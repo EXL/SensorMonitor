@@ -1,0 +1,64 @@
+5/13/2013 (v. 0.5):
++: Push SensorMonitor to GitHub
+
+5/8/2013 (v. 0.5):
++: Fix LoadTable
++: Add SensorsScheme
++: Fix SensorScheme
+
+5/4/2013 (v. 0.5):
++: Full code refactoring
++: Fixed Memory Leaked
++: Add save window state and geometry after closing
+
+4/9/2013 (v. 0.43):
++: Fixed "Level One" tab
++: Trying translations to Russian
++: Add resource file
+
+3/26/2013 (v. 0.43):
++: Add plot into tab5
++: Calculate "Alfa"
+
+3/21/2013 (v. 0.42):
++: Add statusBar (footer)
++: Calculation "Mu"
++: Update tables on tabs
++: Experiments with tabs
++: Fixed const "col"
++: Crosscompile for Linux x64_86 (Mint 14)
++: Fixed variables for Linux
++: Edit "*.pro" file for crosscompiling
+
+3/19/2013 (v. 0.41):
++: Add Generate HTML table func
++: Add DEFINE
++: Fix MAX cells in SQLite Table
++: Add example tabs
+
+3/18/2013 (v. 0.4):
++: Transformation 8 sensors to 16 sensors
++: Add Date to plot
++: Add read Arr from DATA file
++: Fixed save/read DATA file
++: Maximized main window
++: Fixed save/read TEXT file
++: Added ToolTips for Buttons
++: Add label to main window (widget)
++: Add example levels implemintation to third tab from QGridLayout (trying)
+
+3/5/2013 (v. 0.3):
++: Add RegExp for check double/float
++: Transition from QMainWindow to QWidget in Plot
++: Add datacomm.h for share data (this is good style)
++: Remove "bad" DataComm class and gcc flag "-fpermissive"
++: Add CHANGELOG.txt
++: Add TableData to plots
++: Fix TableData in plot
++: Try OpenGL Context (worked)
++: Removing excess QWidget in plot
+
+3/4/2013 (v. 0.2):
++: Add TXT Importer/Exporter
++: Add DAT Importer
++: Planing DAT Exporter

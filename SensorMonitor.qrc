@@ -1,0 +1,46 @@
+<RCC>
+    <qresource prefix="/">
+        <file>icons/open_icons/open_dat_32x32.png</file>
+        <file>icons/open_icons/open_txt_32x32.png</file>
+        <file>icons/others_icons/about_dialog_32x32.png</file>
+        <file>icons/others_icons/about_Qt_32x32.png</file>
+        <file>icons/others_icons/add_row_into_table_32x32.png</file>
+        <file>icons/others_icons/clear_table_32x32.png</file>
+        <file>icons/others_icons/load_table_32x32.png</file>
+        <file>icons/others_icons/show_levels.png</file>
+        <file>icons/others_icons/show_open_gl_context_32x32.png</file>
+        <file>icons/others_icons/show_plot_32x32.png</file>
+        <file>icons/save_icons/save_dat_32x32.png</file>
+        <file>icons/save_icons/save_html_32x32.png</file>
+        <file>icons/save_icons/save_txt_32x32.png</file>
+        <file>translations/qt_ru.qm</file>
+        <file>translations/sensormonitor_en.qm</file>
+        <file>translations/sensormonitor_ru.qm</file>
+        <file>gfx/html.png</file>
+        <file>gfx/logo.png</file>
+        <file>gfx/opengl.png</file>
+        <file>gfx/qwt.png</file>
+        <file>gfx/sqlite.png</file>
+        <file>icons/sensormonitor_icon.png</file>
+        <file>icons/others_icons/swap_tables.png</file>
+        <file>icons/chart_icons/close_chart_icon.png</file>
+        <file>icons/chart_icons/export_chart_icon.png</file>
+        <file>icons/chart_icons/print_chart_icon.png</file>
+        <file>gfx/Sensors/Sensor-1.png</file>
+        <file>gfx/Sensors/Sensor-2.png</file>
+        <file>gfx/Sensors/Sensor-3.png</file>
+        <file>gfx/Sensors/Sensor-4.png</file>
+        <file>gfx/Sensors/Sensor-5.png</file>
+        <file>gfx/Sensors/Sensor-6.png</file>
+        <file>gfx/Sensors/Sensor-7.png</file>
+        <file>gfx/Sensors/Sensor-8.png</file>
+        <file>gfx/Sensors/Sensor-9.png</file>
+        <file>gfx/Sensors/Sensor-10.png</file>
+        <file>gfx/Sensors/Sensor-11.png</file>
+        <file>gfx/Sensors/Sensor-12.png</file>
+        <file>gfx/Sensors/Sensor-13.png</file>
+        <file>gfx/Sensors/Sensor-14.png</file>
+        <file>gfx/Sensors/Sensor-15.png</file>
+        <file>gfx/Sensors/Sensor-16.png</file>
+    </qresource>
+</RCC>

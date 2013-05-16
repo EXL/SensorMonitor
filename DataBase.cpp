@@ -426,7 +426,10 @@ void DataBase::saveTableToHtmlFile()
         QFile file(fileName);
         if (!(file.open(QIODevice::WriteOnly | QIODevice::Text)))
         {
+#ifdef _DEBUG
             QMessageBox::critical(0, errorTitleGeneral, saveHTMLFileSlot[2]);
+            qDebug() << "Error: " << saveHTMLFileSlot[2];
+#endif
             return;
         }
 
@@ -523,7 +526,10 @@ void DataBase::saveTableToTextFile()
         QFile file(fileName);
         if (!(file.open(QIODevice::WriteOnly | QIODevice::Text)))
         {
+#ifdef _DEBUG
             QMessageBox::critical(0, errorTitleGeneral, saveTextFileSlot[2]);
+            qDebug() << "Error: " << saveTextFileSlot[2];
+#endif
             return;
         }
 
@@ -571,7 +577,10 @@ void DataBase::saveTableToDataFile()
         QFile file(fileName);
         if (!(file.open(QIODevice::WriteOnly)))
         {
+#ifdef _DEBUG
             QMessageBox::critical(0, errorTitleGeneral, saveDataFileSlot[2]);
+            qDebug() << "Error: " << saveDataFileSlot[2];
+#endif
             return;
         }
 
@@ -619,10 +628,6 @@ void DataBase::loadTableFromTextFile()
             "",
             loadTextFileSlot[1]);
 
-    /* Clearing extern arrays */
-    sensorsDateVector.clear();
-    sensorsReadingsVector2D.clear();
-
     QFile read_file(fileName);
     QString all_file;
 
@@ -638,9 +643,16 @@ void DataBase::loadTableFromTextFile()
     }
     else
     {
+#ifdef _DEBUG
         QMessageBox::critical(0, errorTitleGeneral, loadTextFileSlot[2]);
+        qDebug() << "Error: " << loadDataFileSlot[2];
+#endif
         return;
     }
+
+    /* Clearing extern arrays */
+    sensorsDateVector.clear();
+    sensorsReadingsVector2D.clear();
 
     /* Read ALL contains text file in QStringList */
     QStringList temp = all_file.split("\n");
@@ -750,17 +762,20 @@ void DataBase::loadTableFromDataFile()
             "",
             loadDataFileSlot[1]);
 
-    /* Clear extern arrays */
-    sensorsDateVector.clear();
-    sensorsReadingsVector2D.clear();
-
     QFile file(fileName);
     QDataStream in(&file);
     if (!(file.open((QIODevice::ReadOnly))))
     {
+#ifdef _DEBUG
         QMessageBox::critical(0, errorTitleGeneral, loadDataFileSlot[2]);
+        qDebug() << "Error: " << loadDataFileSlot[2];
+#endif
         return;
     }
+
+    /* Clear extern arrays */
+    sensorsDateVector.clear();
+    sensorsReadingsVector2D.clear();
 
     /* Variables */
     unsigned int row_str;

@@ -1,3 +1,6 @@
+5/16/2013 (v. 0.5):
++: Fixed Opening/Saving file dialog
+
 5/13/2013 (v. 0.5):
 +: Push SensorMonitor to GitHub
 

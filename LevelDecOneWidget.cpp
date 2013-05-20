@@ -513,7 +513,7 @@ void LevelDecOne::chooseExportCharts()
     QMessageBox *pmbx = new QMessageBox(QMessageBox::Information,
                                         tr("Export"),
                                         tr("What is the chart you want to export?"),
-                                        QMessageBox::Yes | QMessageBox::No);
+                                        QMessageBox::Yes | QMessageBox::No | QMessageBox::Close);
 
     pmbx->button(QMessageBox::Yes)->setText(tr("Phase Coordinates"));
     pmbx->button(QMessageBox::No)->setText(tr("Available Deviations"));
@@ -531,6 +531,10 @@ void LevelDecOne::chooseExportCharts()
         levelOneMuChart->exportLevelOnePlotToImage();
         return;
     }
+    else if (n == QMessageBox::Close)
+    {
+        return;
+    }
 }
 
 void LevelDecOne::choosePrintCharts()
@@ -538,7 +542,7 @@ void LevelDecOne::choosePrintCharts()
     QMessageBox *pmbx = new QMessageBox(QMessageBox::Information,
                                         tr("Print"),
                                         tr("What is the chart you want to print?"),
-                                        QMessageBox::Yes | QMessageBox::No);
+                                        QMessageBox::Yes | QMessageBox::No | QMessageBox::Close);
 
     pmbx->button(QMessageBox::Yes)->setText(tr("Phase Coordinates"));
     pmbx->button(QMessageBox::No)->setText(tr("Available Deviations"));
@@ -554,6 +558,10 @@ void LevelDecOne::choosePrintCharts()
     else if (n == QMessageBox::No)
     {
         levelOneMuChart->printLevelOnePlot();
+        return;
+    }
+    else if (n == QMessageBox::Close)
+    {
         return;
     }
 }

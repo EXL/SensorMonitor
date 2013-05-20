@@ -614,7 +614,7 @@ Show plot?</source>
     <message>
         <location filename="LevelDecOneWidget.cpp" line="515"/>
         <source>What is the chart you want to export?</source>
-        <translation>Какой граик вы хотите экспортировать?</translation>
+        <translation>Какой график вы хотите экспортировать?</translation>
     </message>
     <message>
         <location filename="LevelDecOneWidget.cpp" line="518"/>

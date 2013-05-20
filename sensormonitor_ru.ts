@@ -604,7 +604,7 @@ Show plot?</source>
     <message>
         <location filename="LevelDecOneWidget.cpp" line="180"/>
         <source>Warning! System is not stable! You need to go to the second level of decomposition or increase the coefficient &quot;Eps&quot;</source>
-        <translation>Внимание! Система не устойчива! Рекомендуется перейти на следующий уровень декомпозиции или увеличить коэффициент &quot;Eps&quot;</translation>
+        <translation>Внимание! Система неустойчива! Рекомендуется перейти на следующий уровень декомпозиции или увеличить коэффициент &quot;Eps&quot;</translation>
     </message>
     <message>
         <location filename="LevelDecOneWidget.cpp" line="508"/>
@@ -979,268 +979,269 @@ Show plot?</source>
     </message>
     <message>
         <location filename="MainWindow.cpp" line="381"/>
-        <source>&lt;p&gt;&lt;b&gt;Version 0.5&lt;/b&gt;&lt;/p&gt;&lt;p&gt;Application and source code available under license GPL v.3.0:&lt;/p&gt;&lt;p&gt;&lt;a href=&apos;http://www.gnu.org/licenses/gpl.html&apos;&gt;GNU GENERAL PUBLIC LICENSE&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Sensor Monitor is designed by Vitaly Shuvaev and Alexander Skorlupin, is students of group BI21-A.&lt;/p&gt;&lt;p&gt;Email: &lt;a href=&apos;mailto:exl@bk.ru&apos;&gt;exl@bk.ru&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;center&gt;&lt;a href=&apos;http://ssga.ru&apos;&gt;&lt;img src=&apos;://gfx/logo.png&apos;/&gt;&lt;/a&gt;&lt;/center&gt;&lt;/p&gt;&lt;p&gt;(c) SSGA, 2013&lt;/p&gt;&lt;p&gt;Application was developmented used the following technologies:&lt;/p&gt;&lt;p&gt;&lt;table&gt;&lt;tr&gt;&lt;td align=&apos;center&apos;&gt;&lt;a href=&apos;http://www.w3.org/TR/html-markup/&apos;&gt;&lt;img src=&apos;://gfx/html.png&apos;/&gt;&lt;/a&gt;&lt;/td&gt;&lt;td align=&apos;center&apos;&gt;&lt;br&gt;HTML and CSS is the main web markup language.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&apos;center&apos;&gt;&lt;a href=&apos;http://www.sqlite.org/&apos;&gt;&lt;img src=&apos;://gfx/sqlite.png&apos;/&gt;&lt;/a&gt;&lt;/td&gt;&lt;td align=&apos;center&apos;&gt;&lt;br&gt;SQLite is an embedded SQL database engine.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&apos;center&apos;&gt;&lt;a href=&apos;http://qwt.sourceforge.net/&apos;&gt;&lt;img src=&apos;://gfx/qwt.png&apos;/&gt;&lt;/a&gt;&lt;/td&gt;&lt;td align=&apos;center&apos;&gt;&lt;br&gt;Qwt is Qt Widgets for Technical Applications.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&apos;center&apos;&gt;&lt;a href=&apos;http://www.opengl.org/&apos;&gt;&lt;img src=&apos;://gfx/opengl.png&apos;/&gt;&lt;/a&gt;&lt;/td&gt;&lt;td align=&apos;center&apos;&gt;&lt;br&gt;OpenGL is a library (API) for rendering 2D/3D graphics.&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/p&gt;</source>
-        <translation>&lt;p&gt;&lt;b&gt;Версия 0.5&lt;/b&gt;&lt;/p&gt;&lt;p&gt;Приложение и исходный код доступны под лицензией GPL v.3.0:&lt;/p&gt;&lt;p&gt;&lt;a href=&apos;http://www.gnu.org/licenses/gpl.html&apos;&gt;GNU GENERAL PUBLIC LICENSE&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Sensor Monitor разработан Виталием Шуваевым и Александром Скорлупиным, студентами группы БИ21-А.&lt;/p&gt;&lt;p&gt;Email: &lt;a href=&apos;mailto:exl@bk.ru&apos;&gt;exl@bk.ru&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;center&gt;&lt;a href=&apos;http://ssga.ru&apos;&gt;&lt;img src=&apos;://gfx/logo.png&apos;/&gt;&lt;/a&gt;&lt;/center&gt;&lt;/p&gt;&lt;p&gt;(c) СГГА, 2013&lt;/p&gt;&lt;p&gt;Приложение было разработано с использованием следующих технологий:&lt;/p&gt;&lt;p&gt;&lt;table&gt;&lt;tr&gt;&lt;td align=&apos;center&apos;&gt;&lt;a href=&apos;http://www.w3.org/TR/html-markup/&apos;&gt;&lt;img src=&apos;://gfx/html.png&apos;/&gt;&lt;/a&gt;&lt;/td&gt;&lt;td align=&apos;center&apos;&gt;&lt;br&gt;HTML и CSS главные языки разметки в Интернете.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&apos;center&apos;&gt;&lt;a href=&apos;http://www.sqlite.org/&apos;&gt;&lt;img src=&apos;://gfx/sqlite.png&apos;/&gt;&lt;/a&gt;&lt;/td&gt;&lt;td align=&apos;center&apos;&gt;&lt;br&gt;SQLite это &quot;облегчённый&quot; движок баз данных SQL.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&apos;center&apos;&gt;&lt;a href=&apos;http://qwt.sourceforge.net/&apos;&gt;&lt;img src=&apos;://gfx/qwt.png&apos;/&gt;&lt;/a&gt;&lt;/td&gt;&lt;td align=&apos;center&apos;&gt;&lt;br&gt;Qwt это Qt Виджеты для технических приложений.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&apos;center&apos;&gt;&lt;a href=&apos;http://www.opengl.org/&apos;&gt;&lt;img src=&apos;://gfx/opengl.png&apos;/&gt;&lt;/a&gt;&lt;/td&gt;&lt;td align=&apos;center&apos;&gt;&lt;br&gt;OpenGL это библиотека (API) для отрисовки 2D/3D графики.&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/p&gt;</translation>
+        <source>&lt;p&gt;&lt;b&gt;Version 0.5&lt;/b&gt;&lt;/p&gt;&lt;p&gt;Application and source code available under license GPL v.3.0:&lt;/p&gt;&lt;p&gt;&lt;a href=&apos;http://www.gnu.org/licenses/gpl.html&apos;&gt;GNU GENERAL PUBLIC LICENSE&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;a href=&apos;https://github.com/EXLMOTODEV/SensorMonitor&apos;&gt;Source Code on GitHub&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Sensor Monitor is designed by Vitaly Shuvaev and Alexander Skorlupin, is students of group BI21-A.&lt;/p&gt;&lt;p&gt;Email: &lt;a href=&apos;mailto:exl@bk.ru&apos;&gt;exl@bk.ru&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;center&gt;&lt;a href=&apos;http://ssga.ru&apos;&gt;&lt;img src=&apos;://gfx/logo.png&apos;/&gt;&lt;/a&gt;&lt;/center&gt;&lt;/p&gt;&lt;p&gt;(c) SSGA, 2013&lt;/p&gt;&lt;p&gt;Application was developmented used the following technologies:&lt;/p&gt;&lt;p&gt;&lt;table&gt;&lt;tr&gt;&lt;td align=&apos;center&apos;&gt;&lt;a href=&apos;http://www.w3.org/TR/html-markup/&apos;&gt;&lt;img src=&apos;://gfx/html.png&apos;/&gt;&lt;/a&gt;&lt;/td&gt;&lt;td align=&apos;center&apos;&gt;&lt;br&gt;HTML and CSS is the main web markup language.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&apos;center&apos;&gt;&lt;a href=&apos;http://www.sqlite.org/&apos;&gt;&lt;img src=&apos;://gfx/sqlite.png&apos;/&gt;&lt;/a&gt;&lt;/td&gt;&lt;td align=&apos;center&apos;&gt;&lt;br&gt;SQLite is an embedded SQL database engine.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&apos;center&apos;&gt;&lt;a href=&apos;http://qwt.sourceforge.net/&apos;&gt;&lt;img src=&apos;://gfx/qwt.png&apos;/&gt;&lt;/a&gt;&lt;/td&gt;&lt;td align=&apos;center&apos;&gt;&lt;br&gt;Qwt is Qt Widgets for Technical Applications.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&apos;center&apos;&gt;&lt;a href=&apos;http://www.opengl.org/&apos;&gt;&lt;img src=&apos;://gfx/opengl.png&apos;/&gt;&lt;/a&gt;&lt;/td&gt;&lt;td align=&apos;center&apos;&gt;&lt;br&gt;OpenGL is a library (API) for rendering 2D/3D graphics.&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/p&gt;</source>
+        <oldsource>&lt;p&gt;&lt;b&gt;Version 0.5&lt;/b&gt;&lt;/p&gt;&lt;p&gt;Application and source code available under license GPL v.3.0:&lt;/p&gt;&lt;p&gt;&lt;a href=&apos;http://www.gnu.org/licenses/gpl.html&apos;&gt;GNU GENERAL PUBLIC LICENSE&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Sensor Monitor is designed by Vitaly Shuvaev and Alexander Skorlupin, is students of group BI21-A.&lt;/p&gt;&lt;p&gt;Email: &lt;a href=&apos;mailto:exl@bk.ru&apos;&gt;exl@bk.ru&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;center&gt;&lt;a href=&apos;http://ssga.ru&apos;&gt;&lt;img src=&apos;://gfx/logo.png&apos;/&gt;&lt;/a&gt;&lt;/center&gt;&lt;/p&gt;&lt;p&gt;(c) SSGA, 2013&lt;/p&gt;&lt;p&gt;Application was developmented used the following technologies:&lt;/p&gt;&lt;p&gt;&lt;table&gt;&lt;tr&gt;&lt;td align=&apos;center&apos;&gt;&lt;a href=&apos;http://www.w3.org/TR/html-markup/&apos;&gt;&lt;img src=&apos;://gfx/html.png&apos;/&gt;&lt;/a&gt;&lt;/td&gt;&lt;td align=&apos;center&apos;&gt;&lt;br&gt;HTML and CSS is the main web markup language.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&apos;center&apos;&gt;&lt;a href=&apos;http://www.sqlite.org/&apos;&gt;&lt;img src=&apos;://gfx/sqlite.png&apos;/&gt;&lt;/a&gt;&lt;/td&gt;&lt;td align=&apos;center&apos;&gt;&lt;br&gt;SQLite is an embedded SQL database engine.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&apos;center&apos;&gt;&lt;a href=&apos;http://qwt.sourceforge.net/&apos;&gt;&lt;img src=&apos;://gfx/qwt.png&apos;/&gt;&lt;/a&gt;&lt;/td&gt;&lt;td align=&apos;center&apos;&gt;&lt;br&gt;Qwt is Qt Widgets for Technical Applications.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&apos;center&apos;&gt;&lt;a href=&apos;http://www.opengl.org/&apos;&gt;&lt;img src=&apos;://gfx/opengl.png&apos;/&gt;&lt;/a&gt;&lt;/td&gt;&lt;td align=&apos;center&apos;&gt;&lt;br&gt;OpenGL is a library (API) for rendering 2D/3D graphics.&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/p&gt;</oldsource>
+        <translation>&lt;p&gt;&lt;b&gt;Версия 0.5&lt;/b&gt;&lt;/p&gt;&lt;p&gt;Приложение и исходный код доступны под лицензией GPL v.3.0:&lt;/p&gt;&lt;p&gt;&lt;a href=&apos;http://www.gnu.org/licenses/gpl.html&apos;&gt;GNU GENERAL PUBLIC LICENSE&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;a href=&apos;https://github.com/EXLMOTODEV/SensorMonitor&apos;&gt;Исходный код на GitHub&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Sensor Monitor разработан Виталием Шуваевым и Александром Скорлупиным, студентами группы БИ21-А.&lt;/p&gt;&lt;p&gt;Email: &lt;a href=&apos;mailto:exl@bk.ru&apos;&gt;exl@bk.ru&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;center&gt;&lt;a href=&apos;http://ssga.ru&apos;&gt;&lt;img src=&apos;://gfx/logo.png&apos;/&gt;&lt;/a&gt;&lt;/center&gt;&lt;/p&gt;&lt;p&gt;(c) СГГА, 2013&lt;/p&gt;&lt;p&gt;Приложение было разработано с использованием следующих технологий:&lt;/p&gt;&lt;p&gt;&lt;table&gt;&lt;tr&gt;&lt;td align=&apos;center&apos;&gt;&lt;a href=&apos;http://www.w3.org/TR/html-markup/&apos;&gt;&lt;img src=&apos;://gfx/html.png&apos;/&gt;&lt;/a&gt;&lt;/td&gt;&lt;td align=&apos;center&apos;&gt;&lt;br&gt;HTML и CSS главные языки разметки в Интернете.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&apos;center&apos;&gt;&lt;a href=&apos;http://www.sqlite.org/&apos;&gt;&lt;img src=&apos;://gfx/sqlite.png&apos;/&gt;&lt;/a&gt;&lt;/td&gt;&lt;td align=&apos;center&apos;&gt;&lt;br&gt;SQLite это &quot;облегчённый&quot; движок баз данных SQL.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&apos;center&apos;&gt;&lt;a href=&apos;http://qwt.sourceforge.net/&apos;&gt;&lt;img src=&apos;://gfx/qwt.png&apos;/&gt;&lt;/a&gt;&lt;/td&gt;&lt;td align=&apos;center&apos;&gt;&lt;br&gt;Qwt это Qt Виджеты для технических приложений.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&apos;center&apos;&gt;&lt;a href=&apos;http://www.opengl.org/&apos;&gt;&lt;img src=&apos;://gfx/opengl.png&apos;/&gt;&lt;/a&gt;&lt;/td&gt;&lt;td align=&apos;center&apos;&gt;&lt;br&gt;OpenGL это библиотека (API) для отрисовки 2D/3D графики.&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="398"/>
+        <location filename="MainWindow.cpp" line="399"/>
         <source>&amp;Add a random row</source>
         <translation>&amp;Добавить строку</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="399"/>
+        <location filename="MainWindow.cpp" line="400"/>
         <source>Add a random row in the SQLite DataBase</source>
         <translation>Добавить строку случайных значений в Базу Данных SQLite</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="401"/>
+        <location filename="MainWindow.cpp" line="402"/>
         <source>&amp;Load Table</source>
         <translation>&amp;Загрузить таблицу</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="402"/>
+        <location filename="MainWindow.cpp" line="403"/>
         <source>Load table with the sensor readings</source>
         <translation>Загрузить таблицу со снятыми показаниями сенсоров</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="404"/>
+        <location filename="MainWindow.cpp" line="405"/>
         <source>&amp;Clear DataBase</source>
         <translation>&amp;Очистить Базу Данных</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="405"/>
+        <location filename="MainWindow.cpp" line="406"/>
         <source>Clear the SQLite DataBase</source>
         <translation>Очистить Базу Данных SQLite полностью</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="407"/>
+        <location filename="MainWindow.cpp" line="408"/>
         <source>&amp;Load Table from &quot;*.txt&quot;</source>
         <translation>&amp;Загрузить таблицу из &quot;*.txt&quot;</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="408"/>
+        <location filename="MainWindow.cpp" line="409"/>
         <source>Load Table from general TextFile</source>
         <translation>Загрузить Таблицу из обычного текстового файла</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="410"/>
+        <location filename="MainWindow.cpp" line="411"/>
         <source>&amp;Load Table from &quot;*.dat&quot;</source>
         <translation>&amp;Загрузить таблицу из &quot;*.dat&quot;</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="411"/>
+        <location filename="MainWindow.cpp" line="412"/>
         <source>Load Table from special DataFile</source>
         <translation>Загрузить таблицу из специального файла с данными</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="413"/>
+        <location filename="MainWindow.cpp" line="414"/>
         <source>&amp;Save Table to &quot;*.txt&quot;</source>
         <translation>&amp;Сохранить таблицу в &quot;*.txt&quot;</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="414"/>
+        <location filename="MainWindow.cpp" line="415"/>
         <source>Save Table to the general TextFile</source>
         <translation>Сохранить таблицу в обычный текстовой файл</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="416"/>
+        <location filename="MainWindow.cpp" line="417"/>
         <source>&amp;Save Table to &quot;*.dat&quot;</source>
         <translation>&amp;Сохранить таблицу в &quot;*.dat&quot;</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="417"/>
+        <location filename="MainWindow.cpp" line="418"/>
         <source>Save Table to special DataFile</source>
         <translation>Сохранить таблицу в специальный файл с данными</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="419"/>
+        <location filename="MainWindow.cpp" line="420"/>
         <source>&amp;Export DataBase to HTLM page</source>
         <translation>&amp;Экспортировать в HTML</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="420"/>
+        <location filename="MainWindow.cpp" line="421"/>
         <source>Export DataBase table to general HTLM page with table</source>
         <translation>Экспортировать Базу Данных в обычную HTML страницу с таблицей</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="422"/>
+        <location filename="MainWindow.cpp" line="423"/>
         <source>&amp;Swap tables SQLite &lt;-&gt; Memory</source>
         <translation>&amp;Поменять местами таблицы SQLite &lt;-&gt; Память</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="423"/>
+        <location filename="MainWindow.cpp" line="424"/>
         <source>Switch SQLite DataBase Table on a Table in Memory and back</source>
         <translation>Переключиться с SQLite таблицы базы данных и Таблицей, находяхейся в памяти и обратно</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="425"/>
+        <location filename="MainWindow.cpp" line="426"/>
         <source>&amp;Disable editing table</source>
         <translation>&amp;Отключить редактирование таблицы</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="426"/>
+        <location filename="MainWindow.cpp" line="427"/>
         <source>&amp;Disable editing SQLite DataBase table</source>
         <translation>&amp;Отключить редактирование таблицы Базы Данных SQLite</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="428"/>
+        <location filename="MainWindow.cpp" line="429"/>
         <source>&amp;Enable editing table</source>
         <translation>&amp;Включить редактирование таблицы</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="429"/>
+        <location filename="MainWindow.cpp" line="430"/>
         <source>Enable editing SQLite DataBase table</source>
         <translation>Включить редактирование таблицы Базы Данных SQLite</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="431"/>
+        <location filename="MainWindow.cpp" line="432"/>
         <source>&amp;Show Chart window</source>
         <translation>&amp;Линейный график</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="432"/>
+        <location filename="MainWindow.cpp" line="433"/>
         <source>Show linear schedule of Sensor Monitor Table</source>
         <translation>Показать линейный график значений датчиков из таблицы</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="434"/>
+        <location filename="MainWindow.cpp" line="435"/>
         <source>&amp;Show Levels of Decomposition</source>
         <translation>&amp;Уровни Декомпозиции</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="435"/>
+        <location filename="MainWindow.cpp" line="436"/>
         <source>Show levels of decomposition windows of current DataBase</source>
         <translation>Показать расчетное окно уровней декомпозиции текущей Базы Данных</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="437"/>
+        <location filename="MainWindow.cpp" line="438"/>
         <source>&amp;Show 3D OpenGL window</source>
         <translation>&amp;3D OpenGL График</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="438"/>
+        <location filename="MainWindow.cpp" line="439"/>
         <source>Show OpenGL context window with 3D Plot</source>
         <translation>Показать OpenGL контекст, содержащий 3D график</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="440"/>
+        <location filename="MainWindow.cpp" line="441"/>
         <source>&amp;About SensorMonitor</source>
         <translation>&amp;О SensorMonitor</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="441"/>
+        <location filename="MainWindow.cpp" line="442"/>
         <source>Show About SensorMonitor dialog</source>
         <translation>Показать диалог &quot;О программе&quot;</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="443"/>
+        <location filename="MainWindow.cpp" line="444"/>
         <source>&amp;About Qt</source>
         <translation>&amp;О библиотеке Qt</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="444"/>
+        <location filename="MainWindow.cpp" line="445"/>
         <source>Show About Qt Library dialog</source>
         <translation>Показать диалог &quot;О библиотеке Qt&quot;</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="446"/>
+        <location filename="MainWindow.cpp" line="447"/>
         <source>&amp;Quit</source>
         <translation>&amp;Выход</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="447"/>
+        <location filename="MainWindow.cpp" line="448"/>
         <source>Quit the program</source>
         <translation>Выйти из программы</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="451"/>
+        <location filename="MainWindow.cpp" line="452"/>
         <source>&amp;File</source>
         <translation>&amp;Файл</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="452"/>
+        <location filename="MainWindow.cpp" line="453"/>
         <source>File Menu</source>
         <translation>Меню работы с файлами и базой данных</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="454"/>
+        <location filename="MainWindow.cpp" line="455"/>
         <source>&amp;View</source>
         <translation>&amp;Просмотр</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="455"/>
+        <location filename="MainWindow.cpp" line="456"/>
         <source>View Menu</source>
         <translation>Меню просмотра</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="457"/>
+        <location filename="MainWindow.cpp" line="458"/>
         <source>&amp;Table</source>
         <translation>&amp;Таблица</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="458"/>
+        <location filename="MainWindow.cpp" line="459"/>
         <source>Table menu</source>
         <translation>Меню таблицы</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="460"/>
+        <location filename="MainWindow.cpp" line="461"/>
         <source>&amp;Language</source>
         <translation>&amp;Язык</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="461"/>
+        <location filename="MainWindow.cpp" line="462"/>
         <source>Language Menu</source>
         <translation>Меню выбора языка программы</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="463"/>
+        <location filename="MainWindow.cpp" line="464"/>
         <source>&amp;Help</source>
         <translation>&amp;Помощь</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="464"/>
+        <location filename="MainWindow.cpp" line="465"/>
         <source>Help Menu</source>
         <translation>Меню, содержащее справку</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="468"/>
+        <location filename="MainWindow.cpp" line="469"/>
         <source>File ToolBar</source>
         <translation>Панель иструментов &quot;Файл&quot;</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="469"/>
+        <location filename="MainWindow.cpp" line="470"/>
         <source>View ToolBar</source>
         <translation>Панель инструментов &quot;Просмотр&quot;</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="473"/>
+        <location filename="MainWindow.cpp" line="474"/>
         <source>Ready</source>
         <translation>Готово</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="477"/>
-        <location filename="MainWindow.cpp" line="531"/>
+        <location filename="MainWindow.cpp" line="478"/>
+        <location filename="MainWindow.cpp" line="532"/>
         <source>SQLite DataBase</source>
         <translation>База Данных SQLite</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="478"/>
-        <location filename="MainWindow.cpp" line="532"/>
+        <location filename="MainWindow.cpp" line="479"/>
+        <location filename="MainWindow.cpp" line="533"/>
         <source>Table Monitoring Sensors of SQLite DataBase</source>
         <translation>Таблица значений датчиков из Базы Данных</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="479"/>
+        <location filename="MainWindow.cpp" line="480"/>
         <source>Monitoring Table</source>
         <translation>Таблица показаний датчиков</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="483"/>
+        <location filename="MainWindow.cpp" line="484"/>
         <source>Sensors Scheme</source>
         <translation>Схема Сенсоров</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="484"/>
+        <location filename="MainWindow.cpp" line="485"/>
         <source>Arrangement of sensors on the building. Click to display sensors</source>
         <translation>Схема расположения сенсоров на здании. Кликните на схему, чтобы показать/скрыть датчики</translation>
     </message>
@@ -1249,17 +1250,17 @@ Show plot?</source>
         <translation type="obsolete">Схема расположения сенсоров на здании</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="493"/>
+        <location filename="MainWindow.cpp" line="494"/>
         <source>Sensor Monitor</source>
         <translation>Sensor Monitor: Слежение за датчиками</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="536"/>
+        <location filename="MainWindow.cpp" line="537"/>
         <source>Table in Memory</source>
         <translation>Таблица в Памяти</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="537"/>
+        <location filename="MainWindow.cpp" line="538"/>
         <source>Table Monitoring Sensors of Memory RAM</source>
         <translation>Таблица значений датчиков, находящаяся в Памяти</translation>
     </message>

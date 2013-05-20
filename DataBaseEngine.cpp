@@ -1,5 +1,5 @@
 #include "LoadData.h"
-#include "DataBase.h"
+#include "DataBaseEngine.h"
 
 #include <QtSql/QSqlDatabase>
 #include <QtSql/QSqlRecord>
@@ -18,14 +18,14 @@
 
 /* Public */
 
-DataBase::DataBase(QWidget *parent)
+DataBaseEngine::DataBaseEngine(QWidget *parent)
     : QWidget(parent)
 {
     generator = new Generators();
     tableModelOfVectors = new TableModelOfVectors(this);
 }
 
-void DataBase::connectToSQLiteDataBase()
+void DataBaseEngine::connectToSQLiteDataBase()
 {
     QSqlDatabase dbase = QSqlDatabase::addDatabase("QSQLITE");
     dbase.setDatabaseName("sensors.sqlite");
@@ -49,7 +49,7 @@ void DataBase::connectToSQLiteDataBase()
     sqlTableModel = new QSqlTableModel(this);
 }
 
-void DataBase::createTableInSQLiteDataBase()
+void DataBaseEngine::createTableInSQLiteDataBase()
 {
     QSqlQuery a_query;
 
@@ -89,7 +89,7 @@ void DataBase::createTableInSQLiteDataBase()
     }
 }
 
-void DataBase::formTableInSQLiteDataBase()
+void DataBaseEngine::formTableInSQLiteDataBase()
 {
     QSqlQuery a_query;
 
@@ -128,17 +128,17 @@ void DataBase::formTableInSQLiteDataBase()
 
 }
 
-bool DataBase::getSwitchTable()
+bool DataBaseEngine::getSwitchTable()
 {
     return switchTableModel;
 }
 
-QTableView *DataBase::getTableViewWidget()
+QTableView *DataBaseEngine::getTableViewWidget()
 {
     return tableViewWidget;
 }
 
-QVector<QVector<double> > &DataBase::getSensorsReadingsVector2D()
+QVector<QVector<double> > &DataBaseEngine::getSensorsReadingsVector2D()
 {
 #ifdef _DEBUG
     qDebug() << &sensorsReadingsVector2D;
@@ -147,7 +147,7 @@ QVector<QVector<double> > &DataBase::getSensorsReadingsVector2D()
 
 }
 
-QVector<QString> &DataBase::getSensorsDateVector()
+QVector<QString> &DataBaseEngine::getSensorsDateVector()
 {
 #ifdef _DEBUG
     qDebug() << &sensorsDateVector;
@@ -155,7 +155,7 @@ QVector<QString> &DataBase::getSensorsDateVector()
     return sensorsDateVector;
 }
 
-void DataBase::retranslateUi()
+void DataBaseEngine::retranslateUi()
 {
     date = tr("DATA");
     sensor = tr("Sensor");
@@ -250,7 +250,7 @@ void DataBase::retranslateUi()
 }
 
 /* Public slots */
-void DataBase::addRandomRowToSQLiteDataBase()
+void DataBaseEngine::addRandomRowToSQLiteDataBase()
 {
     QSqlQuery a_query;
 
@@ -328,7 +328,7 @@ void DataBase::addRandomRowToSQLiteDataBase()
 #endif
 }
 
-void DataBase::clearDataBase()
+void DataBaseEngine::clearDataBase()
 {
     if (countRowsOfDataBase > 0)
     {
@@ -371,7 +371,7 @@ void DataBase::clearDataBase()
     }
 }
 
-void DataBase::loadTableFromHeader()
+void DataBaseEngine::loadTableFromHeader()
 {
     clearDataBase();
 
@@ -415,7 +415,7 @@ void DataBase::loadTableFromHeader()
     formTableInSQLiteDataBase();
 }
 
-void DataBase::saveTableToHtmlFile()
+void DataBaseEngine::saveTableToHtmlFile()
 {
     if (countRowsOfDataBase > 0)
     {
@@ -514,7 +514,7 @@ void DataBase::saveTableToHtmlFile()
     }
 }
 
-void DataBase::saveTableToTextFile()
+void DataBaseEngine::saveTableToTextFile()
 {
     if(countRowsOfDataBase > 0)
     {
@@ -566,7 +566,7 @@ void DataBase::saveTableToTextFile()
     }
 }
 
-void DataBase::saveTableToDataFile()
+void DataBaseEngine::saveTableToDataFile()
 {
     if (countRowsOfDataBase > 0)
     {
@@ -621,7 +621,7 @@ void DataBase::saveTableToDataFile()
     }
 }
 
-void DataBase::loadTableFromTextFile()
+void DataBaseEngine::loadTableFromTextFile()
 {
     QString fileName = QFileDialog::getOpenFileName(this,
                                                     loadTextFileSlot[0],
@@ -755,7 +755,7 @@ void DataBase::loadTableFromTextFile()
     }
 }
 
-void DataBase::loadTableFromDataFile()
+void DataBaseEngine::loadTableFromDataFile()
 {
     QString fileName = QFileDialog::getOpenFileName(this,
                                                     loadDataFileSlot[0],
@@ -852,7 +852,7 @@ void DataBase::loadTableFromDataFile()
     }
 }
 
-void DataBase::changeTableModel()
+void DataBaseEngine::changeTableModel()
 {
     if (switchTableModel && countRowsOfDataBase > 0)
     {
@@ -869,18 +869,18 @@ void DataBase::changeTableModel()
     }
 }
 
-void DataBase::setNoEditTablePolicy()
+void DataBaseEngine::setNoEditTablePolicy()
 {
     tableViewWidget->setEditTriggers(QAbstractItemView::NoEditTriggers);
 }
 
-void DataBase::setEditTablePolicy()
+void DataBaseEngine::setEditTablePolicy()
 {
     tableViewWidget->setEditTriggers(QAbstractItemView::DoubleClicked);
 }
 
 /* Private */
-void DataBase::readDataBaseTableToVectors(QSqlQuery &a_query)
+void DataBaseEngine::readDataBaseTableToVectors(QSqlQuery &a_query)
 {
     sensorsReadingsVector2D.clear();
     sensorsDateVector.clear();
@@ -929,7 +929,7 @@ void DataBase::readDataBaseTableToVectors(QSqlQuery &a_query)
 }
 
 #ifdef _DEBUG
-void DataBase::printVector2DDebug()
+void DataBaseEngine::printVector2DDebug()
 {
     const size_t row = sqlTableModel->rowCount();
     const size_t col = 16;
@@ -944,12 +944,12 @@ void DataBase::printVector2DDebug()
 }
 #endif
 
-void DataBase::emptyDataBaseCriticalError()
+void DataBaseEngine::emptyDataBaseCriticalError()
 {
     QMessageBox::critical(0, errorTitleGeneral, emptyDataBaseTableDialog);
 }
 
-void DataBase::showTableModelOfVectors()
+void DataBaseEngine::showTableModelOfVectors()
 {
     tableModelOfVectors->setCurrencyVectors(sensorsDateVector, sensorsReadingsVector2D);
     tableModelOfVectors->setHeaderDataOfTable(datePtr, sensorPtr);
@@ -960,7 +960,7 @@ void DataBase::showTableModelOfVectors()
     tableViewWidget->selectRow(0);
 }
 
-DataBase::~DataBase()
+DataBaseEngine::~DataBaseEngine()
 {
     /* Empty Destructor */
 }
@@ -973,7 +973,8 @@ TableModelOfVectors::TableModelOfVectors(QObject *parent)
     lightYellow.setRgb(255, 255, 153);
 }
 
-void TableModelOfVectors::setCurrencyVectors(const QVector<QString> &vectorSensorsDate, const QVector<QVector<double> > &vectorSensorReadings2D)
+void TableModelOfVectors::setCurrencyVectors(const QVector<QString> &vectorSensorsDate,
+                                             const QVector<QVector<double> > &vectorSensorReadings2D)
 {
     sensorDateOfReceivedVector = vectorSensorsDate;
     sensorReadingsOfReceived2DVector = vectorSensorReadings2D;
@@ -981,7 +982,8 @@ void TableModelOfVectors::setCurrencyVectors(const QVector<QString> &vectorSenso
     reset();
 }
 
-void TableModelOfVectors::setHeaderDataOfTable(const QString *date, const QString *sensor)
+void TableModelOfVectors::setHeaderDataOfTable(const QString *date,
+                                               const QString *sensor)
 {
     dateTable = date;
     sensorTable = sensor;

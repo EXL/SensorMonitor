@@ -73,52 +73,52 @@ void MainWindow::createActions()
     addRandomRowInTheDataBaseAction = new QAction(this);
     addRandomRowInTheDataBaseAction->setShortcut(Qt::CTRL + Qt::Key_R);
     addRandomRowInTheDataBaseAction->setIcon(QIcon("://icons/others_icons/add_row_into_table_32x32.png"));
-    connect(addRandomRowInTheDataBaseAction, SIGNAL(triggered()), dataBase, SLOT(addRandomRowToSQLiteDataBase()));
+    connect(addRandomRowInTheDataBaseAction, SIGNAL(triggered()), dataBaseEngine, SLOT(addRandomRowToSQLiteDataBase()));
     connect(addRandomRowInTheDataBaseAction, SIGNAL(triggered()), this, SLOT(switchTable()));
 
     loadTableFromHeaderAction = new QAction(this);
     loadTableFromHeaderAction->setShortcut(Qt::CTRL + Qt::Key_1);
     loadTableFromHeaderAction->setIcon(QIcon("://icons/others_icons/load_table_32x32.png"));
-    connect(loadTableFromHeaderAction, SIGNAL(triggered()), dataBase, SLOT(loadTableFromHeader()));
+    connect(loadTableFromHeaderAction, SIGNAL(triggered()), dataBaseEngine, SLOT(loadTableFromHeader()));
     connect(loadTableFromHeaderAction, SIGNAL(triggered()), this, SLOT(switchTable()));
 
     clearDataBaseAction = new QAction(this);
     clearDataBaseAction->setShortcut(Qt::CTRL + Qt::Key_N);
     clearDataBaseAction->setIcon(QIcon("://icons/others_icons/clear_table_32x32.png"));
-    connect(clearDataBaseAction, SIGNAL(triggered()), dataBase, SLOT(clearDataBase()));
+    connect(clearDataBaseAction, SIGNAL(triggered()), dataBaseEngine, SLOT(clearDataBase()));
     connect(clearDataBaseAction, SIGNAL(triggered()), this, SLOT(switchTable()));
 
     loadTableFromTextFileAction = new QAction(this);
     loadTableFromTextFileAction->setShortcut(Qt::CTRL + Qt::Key_T);
     loadTableFromTextFileAction->setIcon(QIcon("://icons/open_icons/open_txt_32x32.png"));
-    connect(loadTableFromTextFileAction, SIGNAL(triggered()), dataBase, SLOT(loadTableFromTextFile()));
+    connect(loadTableFromTextFileAction, SIGNAL(triggered()), dataBaseEngine, SLOT(loadTableFromTextFile()));
     connect(loadTableFromTextFileAction, SIGNAL(triggered()), this, SLOT(switchTable()));
 
     loadTableFromDataFileAction = new QAction(this);
     // loadTableFromDataFileAction->setShortcut(QKeySequence::UnknownKey);
     loadTableFromDataFileAction->setIcon(QIcon("://icons/open_icons/open_dat_32x32.png"));
-    connect(loadTableFromDataFileAction, SIGNAL(triggered()), dataBase, SLOT(loadTableFromDataFile()));
+    connect(loadTableFromDataFileAction, SIGNAL(triggered()), dataBaseEngine, SLOT(loadTableFromDataFile()));
     connect(loadTableFromDataFileAction, SIGNAL(triggered()), this, SLOT(switchTable()));
 
     saveTableToTextFileAction = new QAction(this);
     saveTableToTextFileAction->setShortcut(QKeySequence::Save);
     saveTableToTextFileAction->setIcon(QIcon("://icons/save_icons/save_txt_32x32.png"));
-    connect(saveTableToTextFileAction, SIGNAL(triggered()), dataBase, SLOT(saveTableToTextFile()));
+    connect(saveTableToTextFileAction, SIGNAL(triggered()), dataBaseEngine, SLOT(saveTableToTextFile()));
 
     saveTableToDataFileAction = new QAction(this);
     // saveTableToDataFileAction->setShortcut(QKeySequence::UnknownKey);
     saveTableToDataFileAction->setIcon(QIcon("://icons/save_icons/save_dat_32x32.png"));
-    connect(saveTableToDataFileAction, SIGNAL(triggered()), dataBase, SLOT(saveTableToDataFile()));
+    connect(saveTableToDataFileAction, SIGNAL(triggered()), dataBaseEngine, SLOT(saveTableToDataFile()));
 
     saveTableToHtmlFileAction = new QAction(this);
     // saveTableToHtmlFileAction->setShortcut(QKeySequence::UnknownKey);
     saveTableToHtmlFileAction->setIcon(QIcon("://icons/save_icons/save_html_32x32.png"));
-    connect(saveTableToHtmlFileAction, SIGNAL(triggered()), dataBase, SLOT(saveTableToHtmlFile()));
+    connect(saveTableToHtmlFileAction, SIGNAL(triggered()), dataBaseEngine, SLOT(saveTableToHtmlFile()));
 
     changeTableModelAction = new QAction(this);
     changeTableModelAction->setShortcut(Qt::CTRL + Qt::Key_F);
     changeTableModelAction->setIcon(QIcon("://icons/others_icons/swap_tables.png"));
-    connect(changeTableModelAction, SIGNAL(triggered()), dataBase, SLOT(changeTableModel()));
+    connect(changeTableModelAction, SIGNAL(triggered()), dataBaseEngine, SLOT(changeTableModel()));
     connect(changeTableModelAction, SIGNAL(triggered()), this, SLOT(switchTable()));
 
     setEditTablePolicy = new QAction(this);
@@ -162,10 +162,10 @@ void MainWindow::createActions()
 
 void MainWindow::createAndReadDataBase()
 {
-    dataBase = new DataBase(this);
-    dataBase->connectToSQLiteDataBase();
-    dataBase->createTableInSQLiteDataBase();
-    dataBase->formTableInSQLiteDataBase();
+    dataBaseEngine = new DataBaseEngine(this);
+    dataBaseEngine->connectToSQLiteDataBase();
+    dataBaseEngine->createTableInSQLiteDataBase();
+    dataBaseEngine->formTableInSQLiteDataBase();
 }
 
 void MainWindow::createMenus()
@@ -354,7 +354,7 @@ void MainWindow::createTableGroupBox()
     tableGroupBox = new QGroupBox(mainWidget);
     tableWidgetLayout = new QHBoxLayout(tableGroupBox);
 
-    tableWidgetLayout->addWidget(dataBase->getTableViewWidget());
+    tableWidgetLayout->addWidget(dataBaseEngine->getTableViewWidget());
 }
 
 void MainWindow::createSchemeGroupBox()
@@ -486,7 +486,7 @@ void MainWindow::retranslateUi()
     /********** End Central Widget **********/
 
     /********** Start Other Widgets **********/
-    dataBase->retranslateUi();
+    dataBaseEngine->retranslateUi();
     schemeWidget->retranslateUi();
     /********** End Others Widgets **********/
 
@@ -514,19 +514,19 @@ void MainWindow::setEditTablePolicySlot()
 {
     setEditTablePolicy->setChecked(true);
     setNoEditTablePolicy->setChecked(false);
-    dataBase->setEditTablePolicy();
+    dataBaseEngine->setEditTablePolicy();
 }
 
 void MainWindow::setNoEditTablePolicySlot()
 {
     setNoEditTablePolicy->setChecked(true);
     setEditTablePolicy->setChecked(false);
-    dataBase->setNoEditTablePolicy();
+    dataBaseEngine->setNoEditTablePolicy();
 }
 
 void MainWindow::switchTable()
 {
-    if (dataBase->getSwitchTable())
+    if (dataBaseEngine->getSwitchTable())
     {
         tableGroupBox->setTitle(tr("SQLite DataBase"));
         tableGroupBox->setStatusTip(tr("Table Monitoring Sensors of SQLite DataBase"));
@@ -540,14 +540,14 @@ void MainWindow::switchTable()
 
 void MainWindow::showChartWindowSlot()
 {
-    if (dataBase->getSensorsDateVector().size() != 0)
+    if (dataBaseEngine->getSensorsDateVector().size() != 0)
     {
-        lineChartWidget = new LineChartWidget(dataBase->getSensorsDateVector(), dataBase->getSensorsReadingsVector2D());
+        lineChartWidget = new LineChartWidget(dataBaseEngine->getSensorsDateVector(), dataBaseEngine->getSensorsReadingsVector2D());
         lineChartWidget->show();
     }
     else
     {
-        dataBase->emptyDataBaseCriticalError();
+        dataBaseEngine->emptyDataBaseCriticalError();
     }
 }
 
@@ -559,14 +559,14 @@ void MainWindow::showOpenGLContextWindowSlot()
 
 void MainWindow::showLevelsWindowSlot()
 {
-    if (dataBase->getSensorsDateVector().size() != 0)
+    if (dataBaseEngine->getSensorsDateVector().size() != 0)
     {
-        levelsWidget = new LevelsWidget(dataBase->getSensorsDateVector(), dataBase->getSensorsReadingsVector2D());
+        levelsWidget = new LevelsWidget(dataBaseEngine->getSensorsDateVector(), dataBaseEngine->getSensorsReadingsVector2D());
         levelsWidget->show();
     }
     else
     {
-        dataBase->emptyDataBaseCriticalError();
+        dataBaseEngine->emptyDataBaseCriticalError();
     }
 }
 

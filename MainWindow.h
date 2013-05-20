@@ -2,7 +2,7 @@
 #define MAINWINDOW_H
 
 #include "SchemeSensors.h"
-#include "DataBase.h"
+#include "DataBaseEngine.h"
 #include "LineChartWidget.h"
 #include "OGLContextWidget.h"
 #include "LevelsWidget.h"
@@ -90,7 +90,7 @@ class MainWindow : public QMainWindow
     QString aboutTitle;
     QString aboutBody;
 
-    DataBase *dataBase;
+    DataBaseEngine *dataBaseEngine;
     LineChartWidget *lineChartWidget;
     OGLContextWidget *oglContextWidget;
     LevelsWidget *levelsWidget;

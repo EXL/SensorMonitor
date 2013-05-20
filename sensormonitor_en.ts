@@ -4,151 +4,124 @@
 <context>
     <name>DataBase</name>
     <message>
-        <location filename="DataBase.cpp" line="165"/>
         <source>FATAL: Database Error!</source>
         <oldsource>Database Error</oldsource>
-        <translation>FATAL: Database Error!</translation>
+        <translation type="obsolete">FATAL: Database Error!</translation>
     </message>
     <message>
-        <location filename="DataBase.cpp" line="166"/>
         <source>SQLite Driver not found!</source>
-        <translation>SQLite Driver not found!</translation>
+        <translation type="obsolete">SQLite Driver not found!</translation>
     </message>
     <message>
-        <location filename="DataBase.cpp" line="160"/>
         <source>DATA</source>
-        <translation>DATA</translation>
+        <translation type="obsolete">DATA</translation>
     </message>
     <message>
-        <location filename="DataBase.cpp" line="161"/>
         <source>Sensor</source>
-        <translation>Sensor</translation>
+        <translation type="obsolete">Sensor</translation>
     </message>
     <message>
-        <location filename="DataBase.cpp" line="168"/>
         <source>Warning!</source>
-        <translation>Warning!</translation>
+        <translation type="obsolete">Warning!</translation>
     </message>
     <message>
-        <location filename="DataBase.cpp" line="169"/>
         <source>&lt;html&gt;The table was very large (256 rows overflow limit). &lt;br&gt;Adding items can slow down the program. &lt;br&gt;&lt;br&gt;You can:&lt;ul&gt;&lt;li&gt;Continue;&lt;/li&gt;&lt;li&gt;Clear the DataBase;&lt;/li&gt;&lt;li&gt;Generate the HTML Table.&lt;/li&gt;&lt;/ul&gt;&lt;/html&gt;</source>
         <oldsource>The table was very large (256 rows).
 Adding items can slow down the program.
 You can:
 &lt;center&gt;&lt;ul&gt;&lt;li&gt;Continue;&lt;/li&gt;&lt;li&gt;Clean the DataBase;&lt;/li&gt;&lt;li&gt;Generate the HTML Table.&lt;/li&gt;&lt;/ul&gt;&lt;/center&gt;</oldsource>
-        <translation>&lt;html&gt;The table was very large (256 rows overflow limit). &lt;br&gt;Adding items can slow down the program. &lt;br&gt;&lt;br&gt;You can:&lt;ul&gt;&lt;li&gt;Continue;&lt;/li&gt;&lt;li&gt;Clear the DataBase;&lt;/li&gt;&lt;li&gt;Generate the HTML Table.&lt;/li&gt;&lt;/ul&gt;&lt;/html&gt;</translation>
+        <translation type="obsolete">&lt;html&gt;The table was very large (256 rows overflow limit). &lt;br&gt;Adding items can slow down the program. &lt;br&gt;&lt;br&gt;You can:&lt;ul&gt;&lt;li&gt;Continue;&lt;/li&gt;&lt;li&gt;Clear the DataBase;&lt;/li&gt;&lt;li&gt;Generate the HTML Table.&lt;/li&gt;&lt;/ul&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="DataBase.cpp" line="179"/>
         <source>Continue</source>
-        <translation>Continue</translation>
+        <translation type="obsolete">Continue</translation>
     </message>
     <message>
-        <location filename="DataBase.cpp" line="180"/>
         <source>Clear DataBase</source>
         <oldsource>Clear DB</oldsource>
-        <translation>Clear DataBase</translation>
+        <translation type="obsolete">Clear DataBase</translation>
     </message>
     <message>
-        <location filename="DataBase.cpp" line="181"/>
         <source>Generate HTML</source>
-        <translation>Generate HTML</translation>
+        <translation type="obsolete">Generate HTML</translation>
     </message>
     <message>
-        <location filename="DataBase.cpp" line="186"/>
         <source>DataBase Question</source>
-        <translation>DataBase Question</translation>
+        <translation type="obsolete">DataBase Question</translation>
     </message>
     <message>
-        <location filename="DataBase.cpp" line="187"/>
         <source>Delete SQLite DataBase?</source>
-        <translation>Delete SQLite DataBase?</translation>
+        <translation type="obsolete">Delete SQLite DataBase?</translation>
     </message>
     <message>
-        <location filename="DataBase.cpp" line="189"/>
         <source>Empty SQLite DataBase table!</source>
-        <translation>Empty SQLite DataBase table!</translation>
+        <translation type="obsolete">Empty SQLite DataBase table!</translation>
     </message>
     <message>
-        <location filename="DataBase.cpp" line="192"/>
         <source>Save *.html file</source>
-        <translation>Save *.html file</translation>
+        <translation type="obsolete">Save *.html file</translation>
     </message>
     <message>
-        <location filename="DataBase.cpp" line="193"/>
         <source>HTML page (*.html);;All Files (*)</source>
-        <translation>HTML page (*.html);;All Files (*)</translation>
+        <translation type="obsolete">HTML page (*.html);;All Files (*)</translation>
     </message>
     <message>
-        <location filename="DataBase.cpp" line="201"/>
         <source>Save *.txt file</source>
-        <translation>Save *.txt file</translation>
+        <translation type="obsolete">Save *.txt file</translation>
     </message>
     <message>
-        <location filename="DataBase.cpp" line="202"/>
-        <location filename="DataBase.cpp" line="218"/>
         <source>Text File (*.txt);;All Files (*)</source>
-        <translation>Text File (*.txt);;All Files (*)</translation>
+        <translation type="obsolete">Text File (*.txt);;All Files (*)</translation>
     </message>
     <message>
-        <location filename="DataBase.cpp" line="203"/>
         <source>Can&apos;t write TXT file!
 Please check RW permission or correct select the file.
 And try again!</source>
-        <translation>Can&apos;t write TXT file!
+        <translation type="obsolete">Can&apos;t write TXT file!
 Please check RW permission or correct select the file.
 And try again!</translation>
     </message>
     <message>
-        <location filename="DataBase.cpp" line="206"/>
         <source>TXT file is created successfully.
 Written %1 lines!</source>
-        <translation>TXT file is created successfully.
+        <translation type="obsolete">TXT file is created successfully.
 Written %1 lines!</translation>
     </message>
     <message>
-        <location filename="DataBase.cpp" line="209"/>
         <source>Save *.dat file</source>
-        <translation>Save *.dat file</translation>
+        <translation type="obsolete">Save *.dat file</translation>
     </message>
     <message>
-        <location filename="DataBase.cpp" line="210"/>
-        <location filename="DataBase.cpp" line="234"/>
         <source>Data File (*.dat);;All Files (*)</source>
-        <translation>Data File (*.dat);;All Files (*)</translation>
+        <translation type="obsolete">Data File (*.dat);;All Files (*)</translation>
     </message>
     <message>
-        <location filename="DataBase.cpp" line="211"/>
         <source>Can&apos;t write DATA file!
 Please check RW permission or correct select the file.
 And try again!</source>
-        <translation>Can&apos;t write DATA file!
+        <translation type="obsolete">Can&apos;t write DATA file!
 Please check RW permission or correct select the file.
 And try again!</translation>
     </message>
     <message>
-        <location filename="DataBase.cpp" line="214"/>
         <source>DATA file is created successfully.
 Added %1 lines!</source>
-        <translation>DATA file is created successfully.
+        <translation type="obsolete">DATA file is created successfully.
 Added %1 lines!</translation>
     </message>
     <message>
-        <location filename="DataBase.cpp" line="217"/>
         <source>Open *.txt file</source>
-        <translation>Open *.txt file</translation>
+        <translation type="obsolete">Open *.txt file</translation>
     </message>
     <message>
-        <location filename="DataBase.cpp" line="219"/>
         <source>Can&apos;t read TXT file!
 Please check RW permission or correct select the file.
 And try again!</source>
-        <translation>Can&apos;t read TXT file!
+        <translation type="obsolete">Can&apos;t read TXT file!
 Please check RW permission or correct select the file.
 And try again!</translation>
     </message>
     <message>
-        <location filename="DataBase.cpp" line="222"/>
         <source>Attention!
 You try to read TXT file format, which unsuitable size of columns!
 The number of columns must be equal to 17!
@@ -157,20 +130,272 @@ Information: Number of columns in the file - %1</source>
 You try to read TXT file format, which unsuitable size of columns!
 The number of columns must be equal to 16!
 Information: Number of columns in the file - %1</oldsource>
+        <translation type="obsolete">Attention!
+You try to read TXT file format, which unsuitable size of columns!
+The number of columns must be equal to 17!
+Information: Number of columns in the file - %1</translation>
+    </message>
+    <message>
+        <source>The data in the TXT file is corrupted!
+The first mistake: %1</source>
+        <translation type="obsolete">The data in the TXT file is corrupted!
+The first mistake: %1</translation>
+    </message>
+    <message>
+        <source>TXT file is read successfully.
+Read %1 lines!
+
+Show plot?</source>
+        <translation type="obsolete">TXT file is read successfully.
+Read %1 lines!
+
+Show plot?</translation>
+    </message>
+    <message>
+        <source>Open *.dat file</source>
+        <translation type="obsolete">Open *.dat file</translation>
+    </message>
+    <message>
+        <source>Can&apos;t read DATA file!
+Please check RW permission or correct select the file.
+And try again!</source>
+        <translation type="obsolete">Can&apos;t read DATA file!
+Please check RW permission or correct select the file.
+And try again!</translation>
+    </message>
+    <message>
+        <source>Invalid &quot;*.dat&quot; file!
+Please check data file and try again!</source>
+        <translation type="obsolete">Invalid &quot;*.dat&quot; file!
+Please check data file and try again!</translation>
+    </message>
+    <message>
+        <source>Data file is read successfully.
+Read %1 lines!
+
+Show plot?</source>
+        <translation type="obsolete">Data file is read successfully.
+Read %1 lines!
+
+Show plot?</translation>
+    </message>
+    <message>
+        <source>Error!</source>
+        <translation type="obsolete">Error!</translation>
+    </message>
+    <message>
+        <source>Can&apos;t write HTML file!
+Please check RW permission or correct select the file.
+And try again!</source>
+        <translation type="obsolete">Can&apos;t write HTML file!
+Please check RW permission or correct select the file.
+And try again!</translation>
+    </message>
+    <message>
+        <source>Success!</source>
+        <translation type="obsolete">Success!</translation>
+    </message>
+    <message>
+        <source>HTML page is created successfully.
+Written %1x%2 cells!
+
+Show HTML Page in your browser?</source>
+        <translation type="obsolete">HTML page is created successfully.
+Written %1x%2 cells!
+
+Show HTML Page in your browser?</translation>
+    </message>
+</context>
+<context>
+    <name>DataBaseEngine</name>
+    <message>
+        <location filename="DataBaseEngine.cpp" line="160"/>
+        <source>DATA</source>
+        <translation>DATA</translation>
+    </message>
+    <message>
+        <location filename="DataBaseEngine.cpp" line="161"/>
+        <source>Sensor</source>
+        <translation>Sensor</translation>
+    </message>
+    <message>
+        <location filename="DataBaseEngine.cpp" line="165"/>
+        <source>FATAL: Database Error!</source>
+        <translation>FATAL: Database Error!</translation>
+    </message>
+    <message>
+        <location filename="DataBaseEngine.cpp" line="166"/>
+        <source>SQLite Driver not found!</source>
+        <translation>SQLite Driver not found!</translation>
+    </message>
+    <message>
+        <location filename="DataBaseEngine.cpp" line="168"/>
+        <source>Warning!</source>
+        <translation>Warning!</translation>
+    </message>
+    <message>
+        <location filename="DataBaseEngine.cpp" line="169"/>
+        <source>&lt;html&gt;The table was very large (256 rows overflow limit). &lt;br&gt;Adding items can slow down the program. &lt;br&gt;&lt;br&gt;You can:&lt;ul&gt;&lt;li&gt;Continue;&lt;/li&gt;&lt;li&gt;Clear the DataBase;&lt;/li&gt;&lt;li&gt;Generate the HTML Table.&lt;/li&gt;&lt;/ul&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;The table was very large (256 rows overflow limit). &lt;br&gt;Adding items can slow down the program. &lt;br&gt;&lt;br&gt;You can:&lt;ul&gt;&lt;li&gt;Continue;&lt;/li&gt;&lt;li&gt;Clear the DataBase;&lt;/li&gt;&lt;li&gt;Generate the HTML Table.&lt;/li&gt;&lt;/ul&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <location filename="DataBaseEngine.cpp" line="179"/>
+        <source>Continue</source>
+        <translation>Continue</translation>
+    </message>
+    <message>
+        <location filename="DataBaseEngine.cpp" line="180"/>
+        <source>Clear DataBase</source>
+        <translation>Clear DataBase</translation>
+    </message>
+    <message>
+        <location filename="DataBaseEngine.cpp" line="181"/>
+        <source>Generate HTML</source>
+        <translation>Generate HTML</translation>
+    </message>
+    <message>
+        <location filename="DataBaseEngine.cpp" line="183"/>
+        <source>Error!</source>
+        <translation>Error!</translation>
+    </message>
+    <message>
+        <location filename="DataBaseEngine.cpp" line="184"/>
+        <source>Success!</source>
+        <translation>Success!</translation>
+    </message>
+    <message>
+        <location filename="DataBaseEngine.cpp" line="186"/>
+        <source>DataBase Question</source>
+        <translation>DataBase Question</translation>
+    </message>
+    <message>
+        <location filename="DataBaseEngine.cpp" line="187"/>
+        <source>Delete SQLite DataBase?</source>
+        <translation>Delete SQLite DataBase?</translation>
+    </message>
+    <message>
+        <location filename="DataBaseEngine.cpp" line="189"/>
+        <source>Empty SQLite DataBase table!</source>
+        <translation>Empty SQLite DataBase table!</translation>
+    </message>
+    <message>
+        <location filename="DataBaseEngine.cpp" line="192"/>
+        <source>Save *.html file</source>
+        <translation>Save *.html file</translation>
+    </message>
+    <message>
+        <location filename="DataBaseEngine.cpp" line="193"/>
+        <source>HTML page (*.html);;All Files (*)</source>
+        <translation>HTML page (*.html);;All Files (*)</translation>
+    </message>
+    <message>
+        <location filename="DataBaseEngine.cpp" line="194"/>
+        <source>Can&apos;t write HTML file!
+Please check RW permission or correct select the file.
+And try again!</source>
+        <translation>Can&apos;t write HTML file!
+Please check RW permission or correct select the file.
+And try again!</translation>
+    </message>
+    <message>
+        <location filename="DataBaseEngine.cpp" line="197"/>
+        <source>HTML page is created successfully.
+Written %1x%2 cells!
+
+Show HTML Page in your browser?</source>
+        <translation>HTML page is created successfully.
+Written %1x%2 cells!
+
+Show HTML Page in your browser?</translation>
+    </message>
+    <message>
+        <location filename="DataBaseEngine.cpp" line="201"/>
+        <source>Save *.txt file</source>
+        <translation>Save *.txt file</translation>
+    </message>
+    <message>
+        <location filename="DataBaseEngine.cpp" line="202"/>
+        <location filename="DataBaseEngine.cpp" line="218"/>
+        <source>Text File (*.txt);;All Files (*)</source>
+        <translation>Text File (*.txt);;All Files (*)</translation>
+    </message>
+    <message>
+        <location filename="DataBaseEngine.cpp" line="203"/>
+        <source>Can&apos;t write TXT file!
+Please check RW permission or correct select the file.
+And try again!</source>
+        <translation>Can&apos;t write TXT file!
+Please check RW permission or correct select the file.
+And try again!</translation>
+    </message>
+    <message>
+        <location filename="DataBaseEngine.cpp" line="206"/>
+        <source>TXT file is created successfully.
+Written %1 lines!</source>
+        <translation>TXT file is created successfully.
+Written %1 lines!</translation>
+    </message>
+    <message>
+        <location filename="DataBaseEngine.cpp" line="209"/>
+        <source>Save *.dat file</source>
+        <translation>Save *.dat file</translation>
+    </message>
+    <message>
+        <location filename="DataBaseEngine.cpp" line="210"/>
+        <location filename="DataBaseEngine.cpp" line="234"/>
+        <source>Data File (*.dat);;All Files (*)</source>
+        <translation>Data File (*.dat);;All Files (*)</translation>
+    </message>
+    <message>
+        <location filename="DataBaseEngine.cpp" line="211"/>
+        <source>Can&apos;t write DATA file!
+Please check RW permission or correct select the file.
+And try again!</source>
+        <translation>Can&apos;t write DATA file!
+Please check RW permission or correct select the file.
+And try again!</translation>
+    </message>
+    <message>
+        <location filename="DataBaseEngine.cpp" line="214"/>
+        <source>DATA file is created successfully.
+Added %1 lines!</source>
+        <translation>DATA file is created successfully.
+Added %1 lines!</translation>
+    </message>
+    <message>
+        <location filename="DataBaseEngine.cpp" line="217"/>
+        <source>Open *.txt file</source>
+        <translation>Open *.txt file</translation>
+    </message>
+    <message>
+        <location filename="DataBaseEngine.cpp" line="219"/>
+        <source>Can&apos;t read TXT file!
+Please check RW permission or correct select the file.
+And try again!</source>
+        <translation>Can&apos;t read TXT file!
+Please check RW permission or correct select the file.
+And try again!</translation>
+    </message>
+    <message>
+        <location filename="DataBaseEngine.cpp" line="222"/>
+        <source>Attention!
+You try to read TXT file format, which unsuitable size of columns!
+The number of columns must be equal to 17!
+Information: Number of columns in the file - %1</source>
         <translation>Attention!
 You try to read TXT file format, which unsuitable size of columns!
 The number of columns must be equal to 17!
 Information: Number of columns in the file - %1</translation>
     </message>
     <message>
-        <location filename="DataBase.cpp" line="227"/>
+        <location filename="DataBaseEngine.cpp" line="227"/>
         <source>The data in the TXT file is corrupted!
 The first mistake: %1</source>
         <translation>The data in the TXT file is corrupted!
 The first mistake: %1</translation>
     </message>
     <message>
-        <location filename="DataBase.cpp" line="229"/>
+        <location filename="DataBaseEngine.cpp" line="229"/>
         <source>TXT file is read successfully.
 Read %1 lines!
 
@@ -181,12 +406,12 @@ Read %1 lines!
 Show plot?</translation>
     </message>
     <message>
-        <location filename="DataBase.cpp" line="233"/>
+        <location filename="DataBaseEngine.cpp" line="233"/>
         <source>Open *.dat file</source>
         <translation>Open *.dat file</translation>
     </message>
     <message>
-        <location filename="DataBase.cpp" line="235"/>
+        <location filename="DataBaseEngine.cpp" line="235"/>
         <source>Can&apos;t read DATA file!
 Please check RW permission or correct select the file.
 And try again!</source>
@@ -195,14 +420,14 @@ Please check RW permission or correct select the file.
 And try again!</translation>
     </message>
     <message>
-        <location filename="DataBase.cpp" line="238"/>
+        <location filename="DataBaseEngine.cpp" line="238"/>
         <source>Invalid &quot;*.dat&quot; file!
 Please check data file and try again!</source>
         <translation>Invalid &quot;*.dat&quot; file!
 Please check data file and try again!</translation>
     </message>
     <message>
-        <location filename="DataBase.cpp" line="240"/>
+        <location filename="DataBaseEngine.cpp" line="240"/>
         <source>Data file is read successfully.
 Read %1 lines!
 
@@ -212,66 +437,56 @@ Read %1 lines!
 
 Show plot?</translation>
     </message>
-    <message>
-        <location filename="DataBase.cpp" line="183"/>
-        <source>Error!</source>
-        <translation>Error!</translation>
-    </message>
-    <message>
-        <location filename="DataBase.cpp" line="194"/>
-        <source>Can&apos;t write HTML file!
-Please check RW permission or correct select the file.
-And try again!</source>
-        <translation>Can&apos;t write HTML file!
-Please check RW permission or correct select the file.
-And try again!</translation>
-    </message>
-    <message>
-        <location filename="DataBase.cpp" line="184"/>
-        <source>Success!</source>
-        <translation>Success!</translation>
-    </message>
-    <message>
-        <location filename="DataBase.cpp" line="197"/>
-        <source>HTML page is created successfully.
-Written %1x%2 cells!
-
-Show HTML Page in your browser?</source>
-        <translation>HTML page is created successfully.
-Written %1x%2 cells!
-
-Show HTML Page in your browser?</translation>
-    </message>
 </context>
 <context>
     <name>LevelDecOne</name>
     <message>
-        <location filename="LevelDecOneWidget.cpp" line="46"/>
+        <location filename="LevelDecOneWidget.cpp" line="15"/>
+        <source>DATE</source>
+        <translation>DATE</translation>
+    </message>
+    <message>
+        <location filename="LevelDecOneWidget.cpp" line="16"/>
+        <source>Mu</source>
+        <translation>Mu</translation>
+    </message>
+    <message>
+        <location filename="LevelDecOneWidget.cpp" line="17"/>
+        <source>Alpha</source>
+        <translation>Alpha</translation>
+    </message>
+    <message>
+        <location filename="LevelDecOneWidget.cpp" line="18"/>
+        <source>Forecast</source>
+        <translation>Forecast</translation>
+    </message>
+    <message>
+        <location filename="LevelDecOneWidget.cpp" line="57"/>
         <source>Please change Coefficient &quot;A&quot;</source>
         <translation>Please change Coefficient &quot;A&quot;</translation>
     </message>
     <message>
-        <location filename="LevelDecOneWidget.cpp" line="65"/>
+        <location filename="LevelDecOneWidget.cpp" line="76"/>
         <source>Export</source>
         <translation>Export</translation>
     </message>
     <message>
-        <location filename="LevelDecOneWidget.cpp" line="66"/>
+        <location filename="LevelDecOneWidget.cpp" line="77"/>
         <source>Export the Level One Decomposition Chart</source>
         <translation>Export the Level One Decomposition Chart</translation>
     </message>
     <message>
-        <location filename="LevelDecOneWidget.cpp" line="72"/>
+        <location filename="LevelDecOneWidget.cpp" line="83"/>
         <source>Print</source>
         <translation>Print</translation>
     </message>
     <message>
-        <location filename="LevelDecOneWidget.cpp" line="73"/>
+        <location filename="LevelDecOneWidget.cpp" line="84"/>
         <source>Print the Level One Decomposition Chart</source>
         <translation>Print the Level One Decomposition Chart</translation>
     </message>
     <message>
-        <location filename="LevelDecOneWidget.cpp" line="91"/>
+        <location filename="LevelDecOneWidget.cpp" line="102"/>
         <source>&lt;h3&gt;Coefficient &quot;A&quot;: &lt;/h3&gt;</source>
         <translation>&lt;h3&gt;Coefficient &quot;A&quot;: &lt;/h3&gt;</translation>
     </message>
@@ -413,57 +628,57 @@ Show HTML Page in your browser?</translation>
 <context>
     <name>LineChart</name>
     <message>
-        <location filename="LineChart.cpp" line="57"/>
+        <location filename="LineChart.cpp" line="59"/>
         <source>LineChart Demonstration for Sensors</source>
         <translation>LineChart Demonstration for Sensors</translation>
     </message>
     <message>
-        <location filename="LineChart.cpp" line="127"/>
+        <location filename="LineChart.cpp" line="129"/>
         <source>The number of days that have passed --&gt;</source>
         <translation>The number of days that have passed --&gt;</translation>
     </message>
     <message>
-        <location filename="LineChart.cpp" line="131"/>
+        <location filename="LineChart.cpp" line="133"/>
         <source>The values of sensors --&gt;</source>
         <translation>The values of sensors --&gt;</translation>
     </message>
     <message>
-        <location filename="LineChart.cpp" line="207"/>
+        <location filename="LineChart.cpp" line="209"/>
         <source>Sensor %1</source>
         <translation>Sensor %1</translation>
     </message>
     <message>
-        <location filename="LineChart.cpp" line="260"/>
+        <location filename="LineChart.cpp" line="262"/>
         <source>PDF Documents (*.pdf)</source>
         <translation>PDF Documents (*.pdf)</translation>
     </message>
     <message>
-        <location filename="LineChart.cpp" line="262"/>
+        <location filename="LineChart.cpp" line="264"/>
         <source>SVG Documents (*.svg)</source>
         <translation>SVG Documents (*.svg)</translation>
     </message>
     <message>
-        <location filename="LineChart.cpp" line="264"/>
+        <location filename="LineChart.cpp" line="266"/>
         <source>Postscript Documents (*.ps)</source>
         <translation>Postscript Documents (*.ps)</translation>
     </message>
     <message>
-        <location filename="LineChart.cpp" line="268"/>
+        <location filename="LineChart.cpp" line="270"/>
         <source>Images (</source>
         <translation>Images (</translation>
     </message>
     <message>
-        <location filename="LineChart.cpp" line="282"/>
+        <location filename="LineChart.cpp" line="284"/>
         <source>Export File Name</source>
         <translation>Export File Name</translation>
     </message>
     <message>
-        <location filename="LineChart.cpp" line="301"/>
+        <location filename="LineChart.cpp" line="303"/>
         <source> -- </source>
         <translation> -- </translation>
     </message>
     <message>
-        <location filename="LineChart.cpp" line="305"/>
+        <location filename="LineChart.cpp" line="307"/>
         <source>Sensors Chart</source>
         <translation>Sensors Chart</translation>
     </message>
@@ -800,13 +1015,13 @@ Show HTML Page in your browser?</translation>
     </message>
     <message>
         <location filename="MainWindow.cpp" line="477"/>
-        <location filename="MainWindow.cpp" line="530"/>
+        <location filename="MainWindow.cpp" line="531"/>
         <source>SQLite DataBase</source>
         <translation>SQLite DataBase</translation>
     </message>
     <message>
         <location filename="MainWindow.cpp" line="478"/>
-        <location filename="MainWindow.cpp" line="531"/>
+        <location filename="MainWindow.cpp" line="532"/>
         <source>Table Monitoring Sensors of SQLite DataBase</source>
         <translation>Table Monitoring Sensors of SQLite DataBase</translation>
     </message>
@@ -830,17 +1045,17 @@ Show HTML Page in your browser?</translation>
         <translation type="obsolete">Arrangement of sensors on the building</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="492"/>
+        <location filename="MainWindow.cpp" line="493"/>
         <source>Sensor Monitor</source>
         <translation>Sensor Monitor</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="535"/>
+        <location filename="MainWindow.cpp" line="536"/>
         <source>Table in Memory</source>
         <translation>Table in Memory</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="536"/>
+        <location filename="MainWindow.cpp" line="537"/>
         <source>Table Monitoring Sensors of Memory RAM</source>
         <translation>Table Monitoring Sensors of Memory RAM</translation>
     </message>
@@ -895,17 +1110,17 @@ And try again!</translation>
 <context>
     <name>SchemeSensors</name>
     <message>
-        <location filename="SchemeSensors.cpp" line="110"/>
+        <location filename="SchemeSensors.cpp" line="114"/>
         <source>Block &quot;A&quot;</source>
         <translation>Block &quot;A&quot;</translation>
     </message>
     <message>
-        <location filename="SchemeSensors.cpp" line="111"/>
+        <location filename="SchemeSensors.cpp" line="115"/>
         <source>Block &quot;B&quot;</source>
         <translation>Block &quot;B&quot;</translation>
     </message>
     <message>
-        <location filename="SchemeSensors.cpp" line="112"/>
+        <location filename="SchemeSensors.cpp" line="116"/>
         <source>Block &quot;C&quot;</source>
         <translation>Block &quot;C&quot;</translation>
     </message>
@@ -913,29 +1128,28 @@ And try again!</translation>
 <context>
     <name>TableLevelOneModel</name>
     <message>
-        <location filename="LevelDecOneWidget.cpp" line="317"/>
         <source>DATE</source>
-        <translation>DATE</translation>
+        <translation type="obsolete">DATE</translation>
     </message>
     <message>
-        <location filename="LevelDecOneWidget.cpp" line="319"/>
         <source>Mu</source>
-        <translation>Mu</translation>
+        <translation type="obsolete">Mu</translation>
     </message>
     <message>
-        <location filename="LevelDecOneWidget.cpp" line="321"/>
+        <source>Forecast</source>
+        <translation type="obsolete">Forecast</translation>
+    </message>
+    <message>
         <source>Mu Forecast</source>
-        <translation>Mu Forecast</translation>
+        <translation type="obsolete">Mu Forecast</translation>
     </message>
     <message>
-        <location filename="LevelDecOneWidget.cpp" line="323"/>
         <source>Alpha</source>
-        <translation>Alpha</translation>
+        <translation type="obsolete">Alpha</translation>
     </message>
     <message>
-        <location filename="LevelDecOneWidget.cpp" line="325"/>
         <source>Alpha Forecast</source>
-        <translation>Alpha Forecast</translation>
+        <translation type="obsolete">Alpha Forecast</translation>
     </message>
 </context>
 <context>

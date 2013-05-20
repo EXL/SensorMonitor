@@ -22,7 +22,7 @@ struct structHTML
     QString trClose;
 };
 
-class DataBase: public QWidget
+class DataBaseEngine: public QWidget
 {
     Q_OBJECT
 
@@ -96,7 +96,7 @@ public slots:
 
     void emptyDataBaseCriticalError();
 public:
-    DataBase(QWidget *parent = 0);
+    DataBaseEngine(QWidget *parent = 0);
 
     void connectToSQLiteDataBase();
     void createTableInSQLiteDataBase();
@@ -110,7 +110,7 @@ public:
 
     void retranslateUi();
 
-    ~DataBase();
+    ~DataBaseEngine();
 };
 
 class TableModelOfVectors: public QAbstractTableModel
@@ -135,8 +135,10 @@ private:
 public:
     TableModelOfVectors(QObject *parent = 0);
 
-    void setCurrencyVectors(const QVector<QString> &vectorSensorsDate, const QVector<QVector<double> > &vectorSensorReadings2D);
-    void setHeaderDataOfTable(const QString *date, const QString *sensor);
+    void setCurrencyVectors(const QVector<QString> &vectorSensorsDate,
+                            const QVector<QVector<double> > &vectorSensorReadings2D);
+    void setHeaderDataOfTable(const QString *date,
+                              const QString *sensor);
 
     ~TableModelOfVectors();
 };

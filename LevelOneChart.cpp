@@ -174,6 +174,10 @@ void LevelOneChart::readDataOfVectors(bool qFirst,
     for(size_t i = 0; i < row; ++i)
     {
         points_s1.push_back(QPointF(vectorMu[i], vectorAlpha[i].toDouble()));
+    }
+
+    for(size_t i = 0; i <= row; ++i)
+    {
         points_s2.push_back(QPointF(vectorMuForecast[i], vectorAlphaForecast[i].toDouble()));
     }
 

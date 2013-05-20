@@ -43,7 +43,6 @@ LIBS += -L$${QWT_PATH}/lib -l$${QWT_LIB}
 win32-g++:RC_FILE = SensorMonitor.rc
 
 SOURCES += main.cpp\
-    DataBase.cpp \
     Generators.cpp \
     LineChart.cpp \
     LineChartWidget.cpp \
@@ -53,10 +52,10 @@ SOURCES += main.cpp\
     SchemeSensors.cpp \
     LevelsWidget.cpp \
     LevelOneChart.cpp \
-    LevelDecOneWidget.cpp
+    LevelDecOneWidget.cpp \
+    DataBaseEngine.cpp
 
 HEADERS  += \
-    DataBase.h \
     Generators.h \
     LineChart.h \
     LineChartWidget.h \
@@ -67,7 +66,8 @@ HEADERS  += \
     SchemeSensors.h \
     LevelsWidget.h \
     LevelOneChart.h \
-    LevelDecOneWidget.h
+    LevelDecOneWidget.h \
+    DataBaseEngine.h
 
 RESOURCES += \
     SensorMonitor.qrc

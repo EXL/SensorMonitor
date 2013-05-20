@@ -21,6 +21,11 @@ class LevelDecOne : public QWidget
 {
     Q_OBJECT
 
+    QString str_date;
+    QString str_mu;
+    QString str_alpha;
+    QString str_forecast;
+
     QVector<QString> vectorDateToLevelOne;
     QVector<QVector<double> > vectorSensorReadings2DToLevelOne;
 
@@ -59,11 +64,15 @@ class LevelDecOne : public QWidget
 
     double getMu(int i);
     double getAvrgMu();
-    void getMuForecast(int i, double a);
-    void getAlphaForecast(int i, double a);
 
     QString getAlphaString(int i);
     double getAvrgAlpha();
+
+    void getMuForecast(int i, double a);
+    double getAvrgMuForecast();
+
+    void getAlphaForecast(int i, double a);
+    double getAvrgAlphaForecast();
 
     void createTable();
     void createDoubleBox();
@@ -84,6 +93,13 @@ public:
 
 class TableLevelOneModel : public QAbstractTableModel
 {
+    size_t row_count;
+
+    QString str_date_table;
+    QString str_mu_table;
+    QString str_alpha_table;
+    QString str_forecast_table;
+
     QColor lightYellow;
 
     QVector<QString> tableVectorDateOfLevel;
@@ -103,7 +119,11 @@ class TableLevelOneModel : public QAbstractTableModel
                         int role) const;
 
 public:
-    TableLevelOneModel(QObject *parent = 0);
+    TableLevelOneModel(const QString &str_date,
+                       const QString &str_mu,
+                       const QString &str_alpha,
+                       const QString &str_forecast,
+                       QObject *parent = 0);
 
     void setCurrencyVectors(const QVector<QString> &tableVectorDate,
                             const QVector<double> &muVector,

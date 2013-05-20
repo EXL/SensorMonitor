@@ -53,7 +53,8 @@ SOURCES += main.cpp\
     LevelsWidget.cpp \
     LevelOneChart.cpp \
     LevelDecOneWidget.cpp \
-    DataBaseEngine.cpp
+    DataBaseEngine.cpp \
+    LevelOneMuChart.cpp
 
 HEADERS  += \
     Generators.h \
@@ -67,7 +68,8 @@ HEADERS  += \
     LevelsWidget.h \
     LevelOneChart.h \
     LevelDecOneWidget.h \
-    DataBaseEngine.h
+    DataBaseEngine.h \
+    LevelOneMuChart.h
 
 RESOURCES += \
     SensorMonitor.qrc
@@ -79,4 +81,4 @@ TRANSLATIONS += \
 OTHER_FILES += \
     SensorMonitor.rc \
     CHANGELOG.txt \
-    WORKLOG.txt
+    TODO.txt

@@ -490,62 +490,157 @@ Show plot?</source>
 <context>
     <name>LevelDecOne</name>
     <message>
-        <location filename="LevelDecOneWidget.cpp" line="15"/>
+        <location filename="LevelDecOneWidget.cpp" line="41"/>
         <source>DATE</source>
         <translation>ДАТА</translation>
     </message>
     <message>
-        <location filename="LevelDecOneWidget.cpp" line="16"/>
+        <location filename="LevelDecOneWidget.cpp" line="42"/>
         <source>Mu</source>
         <translation>Mu</translation>
     </message>
     <message>
-        <location filename="LevelDecOneWidget.cpp" line="17"/>
+        <location filename="LevelDecOneWidget.cpp" line="43"/>
         <source>Alpha</source>
         <translation>Alpha</translation>
     </message>
     <message>
-        <location filename="LevelDecOneWidget.cpp" line="18"/>
+        <location filename="LevelDecOneWidget.cpp" line="44"/>
         <source>Forecast</source>
         <translation>Прогноз</translation>
     </message>
     <message>
-        <location filename="LevelDecOneWidget.cpp" line="57"/>
+        <location filename="LevelDecOneWidget.cpp" line="45"/>
+        <source>[Low.Lim]</source>
+        <translation>[Ниж.Гр]</translation>
+    </message>
+    <message>
+        <location filename="LevelDecOneWidget.cpp" line="46"/>
+        <source>[Upp.Lim]</source>
+        <translation>[Вер.Гр]</translation>
+    </message>
+    <message>
+        <location filename="LevelDecOneWidget.cpp" line="47"/>
+        <source>[L.L]</source>
+        <translation>[Н.Г]</translation>
+    </message>
+    <message>
+        <location filename="LevelDecOneWidget.cpp" line="48"/>
+        <source>[U.L]</source>
+        <translation>[В.Г]</translation>
+    </message>
+    <message>
+        <location filename="LevelDecOneWidget.cpp" line="49"/>
+        <source>Result</source>
+        <translation>Результат</translation>
+    </message>
+    <message>
+        <location filename="LevelDecOneWidget.cpp" line="50"/>
+        <source>Stable</source>
+        <translation>Устойчиво</translation>
+    </message>
+    <message>
+        <location filename="LevelDecOneWidget.cpp" line="51"/>
+        <source>Unstable</source>
+        <translation>Неустойчиво</translation>
+    </message>
+    <message>
+        <location filename="LevelDecOneWidget.cpp" line="82"/>
         <source>Please change Coefficient &quot;A&quot;</source>
         <translation>Пожалуйста измените коэффициент &quot;A&quot;</translation>
     </message>
     <message>
-        <location filename="LevelDecOneWidget.cpp" line="76"/>
+        <location filename="LevelDecOneWidget.cpp" line="88"/>
+        <source>Please change Coefficient &quot;Eps&quot;</source>
+        <translation>Пожалуйста измените коэффициент &quot;Eps&quot;</translation>
+    </message>
+    <message>
+        <location filename="LevelDecOneWidget.cpp" line="116"/>
+        <location filename="LevelDecOneWidget.cpp" line="514"/>
         <source>Export</source>
         <translation>Экспорт</translation>
     </message>
     <message>
-        <location filename="LevelDecOneWidget.cpp" line="77"/>
+        <location filename="LevelDecOneWidget.cpp" line="117"/>
         <source>Export the Level One Decomposition Chart</source>
         <translation>Экспортировать график первого уровня декомпозиции</translation>
     </message>
     <message>
-        <location filename="LevelDecOneWidget.cpp" line="83"/>
+        <location filename="LevelDecOneWidget.cpp" line="123"/>
+        <location filename="LevelDecOneWidget.cpp" line="539"/>
         <source>Print</source>
         <translation>Печать</translation>
     </message>
     <message>
-        <location filename="LevelDecOneWidget.cpp" line="84"/>
+        <location filename="LevelDecOneWidget.cpp" line="124"/>
         <source>Print the Level One Decomposition Chart</source>
         <translation>Распечатать график первого уровня декомпозиции</translation>
     </message>
     <message>
-        <location filename="LevelDecOneWidget.cpp" line="102"/>
+        <location filename="LevelDecOneWidget.cpp" line="130"/>
+        <source>Switch</source>
+        <translation>Переключить</translation>
+    </message>
+    <message>
+        <location filename="LevelDecOneWidget.cpp" line="131"/>
+        <source>Switch between charts and tables</source>
+        <translation>Переключиться между таблицами и графиками</translation>
+    </message>
+    <message>
+        <location filename="LevelDecOneWidget.cpp" line="153"/>
         <source>&lt;h3&gt;Coefficient &quot;A&quot;: &lt;/h3&gt;</source>
         <translation>&lt;h3&gt;Коэффициент &quot;A&quot;: &lt;/h3&gt;</translation>
+    </message>
+    <message>
+        <location filename="LevelDecOneWidget.cpp" line="156"/>
+        <source>&lt;h3&gt;Coefficient &quot;Eps&quot;: &lt;/h3&gt;</source>
+        <translation>&lt;h3&gt;Коэффициент &quot;Eps&quot;: &lt;/h3&gt;</translation>
+    </message>
+    <message>
+        <location filename="LevelDecOneWidget.cpp" line="159"/>
+        <source>&lt;h3&gt; = 1 mm&lt;/h3&gt;</source>
+        <translation>&lt;h3&gt; = 1 мм&lt;/h3&gt;</translation>
+    </message>
+    <message>
+        <location filename="LevelDecOneWidget.cpp" line="180"/>
+        <source>Warning! System is not stable! You need to go to the second level of decomposition or increase the coefficient &quot;Eps&quot;</source>
+        <translation>Внимание! Система не устойчива! Рекомендуется перейти на следующий уровень декомпозиции или увеличить коэффициент &quot;Eps&quot;</translation>
+    </message>
+    <message>
+        <location filename="LevelDecOneWidget.cpp" line="508"/>
+        <source>&lt;h3&gt; = %1 mm&lt;/h3&gt;</source>
+        <translation>&lt;h3&gt; = %1 мм&lt;/h3&gt;</translation>
+    </message>
+    <message>
+        <location filename="LevelDecOneWidget.cpp" line="515"/>
+        <source>What is the chart you want to export?</source>
+        <translation>Какой граик вы хотите экспортировать?</translation>
+    </message>
+    <message>
+        <location filename="LevelDecOneWidget.cpp" line="518"/>
+        <location filename="LevelDecOneWidget.cpp" line="543"/>
+        <source>Phase Coordinates</source>
+        <translation>Фазовых Координат</translation>
+    </message>
+    <message>
+        <location filename="LevelDecOneWidget.cpp" line="519"/>
+        <location filename="LevelDecOneWidget.cpp" line="544"/>
+        <source>Available Deviations</source>
+        <translation>Доступных Отклонений</translation>
+    </message>
+    <message>
+        <location filename="LevelDecOneWidget.cpp" line="540"/>
+        <source>What is the chart you want to print?</source>
+        <translation>Какой график вы хотите распечатать?</translation>
     </message>
 </context>
 <context>
     <name>LevelOneChart</name>
     <message>
         <location filename="LevelOneChart.cpp" line="43"/>
-        <source>Chart of &quot;Alpha&quot; and &quot;Mu&quot;</source>
-        <translation>График &quot;Alpha&quot; и &quot;Mu&quot;</translation>
+        <source>Chart of of phase coordinates</source>
+        <oldsource>Chart of &quot;Alpha&quot; and &quot;Mu&quot;</oldsource>
+        <translation>График фазовых координат</translation>
     </message>
     <message>
         <location filename="LevelOneChart.cpp" line="109"/>
@@ -558,49 +653,117 @@ Show plot?</source>
         <translation>Прогноз</translation>
     </message>
     <message>
-        <location filename="LevelOneChart.cpp" line="147"/>
+        <location filename="LevelOneChart.cpp" line="151"/>
         <source>Alpha --&gt;</source>
         <translation>Alpha --&gt;</translation>
     </message>
     <message>
-        <location filename="LevelOneChart.cpp" line="151"/>
+        <location filename="LevelOneChart.cpp" line="147"/>
         <source>Mu --&gt;</source>
         <translation>Mu --&gt;</translation>
     </message>
     <message>
-        <location filename="LevelOneChart.cpp" line="223"/>
+        <location filename="LevelOneChart.cpp" line="227"/>
         <source>PDF Documents (*.pdf)</source>
         <translation>PDF Документы (*.pdf)</translation>
     </message>
     <message>
-        <location filename="LevelOneChart.cpp" line="225"/>
+        <location filename="LevelOneChart.cpp" line="229"/>
         <source>SVG Documents (*.svg)</source>
         <translation>SVG Документы (*.svg)</translation>
     </message>
     <message>
-        <location filename="LevelOneChart.cpp" line="227"/>
+        <location filename="LevelOneChart.cpp" line="231"/>
         <source>Postscript Documents (*.ps)</source>
         <translation>Postscript документы (*.ps)</translation>
     </message>
     <message>
-        <location filename="LevelOneChart.cpp" line="231"/>
+        <location filename="LevelOneChart.cpp" line="235"/>
         <source>Images (</source>
         <translation>Изображения (</translation>
     </message>
     <message>
-        <location filename="LevelOneChart.cpp" line="245"/>
+        <location filename="LevelOneChart.cpp" line="249"/>
         <source>Export File Name</source>
         <translation>Имя экспортируемого файла</translation>
     </message>
     <message>
-        <location filename="LevelOneChart.cpp" line="264"/>
+        <location filename="LevelOneChart.cpp" line="268"/>
         <source> -- </source>
         <translation> -- </translation>
     </message>
     <message>
-        <location filename="LevelOneChart.cpp" line="268"/>
+        <location filename="LevelOneChart.cpp" line="272"/>
         <source>Levels One Chart</source>
         <translation>График первого уровня</translation>
+    </message>
+</context>
+<context>
+    <name>LevelOneMuChart</name>
+    <message>
+        <location filename="LevelOneMuChart.cpp" line="43"/>
+        <source>Chart of available deviations</source>
+        <translation>График доступных отклонений</translation>
+    </message>
+    <message>
+        <location filename="LevelOneMuChart.cpp" line="115"/>
+        <source>Mu[Low.Lim]</source>
+        <translation>Mu[Ниж.Гр]</translation>
+    </message>
+    <message>
+        <location filename="LevelOneMuChart.cpp" line="116"/>
+        <source>Mu</source>
+        <translation>Mu</translation>
+    </message>
+    <message>
+        <location filename="LevelOneMuChart.cpp" line="117"/>
+        <source>Mu[Upp.Lim]</source>
+        <translation>Mu[Вер.Гр]</translation>
+    </message>
+    <message>
+        <location filename="LevelOneMuChart.cpp" line="160"/>
+        <source>Mu --&gt;</source>
+        <translation>Mu --&gt;</translation>
+    </message>
+    <message>
+        <location filename="LevelOneMuChart.cpp" line="164"/>
+        <source>Alpha --&gt;</source>
+        <translation>Alpha --&gt;</translation>
+    </message>
+    <message>
+        <location filename="LevelOneMuChart.cpp" line="241"/>
+        <source>PDF Documents (*.pdf)</source>
+        <translation>PDF Документы (*.pdf)</translation>
+    </message>
+    <message>
+        <location filename="LevelOneMuChart.cpp" line="243"/>
+        <source>SVG Documents (*.svg)</source>
+        <translation>SVG Документы (*.svg)</translation>
+    </message>
+    <message>
+        <location filename="LevelOneMuChart.cpp" line="245"/>
+        <source>Postscript Documents (*.ps)</source>
+        <translation>Postscript Документы (*.ps)</translation>
+    </message>
+    <message>
+        <location filename="LevelOneMuChart.cpp" line="249"/>
+        <source>Images (</source>
+        <translation>Изображения (</translation>
+    </message>
+    <message>
+        <location filename="LevelOneMuChart.cpp" line="263"/>
+        <source>Export File Name</source>
+        <translation>Имя экспортируемого файла</translation>
+    </message>
+    <message>
+        <location filename="LevelOneMuChart.cpp" line="282"/>
+        <source> -- </source>
+        <translation> -- </translation>
+    </message>
+    <message>
+        <location filename="LevelOneMuChart.cpp" line="286"/>
+        <source>Levels One Mu Chart</source>
+        <translation>График Первого уровня</translation>
     </message>
 </context>
 <context>

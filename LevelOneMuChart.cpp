@@ -1,4 +1,4 @@
-#include "LevelOneChart.h"
+#include "LevelOneMuChart.h"
 
 #include <QFileDialog>
 #include <QImageWriter>
@@ -13,7 +13,7 @@
 #include <qwt_symbol.h>
 #include <qwt_plot_renderer.h>
 
-LevelOneChart::LevelOneChart(QWidget *parent)
+LevelOneMuChart::LevelOneMuChart(QWidget *parent)
     : QwtPlot(parent)
 {
     setAutoReplot(false);
@@ -40,7 +40,7 @@ LevelOneChart::LevelOneChart(QWidget *parent)
 
     updateWidgetGradient();
 
-    setTitle(tr("Chart of of phase coordinates"));
+    setTitle(tr("Chart of available deviations"));
 
     /* Legend */
     legend = new QwtLegend();
@@ -64,7 +64,7 @@ LevelOneChart::LevelOneChart(QWidget *parent)
     QwtPlotItemList items = itemList(QwtPlotItem::Rtti_PlotCurve);
     for (int i = 0; i < items.size(); i++)
     {
-        if (i == 0 || i == 1)
+        if (i < 3)
         {
             QwtLegendItem *legendItem =
                     qobject_cast<QwtLegendItem *>(legend->find(items[i]));
@@ -82,7 +82,7 @@ LevelOneChart::LevelOneChart(QWidget *parent)
     setAutoReplot(true);
 }
 
-void LevelOneChart::plotAssay()
+void LevelOneMuChart::plotAssay()
 {
     /* Grid settings */
     gridToPlot = new QwtPlotGrid();
@@ -93,34 +93,47 @@ void LevelOneChart::plotAssay()
     gridToPlot->attach(this);
 
     /* Dots and settings dots*/
-    symbol1 = new QwtSymbol;
-    symbol1->setStyle(QwtSymbol::Ellipse);
-    symbol1->setBrush(QBrush(Qt::white));
-    symbol1->setPen(QPen(Qt::blue, 2));
-    symbol1->setSize(5, 5);
+    symbolMuLower = new QwtSymbol;
+    symbolMuLower->setStyle(QwtSymbol::Ellipse);
+    symbolMuLower->setBrush(QBrush(Qt::white));
+    symbolMuLower->setPen(QPen(Qt::red, 2));
+    symbolMuLower->setSize(5, 5);
 
-    symbol2 = new QwtSymbol;
-    symbol2->setStyle(QwtSymbol::Ellipse);
-    symbol2->setBrush(QBrush(Qt::white));
-    symbol2->setPen(QPen(Qt::red, 2));
-    symbol2->setSize(5, 5);
+    symbolMu = new QwtSymbol;
+    symbolMu->setStyle(QwtSymbol::Ellipse);
+    symbolMu->setBrush(QBrush(Qt::white));
+    symbolMu->setPen(QPen(Qt::green, 2));
+    symbolMu->setSize(5, 5);
+
+    symbolMuUpper = new QwtSymbol;
+    symbolMuUpper->setStyle(QwtSymbol::Ellipse);
+    symbolMuUpper->setBrush(QBrush(Qt::white));
+    symbolMuUpper->setPen(QPen(Qt::blue, 2));
+    symbolMuUpper->setSize(5, 5);
 
     /* Curves */
-    curve1 = new QwtPlotCurve(tr("Real"));
-    curve2 = new QwtPlotCurve(tr("Forecast"));
+    curveMuLower = new QwtPlotCurve(tr("Mu[Low.Lim]"));
+    curveMu = new QwtPlotCurve(tr("Mu"));
+    curveMuUpper = new QwtPlotCurve(tr("Mu[Upp.Lim]"));
 
     /* Setting curves */
-    curve1->setRenderHint(QwtPlotItem::RenderAntialiased, true);
-    curve1->setLegendAttribute(QwtPlotCurve::LegendShowLine, true);
-    curve1->setPen(QPen(Qt::blue, 2));
-    curve1->setSymbol(symbol1);
-    curve1->attach(this);
+    curveMuLower->setRenderHint(QwtPlotItem::RenderAntialiased, true);
+    curveMuLower->setLegendAttribute(QwtPlotCurve::LegendShowLine, true);
+    curveMuLower->setPen(QPen(Qt::red, 2));
+    curveMuLower->setSymbol(symbolMuLower);
+    curveMuLower->attach(this);
 
-    curve2->setRenderHint(QwtPlotItem::RenderAntialiased, true);
-    curve2->setLegendAttribute(QwtPlotCurve::LegendShowLine, true);
-    curve2->setPen(QPen(Qt::red, 2));
-    curve2->setSymbol(symbol2);
-    curve2->attach(this);
+    curveMu->setRenderHint(QwtPlotItem::RenderAntialiased, true);
+    curveMu->setLegendAttribute(QwtPlotCurve::LegendShowLine, true);
+    curveMu->setPen(QPen(Qt::green, 2));
+    curveMu->setSymbol(symbolMu);
+    curveMu->attach(this);
+
+    curveMuUpper->setRenderHint(QwtPlotItem::RenderAntialiased, true);
+    curveMuUpper->setLegendAttribute(QwtPlotCurve::LegendShowLine, true);
+    curveMuUpper->setPen(QPen(Qt::blue, 2));
+    curveMuUpper->setSymbol(symbolMuUpper);
+    curveMuUpper->attach(this);
 
     /* Insert markers */
     //  A horizontal line at y = 0.000038
@@ -152,40 +165,40 @@ void LevelOneChart::plotAssay()
     setAxisScale(yLeft, 0, 6e-05);
 }
 
-void LevelOneChart::readDataOfVectors(bool qFirst,
-                              const QVector<double> &vectorMu,
-                              const QVector<double> &vectorMuForecast,
-                              const QVector<QString> &vectorAlpha,
-                              const QVector<QString> &vectorAlphaForecast)
+void LevelOneMuChart::readDataOfVectors(bool qFirst,
+                                        const QVector<double> &vectorMuLower,
+                                        const QVector<double> &vectorMu,
+                                        const QVector<double> &vectorMuUpper,
+                                        const QVector<QString> &vectorAlpha)
 {
     size_t row = vectorMu.size();
 
     /* Data */
     QPolygonF points_s1;
     QPolygonF points_s2;
+    QPolygonF points_s3;
 
     if(qFirst)
     {
         points_s1.clear();
         points_s2.clear();
+        points_s3.clear();
     }
 
     /* Read Data from Array */
     for(size_t i = 0; i < row; ++i)
     {
-        points_s1.push_back(QPointF(vectorMu[i], vectorAlpha[i].toDouble()));
+        points_s1.push_back(QPointF(vectorMuLower[i], vectorAlpha[i].toDouble()));
+        points_s2.push_back(QPointF(vectorMu[i], vectorAlpha[i].toDouble()));
+        points_s3.push_back(QPointF(vectorMuUpper[i], vectorAlpha[i].toDouble()));
     }
 
-    for(size_t i = 0; i <= row; ++i)
-    {
-        points_s2.push_back(QPointF(vectorMuForecast[i], vectorAlphaForecast[i].toDouble()));
-    }
-
-    curve1->setSamples(points_s1);
-    curve2->setSamples(points_s2);
+    curveMuLower->setSamples(points_s1);
+    curveMu->setSamples(points_s2);
+    curveMuUpper->setSamples(points_s3);
 }
 
-void LevelOneChart::updateWidgetGradient()
+void LevelOneMuChart::updateWidgetGradient()
 {
     QPalette pal = palette();
 
@@ -201,22 +214,23 @@ void LevelOneChart::updateWidgetGradient()
     setPalette(pal);
 }
 
-void LevelOneChart::resizeEvent(QResizeEvent *event)
+void LevelOneMuChart::resizeEvent(QResizeEvent *event)
 {
     QwtPlot::resizeEvent(event);
 }
 
-void LevelOneChart::showItem(QwtPlotItem *item, bool on)
+void LevelOneMuChart::showItem(QwtPlotItem *item, bool on)
 {
     item->setVisible(on);
 }
 
-void LevelOneChart::exportLevelOnePlotToImage()
+void LevelOneMuChart::exportLevelOnePlotToImage()
 {
+
 #ifndef QT_NO_PRINTER
-    QString fileName = "ChartOneLevel.pdf";
+    QString fileName = "MuChartOneLevel.pdf";
 #else
-    QString fileName = "ChartOneLevel.png";
+    QString fileName = "MuChartOneLevel.png";
 #endif
 
 #ifndef QT_NO_FILEDIALOG
@@ -258,7 +272,7 @@ void LevelOneChart::exportLevelOnePlotToImage()
     }
 }
 
-void LevelOneChart::printLevelOnePlot()
+void LevelOneMuChart::printLevelOnePlot()
 {
     QPrinter printer(QPrinter::HighResolution);
 
@@ -269,7 +283,7 @@ void LevelOneChart::printLevelOnePlot()
         printer.setDocName(docName);
     }
 
-    printer.setCreator(tr("Levels One Chart"));
+    printer.setCreator(tr("Levels One Mu Chart"));
     printer.setOrientation(QPrinter::Landscape);
 
     QPrintDialog dialog(&printer);
@@ -287,7 +301,7 @@ void LevelOneChart::printLevelOnePlot()
     }
 }
 
-LevelOneChart::~LevelOneChart()
+LevelOneMuChart::~LevelOneMuChart()
 {
     /* Empty destructor */
 }

@@ -1,6 +1,7 @@
 5/20/2013 (v. 0.5):
 +: Fixed calc forecast values.
 +: Fixed Translations int table.
++: Finally ended Level One.
 
 5/16/2013 (v. 0.5):
 +: Fixed Opening/Saving file dialog

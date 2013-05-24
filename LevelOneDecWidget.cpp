@@ -3,6 +3,9 @@
 #include <QAction>
 #include <QPushButton>
 #include <QMessageBox>
+#include <QFileDialog>
+#include <QDesktopServices>
+#include <QUrl>
 #include <qmath.h>
 
 #ifdef _DEBUG
@@ -122,6 +125,13 @@ void LevelOneDec::createToolBar()
     printLevelOneChart->setToolTip(tr("Print the Level One Decomposition Chart"));
     connect(printLevelOneChart, SIGNAL(triggered()), this, SLOT(choosePrintCharts()));
 
+    exportReportLevelOne = new QAction(this);
+    exportReportLevelOne->setIcon(QIcon("://icons/save_icons/export_html_icon_32x32.png"));
+    exportReportLevelOne->setShortcut(Qt::CTRL + Qt::Key_H);
+    exportReportLevelOne->setText(tr("Export HTML"));
+    exportReportLevelOne->setToolTip(tr("Export detailed report of Level One in the HTML page"));
+    connect(exportReportLevelOne, SIGNAL(triggered()), this, SLOT(exportReportToHTML()));
+
     switchWidgetsLevelOne = new QAction(this);
     switchWidgetsLevelOne->setIcon(QIcon("://icons/others_icons/swap_levels_32x32.png"));
     switchWidgetsLevelOne->setShortcut(Qt::CTRL + Qt::Key_F);
@@ -132,6 +142,7 @@ void LevelOneDec::createToolBar()
     toolBar = new QToolBar(this);
     toolBar->addAction(exportLevelOneChart);
     toolBar->addAction(printLevelOneChart);
+    toolBar->addAction(exportReportLevelOne);
 
     toolBar->addSeparator();
 
@@ -600,6 +611,152 @@ void LevelOneDec::hideLevelOneWidgets()
         spbDoubleBoxAlpha->show();
 
         qSwitch = true;
+    }
+}
+
+void LevelOneDec::exportReportToHTML()
+{
+    Generators *generator = new Generators();
+    QString fileName = QFileDialog::getSaveFileName(this,
+                                                    tr("Save *.html file"),
+                                                    "",
+                                                    tr("HTML page (*.html);;All Files (*)"));
+    QFile file(fileName);
+    if (!(file.open(QIODevice::WriteOnly | QIODevice::Text)))
+    {
+#ifdef _DEBUG
+        QMessageBox::critical(0, tr("Error!"), tr("Can't write HTML file!\n"
+                                                  "Please check RW permission or correct select the file.\n"
+                                                  "And try again!"));
+        qDebug() << "[Level 1] Error Writing HTML-file!";
+#endif
+        return;
+    }
+
+    /* Create TextStream for HTML */
+    QTextStream out(&file);
+
+    /* HTML Structure */
+    structHTMLReportLevelOne htmlReport;
+
+    htmlReport.header = "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n"
+            "<html xmlns=\"http://www.w3.org/1999/xhtml\">\n"
+            "<head>\n"
+            "<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" />\n"
+            "<title>Report of the first level of decomposition (LEVEL I)</title></head>\n";
+
+    /* Taple properties and table one header */
+    htmlReport.tableOne = "<center>\n<h1>Table of phase coordinates:</h1>\n<table border =\"1\" bgcolor=\"#FFFF99\" cellpadding=\"5\">\n"
+            "<tr>\n<td align = \"center\"><strong><i>DATE</i></strong></td>";
+    htmlReport.tableOne += "<td align = \"center\"><strong>Mu</strong></td>";
+    htmlReport.tableOne += "<td align = \"center\"><strong>Alpha</strong></td>";
+    htmlReport.tableOne += "<td align = \"center\"><strong>Mu Forecast</strong></td>";
+    htmlReport.tableOne += "<td align = \"center\"><strong>Alpha Forecast</strong></td>";
+    htmlReport.tableOne += "\n</tr>\n";
+    /************************************/
+
+    /* Taple properties and table one header */
+    htmlReport.tableTwo = "\n<br/><h1>Table of available deviations:\n</h1><table border =\"1\" bgcolor=\"#FFFF99\" cellpadding=\"5\">\n"
+            "<tr>\n<td align = \"center\"><strong><i>DATE</i></strong></td>";
+    htmlReport.tableTwo += "<td align = \"center\"><strong>Mu[Low.Lim]</strong></td>";
+    htmlReport.tableTwo += "<td align = \"center\"><strong>Mu</strong></td>";
+    htmlReport.tableTwo += "<td align = \"center\"><strong>Mu[Upp.Lim]</strong></td>";
+    htmlReport.tableTwo += "<td align = \"center\"><strong>Mu[Low.Lim]-Mu[Upp.Lim]</strong></td>";
+    htmlReport.tableTwo += "<td align = \"center\"><strong>Mu[i]-Mu[0]</strong></td>";
+    htmlReport.tableTwo += "<td align = \"center\"><strong>Result</strong></td>";
+    htmlReport.tableTwo += "\n</tr>\n";
+    /************************************/
+
+    htmlReport.trOpen = "<tr>\n";
+    htmlReport.trClose = "</tr>\n";
+
+    htmlReport.tdOpen = "<td align = \"center\">";
+    htmlReport.tdClose = "</td>";
+
+    htmlReport.footer = "</center>\n"
+            "</body>\n"
+            "</html>";
+
+    out << htmlReport.header;
+    out << "<body bgcolor =\"#FFFFCC\">\n";
+
+    if (!tableStabilityLevelOneModel->checkSystemStable())
+    {
+        out << "<font color = \"#FF0000\"><strong>Warning! System isn't stable!</strong></font><br/>";
+    }
+    out << "Coefficient <strong>A</strong> is: " << (muVectorForecast[2] - muVector[1]) / (muVector[2] - muVector[1]);
+    out << "<br/>Coefficient <strong>Eps</strong> is: " << vector2DSensorReadingsHigh[0][2] - vectorSensorReadings2DToLevelOne[0][2];
+
+    /********** TABLE ONE **********/
+    out << htmlReport.tableOne;
+
+    for(size_t i = 0; i < row; ++i)
+    {
+        /* Put DATE to HTML Table */
+        out << htmlReport.trOpen << htmlReport.tdOpen << vectorDateToLevelOne[i] << htmlReport.tdClose;
+
+        /* Put DATA to HTML Table */
+        out << htmlReport.tdOpen << muVector[i] << htmlReport.tdClose;
+        out << htmlReport.tdOpen << alphaVector[i] << htmlReport.tdClose;
+        out << htmlReport.tdOpen << muVectorForecast[i] << htmlReport.tdClose;
+        out << htmlReport.tdOpen << alphaVectorForecast[i] << htmlReport.tdClose;
+        out << htmlReport.trClose;
+    }
+    out << htmlReport.trOpen;
+    out << htmlReport.tdOpen << QString("Forecast (%1)").arg(generator->dateGenerator()) << htmlReport.tdClose;
+    out << htmlReport.tdOpen << htmlReport.tdClose; // Empty Cell
+    out << htmlReport.tdOpen << htmlReport.tdClose; // Empty Cell
+    out << htmlReport.tdOpen << muVectorForecast[row] << htmlReport.tdClose;
+    out << htmlReport.tdOpen << alphaVectorForecast[row] << htmlReport.tdClose;
+    out << htmlReport.trClose;
+    out << "</table>";
+    /********** END TABLE ONE **********/
+
+    /********** TABLE TWO **********/
+    out << htmlReport.tableTwo;
+
+    for(size_t i = 0; i < row; ++i)
+    {
+        bool qStable = (muUpperLimitVector[i] - muLowerLimitVector[i]) >= (muVector[i] - muVector[0]);
+
+        /* Put DATE to HTML Table */
+        out << htmlReport.trOpen << htmlReport.tdOpen << vectorDateToLevelOne[i] << htmlReport.tdClose;
+
+        /* Put DATA to HTML Table */
+        out << htmlReport.tdOpen << muLowerLimitVector[i] << htmlReport.tdClose;
+        out << htmlReport.tdOpen << muVector[i] << htmlReport.tdClose;
+        out << htmlReport.tdOpen << muUpperLimitVector[i] << htmlReport.tdClose;
+        out << htmlReport.tdOpen << muUpperLimitVector[i] - muLowerLimitVector[i] << htmlReport.tdClose;
+        out << htmlReport.tdOpen << muVector[i] - muVector[0] << htmlReport.tdClose;
+        (qStable) ? out << "<td align = \"center\" bgcolor=\"#00FF00\">" << "Stable" << htmlReport.tdClose
+                     : out << "<td align = \"center\" bgcolor=\"#FF0000\">" << "Unstable" << htmlReport.tdClose;
+        out << htmlReport.trClose;
+    }
+    out << "</table>";
+    /********** END TABLE TWO **********/
+
+    out << htmlReport.footer;
+
+    file.close();
+
+    delete generator;
+
+    QMessageBox *pmbx = new QMessageBox(QMessageBox::Question,
+                                        tr("Success!"),
+                                        tr("Level One HTML-report is created successfully.\n"
+                                           "Show HTML Page in your browser?"),
+                                        QMessageBox::Yes | QMessageBox::No);
+    int n = pmbx->exec();
+    delete pmbx;
+
+    if (n == QMessageBox::No)
+    {
+        return;
+    }
+    else if (n == QMessageBox::Yes)
+    {
+        /* Open HTML Table in your browser */
+        QDesktopServices::openUrl(QUrl::fromLocalFile(fileName));
     }
 }
 

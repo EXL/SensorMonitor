@@ -1,5 +1,5 @@
 TODO:
-    -: Add Export HTML reports of Levels.
+    +: Add Export HTML reports of Levels.
     +: Fix avrg_forecast mu and alpha
     +: Add SourceCode Link on Github in About Dialog.
     +: Get normal names to SwapAction on Level I.

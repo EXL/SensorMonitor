@@ -22,6 +22,18 @@
 class TableLevelOneModel;
 class TableStabilityLevelOneModel;
 
+struct structHTMLReportLevelOne
+{
+    QString header;
+    QString tableOne;
+    QString tableTwo;
+    QString footer;
+    QString tdOpen;
+    QString tdClose;
+    QString trOpen;
+    QString trClose;
+};
+
 class LevelOneDec : public QWidget
 {
     Q_OBJECT
@@ -81,6 +93,7 @@ class LevelOneDec : public QWidget
 
     QAction *exportLevelOneChart;
     QAction *printLevelOneChart;
+    QAction *exportReportLevelOne;
     QAction *switchWidgetsLevelOne;
 
     QToolBar *toolBar;
@@ -135,6 +148,8 @@ private slots:
     void choosePrintCharts();
 
     void hideLevelOneWidgets();
+
+    void exportReportToHTML();
 public:
     LevelOneDec(const QVector<QString> &vectorDate,
                 const QVector<QVector<double> > &vectorSensorReadings2D,

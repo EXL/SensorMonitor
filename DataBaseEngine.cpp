@@ -442,13 +442,13 @@ void DataBaseEngine::saveTableToHtmlFile()
                 "<html xmlns=\"http://www.w3.org/1999/xhtml\">\n"
                 "<head>\n"
                 "<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" />\n"
-                "<title>HTML Table of SQLite DataBase</title>\n"
+                "<title>HTML Table of SQLite DataBase</title></head>\n"
                 "<body bgcolor =\"#FFFFCC\">\n"
                 "<center>\n"
                 "<h1>Table of sensors:</h1>\n";
 
         /* Taple properties and table header */
-        htmlPage.table += "<table border =\"1\" bgcolor=\"#FFFF99\" cellpadding=\"5\">\n"
+        htmlPage.table = "<table border =\"1\" bgcolor=\"#FFFF99\" cellpadding=\"5\">\n"
                 "<tr>\n<td align = \"center\"><strong><i>DATE</i></strong></td>";
         for (size_t i = 0; i < countColumnOfDataBase; ++i)
         {
@@ -1041,3 +1041,4 @@ TableModelOfVectors::~TableModelOfVectors()
 {
     /* Empty Destructor */
 }
+/************** END TABLE MODEL *************/

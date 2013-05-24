@@ -19,6 +19,18 @@
 class TableLevelTwoModel;
 class TableStabilityLevelTwoModel;
 
+struct structHTMLReportLevelTwo
+{
+    QString header;
+    QString tableOne;
+    QString tableTwo;
+    QString footer;
+    QString tdOpen;
+    QString tdClose;
+    QString trOpen;
+    QString trClose;
+};
+
 class LevelTwoDec : public QWidget
 {
     Q_OBJECT
@@ -103,6 +115,7 @@ class LevelTwoDec : public QWidget
 
     QAction *exportLevelTwoChart;
     QAction *printLevelTwoChart;
+    QAction *exportReportLevelTwo;
     QAction *switchWidgetsLevelTwo;
 
     QDoubleSpinBox *spbDoubleBoxAlpha;
@@ -161,6 +174,8 @@ private slots:
     void choosePrintCharts();
 
     void hideLevelTwoWidgets();
+
+    void exportReportToHTML();
 public:
     LevelTwoDec(const QVector<QString> &vectorDate,
                 const QVector<QVector<double> > &vectorSensorReadings2D,

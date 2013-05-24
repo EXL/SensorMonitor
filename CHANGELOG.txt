@@ -3,6 +3,7 @@
 +: Try Level II of decomposition.
 +: Finished Level II of decomposition.
 +: Refactoring.
++: Add HTML Reports on Levels
 
 5/20/2013 (v. 0.5):
 +: Fixed calc forecast values.

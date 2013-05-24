@@ -3,6 +3,9 @@
 #include <QAction>
 #include <QPushButton>
 #include <QMessageBox>
+#include <QFileDialog>
+#include <QDesktopServices>
+#include <QUrl>
 #include <qmath.h>
 
 #ifdef _DEBUG
@@ -453,15 +456,22 @@ void LevelTwoDec::createToolBar()
     exportLevelTwoChart->setIcon(QIcon("://icons/chart_icons/export_chart_icon.png"));
     exportLevelTwoChart->setShortcut(QKeySequence::Print);
     exportLevelTwoChart->setText(tr("Export"));
-    exportLevelTwoChart->setToolTip(tr("Export the Level One Decomposition Chart"));
+    exportLevelTwoChart->setToolTip(tr("Export the Level Two Decomposition Chart"));
     connect(exportLevelTwoChart, SIGNAL(triggered()), this, SLOT(chooseExportCharts()));
 
     printLevelTwoChart = new QAction(this);
     printLevelTwoChart->setIcon(QIcon("://icons/chart_icons/print_chart_icon.png"));
     printLevelTwoChart->setShortcut(QKeySequence::Save);
     printLevelTwoChart->setText(tr("Print"));
-    printLevelTwoChart->setToolTip(tr("Print the Level One Decomposition Chart"));
+    printLevelTwoChart->setToolTip(tr("Print the Level Two Decomposition Chart"));
     connect(printLevelTwoChart, SIGNAL(triggered()), this, SLOT(choosePrintCharts()));
+
+    exportReportLevelTwo = new QAction(this);
+    exportReportLevelTwo->setIcon(QIcon("://icons/save_icons/export_html_icon_32x32.png"));
+    exportReportLevelTwo->setShortcut(Qt::CTRL + Qt::Key_H);
+    exportReportLevelTwo->setText(tr("Export HTML"));
+    exportReportLevelTwo->setToolTip(tr("Export detailed report of Level Two in the HTML page"));
+    connect(exportReportLevelTwo, SIGNAL(triggered()), this, SLOT(exportReportToHTML()));
 
     switchWidgetsLevelTwo = new QAction(this);
     switchWidgetsLevelTwo->setIcon(QIcon("://icons/others_icons/swap_levels_32x32.png"));
@@ -473,6 +483,7 @@ void LevelTwoDec::createToolBar()
     toolBar = new QToolBar(this);
     toolBar->addAction(exportLevelTwoChart);
     toolBar->addAction(printLevelTwoChart);
+    toolBar->addAction(exportReportLevelTwo);
 
     toolBar->addSeparator();
 
@@ -582,6 +593,204 @@ void LevelTwoDec::hideLevelTwoWidgets()
         spbDoubleBoxAlpha->show();
 
         qSwitch = true;
+    }
+}
+
+void LevelTwoDec::exportReportToHTML()
+{
+    Generators *generator = new Generators();
+    QString fileName = QFileDialog::getSaveFileName(this,
+                                                    tr("Save *.html file"),
+                                                    "",
+                                                    tr("HTML page (*.html);;All Files (*)"));
+    QFile file(fileName);
+    if (!(file.open(QIODevice::WriteOnly | QIODevice::Text)))
+    {
+#ifdef _DEBUG
+        QMessageBox::critical(0, tr("Error!"), tr("Can't write HTML file!\n"
+                                                  "Please check RW permission or correct select the file.\n"
+                                                  "And try again!"));
+        qDebug() << "[Level 2] Error Writing HTML-file!";
+#endif
+        return;
+    }
+
+    /* Create TextStream for HTML */
+    QTextStream out(&file);
+
+    /* HTML Structure */
+    structHTMLReportLevelTwo htmlReport;
+
+    htmlReport.header = "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n"
+            "<html xmlns=\"http://www.w3.org/1999/xhtml\">\n"
+            "<head>\n"
+            "<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" />\n"
+            "<title>Report of the second level of decomposition (LEVEL II)</title></head>\n";
+
+    /* Taple properties and table one header */
+    htmlReport.tableOne = "<center>\n<h1>Table of phase coordinates:</h1>\n<table border =\"1\" bgcolor=\"#FFFF99\" cellpadding=\"5\">\n"
+            "<tr>\n<td align = \"center\"><strong><i>DATE</i></strong></td>";
+    htmlReport.tableOne += "<td align = \"center\"><strong>Mu|A</strong></td>";
+    htmlReport.tableOne += "<td align = \"center\"><strong>Alpha|A</strong></td>";
+    htmlReport.tableOne += "<td align = \"center\"><strong>Mu Forecast|A</strong></td>";
+    htmlReport.tableOne += "<td align = \"center\"><strong>Alpha Forecast|A</strong></td>";
+    htmlReport.tableOne += "<td align = \"center\"><strong>Mu|B</strong></td>";
+    htmlReport.tableOne += "<td align = \"center\"><strong>Alpha|B</strong></td>";
+    htmlReport.tableOne += "<td align = \"center\"><strong>Mu Forecast|B</strong></td>";
+    htmlReport.tableOne += "<td align = \"center\"><strong>Alpha Forecast|B</strong></td>";
+    htmlReport.tableOne += "<td align = \"center\"><strong>Mu|C</strong></td>";
+    htmlReport.tableOne += "<td align = \"center\"><strong>Alpha|C</strong></td>";
+    htmlReport.tableOne += "<td align = \"center\"><strong>Mu Forecast|C</strong></td>";
+    htmlReport.tableOne += "<td align = \"center\"><strong>Alpha Forecast|C</strong></td>";
+    htmlReport.tableOne += "\n</tr>\n";
+    /************************************/
+
+    /* Taple properties and table one header */
+    htmlReport.tableTwo = "\n<br/><h1>Table of available deviations:\n</h1><table border =\"1\" bgcolor=\"#FFFF99\" cellpadding=\"5\">\n"
+            "<tr>\n<td align = \"center\"><strong><i>DATE</i></strong></td>";
+    htmlReport.tableTwo += "<td align = \"center\"><strong>Mu[Low.Lim]|A</strong></td>";
+    htmlReport.tableTwo += "<td align = \"center\"><strong>Mu|A</strong></td>";
+    htmlReport.tableTwo += "<td align = \"center\"><strong>Mu[Upp.Lim]|A</strong></td>";
+    htmlReport.tableTwo += "<td align = \"center\"><strong>Mu[Low.Lim]-Mu[Upp.Lim]|A</strong></td>";
+    htmlReport.tableTwo += "<td align = \"center\"><strong>Mu[i]-Mu[0]|A</strong></td>";
+    htmlReport.tableTwo += "<td align = \"center\"><strong>Result|A</strong></td>";
+    htmlReport.tableTwo += "<td align = \"center\"><strong>Mu[Low.Lim]|B</strong></td>";
+    htmlReport.tableTwo += "<td align = \"center\"><strong>Mu|B</strong></td>";
+    htmlReport.tableTwo += "<td align = \"center\"><strong>Mu[Upp.Lim]|B</strong></td>";
+    htmlReport.tableTwo += "<td align = \"center\"><strong>Mu[Low.Lim]-Mu[Upp.Lim]|B</strong></td>";
+    htmlReport.tableTwo += "<td align = \"center\"><strong>Mu[i]-Mu[0]|B</strong></td>";
+    htmlReport.tableTwo += "<td align = \"center\"><strong>Result|B</strong></td>";
+    htmlReport.tableTwo += "<td align = \"center\"><strong>Mu[Low.Lim]|C</strong></td>";
+    htmlReport.tableTwo += "<td align = \"center\"><strong>Mu|C</strong></td>";
+    htmlReport.tableTwo += "<td align = \"center\"><strong>Mu[Upp.Lim]|C</strong></td>";
+    htmlReport.tableTwo += "<td align = \"center\"><strong>Mu[Low.Lim]-Mu[Upp.Lim]|C</strong></td>";
+    htmlReport.tableTwo += "<td align = \"center\"><strong>Mu[i]-Mu[0]|C</strong></td>";
+    htmlReport.tableTwo += "<td align = \"center\"><strong>Result|C</strong></td>";
+    htmlReport.tableTwo += "\n</tr>\n";
+    /************************************/
+
+    htmlReport.trOpen = "<tr>\n";
+    htmlReport.trClose = "</tr>\n";
+
+    htmlReport.tdOpen = "<td align = \"center\">";
+    htmlReport.tdClose = "</td>";
+
+    htmlReport.footer = "</center>\n"
+            "</body>\n"
+            "</html>";
+
+    out << htmlReport.header;
+    out << "<body bgcolor =\"#FFFFCC\">\n";
+
+    if (!tableStabilityLevelTwoModel->checkSystemStable())
+    {
+        out << "<font color = \"#FF0000\"><strong>Warning! System isn't stable!</strong></font><br/>";
+    }
+    out << "Coefficient <strong>A</strong> is: " << (vectorForecastMuBlockA[2] - vectorMuBlockA[1]) / (vectorMuBlockA[2] - vectorMuBlockA[1]);
+    out << "<br/>Coefficient <strong>Eps</strong> is: " << vectorBlockAHigh[0][2] - vectorBlockAToLevelTwo[0][2];
+
+    /********** TABLE ONE **********/
+    out << htmlReport.tableOne;
+
+    for(size_t i = 0; i < row; ++i)
+    {
+        /* Put DATE to HTML Table */
+        out << htmlReport.trOpen << htmlReport.tdOpen << vectorDateToLevelTwo[i] << htmlReport.tdClose;
+
+        /* Put DATA to HTML Table */
+        out << htmlReport.tdOpen << vectorMuBlockA[i] << htmlReport.tdClose;
+        out << htmlReport.tdOpen << vectorAlphaBlockA[i] << htmlReport.tdClose;
+        out << htmlReport.tdOpen << vectorForecastMuBlockA[i] << htmlReport.tdClose;
+        out << htmlReport.tdOpen << vectorForecastAlphaBlockA[i] << htmlReport.tdClose;
+        out << htmlReport.tdOpen << vectorMuBlockB[i] << htmlReport.tdClose;
+        out << htmlReport.tdOpen << vectorAlphaBlockB[i] << htmlReport.tdClose;
+        out << htmlReport.tdOpen << vectorForecastMuBlockB[i] << htmlReport.tdClose;
+        out << htmlReport.tdOpen << vectorForecastAlphaBlockB[i] << htmlReport.tdClose;
+        out << htmlReport.tdOpen << vectorMuBlockC[i] << htmlReport.tdClose;
+        out << htmlReport.tdOpen << vectorAlphaBlockC[i] << htmlReport.tdClose;
+        out << htmlReport.tdOpen << vectorForecastMuBlockC[i] << htmlReport.tdClose;
+        out << htmlReport.tdOpen << vectorForecastAlphaBlockC[i] << htmlReport.tdClose;
+        out << htmlReport.trClose;
+    }
+    out << htmlReport.trOpen;
+    out << htmlReport.tdOpen << QString("Forecast (%1)").arg(generator->dateGenerator()) << htmlReport.tdClose;
+    out << htmlReport.tdOpen << htmlReport.tdClose; // Empty Cell
+    out << htmlReport.tdOpen << htmlReport.tdClose; // Empty Cell
+    out << htmlReport.tdOpen << vectorForecastMuBlockA[row] << htmlReport.tdClose;
+    out << htmlReport.tdOpen << vectorForecastAlphaBlockA[row] << htmlReport.tdClose;
+    out << htmlReport.tdOpen << htmlReport.tdClose; // Empty Cell
+    out << htmlReport.tdOpen << htmlReport.tdClose; // Empty Cell
+    out << htmlReport.tdOpen << vectorForecastMuBlockB[row] << htmlReport.tdClose;
+    out << htmlReport.tdOpen << vectorForecastAlphaBlockB[row] << htmlReport.tdClose;
+    out << htmlReport.tdOpen << htmlReport.tdClose; // Empty Cell
+    out << htmlReport.tdOpen << htmlReport.tdClose; // Empty Cell
+    out << htmlReport.tdOpen << vectorForecastMuBlockC[row] << htmlReport.tdClose;
+    out << htmlReport.tdOpen << vectorForecastAlphaBlockC[row] << htmlReport.tdClose;
+    out << htmlReport.trClose;
+    out << "</table>";
+    /********** END TABLE ONE **********/
+
+    /********** TABLE TWO **********/
+    out << htmlReport.tableTwo;
+
+    for(size_t i = 0; i < row; ++i)
+    {
+        bool qStableBlockA = (vectorMuBlockAUpperLimit[i] - vectorMuBlockALowerLimit[i]) >= (vectorMuBlockA[i] - vectorMuBlockA[0]);
+        bool qStableBlockB = (vectorMuBlockBUpperLimit[i] - vectorMuBlockBLowerLimit[i]) >= (vectorMuBlockB[i] - vectorMuBlockB[0]);
+        bool qStableBlockC = (vectorMuBlockCUpperLimit[i] - vectorMuBlockCLowerLimit[i]) >= (vectorMuBlockC[i] - vectorMuBlockC[0]);
+
+        /* Put DATE to HTML Table */
+        out << htmlReport.trOpen << htmlReport.tdOpen << vectorDateToLevelTwo[i] << htmlReport.tdClose;
+
+        /* Put DATA to HTML Table */
+        out << htmlReport.tdOpen << vectorMuBlockALowerLimit[i] << htmlReport.tdClose;
+        out << htmlReport.tdOpen << vectorMuBlockA[i] << htmlReport.tdClose;
+        out << htmlReport.tdOpen << vectorMuBlockAUpperLimit[i] << htmlReport.tdClose;
+        out << htmlReport.tdOpen << vectorMuBlockAUpperLimit[i] - vectorMuBlockALowerLimit[i] << htmlReport.tdClose;
+        out << htmlReport.tdOpen << vectorMuBlockA[i] - vectorMuBlockA[0] << htmlReport.tdClose;
+        (qStableBlockA) ? out << "<td align = \"center\" bgcolor=\"#00FF00\">" << "Stable" << htmlReport.tdClose
+                     : out << "<td align = \"center\" bgcolor=\"#FF0000\">" << "Unstable" << htmlReport.tdClose;
+        out << htmlReport.tdOpen << vectorMuBlockBLowerLimit[i] << htmlReport.tdClose;
+        out << htmlReport.tdOpen << vectorMuBlockB[i] << htmlReport.tdClose;
+        out << htmlReport.tdOpen << vectorMuBlockBUpperLimit[i] << htmlReport.tdClose;
+        out << htmlReport.tdOpen << vectorMuBlockBUpperLimit[i] - vectorMuBlockBLowerLimit[i] << htmlReport.tdClose;
+        out << htmlReport.tdOpen << vectorMuBlockB[i] - vectorMuBlockB[0] << htmlReport.tdClose;
+        (qStableBlockB) ? out << "<td align = \"center\" bgcolor=\"#00FF00\">" << "Stable" << htmlReport.tdClose
+                     : out << "<td align = \"center\" bgcolor=\"#FF0000\">" << "Unstable" << htmlReport.tdClose;
+        out << htmlReport.tdOpen << vectorMuBlockCLowerLimit[i] << htmlReport.tdClose;
+        out << htmlReport.tdOpen << vectorMuBlockC[i] << htmlReport.tdClose;
+        out << htmlReport.tdOpen << vectorMuBlockCUpperLimit[i] << htmlReport.tdClose;
+        out << htmlReport.tdOpen << vectorMuBlockCUpperLimit[i] - vectorMuBlockCLowerLimit[i] << htmlReport.tdClose;
+        out << htmlReport.tdOpen << vectorMuBlockC[i] - vectorMuBlockC[0] << htmlReport.tdClose;
+        (qStableBlockC) ? out << "<td align = \"center\" bgcolor=\"#00FF00\">" << "Stable" << htmlReport.tdClose
+                     : out << "<td align = \"center\" bgcolor=\"#FF0000\">" << "Unstable" << htmlReport.tdClose;
+        out << htmlReport.trClose;
+    }
+    out << "</table>";
+    /********** END TABLE TWO **********/
+
+    out << htmlReport.footer;
+
+    file.close();
+
+    delete generator;
+
+    QMessageBox *pmbx = new QMessageBox(QMessageBox::Question,
+                                        tr("Success!"),
+                                        tr("Level Two HTML-report is created successfully.\n"
+                                           "Show HTML Page in your browser?"),
+                                        QMessageBox::Yes | QMessageBox::No);
+    int n = pmbx->exec();
+    delete pmbx;
+
+    if (n == QMessageBox::No)
+    {
+        return;
+    }
+    else if (n == QMessageBox::Yes)
+    {
+        /* Open HTML Table in your browser */
+        QDesktopServices::openUrl(QUrl::fromLocalFile(fileName));
     }
 }
 

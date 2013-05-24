@@ -52,9 +52,10 @@ SOURCES += main.cpp\
     SchemeSensors.cpp \
     LevelsWidget.cpp \
     LevelOneChart.cpp \
-    LevelDecOneWidget.cpp \
     DataBaseEngine.cpp \
-    LevelOneMuChart.cpp
+    LevelOneMuChart.cpp \
+    LevelOneDecWidget.cpp \
+    LevelTwoDecWidget.cpp
 
 HEADERS  += \
     Generators.h \
@@ -67,9 +68,10 @@ HEADERS  += \
     SchemeSensors.h \
     LevelsWidget.h \
     LevelOneChart.h \
-    LevelDecOneWidget.h \
     DataBaseEngine.h \
-    LevelOneMuChart.h
+    LevelOneMuChart.h \
+    LevelOneDecWidget.h \
+    LevelTwoDecWidget.h
 
 RESOURCES += \
     SensorMonitor.qrc

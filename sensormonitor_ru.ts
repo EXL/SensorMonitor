@@ -490,148 +490,116 @@ Show plot?</source>
 <context>
     <name>LevelDecOne</name>
     <message>
-        <location filename="LevelDecOneWidget.cpp" line="41"/>
         <source>DATE</source>
-        <translation>ДАТА</translation>
+        <translation type="obsolete">ДАТА</translation>
     </message>
     <message>
-        <location filename="LevelDecOneWidget.cpp" line="42"/>
         <source>Mu</source>
-        <translation>Mu</translation>
+        <translation type="obsolete">Mu</translation>
     </message>
     <message>
-        <location filename="LevelDecOneWidget.cpp" line="43"/>
         <source>Alpha</source>
-        <translation>Alpha</translation>
+        <translation type="obsolete">Alpha</translation>
     </message>
     <message>
-        <location filename="LevelDecOneWidget.cpp" line="44"/>
         <source>Forecast</source>
-        <translation>Прогноз</translation>
+        <translation type="obsolete">Прогноз</translation>
     </message>
     <message>
-        <location filename="LevelDecOneWidget.cpp" line="45"/>
         <source>[Low.Lim]</source>
-        <translation>[Ниж.Гр]</translation>
+        <translation type="obsolete">[Ниж.Гр]</translation>
     </message>
     <message>
-        <location filename="LevelDecOneWidget.cpp" line="46"/>
         <source>[Upp.Lim]</source>
-        <translation>[Вер.Гр]</translation>
+        <translation type="obsolete">[Вер.Гр]</translation>
     </message>
     <message>
-        <location filename="LevelDecOneWidget.cpp" line="47"/>
         <source>[L.L]</source>
-        <translation>[Н.Г]</translation>
+        <translation type="obsolete">[Н.Г]</translation>
     </message>
     <message>
-        <location filename="LevelDecOneWidget.cpp" line="48"/>
         <source>[U.L]</source>
-        <translation>[В.Г]</translation>
+        <translation type="obsolete">[В.Г]</translation>
     </message>
     <message>
-        <location filename="LevelDecOneWidget.cpp" line="49"/>
         <source>Result</source>
-        <translation>Результат</translation>
+        <translation type="obsolete">Результат</translation>
     </message>
     <message>
-        <location filename="LevelDecOneWidget.cpp" line="50"/>
         <source>Stable</source>
-        <translation>Устойчиво</translation>
+        <translation type="obsolete">Устойчиво</translation>
     </message>
     <message>
-        <location filename="LevelDecOneWidget.cpp" line="51"/>
         <source>Unstable</source>
-        <translation>Неустойчиво</translation>
+        <translation type="obsolete">Неустойчиво</translation>
     </message>
     <message>
-        <location filename="LevelDecOneWidget.cpp" line="82"/>
         <source>Please change Coefficient &quot;A&quot;</source>
-        <translation>Пожалуйста измените коэффициент &quot;A&quot;</translation>
+        <translation type="obsolete">Пожалуйста измените коэффициент &quot;A&quot;</translation>
     </message>
     <message>
-        <location filename="LevelDecOneWidget.cpp" line="88"/>
         <source>Please change Coefficient &quot;Eps&quot;</source>
-        <translation>Пожалуйста измените коэффициент &quot;Eps&quot;</translation>
+        <translation type="obsolete">Пожалуйста измените коэффициент &quot;Eps&quot;</translation>
     </message>
     <message>
-        <location filename="LevelDecOneWidget.cpp" line="116"/>
-        <location filename="LevelDecOneWidget.cpp" line="514"/>
         <source>Export</source>
-        <translation>Экспорт</translation>
+        <translation type="obsolete">Экспорт</translation>
     </message>
     <message>
-        <location filename="LevelDecOneWidget.cpp" line="117"/>
         <source>Export the Level One Decomposition Chart</source>
-        <translation>Экспортировать график первого уровня декомпозиции</translation>
+        <translation type="obsolete">Экспортировать график первого уровня декомпозиции</translation>
     </message>
     <message>
-        <location filename="LevelDecOneWidget.cpp" line="123"/>
-        <location filename="LevelDecOneWidget.cpp" line="539"/>
         <source>Print</source>
-        <translation>Печать</translation>
+        <translation type="obsolete">Печать</translation>
     </message>
     <message>
-        <location filename="LevelDecOneWidget.cpp" line="124"/>
         <source>Print the Level One Decomposition Chart</source>
-        <translation>Распечатать график первого уровня декомпозиции</translation>
+        <translation type="obsolete">Распечатать график первого уровня декомпозиции</translation>
     </message>
     <message>
-        <location filename="LevelDecOneWidget.cpp" line="130"/>
         <source>Switch</source>
-        <translation>Переключить</translation>
+        <translation type="obsolete">Переключить</translation>
     </message>
     <message>
-        <location filename="LevelDecOneWidget.cpp" line="131"/>
         <source>Switch between charts and tables</source>
-        <translation>Переключиться между таблицами и графиками</translation>
+        <translation type="obsolete">Переключиться между таблицами и графиками</translation>
     </message>
     <message>
-        <location filename="LevelDecOneWidget.cpp" line="153"/>
         <source>&lt;h3&gt;Coefficient &quot;A&quot;: &lt;/h3&gt;</source>
-        <translation>&lt;h3&gt;Коэффициент &quot;A&quot;: &lt;/h3&gt;</translation>
+        <translation type="obsolete">&lt;h3&gt;Коэффициент &quot;A&quot;: &lt;/h3&gt;</translation>
     </message>
     <message>
-        <location filename="LevelDecOneWidget.cpp" line="156"/>
         <source>&lt;h3&gt;Coefficient &quot;Eps&quot;: &lt;/h3&gt;</source>
-        <translation>&lt;h3&gt;Коэффициент &quot;Eps&quot;: &lt;/h3&gt;</translation>
+        <translation type="obsolete">&lt;h3&gt;Коэффициент &quot;Eps&quot;: &lt;/h3&gt;</translation>
     </message>
     <message>
-        <location filename="LevelDecOneWidget.cpp" line="159"/>
         <source>&lt;h3&gt; = 1 mm&lt;/h3&gt;</source>
-        <translation>&lt;h3&gt; = 1 мм&lt;/h3&gt;</translation>
+        <translation type="obsolete">&lt;h3&gt; = 1 мм&lt;/h3&gt;</translation>
     </message>
     <message>
-        <location filename="LevelDecOneWidget.cpp" line="180"/>
         <source>Warning! System is not stable! You need to go to the second level of decomposition or increase the coefficient &quot;Eps&quot;</source>
-        <translation>Внимание! Система неустойчива! Рекомендуется перейти на следующий уровень декомпозиции или увеличить коэффициент &quot;Eps&quot;</translation>
+        <translation type="obsolete">Внимание! Система неустойчива! Рекомендуется перейти на следующий уровень декомпозиции или увеличить коэффициент &quot;Eps&quot;</translation>
     </message>
     <message>
-        <location filename="LevelDecOneWidget.cpp" line="508"/>
         <source>&lt;h3&gt; = %1 mm&lt;/h3&gt;</source>
-        <translation>&lt;h3&gt; = %1 мм&lt;/h3&gt;</translation>
+        <translation type="obsolete">&lt;h3&gt; = %1 мм&lt;/h3&gt;</translation>
     </message>
     <message>
-        <location filename="LevelDecOneWidget.cpp" line="515"/>
         <source>What is the chart you want to export?</source>
-        <translation>Какой график вы хотите экспортировать?</translation>
+        <translation type="obsolete">Какой график вы хотите экспортировать?</translation>
     </message>
     <message>
-        <location filename="LevelDecOneWidget.cpp" line="518"/>
-        <location filename="LevelDecOneWidget.cpp" line="543"/>
         <source>Phase Coordinates</source>
-        <translation>Фазовых Координат</translation>
+        <translation type="obsolete">Фазовых Координат</translation>
     </message>
     <message>
-        <location filename="LevelDecOneWidget.cpp" line="519"/>
-        <location filename="LevelDecOneWidget.cpp" line="544"/>
         <source>Available Deviations</source>
-        <translation>Доступных Отклонений</translation>
+        <translation type="obsolete">Доступных Отклонений</translation>
     </message>
     <message>
-        <location filename="LevelDecOneWidget.cpp" line="540"/>
         <source>What is the chart you want to print?</source>
-        <translation>Какой график вы хотите распечатать?</translation>
+        <translation type="obsolete">Какой график вы хотите распечатать?</translation>
     </message>
 </context>
 <context>
@@ -696,6 +664,153 @@ Show plot?</source>
         <location filename="LevelOneChart.cpp" line="272"/>
         <source>Levels One Chart</source>
         <translation>График первого уровня</translation>
+    </message>
+</context>
+<context>
+    <name>LevelOneDec</name>
+    <message>
+        <location filename="LevelOneDecWidget.cpp" line="41"/>
+        <source>DATE</source>
+        <translation>ДАТА</translation>
+    </message>
+    <message>
+        <location filename="LevelOneDecWidget.cpp" line="42"/>
+        <source>Mu</source>
+        <translation>Mu</translation>
+    </message>
+    <message>
+        <location filename="LevelOneDecWidget.cpp" line="43"/>
+        <source>Alpha</source>
+        <translation>Alpha</translation>
+    </message>
+    <message>
+        <location filename="LevelOneDecWidget.cpp" line="44"/>
+        <source>Forecast</source>
+        <translation>Прогноз</translation>
+    </message>
+    <message>
+        <location filename="LevelOneDecWidget.cpp" line="45"/>
+        <source>[Low.Lim]</source>
+        <translation>[Ниж.Гр]</translation>
+    </message>
+    <message>
+        <location filename="LevelOneDecWidget.cpp" line="46"/>
+        <source>[Upp.Lim]</source>
+        <translation>[Вер.Гр]</translation>
+    </message>
+    <message>
+        <location filename="LevelOneDecWidget.cpp" line="47"/>
+        <source>[L.L]</source>
+        <translation>[Н.Г]</translation>
+    </message>
+    <message>
+        <location filename="LevelOneDecWidget.cpp" line="48"/>
+        <source>[U.L]</source>
+        <translation>[В.Г]</translation>
+    </message>
+    <message>
+        <location filename="LevelOneDecWidget.cpp" line="49"/>
+        <source>Result</source>
+        <translation>Результат</translation>
+    </message>
+    <message>
+        <location filename="LevelOneDecWidget.cpp" line="50"/>
+        <source>Stable</source>
+        <translation>Устойчиво</translation>
+    </message>
+    <message>
+        <location filename="LevelOneDecWidget.cpp" line="51"/>
+        <source>Unstable</source>
+        <translation>Неустойчиво</translation>
+    </message>
+    <message>
+        <location filename="LevelOneDecWidget.cpp" line="82"/>
+        <source>Please change Coefficient &quot;A&quot;</source>
+        <translation>Пожалуйста измените коэффициент &quot;A&quot;</translation>
+    </message>
+    <message>
+        <location filename="LevelOneDecWidget.cpp" line="88"/>
+        <source>Please change Coefficient &quot;Eps&quot;</source>
+        <translation>Пожалуйста измените коэффициент &quot;Eps&quot;</translation>
+    </message>
+    <message>
+        <location filename="LevelOneDecWidget.cpp" line="116"/>
+        <location filename="LevelOneDecWidget.cpp" line="514"/>
+        <source>Export</source>
+        <translation>Экспорт</translation>
+    </message>
+    <message>
+        <location filename="LevelOneDecWidget.cpp" line="117"/>
+        <source>Export the Level One Decomposition Chart</source>
+        <translation>Экспортировать график первого уровня декомпозиции</translation>
+    </message>
+    <message>
+        <location filename="LevelOneDecWidget.cpp" line="123"/>
+        <location filename="LevelOneDecWidget.cpp" line="543"/>
+        <source>Print</source>
+        <translation>Печать</translation>
+    </message>
+    <message>
+        <location filename="LevelOneDecWidget.cpp" line="124"/>
+        <source>Print the Level One Decomposition Chart</source>
+        <translation>Распечатать график первого уровня декомпозиции</translation>
+    </message>
+    <message>
+        <location filename="LevelOneDecWidget.cpp" line="130"/>
+        <source>Switch</source>
+        <translation>Переключить</translation>
+    </message>
+    <message>
+        <location filename="LevelOneDecWidget.cpp" line="131"/>
+        <source>Switch between charts and tables</source>
+        <translation>Переключиться между таблицами и графиками</translation>
+    </message>
+    <message>
+        <location filename="LevelOneDecWidget.cpp" line="153"/>
+        <source>&lt;h3&gt;Coefficient &quot;A&quot;: &lt;/h3&gt;</source>
+        <translation>&lt;h3&gt;Коэффициент &quot;A&quot;: &lt;/h3&gt;</translation>
+    </message>
+    <message>
+        <location filename="LevelOneDecWidget.cpp" line="156"/>
+        <source>&lt;h3&gt;Coefficient &quot;Eps&quot;: &lt;/h3&gt;</source>
+        <translation>&lt;h3&gt;Коэффициент &quot;Eps&quot;: &lt;/h3&gt;</translation>
+    </message>
+    <message>
+        <location filename="LevelOneDecWidget.cpp" line="159"/>
+        <source>&lt;h3&gt; = 1 mm&lt;/h3&gt;</source>
+        <translation>&lt;h3&gt; = 1 мм&lt;/h3&gt;</translation>
+    </message>
+    <message>
+        <location filename="LevelOneDecWidget.cpp" line="180"/>
+        <source>Warning! System is not stable! You need to go to the second level of decomposition or increase the coefficient &quot;Eps&quot;</source>
+        <translation>Внимание! Система неустойчива! Рекомендуется перейти на следующий уровень декомпозиции или увеличить коэффициент &quot;Eps&quot;</translation>
+    </message>
+    <message>
+        <location filename="LevelOneDecWidget.cpp" line="508"/>
+        <source>&lt;h3&gt; = %1 mm&lt;/h3&gt;</source>
+        <translation>&lt;h3&gt; = %1 мм&lt;/h3&gt;</translation>
+    </message>
+    <message>
+        <location filename="LevelOneDecWidget.cpp" line="515"/>
+        <source>What is the chart you want to export?</source>
+        <translation>Какой график вы хотите экспортировать?</translation>
+    </message>
+    <message>
+        <location filename="LevelOneDecWidget.cpp" line="518"/>
+        <location filename="LevelOneDecWidget.cpp" line="547"/>
+        <source>Phase Coordinates</source>
+        <translation>Фазовых Координат</translation>
+    </message>
+    <message>
+        <location filename="LevelOneDecWidget.cpp" line="519"/>
+        <location filename="LevelOneDecWidget.cpp" line="548"/>
+        <source>Available Deviations</source>
+        <translation>Доступных Отклонений</translation>
+    </message>
+    <message>
+        <location filename="LevelOneDecWidget.cpp" line="544"/>
+        <source>What is the chart you want to print?</source>
+        <translation>Какой график вы хотите распечатать?</translation>
     </message>
 </context>
 <context>

@@ -1,4 +1,4 @@
-#include "LevelDecOneWidget.h"
+#include "LevelOneDecWidget.h"
 
 #include <QAction>
 #include <QPushButton>
@@ -9,7 +9,7 @@
 #include <QDebug>
 #endif
 
-LevelDecOne::LevelDecOne(const QVector<QString> &vectorDate,
+LevelOneDec::LevelOneDec(const QVector<QString> &vectorDate,
                          const QVector<QVector<double> > &vectorSensorReadings2D,
                          QWidget *parent) :
     QWidget(parent)
@@ -36,7 +36,7 @@ LevelDecOne::LevelDecOne(const QVector<QString> &vectorDate,
 }
 
 
-void LevelDecOne::retranslateUi()
+void LevelOneDec::retranslateUi()
 {
     str_date = tr("DATE");
     str_mu = tr("Mu");
@@ -51,7 +51,7 @@ void LevelDecOne::retranslateUi()
     unstable_str = tr("Unstable");
 }
 
-void LevelDecOne::createTables()
+void LevelOneDec::createTables()
 {
     viewTableLevelOneModel = new QTableView(this);
     tableLevelOneModel = new TableLevelOneModel(str_date,
@@ -73,7 +73,7 @@ void LevelDecOne::createTables()
     viewTableLevelOneModel->setModel(tableLevelOneModel);
 }
 
-void LevelDecOne::createDoubleBoxes()
+void LevelOneDec::createDoubleBoxes()
 {
     spbDoubleBoxAlpha = new QDoubleSpinBox(this);
     spbDoubleBoxAlpha->setRange(0.1, 1.0);
@@ -90,7 +90,7 @@ void LevelDecOne::createDoubleBoxes()
     connect(spbDoubleBoxEps, SIGNAL(valueChanged(double)), this, SLOT(setDoubleCountToLabel(double)));
 }
 
-void LevelDecOne::createCharts()
+void LevelOneDec::createCharts()
 {
     levelOneChart = new LevelOneChart(this);
     levelOneChart->readDataOfVectors(true,
@@ -108,7 +108,7 @@ void LevelDecOne::createCharts()
 
 }
 
-void LevelDecOne::createToolBar()
+void LevelOneDec::createToolBar()
 {
     exportLevelOneChart = new QAction(this);
     exportLevelOneChart->setIcon(QIcon("://icons/chart_icons/export_chart_icon.png"));
@@ -174,7 +174,7 @@ void LevelDecOne::createToolBar()
     toolBar->setToolButtonStyle(Qt::ToolButtonTextUnderIcon);
 }
 
-void LevelDecOne::createWidgets()
+void LevelOneDec::createWidgets()
 {
     labelWarning = new QLabel(this);
     labelWarning->setText(tr("Warning! System is not stable! You need to go to the second level of decomposition or increase the coefficient \"Eps\""));
@@ -195,7 +195,8 @@ void LevelDecOne::createWidgets()
     vertLayoutLevelOne->addLayout(horizLayoutTableLevelOne);
     vertLayoutLevelOne->addWidget(labelWarning);
 
-    labelWarning->hide();
+    checkStability();
+
     levelOneMuChart->hide();
 
     setLayout(vertLayoutLevelOne);
@@ -203,7 +204,19 @@ void LevelDecOne::createWidgets()
     qSwitch = true;
 }
 
-void LevelDecOne::setVectorsToTables()
+void LevelOneDec::checkStability()
+{
+    if (!tableStabilityLevelOneModel->checkSystemStable())
+    {
+        labelWarning->show();
+    }
+    else
+    {
+        labelWarning->hide();
+    }
+}
+
+void LevelOneDec::setVectorsToTables()
 {
     for (size_t i = 0; i < row; ++i)
     {
@@ -248,7 +261,7 @@ void LevelDecOne::setVectorsToTables()
     viewTableLevelOneModel->selectRow(row);
 }
 
-double LevelDecOne::getMu(int i)
+double LevelOneDec::getMu(int i)
 {
     double mu = 0;
     for (size_t j = 0; j < col; ++j)
@@ -258,7 +271,7 @@ double LevelDecOne::getMu(int i)
     return qSqrt(mu);
 }
 
-double LevelDecOne::getAvrgMu()
+double LevelOneDec::getAvrgMu()
 {
     double mu_avrg = 0;
 
@@ -274,7 +287,7 @@ double LevelDecOne::getAvrgMu()
     return mu_avrg / row;
 }
 
-QString LevelDecOne::getAlphaString(int i)
+QString LevelOneDec::getAlphaString(int i)
 {
     double vecMultiplic = 0;
     double muMultiplic = 0;
@@ -293,7 +306,7 @@ QString LevelDecOne::getAlphaString(int i)
     return QString::number(qAcos(vecMultiplic/muMultiplic), 'f', 6);
 }
 
-double LevelDecOne::getAvrgAlpha()
+double LevelOneDec::getAvrgAlpha()
 {
     double alpha_avrg = 0;
 
@@ -309,7 +322,7 @@ double LevelDecOne::getAvrgAlpha()
     return alpha_avrg / row;
 }
 
-void LevelDecOne::getMuForecast(size_t i, double a)
+void LevelOneDec::getMuForecast(size_t i, double a)
 {
     double mu_forecast;
 
@@ -323,13 +336,13 @@ void LevelDecOne::getMuForecast(size_t i, double a)
     }
     else if (i == row)
     {
-        mu_forecast = avrg_mu * a + (1 - a) * muVector[i - 1];
+        mu_forecast = getAvrgMuForecast() * a + (1 - a) * muVector[i - 1];
     }
 
     muVectorForecast.push_back(mu_forecast);
 }
 
-double LevelDecOne::getAvrgMuForecast()
+double LevelOneDec::getAvrgMuForecast()
 {
     double mu_avrg_forecast = 0;
 
@@ -345,7 +358,7 @@ double LevelDecOne::getAvrgMuForecast()
     return mu_avrg_forecast / row;
 }
 
-void LevelDecOne::getAlphaForecast(size_t i, double a)
+void LevelOneDec::getAlphaForecast(size_t i, double a)
 {
     double alpha_forecast = 0;
 
@@ -359,13 +372,13 @@ void LevelDecOne::getAlphaForecast(size_t i, double a)
     }
     else if (i == row)
     {
-        alpha_forecast = avrg_alpha * a + (1 - a) * alphaVector[i - 1].toDouble();
+        alpha_forecast = getAvrgAlphaForecast() * a + (1 - a) * alphaVector[i - 1].toDouble();
     }
 
     alphaVectorForecast.push_back(QString::number(alpha_forecast, 'f', 6));
 }
 
-double LevelDecOne::getAvrgAlphaForecast()
+double LevelOneDec::getAvrgAlphaForecast()
 {
     double alpha_avrg_forecast = 0;
 
@@ -381,7 +394,7 @@ double LevelDecOne::getAvrgAlphaForecast()
     return alpha_avrg_forecast / row;
 }
 
-void LevelDecOne::createVector2DSensReadingsLow(double eps)
+void LevelOneDec::createVector2DSensReadingsLow(double eps)
 {
     vector2DSensorReadingsLow.clear();
 
@@ -400,7 +413,7 @@ void LevelDecOne::createVector2DSensReadingsLow(double eps)
 #endif
 }
 
-void LevelDecOne::createVector2DSensReadingsHigh(double eps)
+void LevelOneDec::createVector2DSensReadingsHigh(double eps)
 {
     vector2DSensorReadingsHigh.clear();
 
@@ -419,7 +432,7 @@ void LevelDecOne::createVector2DSensReadingsHigh(double eps)
 #endif
 }
 
-double LevelDecOne::getMuLowerLimit(size_t i)
+double LevelOneDec::getMuLowerLimit(size_t i)
 {
     double mu_lower_limit = 0;
     for (size_t j = 0; j < col; ++j)
@@ -429,7 +442,7 @@ double LevelDecOne::getMuLowerLimit(size_t i)
     return qSqrt(mu_lower_limit);
 }
 
-double LevelDecOne::getMuHighLimit(size_t i)
+double LevelOneDec::getMuHighLimit(size_t i)
 {
     double mu_high_limit = 0;
     for (size_t j = 0; j < col; ++j)
@@ -439,7 +452,7 @@ double LevelDecOne::getMuHighLimit(size_t i)
     return qSqrt(mu_high_limit);
 }
 
-void LevelDecOne::changedAlpha(double i)
+void LevelOneDec::changedAlpha(double i)
 {
     muVectorForecast.clear();
     alphaVectorForecast.clear();
@@ -466,7 +479,7 @@ void LevelDecOne::changedAlpha(double i)
                                      alphaVectorForecast);
 }
 
-void LevelDecOne::changedEps(double eps)
+void LevelOneDec::changedEps(double eps)
 {
     muLowerLimitVector.clear();
     muUpperLimitVector.clear();
@@ -493,22 +506,15 @@ void LevelDecOne::changedEps(double eps)
                                        muUpperLimitVector,
                                        alphaVector);
 
-    if (!tableStabilityLevelOneModel->checkSystemStable())
-    {
-        labelWarning->show();
-    }
-    else
-    {
-        labelWarning->hide();
-    }
+    checkStability();
 }
 
-void LevelDecOne::setDoubleCountToLabel(double eps)
+void LevelOneDec::setDoubleCountToLabel(double eps)
 {
     labelMeterEps->setText(QString(tr("<h3> = %1 mm</h3>")).arg(eps * 1000));
 }
 
-void LevelDecOne::chooseExportCharts()
+void LevelOneDec::chooseExportCharts()
 {
     QMessageBox *pmbx = new QMessageBox(QMessageBox::Information,
                                         tr("Export"),
@@ -537,7 +543,7 @@ void LevelDecOne::chooseExportCharts()
     }
 }
 
-void LevelDecOne::choosePrintCharts()
+void LevelOneDec::choosePrintCharts()
 {
     QMessageBox *pmbx = new QMessageBox(QMessageBox::Information,
                                         tr("Print"),
@@ -566,7 +572,7 @@ void LevelDecOne::choosePrintCharts()
     }
 }
 
-void LevelDecOne::hideLevelOneWidgets()
+void LevelOneDec::hideLevelOneWidgets()
 {
     if (qSwitch)
     {
@@ -601,7 +607,7 @@ void LevelDecOne::hideLevelOneWidgets()
     }
 }
 
-LevelDecOne::~LevelDecOne()
+LevelOneDec::~LevelOneDec()
 {
     /* Empty Destructor */
 }
@@ -611,7 +617,8 @@ LevelDecOne::~LevelDecOne()
 TableLevelOneModel::TableLevelOneModel(const QString &str_date,
                                        const QString &str_mu,
                                        const QString &str_alpha,
-                                       const QString &str_forecast, QObject *parent)
+                                       const QString &str_forecast,
+                                       QObject *parent)
     : QAbstractTableModel(parent)
 {
     generator = new Generators();

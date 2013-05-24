@@ -22,7 +22,7 @@
 class TableLevelOneModel;
 class TableStabilityLevelOneModel;
 
-class LevelDecOne : public QWidget
+class LevelOneDec : public QWidget
 {
     Q_OBJECT
 
@@ -118,11 +118,12 @@ class LevelDecOne : public QWidget
     /********** END SECOND TABLE **********/
     void retranslateUi();
     void createTables();
+    void setVectorsToTables();
     void createDoubleBoxes();
     void createCharts();
     void createToolBar();
     void createWidgets();
-    void setVectorsToTables();
+    void checkStability();
 private slots:
     void changedAlpha(double i);
     void changedEps(double eps);
@@ -134,10 +135,10 @@ private slots:
 
     void hideLevelOneWidgets();
 public:
-    LevelDecOne(const QVector<QString> &vectorDate,
+    LevelOneDec(const QVector<QString> &vectorDate,
                 const QVector<QVector<double> > &vectorSensorReadings2D,
                 QWidget *parent = 0);
-    ~LevelDecOne();
+    ~LevelOneDec();
 };
 
 class TableLevelOneModel : public QAbstractTableModel

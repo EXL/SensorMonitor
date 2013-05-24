@@ -8,7 +8,8 @@
 LevelsWidget::LevelsWidget(const QVector<QString> &vectorDate, const QVector<QVector<double> > &vectorSensorReadings2D, QWidget *parent) :
     QMainWindow(parent)
 {
-    levelDecOne = new LevelDecOne(vectorDate, vectorSensorReadings2D);
+    levelOneDec = new LevelOneDec(vectorDate, vectorSensorReadings2D);
+    levelTwoDec = new LevelTwoDec(vectorDate, vectorSensorReadings2D);
 
     createActions();
 
@@ -66,8 +67,8 @@ void LevelsWidget::createCentralLevelsWidget()
 
     tabLevelsWidget = new QTabWidget(centralLevelsWidget);
 
-    tabLevelsWidget->addTab(levelDecOne, tr("Level I"));
-    tabLevelsWidget->addTab(new QLabel(tr("There is a second level"), tabLevelsWidget), tr("Level II"));
+    tabLevelsWidget->addTab(levelOneDec, tr("Level I"));
+    tabLevelsWidget->addTab(levelTwoDec, tr("Level II"));
     tabLevelsWidget->addTab(new QLabel(tr("There is a third level"), tabLevelsWidget), tr("Level III"));
 
     centralLayout->addWidget(tabLevelsWidget);
@@ -100,7 +101,7 @@ void LevelsWidget::retranslateUi()
 
     statusBar()->showMessage(tr("Ready"));
 
-    levelDecOne->setStatusTip(tr("First Level of Decomposition"));
+    levelOneDec->setStatusTip(tr("First Level of Decomposition"));
 
     setWindowTitle(tr("Levels of decomposition"));
 }

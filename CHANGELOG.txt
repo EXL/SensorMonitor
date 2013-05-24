@@ -1,3 +1,7 @@
+5/24/2013 (v. 0.5):
++: Fixed avrg forecast vectors
++: Try Level II of decomposition
+
 5/20/2013 (v. 0.5):
 +: Fixed calc forecast values.
 +: Fixed Translations int table.

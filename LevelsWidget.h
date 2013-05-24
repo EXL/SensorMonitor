@@ -1,7 +1,8 @@
 #ifndef LEVELSWIDGET_H
 #define LEVELSWIDGET_H
 
-#include "LevelDecOneWidget.h"
+#include "LevelOneDecWidget.h"
+#include "LevelTwoDecWidget.h"
 
 #include <QMainWindow>
 
@@ -17,7 +18,8 @@ class LevelsWidget : public QMainWindow
     QHBoxLayout *centralLayout;
     QWidget *centralLevelsWidget;
 
-    LevelDecOne *levelDecOne;
+    LevelOneDec *levelOneDec;
+    LevelTwoDec *levelTwoDec;
 
     void createActions();
     void createMenus();

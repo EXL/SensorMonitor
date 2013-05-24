@@ -165,8 +165,7 @@ void LevelOneMuChart::plotAssay()
     setAxisScale(yLeft, 0, 6e-05);
 }
 
-void LevelOneMuChart::readDataOfVectors(bool qFirst,
-                                        const QVector<double> &vectorMuLower,
+void LevelOneMuChart::readDataOfVectors(const QVector<double> &vectorMuLower,
                                         const QVector<double> &vectorMu,
                                         const QVector<double> &vectorMuUpper,
                                         const QVector<QString> &vectorAlpha)
@@ -174,28 +173,21 @@ void LevelOneMuChart::readDataOfVectors(bool qFirst,
     size_t row = vectorMu.size();
 
     /* Data */
-    QPolygonF points_s1;
-    QPolygonF points_s2;
-    QPolygonF points_s3;
-
-    if(qFirst)
-    {
-        points_s1.clear();
-        points_s2.clear();
-        points_s3.clear();
-    }
+    QPolygonF points_ml;
+    QPolygonF points_m;
+    QPolygonF points_mu;
 
     /* Read Data from Array */
     for(size_t i = 0; i < row; ++i)
     {
-        points_s1.push_back(QPointF(vectorMuLower[i], vectorAlpha[i].toDouble()));
-        points_s2.push_back(QPointF(vectorMu[i], vectorAlpha[i].toDouble()));
-        points_s3.push_back(QPointF(vectorMuUpper[i], vectorAlpha[i].toDouble()));
+        points_ml.push_back(QPointF(vectorMuLower[i], vectorAlpha[i].toDouble()));
+        points_m.push_back(QPointF(vectorMu[i], vectorAlpha[i].toDouble()));
+        points_mu.push_back(QPointF(vectorMuUpper[i], vectorAlpha[i].toDouble()));
     }
 
-    curveMuLower->setSamples(points_s1);
-    curveMu->setSamples(points_s2);
-    curveMuUpper->setSamples(points_s3);
+    curveMuLower->setSamples(points_ml);
+    curveMu->setSamples(points_m);
+    curveMuUpper->setSamples(points_mu);
 }
 
 void LevelOneMuChart::updateWidgetGradient()
@@ -283,7 +275,7 @@ void LevelOneMuChart::printLevelOnePlot()
         printer.setDocName(docName);
     }
 
-    printer.setCreator(tr("Levels One Mu Chart"));
+    printer.setCreator(tr("LevelOneMuChart"));
     printer.setOrientation(QPrinter::Landscape);
 
     QPrintDialog dialog(&printer);

@@ -1,12 +1,20 @@
 #ifndef LEVELTWODECWIDGET_H
 #define LEVELTWODECWIDGET_H
 
+#include "LevelTwoChart.h"
+#include "LevelTwoMuChart.h"
 #include "Generators.h"
+
+#include <qwt_counter.h>
 
 #include <QWidget>
 #include <QAbstractTableModel>
 #include <QTableView>
 #include <QHBoxLayout>
+#include <QVBoxLayout>
+#include <QToolBar>
+#include <QLabel>
+#include <QDoubleSpinBox>
 
 class TableLevelTwoModel;
 class TableStabilityLevelTwoModel;
@@ -17,6 +25,8 @@ class LevelTwoDec : public QWidget
 
     size_t row;
     size_t col;
+
+    bool qSwitch;
 
     QString str_date;
     QString str_mu;
@@ -37,7 +47,7 @@ class LevelTwoDec : public QWidget
     double avrg_alpha_blockB;
     double avrg_alpha_blockC;
 
-    /*************************************/
+    /********** FIRST TABLE **********/
     QVector<QString> vectorDateToLevelTwo;
     QVector<QVector<double> > vectorBlockAToLevelTwo;
     QVector<QVector<double> > vectorBlockBToLevelTwo;
@@ -56,9 +66,9 @@ class LevelTwoDec : public QWidget
     QVector<QString> vectorForecastAlphaBlockA;
     QVector<QString> vectorForecastAlphaBlockB;
     QVector<QString> vectorForecastAlphaBlockC;
-    /*****************************************/
+    /********** END FIRST TABLE **********/
 
-    /*****************************************/
+    /********** SECOND TABLE **********/
     QVector<QVector<double> > vectorBlockALow;
     QVector<QVector<double> > vectorBlockAHigh;
     QVector<QVector<double> > vectorBlockBLow;
@@ -72,17 +82,39 @@ class LevelTwoDec : public QWidget
     QVector<double> vectorMuBlockBUpperLimit;
     QVector<double> vectorMuBlockCLowerLimit;
     QVector<double> vectorMuBlockCUpperLimit;
-    /*****************************************/
+    /********** END SECOND TABLE **********/
 
     QTableView *viewTableLevelTwoModel;
     TableLevelTwoModel *tableLevelTwoModel;
     TableStabilityLevelTwoModel *tableStabilityLevelTwoModel;
 
     QHBoxLayout *horizLayoutTableLevelTwo;
+    QVBoxLayout *vertLayoutTableLevelTwo;
+
+    QToolBar *toolBar;
+    QWidget *toolBarBox;
+    QHBoxLayout *horizToolBarLayout;
+
+    QLabel *labelCoeffEps;
+    QLabel *labelMeterEps;
+    QLabel *labelCoeffAlpha;
+    QLabel *labelWarning;
+    QLabel *blocksToolTips;
+
+    QAction *exportLevelTwoChart;
+    QAction *printLevelTwoChart;
+    QAction *switchWidgetsLevelTwo;
+
+    QDoubleSpinBox *spbDoubleBoxAlpha;
+    QwtCounter *spbDoubleBoxEps;
+
+    LevelTwoChart *levelTwoChart;
+    LevelTwoMuChart *levelTwoMuChart;
 
     void splitVectors(const QVector<QVector<double> > &vectorSensorReadings2D);
     void setVectorsToTables();
 
+    /********** FIRST TABLE **********/
     double getMu(unsigned int i,
                  const QVector<QVector<double> > &vectorTarget2D);
     double getAvrgMu(const QVector<double> &vectorTarget);
@@ -100,16 +132,35 @@ class LevelTwoDec : public QWidget
     void getAlphaForecast(size_t i, double a, double avrg_alpha,
                           const QVector<QString> &vectorTarget,
                           QVector<QString> &vectorOutput);
+    /********** END FIRST TABLE **********/
 
+    /********** SECOND TABLE **********/
     void createBlocksVectorsSensReadingsLandH(bool qLow,
                                               double eps,
                                               const QVector<QVector<double> > &vectorTarget,
                                               QVector<QVector<double> > &vectorOutput);
     double getMuLimits(size_t i, QVector<QVector<double> > &vectorTarget);
+    /********** END SECOND TABLE **********/
 
     void retranslateUi();
     void createTables();
+    void readDataOfVectorsToChart();
+    void readDataOfVectorsToMuChart();
+    void createDoubleBoxes();
+    void createCharts();
+    void createToolBar();
     void createWidgets();
+    void checkStability();
+private slots:
+    void changedAlpha(double i);
+    void changedEps(double eps);
+
+    void setDoubleCountToLabel(double eps);
+
+    void chooseExportCharts();
+    void choosePrintCharts();
+
+    void hideLevelTwoWidgets();
 public:
     LevelTwoDec(const QVector<QString> &vectorDate,
                 const QVector<QVector<double> > &vectorSensorReadings2D,
@@ -212,9 +263,9 @@ class TableStabilityLevelTwoModel : public QAbstractTableModel
     QVector<double> muBlockCULVectorOfLevel;
 
     bool checkResult(int i,
-                     const QVector<double> &vectorUpper,
+                     const QVector<double> &vectorLower,
                      const QVector<double> &vectorMiddle,
-                     const QVector<double> &vectorLower) const;
+                     const QVector<double> &vectorUpper) const;
 protected:
     int rowCount(const QModelIndex &) const;
     int columnCount(const QModelIndex &) const;
@@ -241,6 +292,7 @@ public:
                             QVector<double> &vectorMuBlockCLowerLimit,
                             QVector<double> &vectorMuBlockC,
                             QVector<double> &vectorMuBlockCUpperLimit);
+    bool checkSystemStable() const;
     ~TableStabilityLevelTwoModel();
 };
 

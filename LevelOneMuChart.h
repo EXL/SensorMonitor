@@ -19,17 +19,18 @@ class LevelOneMuChart : public QwtPlot
     QwtPlotMarker *mY;
     QwtPlotMarker *mX;
 
+    /* Curves */
     QwtPlotCurve *curveMuLower;
     QwtPlotCurve *curveMu;
     QwtPlotCurve *curveMuUpper;
 
+    /* Symbols */
     QwtSymbol *symbolMuLower;
     QwtSymbol *symbolMu;
     QwtSymbol *symbolMuUpper;
 
     void updateWidgetGradient();
     void plotAssay();
-
 protected:
     virtual void resizeEvent(QResizeEvent *);
 private slots:
@@ -40,11 +41,10 @@ public slots:
 public:
     LevelOneMuChart(QWidget *parent = 0);
 
-    void readDataOfVectors(bool qFirst,
-                   const QVector<double> &vectorMuLower,
-                   const QVector<double> &vectorMu,
-                   const QVector<double> &vectorMuUpper,
-                   const QVector<QString> &vectorAlpha);
+    void readDataOfVectors(const QVector<double> &vectorMuLower,
+                           const QVector<double> &vectorMu,
+                           const QVector<double> &vectorMuUpper,
+                           const QVector<QString> &vectorAlpha);
     ~LevelOneMuChart();
 };
 

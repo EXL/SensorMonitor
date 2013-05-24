@@ -87,7 +87,7 @@ void LevelsWidget::settingsLevelsWindow()
     setAttribute(Qt::WA_DeleteOnClose);
     setAttribute(Qt::WA_ShowModal);
 
-    resize(920, 625);
+    resize(1024, 650);
     setMinimumSize(800, 480);
 }
 

@@ -590,39 +590,39 @@ Show plot?</translation>
         <translation>Mu --&gt;</translation>
     </message>
     <message>
-        <location filename="LevelOneChart.cpp" line="227"/>
+        <location filename="LevelOneChart.cpp" line="220"/>
         <source>PDF Documents (*.pdf)</source>
         <translation>PDF Documents (*.pdf)</translation>
     </message>
     <message>
-        <location filename="LevelOneChart.cpp" line="229"/>
+        <location filename="LevelOneChart.cpp" line="222"/>
         <source>SVG Documents (*.svg)</source>
         <translation>SVG Documents (*.svg)</translation>
     </message>
     <message>
-        <location filename="LevelOneChart.cpp" line="231"/>
+        <location filename="LevelOneChart.cpp" line="224"/>
         <source>Postscript Documents (*.ps)</source>
         <translation>Postscript Documents (*.ps)</translation>
     </message>
     <message>
-        <location filename="LevelOneChart.cpp" line="235"/>
+        <location filename="LevelOneChart.cpp" line="228"/>
         <source>Images (</source>
         <translation>Images (</translation>
     </message>
     <message>
-        <location filename="LevelOneChart.cpp" line="249"/>
+        <location filename="LevelOneChart.cpp" line="242"/>
         <source>Export File Name</source>
         <translation>Export File Name</translation>
     </message>
     <message>
-        <location filename="LevelOneChart.cpp" line="268"/>
+        <location filename="LevelOneChart.cpp" line="261"/>
         <source> -- </source>
         <translation> -- </translation>
     </message>
     <message>
-        <location filename="LevelOneChart.cpp" line="272"/>
-        <source>Levels One Chart</source>
-        <translation></translation>
+        <location filename="LevelOneChart.cpp" line="265"/>
+        <source>OneLevelChart</source>
+        <translation>OneLevelChart</translation>
     </message>
 </context>
 <context>
@@ -693,81 +693,81 @@ Show plot?</translation>
         <translation>Please change Coefficient &quot;Eps&quot;</translation>
     </message>
     <message>
-        <location filename="LevelOneDecWidget.cpp" line="116"/>
-        <location filename="LevelOneDecWidget.cpp" line="514"/>
+        <location filename="LevelOneDecWidget.cpp" line="114"/>
+        <location filename="LevelOneDecWidget.cpp" line="516"/>
         <source>Export</source>
         <translation>Export</translation>
     </message>
     <message>
-        <location filename="LevelOneDecWidget.cpp" line="117"/>
+        <location filename="LevelOneDecWidget.cpp" line="115"/>
         <source>Export the Level One Decomposition Chart</source>
         <translation>Export the Level One Decomposition Chart</translation>
     </message>
     <message>
-        <location filename="LevelOneDecWidget.cpp" line="123"/>
-        <location filename="LevelOneDecWidget.cpp" line="543"/>
+        <location filename="LevelOneDecWidget.cpp" line="121"/>
+        <location filename="LevelOneDecWidget.cpp" line="545"/>
         <source>Print</source>
         <translation>Print</translation>
     </message>
     <message>
-        <location filename="LevelOneDecWidget.cpp" line="124"/>
+        <location filename="LevelOneDecWidget.cpp" line="122"/>
         <source>Print the Level One Decomposition Chart</source>
         <translation>Print the Level One Decomposition Chart</translation>
     </message>
     <message>
-        <location filename="LevelOneDecWidget.cpp" line="130"/>
+        <location filename="LevelOneDecWidget.cpp" line="128"/>
         <source>Switch</source>
         <translation>Switch</translation>
     </message>
     <message>
-        <location filename="LevelOneDecWidget.cpp" line="131"/>
+        <location filename="LevelOneDecWidget.cpp" line="129"/>
         <source>Switch between charts and tables</source>
         <translation>Switch between charts and tables</translation>
     </message>
     <message>
-        <location filename="LevelOneDecWidget.cpp" line="153"/>
+        <location filename="LevelOneDecWidget.cpp" line="151"/>
         <source>&lt;h3&gt;Coefficient &quot;A&quot;: &lt;/h3&gt;</source>
         <translation>&lt;h3&gt;Coefficient &quot;A&quot;: &lt;/h3&gt;</translation>
     </message>
     <message>
-        <location filename="LevelOneDecWidget.cpp" line="156"/>
+        <location filename="LevelOneDecWidget.cpp" line="154"/>
         <source>&lt;h3&gt;Coefficient &quot;Eps&quot;: &lt;/h3&gt;</source>
         <translation>&lt;h3&gt;Coefficient &quot;Eps&quot;: &lt;/h3&gt;</translation>
     </message>
     <message>
-        <location filename="LevelOneDecWidget.cpp" line="159"/>
+        <location filename="LevelOneDecWidget.cpp" line="157"/>
         <source>&lt;h3&gt; = 1 mm&lt;/h3&gt;</source>
         <translation>&lt;h3&gt; = 1 mm&lt;/h3&gt;</translation>
     </message>
     <message>
-        <location filename="LevelOneDecWidget.cpp" line="180"/>
+        <location filename="LevelOneDecWidget.cpp" line="178"/>
         <source>Warning! System is not stable! You need to go to the second level of decomposition or increase the coefficient &quot;Eps&quot;</source>
         <translation>Warning! System is not stable! You need to go to the second level of decomposition or increase the coefficient &quot;Eps&quot;</translation>
     </message>
     <message>
-        <location filename="LevelOneDecWidget.cpp" line="508"/>
+        <location filename="LevelOneDecWidget.cpp" line="510"/>
         <source>&lt;h3&gt; = %1 mm&lt;/h3&gt;</source>
         <translation>&lt;h3&gt; = %1 mm&lt;/h3&gt;</translation>
     </message>
     <message>
-        <location filename="LevelOneDecWidget.cpp" line="515"/>
+        <location filename="LevelOneDecWidget.cpp" line="517"/>
         <source>What is the chart you want to export?</source>
         <translation>What is the chart you want to export?</translation>
     </message>
     <message>
-        <location filename="LevelOneDecWidget.cpp" line="518"/>
-        <location filename="LevelOneDecWidget.cpp" line="547"/>
+        <location filename="LevelOneDecWidget.cpp" line="520"/>
+        <location filename="LevelOneDecWidget.cpp" line="549"/>
         <source>Phase Coordinates</source>
         <translation>Phase Coordinates</translation>
     </message>
     <message>
-        <location filename="LevelOneDecWidget.cpp" line="519"/>
-        <location filename="LevelOneDecWidget.cpp" line="548"/>
+        <location filename="LevelOneDecWidget.cpp" line="521"/>
+        <location filename="LevelOneDecWidget.cpp" line="550"/>
         <source>Available Deviations</source>
         <translation>Available Deviations</translation>
     </message>
     <message>
-        <location filename="LevelOneDecWidget.cpp" line="544"/>
+        <location filename="LevelOneDecWidget.cpp" line="546"/>
         <source>What is the chart you want to print?</source>
         <translation>What is the chart you want to print?</translation>
     </message>
@@ -809,100 +809,443 @@ Show plot?</translation>
         <translation>Alpha --&gt;</translation>
     </message>
     <message>
-        <location filename="LevelOneMuChart.cpp" line="241"/>
+        <location filename="LevelOneMuChart.cpp" line="233"/>
         <source>PDF Documents (*.pdf)</source>
         <translation>PDF Documents (*.pdf)</translation>
     </message>
     <message>
-        <location filename="LevelOneMuChart.cpp" line="243"/>
+        <location filename="LevelOneMuChart.cpp" line="235"/>
         <source>SVG Documents (*.svg)</source>
         <translation>SVG Documents (*.svg)</translation>
     </message>
     <message>
-        <location filename="LevelOneMuChart.cpp" line="245"/>
+        <location filename="LevelOneMuChart.cpp" line="237"/>
         <source>Postscript Documents (*.ps)</source>
         <translation>Postscript Documents (*.ps)</translation>
     </message>
     <message>
-        <location filename="LevelOneMuChart.cpp" line="249"/>
+        <location filename="LevelOneMuChart.cpp" line="241"/>
         <source>Images (</source>
         <translation>Images (</translation>
     </message>
     <message>
-        <location filename="LevelOneMuChart.cpp" line="263"/>
+        <location filename="LevelOneMuChart.cpp" line="255"/>
         <source>Export File Name</source>
         <translation>Export File Name</translation>
     </message>
     <message>
-        <location filename="LevelOneMuChart.cpp" line="282"/>
+        <location filename="LevelOneMuChart.cpp" line="274"/>
         <source> -- </source>
         <translation> -- </translation>
     </message>
     <message>
-        <location filename="LevelOneMuChart.cpp" line="286"/>
-        <source>Levels One Mu Chart</source>
-        <translation>Levels One Mu Chart</translation>
+        <location filename="LevelOneMuChart.cpp" line="278"/>
+        <source>LevelOneMuChart</source>
+        <oldsource>Levels One Mu Chart</oldsource>
+        <translation>LevelOneMuChart</translation>
+    </message>
+</context>
+<context>
+    <name>LevelTwoChart</name>
+    <message>
+        <location filename="LevelTwoChart.cpp" line="43"/>
+        <source>Chart of of phase coordinates</source>
+        <translation>Chart of of phase coordinates</translation>
+    </message>
+    <message>
+        <location filename="LevelTwoChart.cpp" line="133"/>
+        <source>[A] Real</source>
+        <translation>[A] Real</translation>
+    </message>
+    <message>
+        <location filename="LevelTwoChart.cpp" line="134"/>
+        <source>[A] Forecast</source>
+        <translation>[A] Forecast</translation>
+    </message>
+    <message>
+        <location filename="LevelTwoChart.cpp" line="135"/>
+        <source>[B] Real</source>
+        <translation>[B] Real</translation>
+    </message>
+    <message>
+        <location filename="LevelTwoChart.cpp" line="136"/>
+        <source>[B] Forecast</source>
+        <translation>[B] Forecast</translation>
+    </message>
+    <message>
+        <location filename="LevelTwoChart.cpp" line="137"/>
+        <source>[C] Real</source>
+        <translation>[C] Real</translation>
+    </message>
+    <message>
+        <location filename="LevelTwoChart.cpp" line="138"/>
+        <source>[C] Forecast</source>
+        <translation>[C] Forecast</translation>
+    </message>
+    <message>
+        <location filename="LevelTwoChart.cpp" line="199"/>
+        <source>Mu --&gt;</source>
+        <translation>Mu --&gt;</translation>
+    </message>
+    <message>
+        <location filename="LevelTwoChart.cpp" line="203"/>
+        <source>Alpha --&gt;</source>
+        <translation>Alpha --&gt;</translation>
+    </message>
+    <message>
+        <location filename="LevelTwoChart.cpp" line="292"/>
+        <source>PDF Documents (*.pdf)</source>
+        <translation>PDF Documents (*.pdf)</translation>
+    </message>
+    <message>
+        <location filename="LevelTwoChart.cpp" line="294"/>
+        <source>SVG Documents (*.svg)</source>
+        <translation>SVG Documents (*.svg)</translation>
+    </message>
+    <message>
+        <location filename="LevelTwoChart.cpp" line="296"/>
+        <source>Postscript Documents (*.ps)</source>
+        <translation>Postscript Documents (*.ps)</translation>
+    </message>
+    <message>
+        <location filename="LevelTwoChart.cpp" line="300"/>
+        <source>Images (</source>
+        <translation>Images (</translation>
+    </message>
+    <message>
+        <location filename="LevelTwoChart.cpp" line="314"/>
+        <source>Export File Name</source>
+        <translation>Export File Name</translation>
+    </message>
+    <message>
+        <location filename="LevelTwoChart.cpp" line="333"/>
+        <source> -- </source>
+        <translation> -- </translation>
+    </message>
+    <message>
+        <location filename="LevelTwoChart.cpp" line="337"/>
+        <source>TwoLevelChart</source>
+        <translation>TwoLevelChart</translation>
+    </message>
+    <message>
+        <source>Levels Two Chart</source>
+        <translation type="obsolete">Levels Two Chart</translation>
+    </message>
+</context>
+<context>
+    <name>LevelTwoDec</name>
+    <message>
+        <location filename="LevelTwoDecWidget.cpp" line="355"/>
+        <source>DATE</source>
+        <translation>DATE</translation>
+    </message>
+    <message>
+        <location filename="LevelTwoDecWidget.cpp" line="356"/>
+        <source>Mu</source>
+        <translation>Mu</translation>
+    </message>
+    <message>
+        <location filename="LevelTwoDecWidget.cpp" line="357"/>
+        <source>Alpha</source>
+        <translation>Alpha</translation>
+    </message>
+    <message>
+        <location filename="LevelTwoDecWidget.cpp" line="358"/>
+        <source>Forecast</source>
+        <translation>Forecast</translation>
+    </message>
+    <message>
+        <location filename="LevelTwoDecWidget.cpp" line="359"/>
+        <source>[Low.Lim]</source>
+        <translation>[Low.Lim]</translation>
+    </message>
+    <message>
+        <location filename="LevelTwoDecWidget.cpp" line="360"/>
+        <source>[Upp.Lim]</source>
+        <translation>[Upp.Lim]</translation>
+    </message>
+    <message>
+        <location filename="LevelTwoDecWidget.cpp" line="361"/>
+        <source>[L.L]</source>
+        <translation>[L.L]</translation>
+    </message>
+    <message>
+        <location filename="LevelTwoDecWidget.cpp" line="362"/>
+        <source>[U.L]</source>
+        <translation>[U.L]</translation>
+    </message>
+    <message>
+        <location filename="LevelTwoDecWidget.cpp" line="363"/>
+        <source>Result</source>
+        <translation>Result</translation>
+    </message>
+    <message>
+        <location filename="LevelTwoDecWidget.cpp" line="364"/>
+        <source>Stable</source>
+        <translation>Stable</translation>
+    </message>
+    <message>
+        <location filename="LevelTwoDecWidget.cpp" line="365"/>
+        <source>Unstable</source>
+        <translation>Unstable</translation>
+    </message>
+    <message>
+        <location filename="LevelTwoDecWidget.cpp" line="428"/>
+        <source>Please change Coefficient &quot;A&quot;</source>
+        <translation>Please change Coefficient &quot;A&quot;</translation>
+    </message>
+    <message>
+        <location filename="LevelTwoDecWidget.cpp" line="434"/>
+        <source>Please change Coefficient &quot;Eps&quot;</source>
+        <translation>Please change Coefficient &quot;Eps&quot;</translation>
+    </message>
+    <message>
+        <location filename="LevelTwoDecWidget.cpp" line="455"/>
+        <location filename="LevelTwoDecWidget.cpp" line="706"/>
+        <source>Export</source>
+        <translation>Export</translation>
+    </message>
+    <message>
+        <location filename="LevelTwoDecWidget.cpp" line="456"/>
+        <source>Export the Level One Decomposition Chart</source>
+        <translation>Export the Level One Decomposition Chart</translation>
+    </message>
+    <message>
+        <location filename="LevelTwoDecWidget.cpp" line="462"/>
+        <location filename="LevelTwoDecWidget.cpp" line="735"/>
+        <source>Print</source>
+        <translation>Print</translation>
+    </message>
+    <message>
+        <location filename="LevelTwoDecWidget.cpp" line="463"/>
+        <source>Print the Level One Decomposition Chart</source>
+        <translation>Print the Level One Decomposition Chart</translation>
+    </message>
+    <message>
+        <location filename="LevelTwoDecWidget.cpp" line="469"/>
+        <source>Switch</source>
+        <translation>Switch</translation>
+    </message>
+    <message>
+        <location filename="LevelTwoDecWidget.cpp" line="470"/>
+        <source>Switch between charts and tables</source>
+        <translation>Switch between charts and tables</translation>
+    </message>
+    <message>
+        <location filename="LevelTwoDecWidget.cpp" line="484"/>
+        <source>&lt;strong&gt;&lt;font color=&apos;#FFCC99&apos;&gt;Block A&lt;/font&gt;&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;&lt;font color=&apos;#CCFFCC&apos;&gt;Block B&lt;/strong&gt;&lt;/font&gt;&lt;br&gt;&lt;strong&gt;&lt;font color=&apos;#99CCFF&apos;&gt;Block C&lt;/strong&gt;&lt;/font&gt;&lt;br&gt;</source>
+        <translation>&lt;strong&gt;&lt;font color=&apos;#FFCC99&apos;&gt;Block A&lt;/font&gt;&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;&lt;font color=&apos;#CCFFCC&apos;&gt;Block B&lt;/strong&gt;&lt;/font&gt;&lt;br&gt;&lt;strong&gt;&lt;font color=&apos;#99CCFF&apos;&gt;Block C&lt;/strong&gt;&lt;/font&gt;&lt;br&gt;</translation>
+    </message>
+    <message>
+        <location filename="LevelTwoDecWidget.cpp" line="488"/>
+        <source>The color in the table corresponds to the tip</source>
+        <translation>The color in the table corresponds to the tip</translation>
+    </message>
+    <message>
+        <location filename="LevelTwoDecWidget.cpp" line="501"/>
+        <source>&lt;h3&gt;Coefficient &quot;A&quot;: &lt;/h3&gt;</source>
+        <translation>&lt;h3&gt;Coefficient &quot;A&quot;: &lt;/h3&gt;</translation>
+    </message>
+    <message>
+        <location filename="LevelTwoDecWidget.cpp" line="504"/>
+        <source>&lt;h3&gt;Coefficient &quot;Eps&quot;: &lt;/h3&gt;</source>
+        <translation>&lt;h3&gt;Coefficient &quot;Eps&quot;: &lt;/h3&gt;</translation>
+    </message>
+    <message>
+        <location filename="LevelTwoDecWidget.cpp" line="507"/>
+        <source>&lt;h3&gt; = 3 mm&lt;/h3&gt;</source>
+        <translation>&lt;h3&gt; = 3 mm&lt;/h3&gt;</translation>
+    </message>
+    <message>
+        <location filename="LevelTwoDecWidget.cpp" line="528"/>
+        <source>Warning! System is not stable! You need refer to a specialist or increase the coefficient &quot;Eps&quot;</source>
+        <translation>Warning! System is not stable! You need refer to a specialist or increase the coefficient &quot;Eps&quot;</translation>
+    </message>
+    <message>
+        <location filename="LevelTwoDecWidget.cpp" line="700"/>
+        <source>&lt;h3&gt; = %1 mm&lt;/h3&gt;</source>
+        <translation>&lt;h3&gt; = %1 mm&lt;/h3&gt;</translation>
+    </message>
+    <message>
+        <location filename="LevelTwoDecWidget.cpp" line="707"/>
+        <source>What is the chart you want to export?</source>
+        <translation>What is the chart you want to export?</translation>
+    </message>
+    <message>
+        <location filename="LevelTwoDecWidget.cpp" line="710"/>
+        <location filename="LevelTwoDecWidget.cpp" line="739"/>
+        <source>Phase Coordinates</source>
+        <translation>Phase Coordinates</translation>
+    </message>
+    <message>
+        <location filename="LevelTwoDecWidget.cpp" line="711"/>
+        <location filename="LevelTwoDecWidget.cpp" line="740"/>
+        <source>Available Deviations</source>
+        <translation>Available Deviations</translation>
+    </message>
+    <message>
+        <location filename="LevelTwoDecWidget.cpp" line="736"/>
+        <source>What is the chart you want to print?</source>
+        <translation>What is the chart you want to print?</translation>
+    </message>
+</context>
+<context>
+    <name>LevelTwoMuChart</name>
+    <message>
+        <location filename="LevelTwoMuChart.cpp" line="47"/>
+        <source>Chart of available deviations</source>
+        <translation>Chart of available deviations</translation>
+    </message>
+    <message>
+        <location filename="LevelTwoMuChart.cpp" line="155"/>
+        <source>[A] Mu[Low.Lim]</source>
+        <translation>[A] Mu[Low.Lim]</translation>
+    </message>
+    <message>
+        <location filename="LevelTwoMuChart.cpp" line="156"/>
+        <source>[A] Mu</source>
+        <translation>[A] Mu</translation>
+    </message>
+    <message>
+        <location filename="LevelTwoMuChart.cpp" line="157"/>
+        <source>[A] Mu[Upp.Lim]</source>
+        <translation>[A] Mu[Upp.Lim]</translation>
+    </message>
+    <message>
+        <location filename="LevelTwoMuChart.cpp" line="158"/>
+        <source>[B] Mu[Low.Lim]</source>
+        <translation>[B] Mu[Low.Lim]</translation>
+    </message>
+    <message>
+        <location filename="LevelTwoMuChart.cpp" line="159"/>
+        <source>[B] Mu</source>
+        <translation>[B] Mu</translation>
+    </message>
+    <message>
+        <location filename="LevelTwoMuChart.cpp" line="160"/>
+        <source>[B] Mu[Upp.Lim]</source>
+        <translation>[B] Mu[Upp.Lim]</translation>
+    </message>
+    <message>
+        <location filename="LevelTwoMuChart.cpp" line="161"/>
+        <source>[C] Mu[Low.Lim]</source>
+        <translation>[C] Mu[Low.Lim]</translation>
+    </message>
+    <message>
+        <location filename="LevelTwoMuChart.cpp" line="162"/>
+        <source>[C] Mu</source>
+        <translation>[C] Mu</translation>
+    </message>
+    <message>
+        <location filename="LevelTwoMuChart.cpp" line="163"/>
+        <source>[C] Mu[Upp.Lim]</source>
+        <translation>[C] Mu[Upp.Lim]</translation>
+    </message>
+    <message>
+        <location filename="LevelTwoMuChart.cpp" line="242"/>
+        <source>Mu --&gt;</source>
+        <translation>Mu --&gt;</translation>
+    </message>
+    <message>
+        <location filename="LevelTwoMuChart.cpp" line="246"/>
+        <source>Alpha --&gt;</source>
+        <translation>Alpha --&gt;</translation>
+    </message>
+    <message>
+        <location filename="LevelTwoMuChart.cpp" line="332"/>
+        <source>PDF Documents (*.pdf)</source>
+        <translation>PDF Documents (*.pdf)</translation>
+    </message>
+    <message>
+        <location filename="LevelTwoMuChart.cpp" line="334"/>
+        <source>SVG Documents (*.svg)</source>
+        <translation>SVG Documents (*.svg)</translation>
+    </message>
+    <message>
+        <location filename="LevelTwoMuChart.cpp" line="336"/>
+        <source>Postscript Documents (*.ps)</source>
+        <translation>Postscript Documents (*.ps)</translation>
+    </message>
+    <message>
+        <location filename="LevelTwoMuChart.cpp" line="340"/>
+        <source>Images (</source>
+        <translation>Images (</translation>
+    </message>
+    <message>
+        <location filename="LevelTwoMuChart.cpp" line="354"/>
+        <source>Export File Name</source>
+        <translation>Export File Name</translation>
+    </message>
+    <message>
+        <location filename="LevelTwoMuChart.cpp" line="373"/>
+        <source> -- </source>
+        <translation> -- </translation>
+    </message>
+    <message>
+        <location filename="LevelTwoMuChart.cpp" line="377"/>
+        <source>LevelTwoMuChart</source>
+        <oldsource>Levels One Mu Chart</oldsource>
+        <translation>LevelTwoMuChart</translation>
     </message>
 </context>
 <context>
     <name>LevelsWidget</name>
     <message>
-        <location filename="LevelsWidget.cpp" line="69"/>
+        <location filename="LevelsWidget.cpp" line="70"/>
         <source>Level I</source>
         <translation>Level I</translation>
     </message>
     <message>
-        <location filename="LevelsWidget.cpp" line="70"/>
         <source>There is a second level</source>
-        <translation>There is a second level</translation>
+        <translation type="obsolete">There is a second level</translation>
     </message>
     <message>
-        <location filename="LevelsWidget.cpp" line="70"/>
+        <location filename="LevelsWidget.cpp" line="71"/>
         <source>Level II</source>
         <translation>Level II</translation>
     </message>
     <message>
-        <location filename="LevelsWidget.cpp" line="71"/>
+        <location filename="LevelsWidget.cpp" line="72"/>
         <source>There is a third level</source>
         <translation>There is a third level</translation>
     </message>
     <message>
-        <location filename="LevelsWidget.cpp" line="71"/>
+        <location filename="LevelsWidget.cpp" line="72"/>
         <source>Level III</source>
         <translation>Level III</translation>
     </message>
     <message>
-        <location filename="LevelsWidget.cpp" line="95"/>
+        <location filename="LevelsWidget.cpp" line="96"/>
         <source>&amp;Close window</source>
         <translation>&amp;Close window</translation>
     </message>
     <message>
-        <location filename="LevelsWidget.cpp" line="96"/>
+        <location filename="LevelsWidget.cpp" line="97"/>
         <source>Close the levels decomposition window</source>
         <translation>Close the levels decomposition window</translation>
     </message>
     <message>
-        <location filename="LevelsWidget.cpp" line="98"/>
+        <location filename="LevelsWidget.cpp" line="99"/>
         <source>&amp;File</source>
         <translation>&amp;File</translation>
     </message>
     <message>
-        <location filename="LevelsWidget.cpp" line="99"/>
+        <location filename="LevelsWidget.cpp" line="100"/>
         <source>File Menu</source>
         <translation>File Menu</translation>
     </message>
     <message>
-        <location filename="LevelsWidget.cpp" line="101"/>
+        <location filename="LevelsWidget.cpp" line="102"/>
         <source>Ready</source>
         <translation>Ready</translation>
     </message>
     <message>
-        <location filename="LevelsWidget.cpp" line="103"/>
+        <location filename="LevelsWidget.cpp" line="104"/>
         <source>First Level of Decomposition</source>
         <translation>First Level of Decomposition</translation>
     </message>
     <message>
-        <location filename="LevelsWidget.cpp" line="105"/>
+        <location filename="LevelsWidget.cpp" line="106"/>
         <source>Levels of decomposition</source>
         <translation>Levels of decomposition</translation>
     </message>

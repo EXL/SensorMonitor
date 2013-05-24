@@ -1,6 +1,8 @@
 5/24/2013 (v. 0.5):
-+: Fixed avrg forecast vectors
-+: Try Level II of decomposition
++: Fixed avrg forecast vectors.
++: Try Level II of decomposition.
++: Finished Level II of decomposition.
++: Refactoring.
 
 5/20/2013 (v. 0.5):
 +: Fixed calc forecast values.

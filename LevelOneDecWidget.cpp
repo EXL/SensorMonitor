@@ -93,15 +93,13 @@ void LevelOneDec::createDoubleBoxes()
 void LevelOneDec::createCharts()
 {
     levelOneChart = new LevelOneChart(this);
-    levelOneChart->readDataOfVectors(true,
-                                     muVector,
+    levelOneChart->readDataOfVectors(muVector,
                                      muVectorForecast,
                                      alphaVector,
                                      alphaVectorForecast);
 
     levelOneMuChart = new LevelOneMuChart(this);
-    levelOneMuChart->readDataOfVectors(true,
-                                       muLowerLimitVector,
+    levelOneMuChart->readDataOfVectors(muLowerLimitVector,
                                        muVector,
                                        muUpperLimitVector,
                                        alphaVector);
@@ -472,8 +470,7 @@ void LevelOneDec::changedAlpha(double i)
     viewTableLevelOneModel->selectRow(row);
 
     // viewTableLevelOneModel->setFocus();
-    levelOneChart->readDataOfVectors(false,
-                                     muVector,
+    levelOneChart->readDataOfVectors(muVector,
                                      muVectorForecast,
                                      alphaVector,
                                      alphaVectorForecast);
@@ -500,8 +497,7 @@ void LevelOneDec::changedEps(double eps)
 
     viewTableLevelOneModel->selectRow(row - 1);
 
-    levelOneMuChart->readDataOfVectors(false,
-                                       muLowerLimitVector,
+    levelOneMuChart->readDataOfVectors(muLowerLimitVector,
                                        muVector,
                                        muUpperLimitVector,
                                        alphaVector);

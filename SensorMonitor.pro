@@ -55,7 +55,9 @@ SOURCES += main.cpp\
     DataBaseEngine.cpp \
     LevelOneMuChart.cpp \
     LevelOneDecWidget.cpp \
-    LevelTwoDecWidget.cpp
+    LevelTwoDecWidget.cpp \
+    LevelTwoChart.cpp \
+    LevelTwoMuChart.cpp
 
 HEADERS  += \
     Generators.h \
@@ -71,7 +73,9 @@ HEADERS  += \
     DataBaseEngine.h \
     LevelOneMuChart.h \
     LevelOneDecWidget.h \
-    LevelTwoDecWidget.h
+    LevelTwoDecWidget.h \
+    LevelTwoChart.h \
+    LevelTwoMuChart.h
 
 RESOURCES += \
     SensorMonitor.qrc

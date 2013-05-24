@@ -1,10 +1,13 @@
 #include "LevelTwoDecWidget.h"
 
+#include <QAction>
+#include <QPushButton>
+#include <QMessageBox>
+#include <qmath.h>
+
 #ifdef _DEBUG
 #include <QDebug>
 #endif
-
-#include <qmath.h>
 
 LevelTwoDec::LevelTwoDec(const QVector<QString> &vectorDate,
                          const QVector<QVector<double> > &vectorSensorReadings2D,
@@ -23,6 +26,12 @@ LevelTwoDec::LevelTwoDec(const QVector<QString> &vectorDate,
     createTables();
 
     setVectorsToTables();
+
+    createDoubleBoxes();
+
+    createCharts();
+
+    createToolBar();
 
     createWidgets();
 }
@@ -84,13 +93,13 @@ void LevelTwoDec::setVectorsToTables()
         vectorAlphaBlockC.push_back(getAlphaString(i, vectorBlockCToLevelTwo));
     }
 
-    createBlocksVectorsSensReadingsLandH(true, 0.001, vectorBlockAToLevelTwo, vectorBlockALow);
-    createBlocksVectorsSensReadingsLandH(true, 0.001, vectorBlockBToLevelTwo, vectorBlockBLow);
-    createBlocksVectorsSensReadingsLandH(true, 0.001, vectorBlockCToLevelTwo, vectorBlockCLow);
+    createBlocksVectorsSensReadingsLandH(true, 0.003, vectorBlockAToLevelTwo, vectorBlockALow);
+    createBlocksVectorsSensReadingsLandH(true, 0.003, vectorBlockBToLevelTwo, vectorBlockBLow);
+    createBlocksVectorsSensReadingsLandH(true, 0.003, vectorBlockCToLevelTwo, vectorBlockCLow);
 
-    createBlocksVectorsSensReadingsLandH(false, 0.001, vectorBlockAToLevelTwo, vectorBlockAHigh);
-    createBlocksVectorsSensReadingsLandH(false, 0.001, vectorBlockBToLevelTwo, vectorBlockBHigh);
-    createBlocksVectorsSensReadingsLandH(false, 0.001, vectorBlockCToLevelTwo, vectorBlockCHigh);
+    createBlocksVectorsSensReadingsLandH(false, 0.003, vectorBlockAToLevelTwo, vectorBlockAHigh);
+    createBlocksVectorsSensReadingsLandH(false, 0.003, vectorBlockBToLevelTwo, vectorBlockBHigh);
+    createBlocksVectorsSensReadingsLandH(false, 0.003, vectorBlockCToLevelTwo, vectorBlockCHigh);
 
     for (size_t i = 0; i < row; ++i)
     {
@@ -377,15 +386,376 @@ void LevelTwoDec::createTables()
                                                                   unstable_str,
                                                                   this);
 
-    viewTableLevelTwoModel->setModel(tableStabilityLevelTwoModel);
+    viewTableLevelTwoModel->setModel(tableLevelTwoModel);
+}
+
+void LevelTwoDec::readDataOfVectorsToChart()
+{
+    levelTwoChart->readDataOfVectors(vectorMuBlockA,
+                                     vectorForecastMuBlockA,
+                                     vectorAlphaBlockA,
+                                     vectorForecastAlphaBlockA,
+                                     vectorMuBlockB,
+                                     vectorForecastMuBlockB,
+                                     vectorAlphaBlockB,
+                                     vectorForecastAlphaBlockB,
+                                     vectorMuBlockC,
+                                     vectorForecastMuBlockC,
+                                     vectorAlphaBlockC,
+                                     vectorForecastAlphaBlockC);
+}
+
+void LevelTwoDec::readDataOfVectorsToMuChart()
+{
+    levelTwoMuChart->readDataOfVectors(vectorAlphaBlockA,
+                                       vectorMuBlockALowerLimit,
+                                       vectorMuBlockA,
+                                       vectorMuBlockAUpperLimit,
+                                       vectorMuBlockBLowerLimit,
+                                       vectorMuBlockB,
+                                       vectorMuBlockBUpperLimit,
+                                       vectorMuBlockCLowerLimit,
+                                       vectorMuBlockC,
+                                       vectorMuBlockCUpperLimit);
+}
+
+void LevelTwoDec::createDoubleBoxes()
+{
+    spbDoubleBoxAlpha = new QDoubleSpinBox(this);
+    spbDoubleBoxAlpha->setRange(0.1, 1.0);
+    spbDoubleBoxAlpha->setSingleStep(0.1);
+    spbDoubleBoxAlpha->setWrapping(false);
+    spbDoubleBoxAlpha->setToolTip(tr("Please change Coefficient \"A\""));
+    connect(spbDoubleBoxAlpha, SIGNAL(valueChanged(double)), this, SLOT(changedAlpha(double)));
+
+    spbDoubleBoxEps = new QwtCounter(this);
+    spbDoubleBoxEps->setRange(0.0001, 0.02, 0.0001);
+    spbDoubleBoxEps->setValue(0.003);
+    spbDoubleBoxEps->setToolTip(tr("Please change Coefficient \"Eps\""));
+    connect(spbDoubleBoxEps, SIGNAL(valueChanged(double)), this, SLOT(changedEps(double)));
+    connect(spbDoubleBoxEps, SIGNAL(valueChanged(double)), this, SLOT(setDoubleCountToLabel(double)));
+}
+
+void LevelTwoDec::createCharts()
+{
+    levelTwoChart = new LevelTwoChart(this);
+
+    readDataOfVectorsToChart();
+
+    levelTwoMuChart = new LevelTwoMuChart(this);
+
+    readDataOfVectorsToMuChart();
+}
+
+void LevelTwoDec::createToolBar()
+{
+    exportLevelTwoChart = new QAction(this);
+    exportLevelTwoChart->setIcon(QIcon("://icons/chart_icons/export_chart_icon.png"));
+    exportLevelTwoChart->setShortcut(QKeySequence::Print);
+    exportLevelTwoChart->setText(tr("Export"));
+    exportLevelTwoChart->setToolTip(tr("Export the Level One Decomposition Chart"));
+    connect(exportLevelTwoChart, SIGNAL(triggered()), this, SLOT(chooseExportCharts()));
+
+    printLevelTwoChart = new QAction(this);
+    printLevelTwoChart->setIcon(QIcon("://icons/chart_icons/print_chart_icon.png"));
+    printLevelTwoChart->setShortcut(QKeySequence::Save);
+    printLevelTwoChart->setText(tr("Print"));
+    printLevelTwoChart->setToolTip(tr("Print the Level One Decomposition Chart"));
+    connect(printLevelTwoChart, SIGNAL(triggered()), this, SLOT(choosePrintCharts()));
+
+    switchWidgetsLevelTwo = new QAction(this);
+    switchWidgetsLevelTwo->setIcon(QIcon("://icons/others_icons/swap_levels_32x32.png"));
+    switchWidgetsLevelTwo->setShortcut(Qt::CTRL + Qt::Key_F);
+    switchWidgetsLevelTwo->setText(tr("Switch"));
+    switchWidgetsLevelTwo->setToolTip(tr("Switch between charts and tables"));
+    connect(switchWidgetsLevelTwo, SIGNAL(triggered()), this, SLOT(hideLevelTwoWidgets()));
+
+    toolBar = new QToolBar(this);
+    toolBar->addAction(exportLevelTwoChart);
+    toolBar->addAction(printLevelTwoChart);
+
+    toolBar->addSeparator();
+
+    toolBar->addAction(switchWidgetsLevelTwo);
+
+    toolBar->addSeparator();
+
+    blocksToolTips = new QLabel(toolBar);
+    blocksToolTips->setText(tr("<strong><font color='#FFCC99'>Block A</font></strong><br>"
+                               "<strong><font color='#CCFFCC'>Block B</strong></font><br>"
+                               "<strong><font color='#99CCFF'>Block C</strong></font><br>"));
+    blocksToolTips->setContentsMargins(10, 10, 0, 0);
+    blocksToolTips->setToolTip(tr("The color in the table corresponds to the tip"));
+
+    toolBar->addWidget(blocksToolTips);
+
+    toolBarBox = new QWidget(toolBar);
+
+    horizToolBarLayout = new QHBoxLayout(toolBarBox);
+    horizToolBarLayout->setSpacing(10);
+
+    /* Spacer */
+    horizToolBarLayout->addWidget(new QWidget(toolBarBox), 10);
+
+    labelCoeffAlpha = new QLabel(toolBarBox);
+    labelCoeffAlpha->setText(tr("<h3>Coefficient \"A\": </h3>"));
+
+    labelCoeffEps = new QLabel(toolBarBox);
+    labelCoeffEps->setText(tr("<h3>Coefficient \"Eps\": </h3>"));
+
+    labelMeterEps = new QLabel(toolBarBox);
+    labelMeterEps->setText(tr("<h3> = 3 mm</h3>"));
+
+    horizToolBarLayout->addWidget(labelCoeffAlpha , 0);
+    horizToolBarLayout->addWidget(labelCoeffEps , 0);
+    horizToolBarLayout->addSpacing(10);
+    horizToolBarLayout->addWidget(spbDoubleBoxAlpha, 0);
+    horizToolBarLayout->addWidget(spbDoubleBoxEps, 0);
+    horizToolBarLayout->addWidget(labelMeterEps, 0);
+
+    labelCoeffEps->hide();
+    spbDoubleBoxEps->hide();
+    labelMeterEps->hide();
+
+    toolBar->addWidget(toolBarBox);
+
+    toolBar->setToolButtonStyle(Qt::ToolButtonTextUnderIcon);
 }
 
 void LevelTwoDec::createWidgets()
 {
+    labelWarning = new QLabel(this);
+    labelWarning->setText(tr("Warning! System is not stable! You need refer to a specialist or increase the coefficient \"Eps\""));
+    labelWarning->setStyleSheet("QLabel { color: #FFFFFF; background-color: #FF0000 }");
+    labelWarning->setContentsMargins(2, 2, 2, 2);
+
     horizLayoutTableLevelTwo = new QHBoxLayout;
     horizLayoutTableLevelTwo->addWidget(viewTableLevelTwoModel);
+    horizLayoutTableLevelTwo->addWidget(levelTwoChart);
+    horizLayoutTableLevelTwo->addWidget(levelTwoMuChart);
 
-    setLayout(horizLayoutTableLevelTwo);
+    vertLayoutTableLevelTwo = new QVBoxLayout(this);
+    vertLayoutTableLevelTwo->addWidget(toolBar);
+    vertLayoutTableLevelTwo->addLayout(horizLayoutTableLevelTwo);
+    vertLayoutTableLevelTwo->addWidget(labelWarning);
+
+    checkStability();
+
+    levelTwoMuChart->hide();
+
+    setLayout(vertLayoutTableLevelTwo);
+
+    qSwitch = true;
+}
+
+void LevelTwoDec::hideLevelTwoWidgets()
+{
+    if (qSwitch)
+    {
+        viewTableLevelTwoModel->setModel(tableStabilityLevelTwoModel);
+
+        levelTwoChart->hide();
+
+        labelCoeffAlpha->hide();
+        spbDoubleBoxAlpha->hide();
+
+
+        labelCoeffEps->show();
+        spbDoubleBoxEps->show();
+        labelMeterEps->show();
+
+        levelTwoMuChart->show();
+
+        qSwitch = false;
+    }
+    else
+    {
+        viewTableLevelTwoModel->setModel(tableLevelTwoModel);
+        levelTwoMuChart->hide();
+
+        labelCoeffEps->hide();
+        spbDoubleBoxEps->hide();
+        labelMeterEps->hide();
+
+        levelTwoChart->show();
+        labelCoeffAlpha->show();
+        spbDoubleBoxAlpha->show();
+
+        qSwitch = true;
+    }
+}
+
+void LevelTwoDec::checkStability()
+{
+    if (!tableStabilityLevelTwoModel->checkSystemStable())
+    {
+        labelWarning->show();
+    }
+    else
+    {
+        labelWarning->hide();
+    }
+}
+
+void LevelTwoDec::changedAlpha(double i)
+{
+    vectorForecastMuBlockA.clear();
+    vectorForecastMuBlockB.clear();
+    vectorForecastMuBlockC.clear();
+    vectorForecastAlphaBlockA.clear();
+    vectorForecastAlphaBlockB.clear();
+    vectorForecastAlphaBlockC.clear();
+
+    for (size_t j = 0; j <= row; ++j)
+    {
+        getMuForecast(j, i, avrg_mu_blockA, vectorMuBlockA, vectorForecastMuBlockA);
+        getMuForecast(j, i, avrg_mu_blockB, vectorMuBlockB, vectorForecastMuBlockB);
+        getMuForecast(j, i, avrg_mu_blockC, vectorMuBlockC, vectorForecastMuBlockC);
+
+        getAlphaForecast(j, i, avrg_alpha_blockA, vectorAlphaBlockA, vectorForecastAlphaBlockA);
+        getAlphaForecast(j, i, avrg_alpha_blockB, vectorAlphaBlockB, vectorForecastAlphaBlockB);
+        getAlphaForecast(j, i, avrg_alpha_blockC, vectorAlphaBlockC, vectorForecastAlphaBlockC);
+    }
+
+    tableLevelTwoModel->setCurrencyVectors(vectorDateToLevelTwo,
+                                           vectorMuBlockA,
+                                           vectorForecastMuBlockA,
+                                           vectorAlphaBlockA,
+                                           vectorForecastAlphaBlockA,
+                                           vectorMuBlockB,
+                                           vectorForecastMuBlockB,
+                                           vectorAlphaBlockB,
+                                           vectorForecastAlphaBlockB,
+                                           vectorMuBlockC,
+                                           vectorForecastMuBlockC,
+                                           vectorAlphaBlockC,
+                                           vectorForecastAlphaBlockC);
+
+    viewTableLevelTwoModel->selectRow(row);
+
+    // viewTableLevelOneModel->setFocus();
+
+    readDataOfVectorsToChart();
+}
+
+void LevelTwoDec::changedEps(double eps)
+{
+    vectorMuBlockALowerLimit.clear();
+    vectorMuBlockAUpperLimit.clear();
+    vectorMuBlockBLowerLimit.clear();
+    vectorMuBlockBUpperLimit.clear();
+    vectorMuBlockCLowerLimit.clear();
+    vectorMuBlockCUpperLimit.clear();
+
+    createBlocksVectorsSensReadingsLandH(true, eps, vectorBlockAToLevelTwo, vectorBlockALow);
+    createBlocksVectorsSensReadingsLandH(true, eps, vectorBlockBToLevelTwo, vectorBlockBLow);
+    createBlocksVectorsSensReadingsLandH(true, eps, vectorBlockCToLevelTwo, vectorBlockCLow);
+
+    createBlocksVectorsSensReadingsLandH(false, eps, vectorBlockAToLevelTwo, vectorBlockAHigh);
+    createBlocksVectorsSensReadingsLandH(false, eps, vectorBlockBToLevelTwo, vectorBlockBHigh);
+    createBlocksVectorsSensReadingsLandH(false, eps, vectorBlockCToLevelTwo, vectorBlockCHigh);
+
+
+    for (size_t i = 0; i < row; ++i)
+    {
+        vectorMuBlockALowerLimit.push_back(getMuLimits(i, vectorBlockALow));
+        vectorMuBlockBLowerLimit.push_back(getMuLimits(i, vectorBlockBLow));
+        vectorMuBlockCLowerLimit.push_back(getMuLimits(i, vectorBlockCLow));
+
+        vectorMuBlockAUpperLimit.push_back(getMuLimits(i, vectorBlockAHigh));
+        vectorMuBlockBUpperLimit.push_back(getMuLimits(i, vectorBlockBHigh));
+        vectorMuBlockCUpperLimit.push_back(getMuLimits(i, vectorBlockCHigh));
+    }
+
+    tableStabilityLevelTwoModel->setCurrencyVectors(vectorDateToLevelTwo,
+                                                    vectorMuBlockALowerLimit,
+                                                    vectorMuBlockA,
+                                                    vectorMuBlockAUpperLimit,
+                                                    vectorMuBlockBLowerLimit,
+                                                    vectorMuBlockB,
+                                                    vectorMuBlockBUpperLimit,
+                                                    vectorMuBlockCLowerLimit,
+                                                    vectorMuBlockC,
+                                                    vectorMuBlockCUpperLimit);
+
+    viewTableLevelTwoModel->selectRow(row - 1);
+
+    tableStabilityLevelTwoModel->setCurrencyVectors(vectorDateToLevelTwo,
+                                                    vectorMuBlockALowerLimit,
+                                                    vectorMuBlockA,
+                                                    vectorMuBlockAUpperLimit,
+                                                    vectorMuBlockBLowerLimit,
+                                                    vectorMuBlockB,
+                                                    vectorMuBlockBUpperLimit,
+                                                    vectorMuBlockCLowerLimit,
+                                                    vectorMuBlockC,
+                                                    vectorMuBlockCUpperLimit);
+
+    readDataOfVectorsToMuChart();
+    checkStability();
+}
+
+void LevelTwoDec::setDoubleCountToLabel(double eps)
+{
+    labelMeterEps->setText(QString(tr("<h3> = %1 mm</h3>")).arg(eps * 1000));
+}
+
+void LevelTwoDec::chooseExportCharts()
+{
+    QMessageBox *pmbx = new QMessageBox(QMessageBox::Information,
+                                        tr("Export"),
+                                        tr("What is the chart you want to export?"),
+                                        QMessageBox::Yes | QMessageBox::No | QMessageBox::Close);
+
+    pmbx->button(QMessageBox::Yes)->setText(tr("Phase Coordinates"));
+    pmbx->button(QMessageBox::No)->setText(tr("Available Deviations"));
+
+    int n = pmbx->exec();
+    delete pmbx;
+
+    if (n == QMessageBox::Yes)
+    {
+        levelTwoChart->exportLevelTwoPlotToImage();
+        return;
+    }
+    else if (n == QMessageBox::No)
+    {
+        levelTwoMuChart->exportLevelTwoPlotToImage();
+        return;
+    }
+    else if (n == QMessageBox::Close)
+    {
+        return;
+    }
+}
+
+void LevelTwoDec::choosePrintCharts()
+{
+    QMessageBox *pmbx = new QMessageBox(QMessageBox::Information,
+                                        tr("Print"),
+                                        tr("What is the chart you want to print?"),
+                                        QMessageBox::Yes | QMessageBox::No | QMessageBox::Close);
+
+    pmbx->button(QMessageBox::Yes)->setText(tr("Phase Coordinates"));
+    pmbx->button(QMessageBox::No)->setText(tr("Available Deviations"));
+
+    int n = pmbx->exec();
+    delete pmbx;
+
+    if (n == QMessageBox::Yes)
+    {
+        levelTwoChart->printLevelTwoPlot();
+        return;
+    }
+    else if (n == QMessageBox::No)
+    {
+        levelTwoMuChart->printLevelTwoPlot();
+        return;
+    }
+    else if (n == QMessageBox::Close)
+    {
+        return;
+    }
 }
 
 LevelTwoDec::~LevelTwoDec()
@@ -393,7 +763,7 @@ LevelTwoDec::~LevelTwoDec()
     /* Empty Destructor */
 }
 
-/********** TABLE ONE **********/
+/********** TABLE MODEL #1 **********/
 TableLevelTwoModel::TableLevelTwoModel(const QString &str_date,
                                        const QString &str_mu,
                                        const QString &str_alpha,
@@ -570,9 +940,9 @@ TableLevelTwoModel::~TableLevelTwoModel()
 {
     /* Empty Destructor */
 }
-/********** END TABLE ONE **********/
+/********** END TABLE MODEL #1 **********/
 
-/********** TABLE TWO **********/
+/********** TABLE MODEL #2 **********/
 TableStabilityLevelTwoModel::TableStabilityLevelTwoModel(const QString &str_date,
                                                          const QString &str_mu,
                                                          const QString &lower_limit,
@@ -633,10 +1003,40 @@ void TableStabilityLevelTwoModel::setCurrencyVectors(const QVector<QString> &tab
     reset();
 }
 
+bool TableStabilityLevelTwoModel::checkSystemStable() const
+{
+    QVector<bool> checkSystemStableVector;
+
+    for (size_t i = 0; i < row_count; ++i)
+    {
+        checkSystemStableVector.push_back(checkResult(i,
+                                                      muBlockALLVectorOfLevel,
+                                                      muBlockAVectorOfLevel,
+                                                      muBlockAULVectorOfLevel));
+        checkSystemStableVector.push_back(checkResult(i,
+                                                      muBlockBLLVectorOfLevel,
+                                                      muBlockBVectorOfLevel,
+                                                      muBlockBULVectorOfLevel));
+        checkSystemStableVector.push_back(checkResult(i,
+                                                      muBlockCLLVectorOfLevel,
+                                                      muBlockCVectorOfLevel,
+                                                      muBlockCULVectorOfLevel));
+    }
+
+    for (size_t j = 0; j < row_count* 3; ++j)
+    {
+        if (!checkSystemStableVector[j])
+        {
+            return false;
+        }
+    }
+    return true;
+}
+
 bool TableStabilityLevelTwoModel::checkResult(int i,
-                                              const QVector<double> &vectorUpper,
+                                              const QVector<double> &vectorLower,
                                               const QVector<double> &vectorMiddle,
-                                              const QVector<double> &vectorLower) const
+                                              const QVector<double> &vectorUpper) const
 {
     bool check_result = (vectorUpper[i] - vectorLower[i]) >=
             (vectorMiddle[i] - vectorMiddle[0]);
@@ -844,4 +1244,4 @@ TableStabilityLevelTwoModel::~TableStabilityLevelTwoModel()
 {
     /* Empty Destructor */
 }
-/********** END TABLE TWO **********/
+/********** END TABLE MODEL #2 **********/

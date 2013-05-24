@@ -19,15 +19,16 @@ class LevelOneChart : public QwtPlot
     QwtPlotMarker *mY;
     QwtPlotMarker *mX;
 
-    QwtPlotCurve *curve1;
-    QwtPlotCurve *curve2;
+    /* Cureves */
+    QwtPlotCurve *curveR;
+    QwtPlotCurve *curveF;
 
-    QwtSymbol *symbol1;
-    QwtSymbol *symbol2;
+    /* Symbols */
+    QwtSymbol *symbolR;
+    QwtSymbol *symbolF;
 
     void updateWidgetGradient();
     void plotAssay();
-
 protected:
     virtual void resizeEvent(QResizeEvent *);
 private slots:
@@ -38,8 +39,7 @@ public slots:
 public:
     LevelOneChart(QWidget *parent = 0);
 
-    void readDataOfVectors(bool qFirst,
-                   const QVector<double> &vectorMu,
+    void readDataOfVectors(const QVector<double> &vectorMu,
                    const QVector<double> &vectorMuForecast,
                    const QVector<QString> &vectorAlpha,
                    const QVector<QString> &vectorAlphaForecast);

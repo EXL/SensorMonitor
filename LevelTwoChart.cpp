@@ -1,4 +1,4 @@
-#include "LevelOneChart.h"
+#include "LevelTwoChart.h"
 
 #include <QFileDialog>
 #include <QImageWriter>
@@ -13,7 +13,7 @@
 #include <qwt_symbol.h>
 #include <qwt_plot_renderer.h>
 
-LevelOneChart::LevelOneChart(QWidget *parent)
+LevelTwoChart::LevelTwoChart(QWidget *parent)
     : QwtPlot(parent)
 {
     setAutoReplot(false);
@@ -82,7 +82,7 @@ LevelOneChart::LevelOneChart(QWidget *parent)
     setAutoReplot(true);
 }
 
-void LevelOneChart::plotAssay()
+void LevelTwoChart::plotAssay()
 {
     /* Grid settings */
     gridToPlot = new QwtPlotGrid();
@@ -93,34 +93,86 @@ void LevelOneChart::plotAssay()
     gridToPlot->attach(this);
 
     /* Dots and settings dots*/
-    symbolR = new QwtSymbol;
-    symbolR->setStyle(QwtSymbol::Ellipse);
-    symbolR->setBrush(QBrush(Qt::white));
-    symbolR->setPen(QPen(Qt::blue, 2));
-    symbolR->setSize(5, 5);
+    symbolRA = new QwtSymbol;
+    symbolRA->setStyle(QwtSymbol::Ellipse);
+    symbolRA->setBrush(QBrush(Qt::white));
+    symbolRA->setPen(QPen(QColor(255, 0, 0), 2));
+    symbolRA->setSize(5, 5);
 
-    symbolF = new QwtSymbol;
-    symbolF->setStyle(QwtSymbol::Ellipse);
-    symbolF->setBrush(QBrush(Qt::white));
-    symbolF->setPen(QPen(Qt::red, 2));
-    symbolF->setSize(5, 5);
+    symbolFA = new QwtSymbol;
+    symbolFA->setStyle(QwtSymbol::Ellipse);
+    symbolFA->setBrush(QBrush(Qt::white));
+    symbolFA->setPen(QPen(QColor(255, 204, 153), 2));
+    symbolFA->setSize(5, 5);
+
+    symbolRB = new QwtSymbol;
+    symbolRB->setStyle(QwtSymbol::Ellipse);
+    symbolRB->setBrush(QBrush(Qt::white));
+    symbolRB->setPen(QPen(QColor(0, 255, 0), 2));
+    symbolRB->setSize(5, 5);
+
+    symbolFB = new QwtSymbol;
+    symbolFB->setStyle(QwtSymbol::Ellipse);
+    symbolFB->setBrush(QBrush(Qt::white));
+    symbolFB->setPen(QPen(QColor(204, 255, 204), 2));
+    symbolFB->setSize(5, 5);
+
+    symbolRC = new QwtSymbol;
+    symbolRC->setStyle(QwtSymbol::Ellipse);
+    symbolRC->setBrush(QBrush(Qt::white));
+    symbolRC->setPen(QPen(QColor(0, 0, 255), 2));
+    symbolRC->setSize(5, 5);
+
+    symbolFC = new QwtSymbol;
+    symbolFC->setStyle(QwtSymbol::Ellipse);
+    symbolFC->setBrush(QBrush(Qt::white));
+    symbolFC->setPen(QPen(QColor(153, 204, 254), 2));
+    symbolFC->setSize(5, 5);
 
     /* Curves */
-    curveR = new QwtPlotCurve(tr("Real"));
-    curveF = new QwtPlotCurve(tr("Forecast"));
+    curveRA = new QwtPlotCurve(tr("[A] Real"));
+    curveFA = new QwtPlotCurve(tr("[A] Forecast"));
+    curveRB = new QwtPlotCurve(tr("[B] Real"));
+    curveFB = new QwtPlotCurve(tr("[B] Forecast"));
+    curveRC = new QwtPlotCurve(tr("[C] Real"));
+    curveFC = new QwtPlotCurve(tr("[C] Forecast"));
 
     /* Setting curves */
-    curveR->setRenderHint(QwtPlotItem::RenderAntialiased, true);
-    curveR->setLegendAttribute(QwtPlotCurve::LegendShowLine, true);
-    curveR->setPen(QPen(Qt::blue, 2));
-    curveR->setSymbol(symbolR);
-    curveR->attach(this);
+    curveRA->setRenderHint(QwtPlotItem::RenderAntialiased, true);
+    curveRA->setLegendAttribute(QwtPlotCurve::LegendShowLine, true);
+    curveRA->setPen(QPen(QColor(255, 0, 0), 2));
+    curveRA->setSymbol(symbolRA);
+    curveRA->attach(this);
 
-    curveF->setRenderHint(QwtPlotItem::RenderAntialiased, true);
-    curveF->setLegendAttribute(QwtPlotCurve::LegendShowLine, true);
-    curveF->setPen(QPen(Qt::red, 2));
-    curveF->setSymbol(symbolF);
-    curveF->attach(this);
+    curveFA->setRenderHint(QwtPlotItem::RenderAntialiased, true);
+    curveFA->setLegendAttribute(QwtPlotCurve::LegendShowLine, true);
+    curveFA->setPen(QPen(QColor(255, 204, 153), 2));
+    curveFA->setSymbol(symbolFA);
+    curveFA->attach(this);
+
+    curveRB->setRenderHint(QwtPlotItem::RenderAntialiased, true);
+    curveRB->setLegendAttribute(QwtPlotCurve::LegendShowLine, true);
+    curveRB->setPen(QPen(QColor(0, 255, 0), 2));
+    curveRB->setSymbol(symbolRB);
+    curveRB->attach(this);
+
+    curveFB->setRenderHint(QwtPlotItem::RenderAntialiased, true);
+    curveFB->setLegendAttribute(QwtPlotCurve::LegendShowLine, true);
+    curveFB->setPen(QPen(QColor(204, 255, 204), 2));
+    curveFB->setSymbol(symbolFB);
+    curveFB->attach(this);
+
+    curveRC->setRenderHint(QwtPlotItem::RenderAntialiased, true);
+    curveRC->setLegendAttribute(QwtPlotCurve::LegendShowLine, true);
+    curveRC->setPen(QPen(QColor(0, 0, 255), 2));
+    curveRC->setSymbol(symbolRC);
+    curveRC->attach(this);
+
+    curveFC->setRenderHint(QwtPlotItem::RenderAntialiased, true);
+    curveFC->setLegendAttribute(QwtPlotCurve::LegendShowLine, true);
+    curveFC->setPen(QPen(QColor(153, 204, 255), 2));
+    curveFC->setSymbol(symbolFC);
+    curveFC->attach(this);
 
     /* Insert markers */
     //  A horizontal line at y = 0.000038
@@ -132,53 +184,73 @@ void LevelOneChart::plotAssay()
     mY->setYValue(38e-06);
     mY->attach(this);
 
-    //  A vertical line at x = 370.638
+    //  A vertical line at x = 226.958
     mX = new QwtPlotMarker();
-    mX->setLabel(QString::fromLatin1("x = 370.638"));
+    mX->setLabel(QString::fromLatin1("x = 226.958"));
     mX->setLabelAlignment(Qt::AlignLeft | Qt::AlignBottom);
     mX->setLabelOrientation(Qt::Vertical);
     mX->setLineStyle(QwtPlotMarker::VLine);
     mX->setLinePen(QPen(Qt::black, 0, Qt::DashDotLine));
-    mX->setXValue(370.638);
+    mX->setXValue(226.958);
     mX->attach(this);
 
     /* Axes */
     /* X */
     setAxisTitle(xBottom, tr("Mu -->"));
-    setAxisScale(xBottom, 370.625, 370.651);
+    setAxisScale(xBottom, 226.945, 226.97);
 
     /* Y */
     setAxisTitle(yLeft, tr("Alpha -->"));
-    setAxisScale(yLeft, 0, 6e-05);
+    setAxisScale(yLeft, (-1e-05), 7e-05);
 }
 
-void LevelOneChart::readDataOfVectors(const QVector<double> &vectorMu,
-                              const QVector<double> &vectorMuForecast,
-                              const QVector<QString> &vectorAlpha,
-                              const QVector<QString> &vectorAlphaForecast)
+void LevelTwoChart::readDataOfVectors(const QVector<double> &vectorMuA,
+                                      const QVector<double> &vectorMuForecastA,
+                                      const QVector<QString> &vectorAlphaA,
+                                      const QVector<QString> &vectorAlphaForecastA,
+                                      const QVector<double> &vectorMuB,
+                                      const QVector<double> &vectorMuForecastB,
+                                      const QVector<QString> &vectorAlphaB,
+                                      const QVector<QString> &vectorAlphaForecastB,
+                                      const QVector<double> &vectorMuC,
+                                      const QVector<double> &vectorMuForecastC,
+                                      const QVector<QString> &vectorAlphaC,
+                                      const QVector<QString> &vectorAlphaForecastC)
 {
-    size_t row = vectorMu.size();
+    size_t row = vectorMuA.size();
 
     /* Data */
-    QPolygonF points_r;
-    QPolygonF points_f;
+    QPolygonF points_ra;
+    QPolygonF points_fa;
+    QPolygonF points_rb;
+    QPolygonF points_fb;
+    QPolygonF points_rc;
+    QPolygonF points_fc;
 
     /* Read Data from Array */
     for(size_t i = 0; i < row; ++i)
     {
-        points_r.push_back(QPointF(vectorMu[i], vectorAlpha[i].toDouble()));
+        points_ra.push_back(QPointF(vectorMuA[i], vectorAlphaA[i].toDouble()));
+        points_rb.push_back(QPointF(vectorMuB[i], vectorAlphaB[i].toDouble()));
+        points_rc.push_back(QPointF(vectorMuC[i], vectorAlphaC[i].toDouble()));
     }
 
     for(size_t i = 0; i <= row; ++i)
     {
-        points_f.push_back(QPointF(vectorMuForecast[i], vectorAlphaForecast[i].toDouble()));
+        points_fa.push_back(QPointF(vectorMuForecastA[i], vectorAlphaForecastA[i].toDouble()));
+        points_fb.push_back(QPointF(vectorMuForecastB[i], vectorAlphaForecastB[i].toDouble()));
+        points_fc.push_back(QPointF(vectorMuForecastC[i], vectorAlphaForecastC[i].toDouble()));
     }
 
-    curveR->setSamples(points_r);
-    curveF->setSamples(points_f);
+    curveRA->setSamples(points_ra);
+    curveFA->setSamples(points_fa);
+    curveRB->setSamples(points_rb);
+    curveFB->setSamples(points_fb);
+    curveRC->setSamples(points_rc);
+    curveFC->setSamples(points_fc);
 }
 
-void LevelOneChart::updateWidgetGradient()
+void LevelTwoChart::updateWidgetGradient()
 {
     QPalette pal = palette();
 
@@ -194,22 +266,22 @@ void LevelOneChart::updateWidgetGradient()
     setPalette(pal);
 }
 
-void LevelOneChart::resizeEvent(QResizeEvent *event)
+void LevelTwoChart::resizeEvent(QResizeEvent *event)
 {
     QwtPlot::resizeEvent(event);
 }
 
-void LevelOneChart::showItem(QwtPlotItem *item, bool on)
+void LevelTwoChart::showItem(QwtPlotItem *item, bool on)
 {
     item->setVisible(on);
 }
 
-void LevelOneChart::exportLevelOnePlotToImage()
+void LevelTwoChart::exportLevelTwoPlotToImage()
 {
 #ifndef QT_NO_PRINTER
-    QString fileName = "ChartOneLevel.pdf";
+    QString fileName = "ChartTwoLevel.pdf";
 #else
-    QString fileName = "ChartOneLevel.png";
+    QString fileName = "ChartTwoLevel.png";
 #endif
 
 #ifndef QT_NO_FILEDIALOG
@@ -251,7 +323,7 @@ void LevelOneChart::exportLevelOnePlotToImage()
     }
 }
 
-void LevelOneChart::printLevelOnePlot()
+void LevelTwoChart::printLevelTwoPlot()
 {
     QPrinter printer(QPrinter::HighResolution);
 
@@ -262,7 +334,7 @@ void LevelOneChart::printLevelOnePlot()
         printer.setDocName(docName);
     }
 
-    printer.setCreator(tr("OneLevelChart"));
+    printer.setCreator(tr("TwoLevelChart"));
     printer.setOrientation(QPrinter::Landscape);
 
     QPrintDialog dialog(&printer);
@@ -280,7 +352,7 @@ void LevelOneChart::printLevelOnePlot()
     }
 }
 
-LevelOneChart::~LevelOneChart()
+LevelTwoChart::~LevelTwoChart()
 {
     /* Empty destructor */
 }

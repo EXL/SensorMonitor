@@ -26,6 +26,11 @@ class LevelOneDec : public QWidget
 {
     Q_OBJECT
 
+    size_t row;
+    size_t col;
+
+    bool qSwitch;
+
     QString str_date;
     QString str_mu;
     QString str_alpha;
@@ -41,13 +46,8 @@ class LevelOneDec : public QWidget
     QVector<QString> vectorDateToLevelOne;
     QVector<QVector<double> > vectorSensorReadings2DToLevelOne;
 
-    size_t row;
-    size_t col;
-
     double avrg_mu;
     double avrg_alpha;
-
-    bool qSwitch;
 
     /********** FIRST TABLE **********/
     QVector<double> muVector;
@@ -94,6 +94,7 @@ class LevelOneDec : public QWidget
 
     LevelOneChart *levelOneChart;
     LevelOneMuChart * levelOneMuChart;
+
     /********** FIRST TABLE **********/
     double getMu(int i);
     double getAvrgMu();
@@ -114,8 +115,8 @@ class LevelOneDec : public QWidget
 
     double getMuLowerLimit(size_t i);
     double getMuHighLimit(size_t i);
-
     /********** END SECOND TABLE **********/
+
     void retranslateUi();
     void createTables();
     void setVectorsToTables();

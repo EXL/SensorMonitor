@@ -87,7 +87,7 @@ void LevelOneDec::createDoubleBoxes()
 
     spbDoubleBoxEps = new QwtCounter(this);
     spbDoubleBoxEps->setRange(0.0001, 0.02, 0.0001);
-    spbDoubleBoxEps->setValue(0.001);
+    spbDoubleBoxEps->setValue(0.003);
     spbDoubleBoxEps->setToolTip(tr("Please change Coefficient \"Eps\""));
     connect(spbDoubleBoxEps, SIGNAL(valueChanged(double)), this, SLOT(changedEps(double)));
     connect(spbDoubleBoxEps, SIGNAL(valueChanged(double)), this, SLOT(setDoubleCountToLabel(double)));
@@ -165,7 +165,7 @@ void LevelOneDec::createToolBar()
     labelCoeffEps->setText(tr("<h3>Coefficient \"Eps\": </h3>"));
 
     labelMeterEps = new QLabel(toolBarBox);
-    labelMeterEps->setText(tr("<h3> = 1 mm</h3>"));
+    labelMeterEps->setText(tr("<h3> = 3 mm</h3>"));
 
     horizToolBarLayout->addWidget(labelCoeffAlpha , 0);
     horizToolBarLayout->addWidget(labelCoeffEps , 0);
@@ -233,8 +233,8 @@ void LevelOneDec::setVectorsToTables()
         alphaVector.push_back(getAlphaString(i));
     }
 
-    createVector2DSensReadingsLow(0.001);
-    createVector2DSensReadingsHigh(0.001);
+    createVector2DSensReadingsLow(0.003);
+    createVector2DSensReadingsHigh(0.003);
 
     for (size_t i = 0; i < row; ++i)
     {
@@ -684,8 +684,16 @@ void LevelOneDec::exportReportToHTML()
     {
         out << "<font color = \"#FF0000\"><strong>Warning! System isn't stable!</strong></font><br/>";
     }
-    out << "Coefficient <strong>A</strong> is: " << (muVectorForecast[2] - muVector[1]) / (muVector[2] - muVector[1]);
-    out << "<br/>Coefficient <strong>Eps</strong> is: " << vector2DSensorReadingsHigh[0][2] - vectorSensorReadings2DToLevelOne[0][2];
+
+    if (muVectorForecast.size() > 3)
+    {
+        out << "Coefficient <strong>A</strong> is: " << (muVectorForecast[2] - muVector[1]) / (muVector[2] - muVector[1]);
+        out << "<br/>Coefficient <strong>Eps</strong> is: " << vector2DSensorReadingsHigh[0][2] - vectorSensorReadings2DToLevelOne[0][2];
+    }
+    else
+    {
+        out << "Add more value in table!<br/>";
+    }
 
     /********** TABLE ONE **********/
     out << htmlReport.tableOne;
@@ -717,7 +725,7 @@ void LevelOneDec::exportReportToHTML()
 
     for(size_t i = 0; i < row; ++i)
     {
-        bool qStable = (muUpperLimitVector[i] - muLowerLimitVector[i]) >= (muVector[i] - muVector[0]);
+        bool qStable = (muUpperLimitVector[i] - muLowerLimitVector[i]) >= (qAbs(muVector[i] - muVector[0]));
 
         /* Put DATE to HTML Table */
         out << htmlReport.trOpen << htmlReport.tdOpen << vectorDateToLevelOne[i] << htmlReport.tdClose;
@@ -727,7 +735,7 @@ void LevelOneDec::exportReportToHTML()
         out << htmlReport.tdOpen << muVector[i] << htmlReport.tdClose;
         out << htmlReport.tdOpen << muUpperLimitVector[i] << htmlReport.tdClose;
         out << htmlReport.tdOpen << muUpperLimitVector[i] - muLowerLimitVector[i] << htmlReport.tdClose;
-        out << htmlReport.tdOpen << muVector[i] - muVector[0] << htmlReport.tdClose;
+        out << htmlReport.tdOpen << qAbs(muVector[i] - muVector[0]) << htmlReport.tdClose;
         (qStable) ? out << "<td align = \"center\" bgcolor=\"#00FF00\">" << "Stable" << htmlReport.tdClose
                      : out << "<td align = \"center\" bgcolor=\"#FF0000\">" << "Unstable" << htmlReport.tdClose;
         out << htmlReport.trClose;
@@ -948,7 +956,7 @@ QVariant TableStabilityLevelOneModel::data(const QModelIndex &index, int role) c
         case 5:
             return (!index.row()) ?
                         QVariant(0) :
-                        QVariant(muVectorOfLevel[index.row()] - muVectorOfLevel[0]);
+                        QVariant(qAbs(muVectorOfLevel[index.row()] - muVectorOfLevel[0]));
         case 6:
             return (checkResult(index.row())) ?
                         QVariant(str_stable) :
@@ -1013,7 +1021,7 @@ QVariant TableStabilityLevelOneModel::headerData(int section, Qt::Orientation or
 bool TableStabilityLevelOneModel::checkResult(int i) const
 {
     bool check_result = (muUpperLimitVectorOfLevel[i] - muLowerLimitVectorOfLevel[i]) >=
-            (muVectorOfLevel[i] - muVectorOfLevel[0]);
+            (qAbs(muVectorOfLevel[i] - muVectorOfLevel[0]));
 
     if (check_result)
     {

@@ -686,8 +686,16 @@ void LevelTwoDec::exportReportToHTML()
     {
         out << "<font color = \"#FF0000\"><strong>Warning! System isn't stable!</strong></font><br/>";
     }
+
+    if (vectorForecastMuBlockA.size() > 3)
+    {
     out << "Coefficient <strong>A</strong> is: " << (vectorForecastMuBlockA[2] - vectorMuBlockA[1]) / (vectorMuBlockA[2] - vectorMuBlockA[1]);
     out << "<br/>Coefficient <strong>Eps</strong> is: " << vectorBlockAHigh[0][2] - vectorBlockAToLevelTwo[0][2];
+    }
+    else
+    {
+        out << "Add more value in table!<br/>";
+    }
 
     /********** TABLE ONE **********/
     out << htmlReport.tableOne;
@@ -735,9 +743,9 @@ void LevelTwoDec::exportReportToHTML()
 
     for(size_t i = 0; i < row; ++i)
     {
-        bool qStableBlockA = (vectorMuBlockAUpperLimit[i] - vectorMuBlockALowerLimit[i]) >= (vectorMuBlockA[i] - vectorMuBlockA[0]);
-        bool qStableBlockB = (vectorMuBlockBUpperLimit[i] - vectorMuBlockBLowerLimit[i]) >= (vectorMuBlockB[i] - vectorMuBlockB[0]);
-        bool qStableBlockC = (vectorMuBlockCUpperLimit[i] - vectorMuBlockCLowerLimit[i]) >= (vectorMuBlockC[i] - vectorMuBlockC[0]);
+        bool qStableBlockA = (vectorMuBlockAUpperLimit[i] - vectorMuBlockALowerLimit[i]) >= qAbs(vectorMuBlockA[i] - vectorMuBlockA[0]);
+        bool qStableBlockB = (vectorMuBlockBUpperLimit[i] - vectorMuBlockBLowerLimit[i]) >= qAbs(vectorMuBlockB[i] - vectorMuBlockB[0]);
+        bool qStableBlockC = (vectorMuBlockCUpperLimit[i] - vectorMuBlockCLowerLimit[i]) >= qAbs(vectorMuBlockC[i] - vectorMuBlockC[0]);
 
         /* Put DATE to HTML Table */
         out << htmlReport.trOpen << htmlReport.tdOpen << vectorDateToLevelTwo[i] << htmlReport.tdClose;
@@ -747,21 +755,21 @@ void LevelTwoDec::exportReportToHTML()
         out << htmlReport.tdOpen << vectorMuBlockA[i] << htmlReport.tdClose;
         out << htmlReport.tdOpen << vectorMuBlockAUpperLimit[i] << htmlReport.tdClose;
         out << htmlReport.tdOpen << vectorMuBlockAUpperLimit[i] - vectorMuBlockALowerLimit[i] << htmlReport.tdClose;
-        out << htmlReport.tdOpen << vectorMuBlockA[i] - vectorMuBlockA[0] << htmlReport.tdClose;
+        out << htmlReport.tdOpen << qAbs(vectorMuBlockA[i] - vectorMuBlockA[0]) << htmlReport.tdClose;
         (qStableBlockA) ? out << "<td align = \"center\" bgcolor=\"#00FF00\">" << "Stable" << htmlReport.tdClose
                      : out << "<td align = \"center\" bgcolor=\"#FF0000\">" << "Unstable" << htmlReport.tdClose;
         out << htmlReport.tdOpen << vectorMuBlockBLowerLimit[i] << htmlReport.tdClose;
         out << htmlReport.tdOpen << vectorMuBlockB[i] << htmlReport.tdClose;
         out << htmlReport.tdOpen << vectorMuBlockBUpperLimit[i] << htmlReport.tdClose;
         out << htmlReport.tdOpen << vectorMuBlockBUpperLimit[i] - vectorMuBlockBLowerLimit[i] << htmlReport.tdClose;
-        out << htmlReport.tdOpen << vectorMuBlockB[i] - vectorMuBlockB[0] << htmlReport.tdClose;
+        out << htmlReport.tdOpen << qAbs(vectorMuBlockB[i] - vectorMuBlockB[0]) << htmlReport.tdClose;
         (qStableBlockB) ? out << "<td align = \"center\" bgcolor=\"#00FF00\">" << "Stable" << htmlReport.tdClose
                      : out << "<td align = \"center\" bgcolor=\"#FF0000\">" << "Unstable" << htmlReport.tdClose;
         out << htmlReport.tdOpen << vectorMuBlockCLowerLimit[i] << htmlReport.tdClose;
         out << htmlReport.tdOpen << vectorMuBlockC[i] << htmlReport.tdClose;
         out << htmlReport.tdOpen << vectorMuBlockCUpperLimit[i] << htmlReport.tdClose;
         out << htmlReport.tdOpen << vectorMuBlockCUpperLimit[i] - vectorMuBlockCLowerLimit[i] << htmlReport.tdClose;
-        out << htmlReport.tdOpen << vectorMuBlockC[i] - vectorMuBlockC[0] << htmlReport.tdClose;
+        out << htmlReport.tdOpen << qAbs(vectorMuBlockC[i] - vectorMuBlockC[0]) << htmlReport.tdClose;
         (qStableBlockC) ? out << "<td align = \"center\" bgcolor=\"#00FF00\">" << "Stable" << htmlReport.tdClose
                      : out << "<td align = \"center\" bgcolor=\"#FF0000\">" << "Unstable" << htmlReport.tdClose;
         out << htmlReport.trClose;
@@ -1248,7 +1256,7 @@ bool TableStabilityLevelTwoModel::checkResult(int i,
                                               const QVector<double> &vectorUpper) const
 {
     bool check_result = (vectorUpper[i] - vectorLower[i]) >=
-            (vectorMiddle[i] - vectorMiddle[0]);
+            (qAbs(vectorMiddle[i] - vectorMiddle[0]));
 
     if (check_result)
     {
@@ -1289,7 +1297,7 @@ QVariant TableStabilityLevelTwoModel::data(const QModelIndex &index, int role) c
         case 5:
             return (!index.row()) ?
                         QVariant(0) :
-                        QVariant(muBlockAVectorOfLevel[index.row()] - muBlockAVectorOfLevel[0]);
+                        QVariant(qAbs(muBlockAVectorOfLevel[index.row()] - muBlockAVectorOfLevel[0]));
         case 6:
             return (checkResult(index.row(),
                                 muBlockALLVectorOfLevel,
@@ -1308,7 +1316,7 @@ QVariant TableStabilityLevelTwoModel::data(const QModelIndex &index, int role) c
         case 11:
             return (!index.row()) ?
                         QVariant(0) :
-                        QVariant(muBlockBVectorOfLevel[index.row()] - muBlockBVectorOfLevel[0]);
+                        QVariant(qAbs(muBlockBVectorOfLevel[index.row()] - muBlockBVectorOfLevel[0]));
         case 12:
             return (checkResult(index.row(),
                                 muBlockBLLVectorOfLevel,
@@ -1327,7 +1335,7 @@ QVariant TableStabilityLevelTwoModel::data(const QModelIndex &index, int role) c
         case 17:
             return (!index.row()) ?
                         QVariant(0) :
-                        QVariant(muBlockCVectorOfLevel[index.row()] - muBlockCVectorOfLevel[0]);
+                        QVariant(qAbs(muBlockCVectorOfLevel[index.row()] - muBlockCVectorOfLevel[0]));
         case 18:
             return (checkResult(index.row(),
                                 muBlockCLLVectorOfLevel,

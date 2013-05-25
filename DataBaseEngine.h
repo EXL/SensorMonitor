@@ -8,8 +8,10 @@
 #include <QTableView>
 #include <QtSql/QSqlTableModel>
 #include <QAbstractTableModel>
+#include <QItemDelegate>
 
 class TableModelOfVectors;
+class DoubleSpinBoxDelegate;
 
 struct structHTML
 {
@@ -72,6 +74,8 @@ class DataBaseEngine: public QWidget
     QSqlTableModel *sqlTableModel;
 
     TableModelOfVectors *tableModelOfVectors;
+
+    DoubleSpinBoxDelegate *spinBoxDelegate;
 
     void readDataBaseTableToVectors(QSqlQuery &a_query);
 #ifdef _DEBUG
@@ -141,6 +145,29 @@ public:
                               const QString *sensor);
 
     ~TableModelOfVectors();
+};
+
+class DoubleSpinBoxDelegate : public QItemDelegate
+{
+    Q_OBJECT
+
+    int decimals;
+
+    void setDecimals(int decimals);
+    int getDecimals();
+protected:
+    QWidget *createEditor(QWidget *parent, const QStyleOptionViewItem &option,
+                          const QModelIndex &index) const;
+
+    void setEditorData(QWidget *editor, const QModelIndex &index) const;
+    void setModelData(QWidget *editor, QAbstractItemModel *model,
+                      const QModelIndex &index) const;
+
+    void updateEditorGeometry(QWidget *editor,
+                              const QStyleOptionViewItem &option, const QModelIndex &index) const;
+public:
+    DoubleSpinBoxDelegate(QObject *parent = 0);
+    ~DoubleSpinBoxDelegate();
 };
 
 #endif // DATABASE_H

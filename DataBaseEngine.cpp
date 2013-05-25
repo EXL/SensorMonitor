@@ -7,6 +7,7 @@
 
 #include <QDesktopServices>
 #include <QAbstractButton>
+#include <QDoubleSpinBox>
 #include <QTextStream>
 #include <QFileDialog>
 #include <QUrl>
@@ -47,6 +48,11 @@ void DataBaseEngine::connectToSQLiteDataBase()
 
     tableViewWidget = new QTableView(this);
     sqlTableModel = new QSqlTableModel(this);
+
+    spinBoxDelegate = new DoubleSpinBoxDelegate(this);
+
+    /* For not to edit table cells */
+    tableViewWidget->setEditTriggers(QAbstractItemView::NoEditTriggers);
 }
 
 void DataBaseEngine::createTableInSQLiteDataBase()
@@ -96,9 +102,6 @@ void DataBaseEngine::formTableInSQLiteDataBase()
     /* Setting QSqlTableModel */
     sqlTableModel->setTable("sensors");
 
-    /* For not to edit table cells */
-    tableViewWidget->setEditTriggers(QAbstractItemView::NoEditTriggers);
-
     /* For edit table cells */
     //sqlTableModel->setEditStrategy(QSqlTableModel::OnFieldChange);
 
@@ -119,13 +122,19 @@ void DataBaseEngine::formTableInSQLiteDataBase()
 #endif
 
     tableViewWidget->setModel(sqlTableModel);
+
+    /* Set DoubleSpinBox in Table */
+    for (size_t i = 1; i <= countColumnOfDataBase; ++i)
+    {
+        tableViewWidget->setItemDelegateForColumn(i, spinBoxDelegate);
+    }
+
     switchTableModel = true;
     tableViewWidget->selectRow(countRowsOfDataBase - 1);
 
     // imatrix.clear();
 
     readDataBaseTableToVectors(a_query);
-
 }
 
 bool DataBaseEngine::getSwitchTable()
@@ -1042,3 +1051,65 @@ TableModelOfVectors::~TableModelOfVectors()
     /* Empty Destructor */
 }
 /************** END TABLE MODEL *************/
+
+/************** START TABLE DELEGATE *************/
+DoubleSpinBoxDelegate::DoubleSpinBoxDelegate(QObject *parent)
+    : QItemDelegate(parent)
+{
+    this->setDecimals(4);
+}
+
+QWidget *DoubleSpinBoxDelegate::createEditor(QWidget *parent,
+                                           const QStyleOptionViewItem &/* option */,
+                                           const QModelIndex &/* index */) const
+{
+    QDoubleSpinBox *editor = new QDoubleSpinBox(parent);
+
+    editor->setMaximum(1000.00);
+    editor->setMinimum(-1000.00);
+    editor->setSingleStep(0.0001);
+    editor->setDecimals(this->decimals);
+
+    return editor;
+}
+
+void DoubleSpinBoxDelegate::setEditorData(QWidget *editor, const QModelIndex &index) const
+{
+    double value = index.model()->data(index, Qt::EditRole).toDouble();
+    QDoubleSpinBox *realEdit = static_cast<QDoubleSpinBox*>(editor);
+
+    realEdit->setValue(value);
+}
+
+void DoubleSpinBoxDelegate::setModelData(QWidget *editor, QAbstractItemModel *model, const QModelIndex &index) const
+{
+    QDoubleSpinBox *realEdit = static_cast<QDoubleSpinBox*>(editor);
+    double value;
+
+    value = realEdit->value();
+
+    model->setData(index, value, Qt::EditRole);
+}
+
+void DoubleSpinBoxDelegate::updateEditorGeometry(QWidget *editor,
+                                               const QStyleOptionViewItem &option,
+                                               const QModelIndex &) const
+{
+    editor->setGeometry(option.rect);
+}
+
+void DoubleSpinBoxDelegate::setDecimals(int decimals)
+{
+    this->decimals = decimals;
+}
+
+int DoubleSpinBoxDelegate::getDecimals()
+{
+    return this->decimals;
+}
+
+DoubleSpinBoxDelegate::~DoubleSpinBoxDelegate()
+{
+    /* Empty Destructor */
+}
+/************** END TABLE DELEGATE *************/

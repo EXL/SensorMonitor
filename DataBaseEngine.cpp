@@ -29,6 +29,15 @@ DataBaseEngine::DataBaseEngine(QWidget *parent)
 void DataBaseEngine::connectToSQLiteDataBase()
 {
     QSqlDatabase dbase = QSqlDatabase::addDatabase("QSQLITE");
+
+    if(!QFile("sensors.sqlite").size())
+    {
+        countColumnOfDataBase = 16;
+#ifdef _DEBUG
+        qDebug() << "[DataBaseEngine] Sensors.sqlite is empty, CountColumnOfDataBase will be 16!";
+#endif
+    }
+
     dbase.setDatabaseName("sensors.sqlite");
     if (!dbase.open())
     {

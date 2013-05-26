@@ -24,6 +24,14 @@ LevelTwoChart::LevelTwoChart(QWidget *parent)
     /* Zoom in/out with the wheel */
     (void)new QwtPlotMagnifier(canvas());
 
+    /* Strings */
+    strRA = tr("[A] Real");
+    strFA = tr("[A] Forecast");
+    strRB = tr("[B] Real");
+    strFB = tr("[B] Forecast");
+    strRC = tr("[C] Real");
+    strFC = tr("[C] Forecast");
+
     /* Picker  */
     plotPicker = new QwtPlotPicker(QwtPlot::xBottom,
                                    QwtPlot::yLeft,
@@ -76,6 +84,8 @@ LevelTwoChart::LevelTwoChart(QWidget *parent)
         }
         else
         {
+            forecastDotB->setVisible(false);
+            forecastDotC->setVisible(false);
             items[i]->setVisible(false);
         }
     }
@@ -129,13 +139,31 @@ void LevelTwoChart::plotAssay()
     symbolFC->setPen(QPen(QColor(153, 204, 254), 2));
     symbolFC->setSize(5, 5);
 
+    forecastSymbolA = new QwtSymbol;
+    forecastSymbolA->setStyle(QwtSymbol::Diamond);
+    forecastSymbolA->setBrush(QBrush(Qt::yellow));
+    forecastSymbolA->setPen(QPen(QColor(255, 204, 153), 2));
+    forecastSymbolA->setSize(10, 10);
+
+    forecastSymbolB = new QwtSymbol;
+    forecastSymbolB->setStyle(QwtSymbol::Diamond);
+    forecastSymbolB->setBrush(QBrush(Qt::yellow));
+    forecastSymbolB->setPen(QPen(QColor(204, 255, 204), 2));
+    forecastSymbolB->setSize(10, 10);
+
+    forecastSymbolC = new QwtSymbol;
+    forecastSymbolC->setStyle(QwtSymbol::Diamond);
+    forecastSymbolC->setBrush(QBrush(Qt::yellow));
+    forecastSymbolC->setPen(QPen(QColor(153, 204, 254), 2));
+    forecastSymbolC->setSize(10, 10);
+
     /* Curves */
-    curveRA = new QwtPlotCurve(tr("[A] Real"));
-    curveFA = new QwtPlotCurve(tr("[A] Forecast"));
-    curveRB = new QwtPlotCurve(tr("[B] Real"));
-    curveFB = new QwtPlotCurve(tr("[B] Forecast"));
-    curveRC = new QwtPlotCurve(tr("[C] Real"));
-    curveFC = new QwtPlotCurve(tr("[C] Forecast"));
+    curveRA = new QwtPlotCurve(strRA);
+    curveFA = new QwtPlotCurve(strFA);
+    curveRB = new QwtPlotCurve(strRB);
+    curveFB = new QwtPlotCurve(strFB);
+    curveRC = new QwtPlotCurve(strRC);
+    curveFC = new QwtPlotCurve(strFC);
 
     /* Setting curves */
     curveRA->setRenderHint(QwtPlotItem::RenderAntialiased, true);
@@ -194,6 +222,18 @@ void LevelTwoChart::plotAssay()
     mX->setXValue(226.958);
     mX->attach(this);
 
+    forecastDotA = new QwtPlotMarker();
+    forecastDotA->setSymbol(forecastSymbolA);
+    forecastDotA->attach(this);
+
+    forecastDotB = new QwtPlotMarker();
+    forecastDotB->setSymbol(forecastSymbolB);
+    forecastDotB->attach(this);
+
+    forecastDotC = new QwtPlotMarker();
+    forecastDotC->setSymbol(forecastSymbolC);
+    forecastDotC->attach(this);
+
     /* Axes */
     /* X */
     setAxisTitle(xBottom, tr("Mu -->"));
@@ -242,6 +282,10 @@ void LevelTwoChart::readDataOfVectors(const QVector<double> &vectorMuA,
         points_fc.push_back(QPointF(vectorMuForecastC[i], vectorAlphaForecastC[i].toDouble()));
     }
 
+    forecastDotA->setValue(QPointF(vectorMuForecastA[row], vectorAlphaForecastA[row].toDouble()));
+    forecastDotB->setValue(QPointF(vectorMuForecastB[row], vectorAlphaForecastB[row].toDouble()));
+    forecastDotC->setValue(QPointF(vectorMuForecastC[row], vectorAlphaForecastC[row].toDouble()));
+
     curveRA->setSamples(points_ra);
     curveFA->setSamples(points_fa);
     curveRB->setSamples(points_rb);
@@ -273,6 +317,43 @@ void LevelTwoChart::resizeEvent(QResizeEvent *event)
 
 void LevelTwoChart::showItem(QwtPlotItem *item, bool on)
 {
+    if(item->title().text() == strRA && on)
+    {
+        setAxisScale(xBottom, 226.945, 226.97);
+    }
+    else if (item->title().text() == strFA)
+    {
+        forecastDotA->setVisible(on);
+        if (on)
+        {
+            setAxisScale(xBottom, 226.945, 226.97);
+        }
+    }
+    else if(item->title().text() == strRB && on)
+    {
+        setAxisScale(xBottom, 226.945, 226.97);
+    }
+    else if(item->title().text() == strFB)
+    {
+        forecastDotB->setVisible(on);
+        if (on)
+        {
+            setAxisScale(xBottom, 226.945, 226.97);
+        }
+    }
+    else if (item->title().text() == strRC && on)
+    {
+        setAxisScale(xBottom, 185.325, 185.355);
+    }
+    else if (item->title().text() == strFC)
+    {
+        forecastDotC->setVisible(on);
+
+        if (on)
+        {
+            setAxisScale(xBottom, 185.325, 185.355);
+        }
+    }
     item->setVisible(on);
 }
 

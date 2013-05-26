@@ -6,6 +6,7 @@
 #include "LineChartWidget.h"
 #include "OGLContextWidget.h"
 #include "LevelsWidget.h"
+#include "NumSensorsDialog.h"
 
 #include <QTranslator>
 #include <QMainWindow>
@@ -15,17 +16,11 @@
 #include <QSettings>
 #include <QTableView>
 #include <QSplitter>
-#include <QSpinBox>
-#include <QLabel>
-#include <QDialog>
-#include <QPushButton>
 
 class MainWindow : public QMainWindow
 {
     /* Macros for signal, slots, tr(), etc. */
     Q_OBJECT
-    
-    size_t columnInDataBase;
 
     /********** Start Translators **********/
     QTranslator appTranslator;
@@ -77,15 +72,6 @@ class MainWindow : public QMainWindow
     QToolBar *fileToolBar;
     QToolBar *viewToolBar;
     /********** End ToolBars **********/
-
-    /********** Start Dialog **********/
-    QDialog *changeNumSensorsDialog;
-    QSpinBox *spinBoxForDialog;
-    QLabel *labelSensorTextForDialog;
-    QLabel *labelWarningTextForDialog;
-    QPushButton *btnOkDialog;
-    QPushButton *btnCancelDialog;
-    /********** End Dialog **********/
 
     /********** Start Widgets **********/
     QWidget *mainWidget;
@@ -143,8 +129,6 @@ private slots:
     void showAboutDialog();
 
     void showChangeNumSensorsDialog();
-    void setColumn(int);
-    void setColumnInDataBase();
 protected:
     void closeEvent(QCloseEvent *event);
 public:

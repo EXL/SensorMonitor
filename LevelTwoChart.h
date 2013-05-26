@@ -15,9 +15,19 @@ class LevelTwoChart : public QwtPlot
     QwtLegend *legend;
     QwtPlotGrid *gridToPlot;
 
+    QString strRA;
+    QString strFA;
+    QString strRB;
+    QString strFB;
+    QString strRC;
+    QString strFC;
+
     /* Markers */
     QwtPlotMarker *mY;
     QwtPlotMarker *mX;
+    QwtPlotMarker *forecastDotA;
+    QwtPlotMarker *forecastDotB;
+    QwtPlotMarker *forecastDotC;
 
     /* Cureves */
     QwtPlotCurve *curveRA;
@@ -34,6 +44,9 @@ class LevelTwoChart : public QwtPlot
     QwtSymbol *symbolFB;
     QwtSymbol *symbolRC;
     QwtSymbol *symbolFC;
+    QwtSymbol *forecastSymbolA;
+    QwtSymbol *forecastSymbolB;
+    QwtSymbol *forecastSymbolC;
 
     void updateWidgetGradient();
     void plotAssay();

@@ -27,7 +27,6 @@ MainWindow::MainWindow(QWidget *parent)
 
     /* 0 */
     createAndReadDataBase();
-    columnInDataBase = dataBaseEngine->getColumnsCount();
 
     /* 1 */
     createActions();
@@ -279,42 +278,7 @@ void MainWindow::createLanguageMenu()
 
 void MainWindow::createChangeNumSensorsDialog()
 {
-    changeNumSensorsDialog = new QDialog();
 
-    spinBoxForDialog = new QSpinBox();
-    spinBoxForDialog->setRange(4, 16);
-    spinBoxForDialog->setSingleStep(1);
-    spinBoxForDialog->setValue(columnInDataBase);
-    connect(spinBoxForDialog, SIGNAL(valueChanged(int)), this, SLOT(setColumn(int)));
-
-    labelSensorTextForDialog = new QLabel();
-    labelSensorTextForDialog->setBuddy(spinBoxForDialog);
-
-    labelWarningTextForDialog = new QLabel();
-
-    btnOkDialog = new QPushButton();
-    connect(btnOkDialog, SIGNAL(clicked()), this, SLOT(setColumnInDataBase()));
-
-    btnCancelDialog = new QPushButton();
-    connect(btnCancelDialog, SIGNAL(clicked()), changeNumSensorsDialog, SLOT(close()));
-
-    QHBoxLayout *hLayForSpinBoxDialog = new QHBoxLayout;
-    hLayForSpinBoxDialog->addWidget(labelSensorTextForDialog);
-    hLayForSpinBoxDialog->addStretch();
-    hLayForSpinBoxDialog->addWidget(spinBoxForDialog);
-
-    QHBoxLayout *hLayForButtonsDialog = new QHBoxLayout;
-    hLayForButtonsDialog->addStretch();
-    hLayForButtonsDialog->addWidget(btnOkDialog);
-    hLayForButtonsDialog->addWidget(btnCancelDialog);
-
-    QVBoxLayout *vLayForWidgetsDialog = new QVBoxLayout;
-    vLayForWidgetsDialog->addLayout(hLayForSpinBoxDialog);
-    vLayForWidgetsDialog->addWidget(labelWarningTextForDialog);
-    vLayForWidgetsDialog->addLayout(hLayForButtonsDialog);
-
-    changeNumSensorsDialog->setLayout(vLayForWidgetsDialog);
-    changeNumSensorsDialog->setModal(true);
 }
 
 void MainWindow::readSettingsFromIniFile()
@@ -431,7 +395,7 @@ void MainWindow::retranslateUi()
 {
     /********** Start About Dialog **********/
     aboutTitle = tr("About SensorMonitor");
-    aboutBody = tr("<p><b>Version 0.5</b></p>"
+    aboutBody = tr("<p><b>Version 0.56</b></p>"
                    "<p>Application and source code available under license GPL v.3.0:</p>"
                    "<p><a href='http://www.gnu.org/licenses/gpl.html'>GNU GENERAL PUBLIC LICENSE</a></p>"
                    "<p><a href='https://github.com/EXLMOTODEV/SensorMonitor'>Source Code on GitHub</a></p>"
@@ -542,16 +506,6 @@ void MainWindow::retranslateUi()
     // schemeGroupBox->setToolTip(tr("Sensors Scheme"));
     /********** End Central Widget **********/
 
-    /********** Start Dialog **********/
-    spinBoxForDialog->setToolTip(tr("Please change the number of sensors on the building"));
-    labelSensorTextForDialog->setText(tr("&The number of sensors:"));
-    labelWarningTextForDialog->setText(tr("Please note, the recommended number of sensors in the building - 16.\n"
-                                          "After changing the number of sensors, the DataBase clears."));
-    btnOkDialog->setText("&Ok");
-    btnCancelDialog->setText("&Cancel");
-    changeNumSensorsDialog->setWindowTitle(tr("Number of sensors"));
-    /********** End Dialog **********/
-
     /********** Start Other Widgets **********/
     dataBaseEngine->retranslateUi();
     schemeWidget->retranslateUi();
@@ -644,18 +598,14 @@ void MainWindow::showAboutDialog()
 
 void MainWindow::showChangeNumSensorsDialog()
 {
-    changeNumSensorsDialog->show();
-}
+    NumSensorsDialog dialog(dataBaseEngine->getColumnsCount());
+    dialog.retranslateUi();
+    dialog.exec();
 
-void MainWindow::setColumn(int column)
-{
-    columnInDataBase = column;
-}
-
-void MainWindow::setColumnInDataBase()
-{
-    dataBaseEngine->setColumnsGlobal(columnInDataBase);
-    changeNumSensorsDialog->close();
+    if (dialog.getClicked())
+    {
+        dataBaseEngine->setColumnsGlobal(dialog.getCountColumn());
+    }
 }
 
 void MainWindow::writeGlobalSettings()

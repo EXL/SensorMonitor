@@ -24,6 +24,10 @@ LevelOneChart::LevelOneChart(QWidget *parent)
     /* Zoom in/out with the wheel */
     (void)new QwtPlotMagnifier(canvas());
 
+    /* Strings */
+    strR = tr("Real");
+    strF = tr("Forecast");
+
     /* Picker  */
     plotPicker = new QwtPlotPicker(QwtPlot::xBottom,
                                    QwtPlot::yLeft,
@@ -105,9 +109,15 @@ void LevelOneChart::plotAssay()
     symbolF->setPen(QPen(Qt::red, 2));
     symbolF->setSize(5, 5);
 
+    forecastSymbol = new QwtSymbol;
+    forecastSymbol->setStyle(QwtSymbol::Diamond);
+    forecastSymbol->setBrush(QBrush(Qt::yellow));
+    forecastSymbol->setPen(QPen(Qt::red, 2));
+    forecastSymbol->setSize(10, 10);
+
     /* Curves */
-    curveR = new QwtPlotCurve(tr("Real"));
-    curveF = new QwtPlotCurve(tr("Forecast"));
+    curveR = new QwtPlotCurve(strR);
+    curveF = new QwtPlotCurve(strF);
 
     /* Setting curves */
     curveR->setRenderHint(QwtPlotItem::RenderAntialiased, true);
@@ -142,6 +152,10 @@ void LevelOneChart::plotAssay()
     mX->setXValue(370.638);
     mX->attach(this);
 
+    forecastDot = new QwtPlotMarker();
+    forecastDot->setSymbol(forecastSymbol);
+    forecastDot->attach(this);
+
     /* Axes */
     /* X */
     setAxisTitle(xBottom, tr("Mu -->"));
@@ -174,6 +188,8 @@ void LevelOneChart::readDataOfVectors(const QVector<double> &vectorMu,
         points_f.push_back(QPointF(vectorMuForecast[i], vectorAlphaForecast[i].toDouble()));
     }
 
+    forecastDot->setValue(QPointF(vectorMuForecast[row], vectorAlphaForecast[row].toDouble()));
+
     curveR->setSamples(points_r);
     curveF->setSamples(points_f);
 }
@@ -201,6 +217,10 @@ void LevelOneChart::resizeEvent(QResizeEvent *event)
 
 void LevelOneChart::showItem(QwtPlotItem *item, bool on)
 {
+    if (item->title().text() == strF)
+    {
+        forecastDot->setVisible(on);
+    }
     item->setVisible(on);
 }
 

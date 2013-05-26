@@ -1,46 +1,50 @@
-5/26/2013 (v. 0.5):
-+: Fix DataBaseEngine
-+: Add dynamic count of sensors
+5/26/2013 (v. 0.56):
++: Added NumSensorsDialog [Experimental]
++: Fixed DataBaseEngine
++: Added dynamic count of sensors [Experimental]
++: Added Forecast point
++: Fixed scale chart for third plot
 
-5/24/2013 (v. 0.5):
+5/24/2013 (v. 0.55):
 +: Fixed avrg forecast vectors.
-+: Try Level II of decomposition.
++: Trying Level II of decomposition.
 +: Finished Level II of decomposition.
 +: Refactoring.
-+: Add HTML Reports on Levels
++: Added HTML Reports on Levels
 
-5/20/2013 (v. 0.5):
+5/20/2013 (v. 0.54):
 +: Fixed calc forecast values.
 +: Fixed Translations int table.
 +: Finally ended Level One.
 
-5/16/2013 (v. 0.5):
+5/16/2013 (v. 0.53):
 +: Fixed Opening/Saving file dialog
 
-5/13/2013 (v. 0.5):
+5/13/2013 (v. 0.52):
 +: Push SensorMonitor to GitHub
 
-5/8/2013 (v. 0.5):
-+: Fix LoadTable
-+: Add SensorsScheme
-+: Fix SensorScheme
+5/8/2013 (v. 0.51):
++: Fixed LoadTable
++: Added SensorsScheme
++: Fixed SensorScheme
 
 5/4/2013 (v. 0.5):
 +: Full code refactoring
 +: Fixed Memory Leaked
-+: Add save window state and geometry after closing
++: Chandged UI
++: Added save window state and geometry after closing
 
 4/9/2013 (v. 0.43):
 +: Fixed "Level One" tab
 +: Trying translations to Russian
-+: Add resource file
++: Added resource file
 
 3/26/2013 (v. 0.43):
-+: Add plot into tab5
++: Added plot into tab5
 +: Calculate "Alfa"
 
 3/21/2013 (v. 0.42):
-+: Add statusBar (footer)
++: Added statusBar (footer)
 +: Calculation "Mu"
 +: Update tables on tabs
 +: Experiments with tabs
@@ -50,34 +54,34 @@
 +: Edit "*.pro" file for crosscompiling
 
 3/19/2013 (v. 0.41):
-+: Add Generate HTML table func
-+: Add DEFINE
-+: Fix MAX cells in SQLite Table
-+: Add example tabs
++: Added Generate HTML table func
++: Added DEFINE
++: Fixed MAX cells in SQLite Table
++: Added example tabs
 
 3/18/2013 (v. 0.4):
 +: Transformation 8 sensors to 16 sensors
-+: Add Date to plot
-+: Add read Arr from DATA file
++: Added Date to plot
++: Added read Arr from DATA file
 +: Fixed save/read DATA file
 +: Maximized main window
 +: Fixed save/read TEXT file
 +: Added ToolTips for Buttons
-+: Add label to main window (widget)
-+: Add example levels implemintation to third tab from QGridLayout (trying)
++: Added label to main window (widget)
++: Added example levels implemintation to third tab from QGridLayout (trying)
 
 3/5/2013 (v. 0.3):
-+: Add RegExp for check double/float
++: Added RegExp for check double/float
 +: Transition from QMainWindow to QWidget in Plot
-+: Add datacomm.h for share data (this is good style)
++: Added datacomm.h for share data (this is good style)
 +: Remove "bad" DataComm class and gcc flag "-fpermissive"
-+: Add CHANGELOG.txt
-+: Add TableData to plots
-+: Fix TableData in plot
-+: Try OpenGL Context (worked)
++: Added CHANGELOG.txt
++: Added TableData to plots
++: Fixed TableData in plot
++: Trying OpenGL Context (worked)
 +: Removing excess QWidget in plot
 
 3/4/2013 (v. 0.2):
-+: Add TXT Importer/Exporter
-+: Add DAT Importer
++: Added TXT Importer/Exporter
++: Added DAT Importer
 +: Planing DAT Exporter

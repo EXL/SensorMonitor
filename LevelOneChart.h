@@ -15,9 +15,14 @@ class LevelOneChart : public QwtPlot
     QwtLegend *legend;
     QwtPlotGrid *gridToPlot;
 
+    /* Strings names */
+    QString strR;
+    QString strF;
+
     /* Markers */
     QwtPlotMarker *mY;
     QwtPlotMarker *mX;
+    QwtPlotMarker *forecastDot;
 
     /* Cureves */
     QwtPlotCurve *curveR;
@@ -26,6 +31,7 @@ class LevelOneChart : public QwtPlot
     /* Symbols */
     QwtSymbol *symbolR;
     QwtSymbol *symbolF;
+    QwtSymbol *forecastSymbol;
 
     void updateWidgetGradient();
     void plotAssay();

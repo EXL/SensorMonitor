@@ -28,6 +28,17 @@ LevelTwoMuChart::LevelTwoMuChart(QWidget *parent)
     /* Zoom in/out with the wheel */
     (void)new QwtPlotMagnifier(canvas());
 
+    /* Strings */
+    strMuLowerBlockA = tr("[A] Mu[Low.Lim]");
+    strMuBlockA = tr("[A] Mu");
+    strMuUpperBlockA = tr("[A] Mu[Upp.Lim]");
+    strMuLowerBlockB = tr("[B] Mu[Low.Lim]");
+    strMuBlockB = tr("[B] Mu");
+    strMuUpperBlockB = tr("[B] Mu[Upp.Lim]");
+    strMuLowerBlockC = tr("[C] Mu[Low.Lim]");
+    strMuBlockC = tr("[C] Mu");
+    strMuUpperBlockC = tr("[C] Mu[Upp.Lim]");
+
     /* Picker  */
     plotPicker = new QwtPlotPicker(QwtPlot::xBottom,
                                    QwtPlot::yLeft,
@@ -152,15 +163,15 @@ void LevelTwoMuChart::plotAssay()
     symbolMuUpperBlockC->setSize(5, 5);
 
     /* Curves */
-    curveMuLowerBlockA = new QwtPlotCurve(tr("[A] Mu[Low.Lim]"));
-    curveMuBlockA = new QwtPlotCurve(tr("[A] Mu"));
-    curveMuUpperBlockA = new QwtPlotCurve(tr("[A] Mu[Upp.Lim]"));
-    curveMuLowerBlockB = new QwtPlotCurve(tr("[B] Mu[Low.Lim]"));
-    curveMuBlockB = new QwtPlotCurve(tr("[B] Mu"));
-    curveMuUpperBlockB = new QwtPlotCurve(tr("[B] Mu[Upp.Lim]"));
-    curveMuLowerBlockC = new QwtPlotCurve(tr("[C] Mu[Low.Lim]"));
-    curveMuBlockC = new QwtPlotCurve(tr("[C] Mu"));
-    curveMuUpperBlockC = new QwtPlotCurve(tr("[C] Mu[Upp.Lim]"));
+    curveMuLowerBlockA = new QwtPlotCurve(strMuLowerBlockA);
+    curveMuBlockA = new QwtPlotCurve(strMuBlockA);
+    curveMuUpperBlockA = new QwtPlotCurve(strMuUpperBlockA);
+    curveMuLowerBlockB = new QwtPlotCurve(strMuLowerBlockB);
+    curveMuBlockB = new QwtPlotCurve(strMuBlockB);
+    curveMuUpperBlockB = new QwtPlotCurve(strMuUpperBlockB);
+    curveMuLowerBlockC = new QwtPlotCurve(strMuLowerBlockC);
+    curveMuBlockC = new QwtPlotCurve(strMuBlockC);
+    curveMuUpperBlockC = new QwtPlotCurve(strMuUpperBlockC);
 
     /* Setting curves */
     curveMuLowerBlockA->setRenderHint(QwtPlotItem::RenderAntialiased, true);
@@ -313,6 +324,18 @@ void LevelTwoMuChart::resizeEvent(QResizeEvent *event)
 
 void LevelTwoMuChart::showItem(QwtPlotItem *item, bool on)
 {
+    bool qScale = (item->title().text() == strMuLowerBlockC
+            || item->title().text() == strMuUpperBlockC
+            || item->title().text() == strMuBlockC);
+
+    if(qScale)
+    {
+        setAxisScale(xBottom, 185.325, 185.355);
+        item->setVisible(on);
+        return;
+    }
+
+    setAxisScale(xBottom, 226.9345, 226.9775);
     item->setVisible(on);
 }
 

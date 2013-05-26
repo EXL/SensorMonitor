@@ -15,6 +15,17 @@ class LevelTwoMuChart : public QwtPlot
     QwtLegend *legend;
     QwtPlotGrid *gridToPlot;
 
+    /* Strings */
+    QString strMuLowerBlockA;
+    QString strMuBlockA;
+    QString strMuUpperBlockA;
+    QString strMuLowerBlockB;
+    QString strMuBlockB;
+    QString strMuUpperBlockB;
+    QString strMuLowerBlockC;
+    QString strMuBlockC;
+    QString strMuUpperBlockC;
+
     /* Markers */
     QwtPlotMarker *mY;
     QwtPlotMarker *mX;

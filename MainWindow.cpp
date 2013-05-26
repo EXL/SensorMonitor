@@ -27,6 +27,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     /* 0 */
     createAndReadDataBase();
+    columnInDataBase = dataBaseEngine->getColumnsCount();
 
     /* 1 */
     createActions();
@@ -35,24 +36,27 @@ MainWindow::MainWindow(QWidget *parent)
     createMenus();
 
     /* 3 */
-    createToolBars();
+    createChangeNumSensorsDialog();
 
     /* 4 */
-    createStatusBar();
+    createToolBars();
 
     /* 5 */
-    readSettingsFromIniFile();
+    createStatusBar();
 
     /* 6 */
-    createCentralWidget();
+    readSettingsFromIniFile();
 
     /* 7 */
-    settingsWindow();
+    createCentralWidget();
 
     /* 8 */
-    readGlobalSettings();
+    settingsWindow();
 
     /* 9 */
+    readGlobalSettings();
+
+    /* 10 */
     retranslateUi();
 }
 
@@ -114,6 +118,10 @@ void MainWindow::createActions()
     // saveTableToHtmlFileAction->setShortcut(QKeySequence::UnknownKey);
     saveTableToHtmlFileAction->setIcon(QIcon("://icons/save_icons/save_html_32x32.png"));
     connect(saveTableToHtmlFileAction, SIGNAL(triggered()), dataBaseEngine, SLOT(saveTableToHtmlFile()));
+
+    changeNumSensorsAction = new QAction(this);
+    // changeNumSensorsAction->setShortcut(QKeySequence::UnknownKey);
+    connect(changeNumSensorsAction, SIGNAL(triggered()), this, SLOT(showChangeNumSensorsDialog()));
 
     changeTableModelAction = new QAction(this);
     changeTableModelAction->setShortcut(Qt::CTRL + Qt::Key_F);
@@ -201,6 +209,7 @@ void MainWindow::createMenus()
 
     tableMenu->addSeparator();
 
+    tableMenu->addAction(changeNumSensorsAction);
     tableMenu->addAction(changeTableModelAction);
 
     createLanguageMenu();
@@ -268,6 +277,46 @@ void MainWindow::createLanguageMenu()
     }
 }
 
+void MainWindow::createChangeNumSensorsDialog()
+{
+    changeNumSensorsDialog = new QDialog();
+
+    spinBoxForDialog = new QSpinBox();
+    spinBoxForDialog->setRange(4, 16);
+    spinBoxForDialog->setSingleStep(1);
+    spinBoxForDialog->setValue(columnInDataBase);
+    connect(spinBoxForDialog, SIGNAL(valueChanged(int)), this, SLOT(setColumn(int)));
+
+    labelSensorTextForDialog = new QLabel();
+    labelSensorTextForDialog->setBuddy(spinBoxForDialog);
+
+    labelWarningTextForDialog = new QLabel();
+
+    btnOkDialog = new QPushButton();
+    connect(btnOkDialog, SIGNAL(clicked()), this, SLOT(setColumnInDataBase()));
+
+    btnCancelDialog = new QPushButton();
+    connect(btnCancelDialog, SIGNAL(clicked()), changeNumSensorsDialog, SLOT(close()));
+
+    QHBoxLayout *hLayForSpinBoxDialog = new QHBoxLayout;
+    hLayForSpinBoxDialog->addWidget(labelSensorTextForDialog);
+    hLayForSpinBoxDialog->addStretch();
+    hLayForSpinBoxDialog->addWidget(spinBoxForDialog);
+
+    QHBoxLayout *hLayForButtonsDialog = new QHBoxLayout;
+    hLayForButtonsDialog->addStretch();
+    hLayForButtonsDialog->addWidget(btnOkDialog);
+    hLayForButtonsDialog->addWidget(btnCancelDialog);
+
+    QVBoxLayout *vLayForWidgetsDialog = new QVBoxLayout;
+    vLayForWidgetsDialog->addLayout(hLayForSpinBoxDialog);
+    vLayForWidgetsDialog->addWidget(labelWarningTextForDialog);
+    vLayForWidgetsDialog->addLayout(hLayForButtonsDialog);
+
+    changeNumSensorsDialog->setLayout(vLayForWidgetsDialog);
+    changeNumSensorsDialog->setModal(true);
+}
+
 void MainWindow::readSettingsFromIniFile()
 {
     QString locale = appSettings->value("Language").toString();
@@ -304,6 +353,10 @@ void MainWindow::createToolBars()
     fileToolBar->addSeparator();
 
     fileToolBar->addAction(changeTableModelAction);
+
+    //    fileToolBar->addSeparator();
+
+    //    fileToolBar->addWidget(spinBoxForDialog);
 
     fileToolBar->setStyleSheet("QToolBar {background-color: #D9F1FF}");
 
@@ -420,11 +473,14 @@ void MainWindow::retranslateUi()
     saveTableToHtmlFileAction->setText(tr("&Export DataBase to HTLM page"));
     saveTableToHtmlFileAction->setStatusTip(tr("Export DataBase table to general HTLM page with table"));
 
+    changeNumSensorsAction->setText(tr("&Change the number of sensors"));
+    changeNumSensorsAction->setStatusTip(tr("Change the number of sensors in SQLite DataBase"));
+
     changeTableModelAction->setText(tr("&Swap tables SQLite <-> Memory"));
     changeTableModelAction->setStatusTip(tr("Switch SQLite DataBase Table on a Table in Memory and back"));
 
     setNoEditTablePolicy->setText(tr("&Disable editing table"));
-    setNoEditTablePolicy->setStatusTip(tr("&Disable editing SQLite DataBase table"));
+    setNoEditTablePolicy->setStatusTip(tr("Disable editing SQLite DataBase table"));
 
     setEditTablePolicy->setText(tr("&Enable editing table"));
     setEditTablePolicy->setStatusTip(tr("Enable editing SQLite DataBase table"));
@@ -483,8 +539,18 @@ void MainWindow::retranslateUi()
 
     schemeGroupBox->setTitle(tr("Sensors Scheme"));
     schemeGroupBox->setStatusTip(tr("Arrangement of sensors on the building. Click to display sensors"));
-    // schemeGroupBox->setToolTip(tr("Sensors scheme"));
+    // schemeGroupBox->setToolTip(tr("Sensors Scheme"));
     /********** End Central Widget **********/
+
+    /********** Start Dialog **********/
+    spinBoxForDialog->setToolTip(tr("Please change the number of sensors on the building"));
+    labelSensorTextForDialog->setText(tr("&The number of sensors:"));
+    labelWarningTextForDialog->setText(tr("Please note, the recommended number of sensors in the building - 16.\n"
+                                          "After changing the number of sensors, the DataBase clears."));
+    btnOkDialog->setText("&Ok");
+    btnCancelDialog->setText("&Cancel");
+    changeNumSensorsDialog->setWindowTitle(tr("Number of sensors"));
+    /********** End Dialog **********/
 
     /********** Start Other Widgets **********/
     dataBaseEngine->retranslateUi();
@@ -574,6 +640,22 @@ void MainWindow::showLevelsWindowSlot()
 void MainWindow::showAboutDialog()
 {
     QMessageBox::about(this, aboutTitle, aboutBody);
+}
+
+void MainWindow::showChangeNumSensorsDialog()
+{
+    changeNumSensorsDialog->show();
+}
+
+void MainWindow::setColumn(int column)
+{
+    columnInDataBase = column;
+}
+
+void MainWindow::setColumnInDataBase()
+{
+    dataBaseEngine->setColumnsGlobal(columnInDataBase);
+    changeNumSensorsDialog->close();
 }
 
 void MainWindow::writeGlobalSettings()

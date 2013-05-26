@@ -55,7 +55,7 @@ class DataBaseEngine: public QWidget
     QString overflowWarningButtons[3];
 
     QString emptyDataBaseTableDialog;
-    QString clearDataBaseSlot[2];
+    QString clearDataBaseSlot[3];
 
     QString saveHTMLFileSlot[4];
     QString saveTextFileSlot[4];
@@ -82,6 +82,7 @@ class DataBaseEngine: public QWidget
     void printVector2DDebug();
 #endif
     void showTableModelOfVectors();
+    void dropingTable();
 public slots:
     void addRandomRowToSQLiteDataBase();
     void clearDataBase();
@@ -99,6 +100,8 @@ public slots:
     void setEditTablePolicy();
 
     void emptyDataBaseCriticalError();
+
+    void setColumnsGlobal(int);
 public:
     DataBaseEngine(QWidget *parent = 0);
 
@@ -113,6 +116,8 @@ public:
     QVector<QString> &getSensorsDateVector();
 
     void retranslateUi();
+
+    int getColumnsCount();
 
     ~DataBaseEngine();
 };

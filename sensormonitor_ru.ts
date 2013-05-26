@@ -258,87 +258,92 @@ Show HTML Page in your browser?</source>
 <context>
     <name>DataBaseEngine</name>
     <message>
-        <location filename="DataBaseEngine.cpp" line="160"/>
+        <location filename="DataBaseEngine.cpp" line="167"/>
         <source>DATA</source>
         <translation>ДАТА</translation>
     </message>
     <message>
-        <location filename="DataBaseEngine.cpp" line="161"/>
+        <location filename="DataBaseEngine.cpp" line="168"/>
         <source>Sensor</source>
         <translation>Датчик</translation>
     </message>
     <message>
-        <location filename="DataBaseEngine.cpp" line="165"/>
+        <location filename="DataBaseEngine.cpp" line="172"/>
         <source>FATAL: Database Error!</source>
         <translation>Фатальная ошибка Базы Данных!</translation>
     </message>
     <message>
-        <location filename="DataBaseEngine.cpp" line="166"/>
+        <location filename="DataBaseEngine.cpp" line="173"/>
         <source>SQLite Driver not found!</source>
         <translation>Драйвер SQLite не найден!</translation>
     </message>
     <message>
-        <location filename="DataBaseEngine.cpp" line="168"/>
+        <location filename="DataBaseEngine.cpp" line="175"/>
         <source>Warning!</source>
         <translation>Внимание!</translation>
     </message>
     <message>
-        <location filename="DataBaseEngine.cpp" line="169"/>
+        <location filename="DataBaseEngine.cpp" line="176"/>
         <source>&lt;html&gt;The table was very large (256 rows overflow limit). &lt;br&gt;Adding items can slow down the program. &lt;br&gt;&lt;br&gt;You can:&lt;ul&gt;&lt;li&gt;Continue;&lt;/li&gt;&lt;li&gt;Clear the DataBase;&lt;/li&gt;&lt;li&gt;Generate the HTML Table.&lt;/li&gt;&lt;/ul&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;Таблица переполнена (превышен лимит в 256 строк).&lt;br&gt;Добавление строк в таблицу может замедлить работу программы.&lt;br&gt;&lt;br&gt;Вы можете:&lt;ul&gt;&lt;li&gt;Продолжить добавлять строки;&lt;/li&gt;&lt;li&gt;Очистить Базу Данных;&lt;/li&gt;&lt;li&gt;Сгенерировать HTML-отчет с таблицей.&lt;/li&gt;&lt;/ul&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="DataBaseEngine.cpp" line="179"/>
+        <location filename="DataBaseEngine.cpp" line="186"/>
         <source>Continue</source>
         <translation>Продолжить</translation>
     </message>
     <message>
-        <location filename="DataBaseEngine.cpp" line="180"/>
+        <location filename="DataBaseEngine.cpp" line="187"/>
         <source>Clear DataBase</source>
         <translation>Очистить Базу Данных</translation>
     </message>
     <message>
-        <location filename="DataBaseEngine.cpp" line="181"/>
+        <location filename="DataBaseEngine.cpp" line="188"/>
         <source>Generate HTML</source>
         <translation>Сгенерировать HTML</translation>
     </message>
     <message>
-        <location filename="DataBaseEngine.cpp" line="183"/>
+        <location filename="DataBaseEngine.cpp" line="190"/>
         <source>Error!</source>
         <translation>Ошибка!</translation>
     </message>
     <message>
-        <location filename="DataBaseEngine.cpp" line="184"/>
+        <location filename="DataBaseEngine.cpp" line="191"/>
         <source>Success!</source>
         <translation>Выполнено!</translation>
     </message>
     <message>
-        <location filename="DataBaseEngine.cpp" line="186"/>
+        <location filename="DataBaseEngine.cpp" line="193"/>
         <source>DataBase Question</source>
         <translation>База Данных</translation>
     </message>
     <message>
-        <location filename="DataBaseEngine.cpp" line="187"/>
+        <location filename="DataBaseEngine.cpp" line="194"/>
         <source>Delete SQLite DataBase?</source>
         <translation>Удалить (очистить) SQLite Базу Данных?</translation>
     </message>
     <message>
-        <location filename="DataBaseEngine.cpp" line="189"/>
+        <location filename="DataBaseEngine.cpp" line="195"/>
+        <source>Load the table deletes the existing database.</source>
+        <translation>Загрузка таблицы удалит существующую Базу Данных.</translation>
+    </message>
+    <message>
+        <location filename="DataBaseEngine.cpp" line="197"/>
         <source>Empty SQLite DataBase table!</source>
         <translation>Пустая таблица базы данных SQLite!</translation>
     </message>
     <message>
-        <location filename="DataBaseEngine.cpp" line="192"/>
+        <location filename="DataBaseEngine.cpp" line="200"/>
         <source>Save *.html file</source>
         <translation>Сохранить &quot;*.html&quot; файл</translation>
     </message>
     <message>
-        <location filename="DataBaseEngine.cpp" line="193"/>
+        <location filename="DataBaseEngine.cpp" line="201"/>
         <source>HTML page (*.html);;All Files (*)</source>
         <translation>HTML страница (*.html);;Все файлы (*)</translation>
     </message>
     <message>
-        <location filename="DataBaseEngine.cpp" line="194"/>
+        <location filename="DataBaseEngine.cpp" line="202"/>
         <source>Can&apos;t write HTML file!
 Please check RW permission or correct select the file.
 And try again!</source>
@@ -347,7 +352,7 @@ And try again!</source>
 в данную директорию и повторите попытку снова!</translation>
     </message>
     <message>
-        <location filename="DataBaseEngine.cpp" line="197"/>
+        <location filename="DataBaseEngine.cpp" line="205"/>
         <source>HTML page is created successfully.
 Written %1x%2 cells!
 
@@ -358,18 +363,18 @@ Show HTML Page in your browser?</source>
 Показать HTML страницу в вашем браузере?</translation>
     </message>
     <message>
-        <location filename="DataBaseEngine.cpp" line="201"/>
+        <location filename="DataBaseEngine.cpp" line="209"/>
         <source>Save *.txt file</source>
         <translation>Сохранить *.txt файл</translation>
     </message>
     <message>
-        <location filename="DataBaseEngine.cpp" line="202"/>
-        <location filename="DataBaseEngine.cpp" line="218"/>
+        <location filename="DataBaseEngine.cpp" line="210"/>
+        <location filename="DataBaseEngine.cpp" line="226"/>
         <source>Text File (*.txt);;All Files (*)</source>
         <translation>Текстовый файл (*.txt);;Все файлы (*)</translation>
     </message>
     <message>
-        <location filename="DataBaseEngine.cpp" line="203"/>
+        <location filename="DataBaseEngine.cpp" line="211"/>
         <source>Can&apos;t write TXT file!
 Please check RW permission or correct select the file.
 And try again!</source>
@@ -378,25 +383,25 @@ And try again!</source>
 в данную директорию и повторите попытку снова!</translation>
     </message>
     <message>
-        <location filename="DataBaseEngine.cpp" line="206"/>
+        <location filename="DataBaseEngine.cpp" line="214"/>
         <source>TXT file is created successfully.
 Written %1 lines!</source>
         <translation>Текстовой файл успешно создан.
 Записано %1 строк(и)!</translation>
     </message>
     <message>
-        <location filename="DataBaseEngine.cpp" line="209"/>
+        <location filename="DataBaseEngine.cpp" line="217"/>
         <source>Save *.dat file</source>
         <translation>Сохранить *.dat файл</translation>
     </message>
     <message>
-        <location filename="DataBaseEngine.cpp" line="210"/>
-        <location filename="DataBaseEngine.cpp" line="234"/>
+        <location filename="DataBaseEngine.cpp" line="218"/>
+        <location filename="DataBaseEngine.cpp" line="242"/>
         <source>Data File (*.dat);;All Files (*)</source>
         <translation>Файлы Данных (*.dat);;Все файлы (*)</translation>
     </message>
     <message>
-        <location filename="DataBaseEngine.cpp" line="211"/>
+        <location filename="DataBaseEngine.cpp" line="219"/>
         <source>Can&apos;t write DATA file!
 Please check RW permission or correct select the file.
 And try again!</source>
@@ -405,19 +410,19 @@ And try again!</source>
 в данную директорию и повторите попытку снова!</translation>
     </message>
     <message>
-        <location filename="DataBaseEngine.cpp" line="214"/>
+        <location filename="DataBaseEngine.cpp" line="222"/>
         <source>DATA file is created successfully.
 Added %1 lines!</source>
         <translation>Файл данных успешно создан.
 Записано %1 строк(и)!</translation>
     </message>
     <message>
-        <location filename="DataBaseEngine.cpp" line="217"/>
+        <location filename="DataBaseEngine.cpp" line="225"/>
         <source>Open *.txt file</source>
         <translation>Открыть *.txt файл</translation>
     </message>
     <message>
-        <location filename="DataBaseEngine.cpp" line="219"/>
+        <location filename="DataBaseEngine.cpp" line="227"/>
         <source>Can&apos;t read TXT file!
 Please check RW permission or correct select the file.
 And try again!</source>
@@ -426,25 +431,29 @@ And try again!</source>
 и их корректность и повторите попытку снова!</translation>
     </message>
     <message>
-        <location filename="DataBaseEngine.cpp" line="222"/>
+        <location filename="DataBaseEngine.cpp" line="230"/>
         <source>Attention!
 You try to read TXT file format, which unsuitable size of columns!
+The number of columns must be equal to %1!
+Information: Number of columns in the file - %2</source>
+        <oldsource>Attention!
+You try to read TXT file format, which unsuitable size of columns!
 The number of columns must be equal to 17!
-Information: Number of columns in the file - %1</source>
+Information: Number of columns in the file - %1</oldsource>
         <translation>Внимание!
 Вы пытаетесь прочесть текстовой файл с неправильным количеством колонок!
-Количество колонок в файле должно быть равно 17!
-Информация: Количество колонок в этом файле - %1</translation>
+Количество колонок в файле должно быть равно %1!
+Информация: Количество колонок в этом файле - %2</translation>
     </message>
     <message>
-        <location filename="DataBaseEngine.cpp" line="227"/>
+        <location filename="DataBaseEngine.cpp" line="235"/>
         <source>The data in the TXT file is corrupted!
 The first mistake: %1</source>
         <translation>Данные в текстовом файле повреждены!
 Первая ошибка: %1</translation>
     </message>
     <message>
-        <location filename="DataBaseEngine.cpp" line="229"/>
+        <location filename="DataBaseEngine.cpp" line="237"/>
         <source>TXT file is read successfully.
 Read %1 lines!
 
@@ -455,12 +464,12 @@ Show plot?</source>
 Показать график?</translation>
     </message>
     <message>
-        <location filename="DataBaseEngine.cpp" line="233"/>
+        <location filename="DataBaseEngine.cpp" line="241"/>
         <source>Open *.dat file</source>
         <translation>Открыть *.dat файл</translation>
     </message>
     <message>
-        <location filename="DataBaseEngine.cpp" line="235"/>
+        <location filename="DataBaseEngine.cpp" line="243"/>
         <source>Can&apos;t read DATA file!
 Please check RW permission or correct select the file.
 And try again!</source>
@@ -469,14 +478,14 @@ And try again!</source>
 и их корректность и повторите попытку снова!</translation>
     </message>
     <message>
-        <location filename="DataBaseEngine.cpp" line="238"/>
+        <location filename="DataBaseEngine.cpp" line="246"/>
         <source>Invalid &quot;*.dat&quot; file!
 Please check data file and try again!</source>
         <translation>Некорректный &quot;*.dat&quot; файл!
 Пожалуйста проверьте его и повторите попытку снова!</translation>
     </message>
     <message>
-        <location filename="DataBaseEngine.cpp" line="240"/>
+        <location filename="DataBaseEngine.cpp" line="248"/>
         <source>Data file is read successfully.
 Read %1 lines!
 
@@ -728,121 +737,125 @@ Show plot?</source>
         <translation>Неустойчиво</translation>
     </message>
     <message>
-        <location filename="LevelOneDecWidget.cpp" line="85"/>
+        <location filename="LevelOneDecWidget.cpp" line="86"/>
         <source>Please change Coefficient &quot;A&quot;</source>
         <translation>Пожалуйста измените коэффициент &quot;A&quot;</translation>
     </message>
     <message>
-        <location filename="LevelOneDecWidget.cpp" line="91"/>
+        <location filename="LevelOneDecWidget.cpp" line="92"/>
         <source>Please change Coefficient &quot;Eps&quot;</source>
         <translation>Пожалуйста измените коэффициент &quot;Eps&quot;</translation>
     </message>
     <message>
-        <location filename="LevelOneDecWidget.cpp" line="117"/>
-        <location filename="LevelOneDecWidget.cpp" line="527"/>
+        <location filename="LevelOneDecWidget.cpp" line="118"/>
+        <location filename="LevelOneDecWidget.cpp" line="528"/>
         <source>Export</source>
         <translation>Экспорт</translation>
     </message>
     <message>
-        <location filename="LevelOneDecWidget.cpp" line="118"/>
+        <location filename="LevelOneDecWidget.cpp" line="119"/>
         <source>Export the Level One Decomposition Chart</source>
         <translation>Экспортировать график первого уровня декомпозиции</translation>
     </message>
     <message>
-        <location filename="LevelOneDecWidget.cpp" line="124"/>
-        <location filename="LevelOneDecWidget.cpp" line="556"/>
+        <location filename="LevelOneDecWidget.cpp" line="125"/>
+        <location filename="LevelOneDecWidget.cpp" line="557"/>
         <source>Print</source>
         <translation>Печать</translation>
     </message>
     <message>
-        <location filename="LevelOneDecWidget.cpp" line="125"/>
+        <location filename="LevelOneDecWidget.cpp" line="126"/>
         <source>Print the Level One Decomposition Chart</source>
         <translation>Распечатать график первого уровня декомпозиции</translation>
     </message>
     <message>
-        <location filename="LevelOneDecWidget.cpp" line="131"/>
+        <location filename="LevelOneDecWidget.cpp" line="132"/>
         <source>Export HTML</source>
         <translation>Экспорт HTML</translation>
     </message>
     <message>
-        <location filename="LevelOneDecWidget.cpp" line="132"/>
+        <location filename="LevelOneDecWidget.cpp" line="133"/>
         <source>Export detailed report of Level One in the HTML page</source>
         <translation>Экспортировать детальный отчет первого уровня декомпозиции в HTML-страницу</translation>
     </message>
     <message>
-        <location filename="LevelOneDecWidget.cpp" line="138"/>
+        <location filename="LevelOneDecWidget.cpp" line="139"/>
         <source>Switch</source>
         <translation>Переключить</translation>
     </message>
     <message>
-        <location filename="LevelOneDecWidget.cpp" line="139"/>
+        <location filename="LevelOneDecWidget.cpp" line="140"/>
         <source>Switch between charts and tables</source>
         <translation>Переключиться между таблицами и графиками</translation>
     </message>
     <message>
-        <location filename="LevelOneDecWidget.cpp" line="162"/>
+        <location filename="LevelOneDecWidget.cpp" line="163"/>
         <source>&lt;h3&gt;Coefficient &quot;A&quot;: &lt;/h3&gt;</source>
         <translation>&lt;h3&gt;Коэффициент &quot;A&quot;: &lt;/h3&gt;</translation>
     </message>
     <message>
-        <location filename="LevelOneDecWidget.cpp" line="165"/>
+        <location filename="LevelOneDecWidget.cpp" line="166"/>
         <source>&lt;h3&gt;Coefficient &quot;Eps&quot;: &lt;/h3&gt;</source>
         <translation>&lt;h3&gt;Коэффициент &quot;Eps&quot;: &lt;/h3&gt;</translation>
     </message>
     <message>
-        <location filename="LevelOneDecWidget.cpp" line="168"/>
-        <source>&lt;h3&gt; = 1 mm&lt;/h3&gt;</source>
-        <translation>&lt;h3&gt; = 1 мм&lt;/h3&gt;</translation>
+        <location filename="LevelOneDecWidget.cpp" line="169"/>
+        <source>&lt;h3&gt; = 3 mm&lt;/h3&gt;</source>
+        <translation>&lt;h3&gt; = 3 мм&lt;/h3&gt;</translation>
     </message>
     <message>
-        <location filename="LevelOneDecWidget.cpp" line="189"/>
+        <source>&lt;h3&gt; = 1 mm&lt;/h3&gt;</source>
+        <translation type="obsolete">&lt;h3&gt; = 1 мм&lt;/h3&gt;</translation>
+    </message>
+    <message>
+        <location filename="LevelOneDecWidget.cpp" line="190"/>
         <source>Warning! System is not stable! You need to go to the second level of decomposition or increase the coefficient &quot;Eps&quot;</source>
         <translation>Внимание! Система неустойчива! Рекомендуется перейти на следующий уровень декомпозиции или увеличить коэффициент &quot;Eps&quot;</translation>
     </message>
     <message>
-        <location filename="LevelOneDecWidget.cpp" line="521"/>
+        <location filename="LevelOneDecWidget.cpp" line="522"/>
         <source>&lt;h3&gt; = %1 mm&lt;/h3&gt;</source>
         <translation>&lt;h3&gt; = %1 мм&lt;/h3&gt;</translation>
     </message>
     <message>
-        <location filename="LevelOneDecWidget.cpp" line="528"/>
+        <location filename="LevelOneDecWidget.cpp" line="529"/>
         <source>What is the chart you want to export?</source>
         <translation>Какой график вы хотите экспортировать?</translation>
     </message>
     <message>
-        <location filename="LevelOneDecWidget.cpp" line="531"/>
-        <location filename="LevelOneDecWidget.cpp" line="560"/>
+        <location filename="LevelOneDecWidget.cpp" line="532"/>
+        <location filename="LevelOneDecWidget.cpp" line="561"/>
         <source>Phase Coordinates</source>
         <translation>Фазовых Координат</translation>
     </message>
     <message>
-        <location filename="LevelOneDecWidget.cpp" line="532"/>
-        <location filename="LevelOneDecWidget.cpp" line="561"/>
+        <location filename="LevelOneDecWidget.cpp" line="533"/>
+        <location filename="LevelOneDecWidget.cpp" line="562"/>
         <source>Available Deviations</source>
         <translation>Доступных Отклонений</translation>
     </message>
     <message>
-        <location filename="LevelOneDecWidget.cpp" line="557"/>
+        <location filename="LevelOneDecWidget.cpp" line="558"/>
         <source>What is the chart you want to print?</source>
         <translation>Какой график вы хотите распечатать?</translation>
     </message>
     <message>
-        <location filename="LevelOneDecWidget.cpp" line="621"/>
+        <location filename="LevelOneDecWidget.cpp" line="622"/>
         <source>Save *.html file</source>
         <translation>Сохранить &quot;*.html&quot; файл</translation>
     </message>
     <message>
-        <location filename="LevelOneDecWidget.cpp" line="623"/>
+        <location filename="LevelOneDecWidget.cpp" line="624"/>
         <source>HTML page (*.html);;All Files (*)</source>
         <translation>HTML страница (*.html);;Все файлы (*)</translation>
     </message>
     <message>
-        <location filename="LevelOneDecWidget.cpp" line="628"/>
+        <location filename="LevelOneDecWidget.cpp" line="629"/>
         <source>Error!</source>
         <translation>Ошибка!</translation>
     </message>
     <message>
-        <location filename="LevelOneDecWidget.cpp" line="628"/>
+        <location filename="LevelOneDecWidget.cpp" line="629"/>
         <source>Can&apos;t write HTML file!
 Please check RW permission or correct select the file.
 And try again!</source>
@@ -851,12 +864,12 @@ And try again!</source>
 в данную директорию и повторите попытку снова!</translation>
     </message>
     <message>
-        <location filename="LevelOneDecWidget.cpp" line="745"/>
+        <location filename="LevelOneDecWidget.cpp" line="754"/>
         <source>Success!</source>
         <translation>Выполнено!</translation>
     </message>
     <message>
-        <location filename="LevelOneDecWidget.cpp" line="746"/>
+        <location filename="LevelOneDecWidget.cpp" line="755"/>
         <source>Level One HTML-report is created successfully.
 Show HTML Page in your browser?</source>
         <translation>HTML-отчет первого уровня декомпозиции успешно создан.
@@ -1077,38 +1090,38 @@ Show HTML Page in your browser?</source>
         <translation>Неустойчиво</translation>
     </message>
     <message>
-        <location filename="LevelTwoDecWidget.cpp" line="431"/>
+        <location filename="LevelTwoDecWidget.cpp" line="432"/>
         <source>Please change Coefficient &quot;A&quot;</source>
         <translation>Пожалуйста измените коэффициент &quot;A&quot;</translation>
     </message>
     <message>
-        <location filename="LevelTwoDecWidget.cpp" line="437"/>
+        <location filename="LevelTwoDecWidget.cpp" line="438"/>
         <source>Please change Coefficient &quot;Eps&quot;</source>
         <translation>Пожалуйста измените коэффициент &quot;Eps&quot;</translation>
     </message>
     <message>
-        <location filename="LevelTwoDecWidget.cpp" line="458"/>
-        <location filename="LevelTwoDecWidget.cpp" line="915"/>
+        <location filename="LevelTwoDecWidget.cpp" line="459"/>
+        <location filename="LevelTwoDecWidget.cpp" line="924"/>
         <source>Export</source>
         <translation>Экспорт</translation>
     </message>
     <message>
-        <location filename="LevelTwoDecWidget.cpp" line="459"/>
+        <location filename="LevelTwoDecWidget.cpp" line="460"/>
         <source>Export the Level Two Decomposition Chart</source>
         <translation>Экспортировать график второго уровня декомпозиции</translation>
     </message>
     <message>
-        <location filename="LevelTwoDecWidget.cpp" line="466"/>
+        <location filename="LevelTwoDecWidget.cpp" line="467"/>
         <source>Print the Level Two Decomposition Chart</source>
         <translation>Распечатать график первого уровня декомпозиции</translation>
     </message>
     <message>
-        <location filename="LevelTwoDecWidget.cpp" line="472"/>
+        <location filename="LevelTwoDecWidget.cpp" line="473"/>
         <source>Export HTML</source>
         <translation>Экспорт HTML</translation>
     </message>
     <message>
-        <location filename="LevelTwoDecWidget.cpp" line="473"/>
+        <location filename="LevelTwoDecWidget.cpp" line="474"/>
         <source>Export detailed report of Level Two in the HTML page</source>
         <translation>Экспортировать детальный отчет второго уровня декомпозиции в HTML-страницу</translation>
     </message>
@@ -1117,8 +1130,8 @@ Show HTML Page in your browser?</source>
         <translation type="obsolete">Экспортировать график первого уровня декомпозиции</translation>
     </message>
     <message>
-        <location filename="LevelTwoDecWidget.cpp" line="465"/>
-        <location filename="LevelTwoDecWidget.cpp" line="944"/>
+        <location filename="LevelTwoDecWidget.cpp" line="466"/>
+        <location filename="LevelTwoDecWidget.cpp" line="953"/>
         <source>Print</source>
         <translation>Печать</translation>
     </message>
@@ -1127,62 +1140,62 @@ Show HTML Page in your browser?</source>
         <translation type="obsolete">Распечатать график первого уровня декомпозиции</translation>
     </message>
     <message>
-        <location filename="LevelTwoDecWidget.cpp" line="479"/>
+        <location filename="LevelTwoDecWidget.cpp" line="480"/>
         <source>Switch</source>
         <translation>Переключить</translation>
     </message>
     <message>
-        <location filename="LevelTwoDecWidget.cpp" line="480"/>
+        <location filename="LevelTwoDecWidget.cpp" line="481"/>
         <source>Switch between charts and tables</source>
         <translation>Переключиться между таблицами и графиками</translation>
     </message>
     <message>
-        <location filename="LevelTwoDecWidget.cpp" line="495"/>
+        <location filename="LevelTwoDecWidget.cpp" line="496"/>
         <source>&lt;strong&gt;&lt;font color=&apos;#FFCC99&apos;&gt;Block A&lt;/font&gt;&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;&lt;font color=&apos;#CCFFCC&apos;&gt;Block B&lt;/strong&gt;&lt;/font&gt;&lt;br&gt;&lt;strong&gt;&lt;font color=&apos;#99CCFF&apos;&gt;Block C&lt;/strong&gt;&lt;/font&gt;&lt;br&gt;</source>
         <translation>&lt;strong&gt;&lt;font color=&apos;#FFCC99&apos;&gt;Блок A&lt;/font&gt;&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;&lt;font color=&apos;#CCFFCC&apos;&gt;Блок B&lt;/strong&gt;&lt;/font&gt;&lt;br&gt;&lt;strong&gt;&lt;font color=&apos;#99CCFF&apos;&gt;Блок C&lt;/strong&gt;&lt;/font&gt;&lt;br&gt;</translation>
     </message>
     <message>
-        <location filename="LevelTwoDecWidget.cpp" line="499"/>
+        <location filename="LevelTwoDecWidget.cpp" line="500"/>
         <source>The color in the table corresponds to the tip</source>
         <translation>Цвет надписи этой подсказки совпадает с цветом ячеек в таблице</translation>
     </message>
     <message>
-        <location filename="LevelTwoDecWidget.cpp" line="512"/>
+        <location filename="LevelTwoDecWidget.cpp" line="513"/>
         <source>&lt;h3&gt;Coefficient &quot;A&quot;: &lt;/h3&gt;</source>
         <translation>&lt;h3&gt;Коэффициент &quot;A&quot;: &lt;/h3&gt;</translation>
     </message>
     <message>
-        <location filename="LevelTwoDecWidget.cpp" line="515"/>
+        <location filename="LevelTwoDecWidget.cpp" line="516"/>
         <source>&lt;h3&gt;Coefficient &quot;Eps&quot;: &lt;/h3&gt;</source>
         <translation>&lt;h3&gt;Коэффициент &quot;Eps&quot;: &lt;/h3&gt;</translation>
     </message>
     <message>
-        <location filename="LevelTwoDecWidget.cpp" line="518"/>
+        <location filename="LevelTwoDecWidget.cpp" line="519"/>
         <source>&lt;h3&gt; = 3 mm&lt;/h3&gt;</source>
         <translation>&lt;h3&gt; = 3 мм&lt;/h3&gt;</translation>
     </message>
     <message>
-        <location filename="LevelTwoDecWidget.cpp" line="539"/>
+        <location filename="LevelTwoDecWidget.cpp" line="540"/>
         <source>Warning! System is not stable! You need refer to a specialist or increase the coefficient &quot;Eps&quot;</source>
         <translation>Внимание! Система неустойчива! Вам необходимо обратиться к специалисту или попробовать увеличить коэффициент &quot;Eps&quot;</translation>
     </message>
     <message>
-        <location filename="LevelTwoDecWidget.cpp" line="603"/>
+        <location filename="LevelTwoDecWidget.cpp" line="604"/>
         <source>Save *.html file</source>
         <translation>Сохранить &quot;*.html&quot; файл</translation>
     </message>
     <message>
-        <location filename="LevelTwoDecWidget.cpp" line="605"/>
+        <location filename="LevelTwoDecWidget.cpp" line="606"/>
         <source>HTML page (*.html);;All Files (*)</source>
         <translation>HTML страница (*.html);;Все файлы (*)</translation>
     </message>
     <message>
-        <location filename="LevelTwoDecWidget.cpp" line="610"/>
+        <location filename="LevelTwoDecWidget.cpp" line="611"/>
         <source>Error!</source>
         <translation>Ошибка!</translation>
     </message>
     <message>
-        <location filename="LevelTwoDecWidget.cpp" line="610"/>
+        <location filename="LevelTwoDecWidget.cpp" line="611"/>
         <source>Can&apos;t write HTML file!
 Please check RW permission or correct select the file.
 And try again!</source>
@@ -1191,41 +1204,41 @@ And try again!</source>
 в данную директорию и повторите попытку снова!</translation>
     </message>
     <message>
-        <location filename="LevelTwoDecWidget.cpp" line="779"/>
+        <location filename="LevelTwoDecWidget.cpp" line="788"/>
         <source>Success!</source>
         <translation>Выполнено!</translation>
     </message>
     <message>
-        <location filename="LevelTwoDecWidget.cpp" line="780"/>
+        <location filename="LevelTwoDecWidget.cpp" line="789"/>
         <source>Level Two HTML-report is created successfully.
 Show HTML Page in your browser?</source>
         <translation>HTML-отчет второго уровня декомпозиции успешно создан.
 Показать HTML страницу в вашем браузере?</translation>
     </message>
     <message>
-        <location filename="LevelTwoDecWidget.cpp" line="909"/>
+        <location filename="LevelTwoDecWidget.cpp" line="918"/>
         <source>&lt;h3&gt; = %1 mm&lt;/h3&gt;</source>
         <translation>&lt;h3&gt; = %1 мм&lt;/h3&gt;</translation>
     </message>
     <message>
-        <location filename="LevelTwoDecWidget.cpp" line="916"/>
+        <location filename="LevelTwoDecWidget.cpp" line="925"/>
         <source>What is the chart you want to export?</source>
         <translation>Какой график вы хотите экспортировать?</translation>
     </message>
     <message>
-        <location filename="LevelTwoDecWidget.cpp" line="919"/>
-        <location filename="LevelTwoDecWidget.cpp" line="948"/>
+        <location filename="LevelTwoDecWidget.cpp" line="928"/>
+        <location filename="LevelTwoDecWidget.cpp" line="957"/>
         <source>Phase Coordinates</source>
         <translation>Фазовых Координат</translation>
     </message>
     <message>
-        <location filename="LevelTwoDecWidget.cpp" line="920"/>
-        <location filename="LevelTwoDecWidget.cpp" line="949"/>
+        <location filename="LevelTwoDecWidget.cpp" line="929"/>
+        <location filename="LevelTwoDecWidget.cpp" line="958"/>
         <source>Available Deviations</source>
         <translation>Доступных Отклонений</translation>
     </message>
     <message>
-        <location filename="LevelTwoDecWidget.cpp" line="945"/>
+        <location filename="LevelTwoDecWidget.cpp" line="954"/>
         <source>What is the chart you want to print?</source>
         <translation>Какой график вы хотите распечатать?</translation>
     </message>
@@ -1394,57 +1407,57 @@ Show HTML Page in your browser?</source>
 <context>
     <name>LineChart</name>
     <message>
-        <location filename="LineChart.cpp" line="59"/>
+        <location filename="LineChart.cpp" line="57"/>
         <source>LineChart Demonstration for Sensors</source>
         <translation>Линейный график значений датчиков</translation>
     </message>
     <message>
-        <location filename="LineChart.cpp" line="129"/>
+        <location filename="LineChart.cpp" line="127"/>
         <source>The number of days that have passed --&gt;</source>
         <translation>Число прошедших дней --&gt;</translation>
     </message>
     <message>
-        <location filename="LineChart.cpp" line="133"/>
+        <location filename="LineChart.cpp" line="131"/>
         <source>The values of sensors --&gt;</source>
         <translation>Значения датчиков по высоте --&gt;</translation>
     </message>
     <message>
-        <location filename="LineChart.cpp" line="209"/>
+        <location filename="LineChart.cpp" line="207"/>
         <source>Sensor %1</source>
         <translation>Датчик %1</translation>
     </message>
     <message>
-        <location filename="LineChart.cpp" line="262"/>
+        <location filename="LineChart.cpp" line="260"/>
         <source>PDF Documents (*.pdf)</source>
         <translation>PDF Документы (*.pdf)</translation>
     </message>
     <message>
-        <location filename="LineChart.cpp" line="264"/>
+        <location filename="LineChart.cpp" line="262"/>
         <source>SVG Documents (*.svg)</source>
         <translation>SVG Документы (*.svg)</translation>
     </message>
     <message>
-        <location filename="LineChart.cpp" line="266"/>
+        <location filename="LineChart.cpp" line="264"/>
         <source>Postscript Documents (*.ps)</source>
         <translation>Postscript Документы (*.ps)</translation>
     </message>
     <message>
-        <location filename="LineChart.cpp" line="270"/>
+        <location filename="LineChart.cpp" line="268"/>
         <source>Images (</source>
         <translation>Изображения (</translation>
     </message>
     <message>
-        <location filename="LineChart.cpp" line="284"/>
+        <location filename="LineChart.cpp" line="282"/>
         <source>Export File Name</source>
         <translation>Имя экспортируемого файла</translation>
     </message>
     <message>
-        <location filename="LineChart.cpp" line="303"/>
+        <location filename="LineChart.cpp" line="301"/>
         <source> -- </source>
         <translation> -- </translation>
     </message>
     <message>
-        <location filename="LineChart.cpp" line="307"/>
+        <location filename="LineChart.cpp" line="305"/>
         <source>Sensors Chart</source>
         <translation>График значений датчиков</translation>
     </message>
@@ -1524,12 +1537,12 @@ Show HTML Page in your browser?</source>
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="MainWindow.cpp" line="259"/>
+        <location filename="MainWindow.cpp" line="268"/>
         <source>&amp;%1</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="380"/>
+        <location filename="MainWindow.cpp" line="433"/>
         <source>About SensorMonitor</source>
         <oldsource>About Monitoring Sensor</oldsource>
         <translation>О программе SensorMonitor</translation>
@@ -1540,289 +1553,327 @@ Show HTML Page in your browser?</source>
         <translation type="obsolete">&lt;p&gt;&lt;b&gt;Версия 0.5&lt;/b&gt;&lt;/p&gt;&lt;p&gt;Приложение и исходный код доступны под лицензией GPL v.3.0:&lt;/p&gt;&lt;p&gt;&lt;a href=&apos;http://www.gnu.org/licenses/gpl.html&apos;&gt;GNU GENERAL PUBLIC LICENSE&lt;/a&gt;&lt;/p&gt;&lt;p&gt;SensorMonitor разработан Виталием Шуваевым и Александром Скорлупиным, студентами группы БИ21-А.&lt;/p&gt;&lt;p&gt;Email: &lt;a href=&apos;mailto:exl@bk.ru&apos;&gt;exl@bk.ru&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;center&gt;&lt;a href=&apos;http://ssga.ru&apos;&gt;&lt;img src=&apos;://gfx/logo.png&apos;/&gt;&lt;/a&gt;&lt;/center&gt;&lt;/p&gt;&lt;p&gt;(c) СГГА, 2013&lt;/p&gt;&lt;p&gt;Приложение было разработано с использованием следующих технологий:&lt;/p&gt;&lt;p&gt;&lt;table&gt;&lt;tr&gt;&lt;td align=&apos;center&apos;&gt;&lt;a href=&apos;http://www.w3.org/TR/html-markup/&apos;&gt;&lt;img src=&apos;://gfx/html.png&apos;/&gt;&lt;/a&gt;&lt;/td&gt;&lt;td align=&apos;center&apos;&gt;&lt;br&gt;HTML и CSS главные языки разметки в Интернете.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&apos;center&apos;&gt;&lt;a href=&apos;http://www.sqlite.org/&apos;&gt;&lt;img src=&apos;://gfx/sqlite.png&apos;/&gt;&lt;/a&gt;&lt;/td&gt;&lt;td align=&apos;center&apos;&gt;&lt;br&gt;SQLite это &quot;облегчённый&quot; движок баз данных SQL.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&apos;center&apos;&gt;&lt;a href=&apos;http://qwt.sourceforge.net/&apos;&gt;&lt;img src=&apos;://gfx/qwt.png&apos;/&gt;&lt;/a&gt;&lt;/td&gt;&lt;td align=&apos;center&apos;&gt;&lt;br&gt;Qwt это Qt Виджеты для технических приложений.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&apos;center&apos;&gt;&lt;a href=&apos;http://www.opengl.org/&apos;&gt;&lt;img src=&apos;://gfx/opengl.png&apos;/&gt;&lt;/a&gt;&lt;/td&gt;&lt;td align=&apos;center&apos;&gt;&lt;br&gt;OpenGL это библиотека (API) для отрисовки 2D/3D графики.&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="381"/>
+        <location filename="MainWindow.cpp" line="434"/>
         <source>&lt;p&gt;&lt;b&gt;Version 0.5&lt;/b&gt;&lt;/p&gt;&lt;p&gt;Application and source code available under license GPL v.3.0:&lt;/p&gt;&lt;p&gt;&lt;a href=&apos;http://www.gnu.org/licenses/gpl.html&apos;&gt;GNU GENERAL PUBLIC LICENSE&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;a href=&apos;https://github.com/EXLMOTODEV/SensorMonitor&apos;&gt;Source Code on GitHub&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Sensor Monitor is designed by Vitaly Shuvaev and Alexander Skorlupin, is students of group BI21-A.&lt;/p&gt;&lt;p&gt;Email: &lt;a href=&apos;mailto:exl@bk.ru&apos;&gt;exl@bk.ru&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;center&gt;&lt;a href=&apos;http://ssga.ru&apos;&gt;&lt;img src=&apos;://gfx/logo.png&apos;/&gt;&lt;/a&gt;&lt;/center&gt;&lt;/p&gt;&lt;p&gt;(c) SSGA, 2013&lt;/p&gt;&lt;p&gt;Application was developmented used the following technologies:&lt;/p&gt;&lt;p&gt;&lt;table&gt;&lt;tr&gt;&lt;td align=&apos;center&apos;&gt;&lt;a href=&apos;http://www.w3.org/TR/html-markup/&apos;&gt;&lt;img src=&apos;://gfx/html.png&apos;/&gt;&lt;/a&gt;&lt;/td&gt;&lt;td align=&apos;center&apos;&gt;&lt;br&gt;HTML and CSS is the main web markup language.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&apos;center&apos;&gt;&lt;a href=&apos;http://www.sqlite.org/&apos;&gt;&lt;img src=&apos;://gfx/sqlite.png&apos;/&gt;&lt;/a&gt;&lt;/td&gt;&lt;td align=&apos;center&apos;&gt;&lt;br&gt;SQLite is an embedded SQL database engine.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&apos;center&apos;&gt;&lt;a href=&apos;http://qwt.sourceforge.net/&apos;&gt;&lt;img src=&apos;://gfx/qwt.png&apos;/&gt;&lt;/a&gt;&lt;/td&gt;&lt;td align=&apos;center&apos;&gt;&lt;br&gt;Qwt is Qt Widgets for Technical Applications.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&apos;center&apos;&gt;&lt;a href=&apos;http://www.opengl.org/&apos;&gt;&lt;img src=&apos;://gfx/opengl.png&apos;/&gt;&lt;/a&gt;&lt;/td&gt;&lt;td align=&apos;center&apos;&gt;&lt;br&gt;OpenGL is a library (API) for rendering 2D/3D graphics.&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/p&gt;</source>
         <oldsource>&lt;p&gt;&lt;b&gt;Version 0.5&lt;/b&gt;&lt;/p&gt;&lt;p&gt;Application and source code available under license GPL v.3.0:&lt;/p&gt;&lt;p&gt;&lt;a href=&apos;http://www.gnu.org/licenses/gpl.html&apos;&gt;GNU GENERAL PUBLIC LICENSE&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Sensor Monitor is designed by Vitaly Shuvaev and Alexander Skorlupin, is students of group BI21-A.&lt;/p&gt;&lt;p&gt;Email: &lt;a href=&apos;mailto:exl@bk.ru&apos;&gt;exl@bk.ru&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;center&gt;&lt;a href=&apos;http://ssga.ru&apos;&gt;&lt;img src=&apos;://gfx/logo.png&apos;/&gt;&lt;/a&gt;&lt;/center&gt;&lt;/p&gt;&lt;p&gt;(c) SSGA, 2013&lt;/p&gt;&lt;p&gt;Application was developmented used the following technologies:&lt;/p&gt;&lt;p&gt;&lt;table&gt;&lt;tr&gt;&lt;td align=&apos;center&apos;&gt;&lt;a href=&apos;http://www.w3.org/TR/html-markup/&apos;&gt;&lt;img src=&apos;://gfx/html.png&apos;/&gt;&lt;/a&gt;&lt;/td&gt;&lt;td align=&apos;center&apos;&gt;&lt;br&gt;HTML and CSS is the main web markup language.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&apos;center&apos;&gt;&lt;a href=&apos;http://www.sqlite.org/&apos;&gt;&lt;img src=&apos;://gfx/sqlite.png&apos;/&gt;&lt;/a&gt;&lt;/td&gt;&lt;td align=&apos;center&apos;&gt;&lt;br&gt;SQLite is an embedded SQL database engine.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&apos;center&apos;&gt;&lt;a href=&apos;http://qwt.sourceforge.net/&apos;&gt;&lt;img src=&apos;://gfx/qwt.png&apos;/&gt;&lt;/a&gt;&lt;/td&gt;&lt;td align=&apos;center&apos;&gt;&lt;br&gt;Qwt is Qt Widgets for Technical Applications.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&apos;center&apos;&gt;&lt;a href=&apos;http://www.opengl.org/&apos;&gt;&lt;img src=&apos;://gfx/opengl.png&apos;/&gt;&lt;/a&gt;&lt;/td&gt;&lt;td align=&apos;center&apos;&gt;&lt;br&gt;OpenGL is a library (API) for rendering 2D/3D graphics.&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/p&gt;</oldsource>
         <translation>&lt;p&gt;&lt;b&gt;Версия 0.5&lt;/b&gt;&lt;/p&gt;&lt;p&gt;Приложение и исходный код доступны под лицензией GPL v.3.0:&lt;/p&gt;&lt;p&gt;&lt;a href=&apos;http://www.gnu.org/licenses/gpl.html&apos;&gt;GNU GENERAL PUBLIC LICENSE&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;a href=&apos;https://github.com/EXLMOTODEV/SensorMonitor&apos;&gt;Исходный код на GitHub&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Sensor Monitor разработан Виталием Шуваевым и Александром Скорлупиным, студентами группы БИ21-А.&lt;/p&gt;&lt;p&gt;Email: &lt;a href=&apos;mailto:exl@bk.ru&apos;&gt;exl@bk.ru&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;center&gt;&lt;a href=&apos;http://ssga.ru&apos;&gt;&lt;img src=&apos;://gfx/logo.png&apos;/&gt;&lt;/a&gt;&lt;/center&gt;&lt;/p&gt;&lt;p&gt;(c) СГГА, 2013&lt;/p&gt;&lt;p&gt;Приложение было разработано с использованием следующих технологий:&lt;/p&gt;&lt;p&gt;&lt;table&gt;&lt;tr&gt;&lt;td align=&apos;center&apos;&gt;&lt;a href=&apos;http://www.w3.org/TR/html-markup/&apos;&gt;&lt;img src=&apos;://gfx/html.png&apos;/&gt;&lt;/a&gt;&lt;/td&gt;&lt;td align=&apos;center&apos;&gt;&lt;br&gt;HTML и CSS главные языки разметки в Интернете.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&apos;center&apos;&gt;&lt;a href=&apos;http://www.sqlite.org/&apos;&gt;&lt;img src=&apos;://gfx/sqlite.png&apos;/&gt;&lt;/a&gt;&lt;/td&gt;&lt;td align=&apos;center&apos;&gt;&lt;br&gt;SQLite это &quot;облегчённый&quot; движок баз данных SQL.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&apos;center&apos;&gt;&lt;a href=&apos;http://qwt.sourceforge.net/&apos;&gt;&lt;img src=&apos;://gfx/qwt.png&apos;/&gt;&lt;/a&gt;&lt;/td&gt;&lt;td align=&apos;center&apos;&gt;&lt;br&gt;Qwt это Qt Виджеты для технических приложений.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&apos;center&apos;&gt;&lt;a href=&apos;http://www.opengl.org/&apos;&gt;&lt;img src=&apos;://gfx/opengl.png&apos;/&gt;&lt;/a&gt;&lt;/td&gt;&lt;td align=&apos;center&apos;&gt;&lt;br&gt;OpenGL это библиотека (API) для отрисовки 2D/3D графики.&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="399"/>
+        <location filename="MainWindow.cpp" line="452"/>
         <source>&amp;Add a random row</source>
         <translation>&amp;Добавить строку</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="400"/>
+        <location filename="MainWindow.cpp" line="453"/>
         <source>Add a random row in the SQLite DataBase</source>
         <translation>Добавить строку случайных значений в Базу Данных SQLite</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="402"/>
+        <location filename="MainWindow.cpp" line="455"/>
         <source>&amp;Load Table</source>
         <translation>&amp;Загрузить таблицу</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="403"/>
+        <location filename="MainWindow.cpp" line="456"/>
         <source>Load table with the sensor readings</source>
         <translation>Загрузить таблицу со снятыми показаниями сенсоров</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="405"/>
+        <location filename="MainWindow.cpp" line="458"/>
         <source>&amp;Clear DataBase</source>
         <translation>&amp;Очистить Базу Данных</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="406"/>
+        <location filename="MainWindow.cpp" line="459"/>
         <source>Clear the SQLite DataBase</source>
         <translation>Очистить Базу Данных SQLite полностью</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="408"/>
+        <location filename="MainWindow.cpp" line="461"/>
         <source>&amp;Load Table from &quot;*.txt&quot;</source>
         <translation>&amp;Загрузить таблицу из &quot;*.txt&quot;</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="409"/>
+        <location filename="MainWindow.cpp" line="462"/>
         <source>Load Table from general TextFile</source>
         <translation>Загрузить Таблицу из обычного текстового файла</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="411"/>
+        <location filename="MainWindow.cpp" line="464"/>
         <source>&amp;Load Table from &quot;*.dat&quot;</source>
         <translation>&amp;Загрузить таблицу из &quot;*.dat&quot;</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="412"/>
+        <location filename="MainWindow.cpp" line="465"/>
         <source>Load Table from special DataFile</source>
         <translation>Загрузить таблицу из специального файла с данными</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="414"/>
+        <location filename="MainWindow.cpp" line="467"/>
         <source>&amp;Save Table to &quot;*.txt&quot;</source>
         <translation>&amp;Сохранить таблицу в &quot;*.txt&quot;</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="415"/>
+        <location filename="MainWindow.cpp" line="468"/>
         <source>Save Table to the general TextFile</source>
         <translation>Сохранить таблицу в обычный текстовой файл</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="417"/>
+        <location filename="MainWindow.cpp" line="470"/>
         <source>&amp;Save Table to &quot;*.dat&quot;</source>
         <translation>&amp;Сохранить таблицу в &quot;*.dat&quot;</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="418"/>
+        <location filename="MainWindow.cpp" line="471"/>
         <source>Save Table to special DataFile</source>
         <translation>Сохранить таблицу в специальный файл с данными</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="420"/>
+        <location filename="MainWindow.cpp" line="473"/>
         <source>&amp;Export DataBase to HTLM page</source>
         <translation>&amp;Экспортировать в HTML</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="421"/>
+        <location filename="MainWindow.cpp" line="474"/>
         <source>Export DataBase table to general HTLM page with table</source>
         <translation>Экспортировать Базу Данных в обычную HTML страницу с таблицей</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="423"/>
+        <location filename="MainWindow.cpp" line="476"/>
+        <source>&amp;Change the number of sensors</source>
+        <translation>&amp;Изменить количество датчиков</translation>
+    </message>
+    <message>
+        <location filename="MainWindow.cpp" line="477"/>
+        <source>Change the number of sensors in SQLite DataBase</source>
+        <translation>Изменить количество датчиков в Базе Данных SQLite</translation>
+    </message>
+    <message>
+        <location filename="MainWindow.cpp" line="479"/>
         <source>&amp;Swap tables SQLite &lt;-&gt; Memory</source>
         <translation>&amp;Поменять местами таблицы SQLite &lt;-&gt; Память</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="424"/>
+        <location filename="MainWindow.cpp" line="480"/>
         <source>Switch SQLite DataBase Table on a Table in Memory and back</source>
         <translation>Переключиться с SQLite таблицы базы данных и Таблицей, находяхейся в памяти и обратно</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="426"/>
+        <location filename="MainWindow.cpp" line="482"/>
         <source>&amp;Disable editing table</source>
         <translation>&amp;Отключить редактирование таблицы</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="427"/>
         <source>&amp;Disable editing SQLite DataBase table</source>
-        <translation>&amp;Отключить редактирование таблицы Базы Данных SQLite</translation>
+        <translation type="obsolete">&amp;Отключить редактирование таблицы Базы Данных SQLite</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="429"/>
+        <location filename="MainWindow.cpp" line="483"/>
+        <source>Disable editing SQLite DataBase table</source>
+        <translation>Отключить редактирование таблицы Базы Данных SQLite</translation>
+    </message>
+    <message>
+        <location filename="MainWindow.cpp" line="485"/>
         <source>&amp;Enable editing table</source>
         <translation>&amp;Включить редактирование таблицы</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="430"/>
+        <location filename="MainWindow.cpp" line="486"/>
         <source>Enable editing SQLite DataBase table</source>
         <translation>Включить редактирование таблицы Базы Данных SQLite</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="432"/>
+        <location filename="MainWindow.cpp" line="488"/>
         <source>&amp;Show Chart window</source>
         <translation>&amp;Линейный график</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="433"/>
+        <location filename="MainWindow.cpp" line="489"/>
         <source>Show linear schedule of Sensor Monitor Table</source>
         <translation>Показать линейный график значений датчиков из таблицы</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="435"/>
+        <location filename="MainWindow.cpp" line="491"/>
         <source>&amp;Show Levels of Decomposition</source>
         <translation>&amp;Уровни Декомпозиции</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="436"/>
+        <location filename="MainWindow.cpp" line="492"/>
         <source>Show levels of decomposition windows of current DataBase</source>
         <translation>Показать расчетное окно уровней декомпозиции текущей Базы Данных</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="438"/>
+        <location filename="MainWindow.cpp" line="494"/>
         <source>&amp;Show 3D OpenGL window</source>
         <translation>&amp;3D OpenGL График</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="439"/>
+        <location filename="MainWindow.cpp" line="495"/>
         <source>Show OpenGL context window with 3D Plot</source>
         <translation>Показать OpenGL контекст, содержащий 3D график</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="441"/>
+        <location filename="MainWindow.cpp" line="497"/>
         <source>&amp;About SensorMonitor</source>
         <translation>&amp;О SensorMonitor</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="442"/>
+        <location filename="MainWindow.cpp" line="498"/>
         <source>Show About SensorMonitor dialog</source>
         <translation>Показать диалог &quot;О программе&quot;</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="444"/>
+        <location filename="MainWindow.cpp" line="500"/>
         <source>&amp;About Qt</source>
         <translation>&amp;О библиотеке Qt</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="445"/>
+        <location filename="MainWindow.cpp" line="501"/>
         <source>Show About Qt Library dialog</source>
         <translation>Показать диалог &quot;О библиотеке Qt&quot;</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="447"/>
+        <location filename="MainWindow.cpp" line="503"/>
         <source>&amp;Quit</source>
         <translation>&amp;Выход</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="448"/>
+        <location filename="MainWindow.cpp" line="504"/>
         <source>Quit the program</source>
         <translation>Выйти из программы</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="452"/>
+        <location filename="MainWindow.cpp" line="508"/>
         <source>&amp;File</source>
         <translation>&amp;Файл</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="453"/>
+        <location filename="MainWindow.cpp" line="509"/>
         <source>File Menu</source>
         <translation>Меню работы с файлами и базой данных</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="455"/>
+        <location filename="MainWindow.cpp" line="511"/>
         <source>&amp;View</source>
         <translation>&amp;Просмотр</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="456"/>
+        <location filename="MainWindow.cpp" line="512"/>
         <source>View Menu</source>
         <translation>Меню просмотра</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="458"/>
+        <location filename="MainWindow.cpp" line="514"/>
         <source>&amp;Table</source>
         <translation>&amp;Таблица</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="459"/>
+        <location filename="MainWindow.cpp" line="515"/>
         <source>Table menu</source>
         <translation>Меню таблицы</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="461"/>
+        <location filename="MainWindow.cpp" line="517"/>
         <source>&amp;Language</source>
         <translation>&amp;Язык</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="462"/>
+        <location filename="MainWindow.cpp" line="518"/>
         <source>Language Menu</source>
         <translation>Меню выбора языка программы</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="464"/>
+        <location filename="MainWindow.cpp" line="520"/>
         <source>&amp;Help</source>
         <translation>&amp;Помощь</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="465"/>
+        <location filename="MainWindow.cpp" line="521"/>
         <source>Help Menu</source>
         <translation>Меню, содержащее справку</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="469"/>
+        <location filename="MainWindow.cpp" line="525"/>
         <source>File ToolBar</source>
         <translation>Панель иструментов &quot;Файл&quot;</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="470"/>
+        <location filename="MainWindow.cpp" line="526"/>
         <source>View ToolBar</source>
         <translation>Панель инструментов &quot;Просмотр&quot;</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="474"/>
+        <location filename="MainWindow.cpp" line="530"/>
         <source>Ready</source>
         <translation>Готово</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="478"/>
-        <location filename="MainWindow.cpp" line="532"/>
+        <location filename="MainWindow.cpp" line="534"/>
+        <location filename="MainWindow.cpp" line="598"/>
         <source>SQLite DataBase</source>
         <translation>База Данных SQLite</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="479"/>
-        <location filename="MainWindow.cpp" line="533"/>
+        <location filename="MainWindow.cpp" line="535"/>
+        <location filename="MainWindow.cpp" line="599"/>
         <source>Table Monitoring Sensors of SQLite DataBase</source>
         <translation>Таблица значений датчиков из Базы Данных</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="480"/>
+        <location filename="MainWindow.cpp" line="536"/>
         <source>Monitoring Table</source>
         <translation>Таблица показаний датчиков</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="484"/>
+        <location filename="MainWindow.cpp" line="540"/>
         <source>Sensors Scheme</source>
         <translation>Схема Сенсоров</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="485"/>
+        <location filename="MainWindow.cpp" line="541"/>
         <source>Arrangement of sensors on the building. Click to display sensors</source>
         <translation>Схема расположения сенсоров на здании. Кликните на схему, чтобы показать/скрыть датчики</translation>
+    </message>
+    <message>
+        <location filename="MainWindow.cpp" line="546"/>
+        <source>Please change the number of sensors on the building</source>
+        <translation>Пожалуйста измените количество датчиков на здании</translation>
+    </message>
+    <message>
+        <location filename="MainWindow.cpp" line="547"/>
+        <source>&amp;The number of sensors:</source>
+        <translation>&amp;Количество датчиков:</translation>
+    </message>
+    <message>
+        <location filename="MainWindow.cpp" line="548"/>
+        <source>Please note, the recommended number of sensors in the building - 16.
+After changing the number of sensors, the DataBase clears.</source>
+        <oldsource>Please note, the recommended number of sensors in the building - 16.
+After changing the number of sensors, the database clears.</oldsource>
+        <translation>Замечание. Рекомендуемое количество датчиков на здании - 16.
+После изменения количества датчиков База Данных будет очищена.</translation>
+    </message>
+    <message>
+        <location filename="MainWindow.cpp" line="552"/>
+        <source>Number of sensors</source>
+        <translation>Количество датчиков</translation>
     </message>
     <message>
         <source>Arrangement of sensors on the building</source>
         <translation type="obsolete">Схема расположения сенсоров на здании</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="494"/>
+        <location filename="MainWindow.cpp" line="560"/>
         <source>Sensor Monitor</source>
         <translation>Sensor Monitor: Слежение за датчиками</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="537"/>
+        <location filename="MainWindow.cpp" line="603"/>
         <source>Table in Memory</source>
         <translation>Таблица в Памяти</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="538"/>
+        <location filename="MainWindow.cpp" line="604"/>
         <source>Table Monitoring Sensors of Memory RAM</source>
         <translation>Таблица значений датчиков, находящаяся в Памяти</translation>
     </message>

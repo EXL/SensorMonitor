@@ -18,8 +18,6 @@
 #include <qwt_plot_curve.h>
 #include <qwt_plot_renderer.h>
 
-const int column = 16;
-
 LineChart::LineChart(const QVector<QString> &vectorDate,
                      const QVector<QVector<double> > &vectorSensorReadings2D,
                      QWidget *parent)
@@ -134,7 +132,7 @@ void LineChart::plotAssay()
     setAxisScale(yLeft, 92.63, 92.7);
 
     /* Data */
-    QPolygonF points[column];
+    QPolygonF points[col];
 
     /* Read Data from Array */
     for(size_t i = 0; i < row; ++i)
@@ -146,7 +144,7 @@ void LineChart::plotAssay()
     }
 
     /* Colors */
-    QColor colors[column];
+    QColor colors[col];
 
     /* Setting Colors for dots and charts */
     for(size_t i = 0; i < col; ++i)
@@ -188,7 +186,7 @@ void LineChart::plotAssay()
     }
 
     /* Dots */
-    QwtSymbol *symbols[column];
+    QwtSymbol *symbols[col];
 
     /* Settings dots */
     for (size_t i = 0; i < col; ++i)
@@ -201,7 +199,7 @@ void LineChart::plotAssay()
     }
 
     /* Curves */
-    QwtPlotCurve *sensors[column];
+    QwtPlotCurve *sensors[col];
 
     /* Setting curves */
     for (size_t i = 0; i < col; ++i)

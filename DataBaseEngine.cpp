@@ -61,24 +61,21 @@ void DataBaseEngine::createTableInSQLiteDataBase()
 
     /* DDL Query */
     QString str = "CREATE TABLE sensors ("
-            "date VARCHAR(255), "
-            "s1 DOUBLE, "
-            "s2 DOUBLE, "
-            "s3 DOUBLE, "
-            "s4 DOUBLE, "
-            "s5 DOUBLE, "
-            "s6 DOUBLE, "
-            "s7 DOUBLE, "
-            "s8 DOUBLE, "
-            "s9 DOUBLE, "
-            "s10 DOUBLE, "
-            "s11 DOUBLE, "
-            "s12 DOUBLE, "
-            "s13 DOUBLE, "
-            "s14 DOUBLE, "
-            "s15 DOUBLE, "
-            "s16 DOUBLE "
-            ");";
+            "date VARCHAR(255), ";
+
+    for (size_t i = 0; i < countColumnOfDataBase; i++)
+    {
+        if (i < countColumnOfDataBase - 1)
+        {
+            str += QString("s%1 DOUBLE, ").arg(i+1);
+        }
+        else
+        {
+            str += QString("s%1 DOUBLE ").arg(i+1);
+        }
+    }
+
+    str += ");";
 
     bool b = a_query.exec(str);
     if (!b)
@@ -108,12 +105,13 @@ void DataBaseEngine::formTableInSQLiteDataBase()
     sqlTableModel->select();
     sqlTableModel->setHeaderData(0, Qt::Horizontal, date);
 
-    for (size_t i = 1; i <= 16; ++i)
+    for (size_t i = 1; i <= countColumnOfDataBase; ++i)
     {
         sqlTableModel->setHeaderData(i, Qt::Horizontal, sensor + QString(" %1").arg(i));
     }
 
     countRowsOfDataBase = sqlTableModel->rowCount();
+    countColumnOfDataBase = sqlTableModel->columnCount() - 1;
     countColumnOfDataBase = sqlTableModel->columnCount() - 1;
 
 #ifdef _DEBUG
@@ -194,6 +192,7 @@ void DataBaseEngine::retranslateUi()
 
     clearDataBaseSlot[0] = tr("DataBase Question");
     clearDataBaseSlot[1] = tr("Delete SQLite DataBase?");
+    clearDataBaseSlot[2] = tr("Load the table deletes the existing database.");
 
     emptyDataBaseTableDialog = tr("Empty SQLite DataBase table!");
 
@@ -230,9 +229,9 @@ void DataBaseEngine::retranslateUi()
                              "And try again!");
     loadTextFileSlot[3] = tr("Attention!\n"
                              "You try to read TXT file format, which unsuitable size of columns!\n"
-                             "The number of columns must be equal to 17!\n"
+                             "The number of columns must be equal to %1!\n"
                              "Information: "
-                             "Number of columns in the file - %1");
+                             "Number of columns in the file - %2");
     loadTextFileSlot[4] = tr("The data in the TXT file is corrupted!\n"
                              "The first mistake: %1");
     loadTextFileSlot[5] = tr("TXT file is read successfully.\n"
@@ -256,6 +255,11 @@ void DataBaseEngine::retranslateUi()
 
     formTableInSQLiteDataBase();
     tableModelOfVectors->setHeaderDataOfTable(datePtr, sensorPtr);
+}
+
+int DataBaseEngine::getColumnsCount()
+{
+    return countColumnOfDataBase;
 }
 
 /* Public slots */
@@ -297,26 +301,41 @@ void DataBaseEngine::addRandomRowToSQLiteDataBase()
         }
     }
 
-    QString str_insert = "INSERT INTO sensors(date, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10, s11, s12, s13, s14, s15, s16) "
-            "VALUES ('%1', %2, %3, %4, %5, %6, %7, %8, %9, %10, %11, %12, %13, %14, %15, %16, %17);";
-    QString add_str = str_insert.arg(generator->dateGenerator())
-            .arg(generator->fRand(rlim[0][0], rlim[0][1]))
-            .arg(generator->fRand(rlim[1][0], rlim[1][1]))
-            .arg(generator->fRand(rlim[2][0], rlim[2][1]))
-            .arg(generator->fRand(rlim[3][0], rlim[3][1]))
-            .arg(generator->fRand(rlim[4][0], rlim[4][1]))
-            .arg(generator->fRand(rlim[5][0], rlim[5][1]))
-            .arg(generator->fRand(rlim[6][0], rlim[6][1]))
-            .arg(generator->fRand(rlim[7][0], rlim[7][1]))
-            .arg(generator->fRand(rlim[8][0], rlim[8][1]))
-            .arg(generator->fRand(rlim[9][0], rlim[9][1]))
-            .arg(generator->fRand(rlim[10][0], rlim[10][1]))
-            .arg(generator->fRand(rlim[11][0], rlim[11][1]))
-            .arg(generator->fRand(rlim[12][0], rlim[12][1]))
-            .arg(generator->fRand(rlim[13][0], rlim[13][1]))
-            .arg(generator->fRand(rlim[14][0], rlim[14][1]))
-            .arg(generator->fRand(rlim[15][0], rlim[15][1]));
-    bool add_b = a_query.exec(add_str);
+    QString str_insert = "INSERT INTO sensors(date, ";
+
+    for (size_t i = 0; i < countColumnOfDataBase; ++i)
+    {
+        if (i < countColumnOfDataBase - 1)
+        {
+            str_insert += QString("s%1, ").arg(i+1);
+        }
+        else
+        {
+            str_insert += QString("s%1) ").arg(i+1);
+        }
+    }
+
+    str_insert += QString("VALUES ('%1', ").arg(generator->dateGenerator());
+
+    for (size_t i = 1; i <= countColumnOfDataBase; ++i)
+    {
+        if (i <= countColumnOfDataBase - 1)
+        {
+            str_insert += QString("%1, ").arg(generator->fRand(rlim[i-1][0], rlim[i-1][1]));
+        }
+        else
+        {
+            str_insert += QString("%1").arg(generator->fRand(rlim[i-1][0], rlim[i-1][1]));
+        }
+    }
+
+    str_insert += ");";
+
+#ifdef _DEBUG
+    qDebug() << str_insert;
+#endif
+
+    bool add_b = a_query.exec(str_insert);
     if (!add_b)
     {
 #ifdef _DEBUG
@@ -381,33 +400,66 @@ void DataBaseEngine::clearDataBase()
 }
 
 void DataBaseEngine::loadTableFromHeader()
-{
-    clearDataBase();
+{if (countRowsOfDataBase > 0)
+    {
+        QMessageBox *pmbx = new QMessageBox(QMessageBox::Question,
+                                            clearDataBaseSlot[0],
+                clearDataBaseSlot[2] + "\n"+ clearDataBaseSlot[1],
+                QMessageBox::Yes | QMessageBox::No);
+        int n = pmbx->exec();
+        delete pmbx;
+
+        if (n == QMessageBox::No)
+        {
+            return;
+        }
+        else if (n == QMessageBox::Yes)
+        {
+#ifdef _DEBUG
+            qDebug() << "Droping Table...";
+#endif
+            dropingTable();
+        }
+    }
 
     QSqlQuery a_query;
     for(int i = 0; i < TEMP_TABLE_ROWS; i++)
     {
-        QString str_insert = "INSERT INTO sensors(date, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10, s11, s12, s13, s14, s15, s16) "
-                "VALUES ('%1', %2, %3, %4, %5, %6, %7, %8, %9, %10, %11, %12, %13, %14, %15, %16, %17);";
-        QString load_str = str_insert.arg(DateT[i])
-                .arg(temp_table[i][0])
-                .arg(temp_table[i][1])
-                .arg(temp_table[i][2])
-                .arg(temp_table[i][3])
-                .arg(temp_table[i][4])
-                .arg(temp_table[i][5])
-                .arg(temp_table[i][6])
-                .arg(temp_table[i][7])
-                .arg(temp_table[i][8])
-                .arg(temp_table[i][9])
-                .arg(temp_table[i][10])
-                .arg(temp_table[i][11])
-                .arg(temp_table[i][12])
-                .arg(temp_table[i][13])
-                .arg(temp_table[i][14])
-                .arg(temp_table[i][15]);
+        QString str_insert = "INSERT INTO sensors(date, ";
 
-        bool load_table = a_query.exec(load_str);
+        for (size_t j = 0; j < countColumnOfDataBase; ++j)
+        {
+            if (j < countColumnOfDataBase - 1)
+            {
+                str_insert += QString("s%1, ").arg(j+1);
+            }
+            else
+            {
+                str_insert += QString("s%1) ").arg(j+1);
+            }
+        }
+
+        str_insert += QString("VALUES ('%1', ").arg(DateT[i]);
+
+        for (size_t j = 0; j < countColumnOfDataBase; ++j)
+        {
+            if (j < countColumnOfDataBase - 1)
+            {
+                str_insert += QString("%1, ").arg(temp_table[i][j]);
+            }
+            else
+            {
+                str_insert += QString("%1").arg(temp_table[i][j]);
+            }
+        }
+
+        str_insert += ");";
+
+#ifdef _DEBUG
+        qDebug() << str_insert;
+#endif
+
+        bool load_table = a_query.exec(str_insert);
         if (!load_table)
         {
 #ifdef _DEBUG
@@ -681,11 +733,12 @@ void DataBaseEngine::loadTableFromTextFile()
     {
         QString forCountRowTmp = temp.at(i);
 
-        if(forCountRowTmp.count('\t') != 16)
+        if((size_t)forCountRowTmp.count('\t') != countColumnOfDataBase)
         {
             QMessageBox *warnCountRow = new QMessageBox(QMessageBox::Information,
                                                         overflowWarningTitle,
-                                                        loadTextFileSlot[3].arg(forCountRowTmp.count('\t')+1),
+                                                        loadTextFileSlot[3].arg(countColumnOfDataBase+1)
+                    .arg(forCountRowTmp.count('\t')+1),
                     QMessageBox::Ok);
             int n = warnCountRow->exec();
             delete warnCountRow;
@@ -911,22 +964,11 @@ void DataBaseEngine::readDataBaseTableToVectors(QSqlQuery &a_query)
         sensorsDateVector.push_back(a_query.value(rec.indexOf("date")).toString());
 
         /* To Add Sensor Readings to 2D Vector */
-        temp.push_back(a_query.value(rec.indexOf("s1")).toDouble());
-        temp.push_back(a_query.value(rec.indexOf("s2")).toDouble());
-        temp.push_back(a_query.value(rec.indexOf("s3")).toDouble());
-        temp.push_back(a_query.value(rec.indexOf("s4")).toDouble());
-        temp.push_back(a_query.value(rec.indexOf("s5")).toDouble());
-        temp.push_back(a_query.value(rec.indexOf("s6")).toDouble());
-        temp.push_back(a_query.value(rec.indexOf("s7")).toDouble());
-        temp.push_back(a_query.value(rec.indexOf("s8")).toDouble());
-        temp.push_back(a_query.value(rec.indexOf("s9")).toDouble());
-        temp.push_back(a_query.value(rec.indexOf("s10")).toDouble());
-        temp.push_back(a_query.value(rec.indexOf("s11")).toDouble());
-        temp.push_back(a_query.value(rec.indexOf("s12")).toDouble());
-        temp.push_back(a_query.value(rec.indexOf("s13")).toDouble());
-        temp.push_back(a_query.value(rec.indexOf("s14")).toDouble());
-        temp.push_back(a_query.value(rec.indexOf("s15")).toDouble());
-        temp.push_back(a_query.value(rec.indexOf("s16")).toDouble());
+        for (size_t i = 0; i < countColumnOfDataBase; ++i)
+        {
+            temp.push_back(a_query.value(rec.indexOf(QString("s%1").arg(i+1))).toDouble());
+        }
+
         sensorsReadingsVector2D.push_back(temp);
     }
 
@@ -941,7 +983,7 @@ void DataBaseEngine::readDataBaseTableToVectors(QSqlQuery &a_query)
 void DataBaseEngine::printVector2DDebug()
 {
     const size_t row = sqlTableModel->rowCount();
-    const size_t col = 16;
+    const size_t col = countColumnOfDataBase;
     for(size_t i = 0; i < row; ++i)
     {
         for(size_t j = 0; j < col; ++j)
@@ -958,6 +1000,18 @@ void DataBaseEngine::emptyDataBaseCriticalError()
     QMessageBox::critical(0, errorTitleGeneral, emptyDataBaseTableDialog);
 }
 
+void DataBaseEngine::setColumnsGlobal(int number_of_column)
+{
+    countColumnOfDataBase = number_of_column;
+
+    dropingTable();
+    addRandomRowToSQLiteDataBase();
+
+#ifdef _DEBUG
+    qDebug() << "[DataBaseEngine] columns_global:" << countColumnOfDataBase;
+#endif
+}
+
 void DataBaseEngine::showTableModelOfVectors()
 {
     tableModelOfVectors->setCurrencyVectors(sensorsDateVector, sensorsReadingsVector2D);
@@ -967,6 +1021,28 @@ void DataBaseEngine::showTableModelOfVectors()
 
     tableViewWidget->setModel(tableModelOfVectors);
     tableViewWidget->selectRow(0);
+}
+
+void DataBaseEngine::dropingTable()
+{
+    QSqlQuery a_query;
+    QString str_insert = "DROP TABLE sensors";
+    bool add_drop = a_query.exec(str_insert);
+    if (!add_drop)
+    {
+#ifdef _DEBUG
+        qDebug() << "Error: DROP TABLE sensors";
+#endif
+    }
+    else
+    {
+#ifdef _DEBUG
+        qDebug() << "Success: DROP TABLE sensors";
+#endif
+    }
+
+    createTableInSQLiteDataBase();
+    formTableInSQLiteDataBase();
 }
 
 DataBaseEngine::~DataBaseEngine()
@@ -1060,8 +1136,8 @@ DoubleSpinBoxDelegate::DoubleSpinBoxDelegate(QObject *parent)
 }
 
 QWidget *DoubleSpinBoxDelegate::createEditor(QWidget *parent,
-                                           const QStyleOptionViewItem &/* option */,
-                                           const QModelIndex &/* index */) const
+                                             const QStyleOptionViewItem &/* option */,
+                                             const QModelIndex &/* index */) const
 {
     QDoubleSpinBox *editor = new QDoubleSpinBox(parent);
 
@@ -1092,8 +1168,8 @@ void DoubleSpinBoxDelegate::setModelData(QWidget *editor, QAbstractItemModel *mo
 }
 
 void DoubleSpinBoxDelegate::updateEditorGeometry(QWidget *editor,
-                                               const QStyleOptionViewItem &option,
-                                               const QModelIndex &) const
+                                                 const QStyleOptionViewItem &option,
+                                                 const QModelIndex &) const
 {
     editor->setGeometry(option.rect);
 }

@@ -15,40 +15,47 @@
 #include <QSettings>
 #include <QTableView>
 #include <QSplitter>
+#include <QSpinBox>
+#include <QLabel>
+#include <QDialog>
+#include <QPushButton>
 
 class MainWindow : public QMainWindow
 {
     /* Macros for signal, slots, tr(), etc. */
     Q_OBJECT
     
+    size_t columnInDataBase;
+
     /********** Start Translators **********/
     QTranslator appTranslator;
     QTranslator qtTranslator;
     /********** End Translators **********/
 
     /********** Start Actions **********/
-        /* Toolbar #1 */
+    /* Toolbar #1 */
     QAction *addRandomRowInTheDataBaseAction;
     QAction *loadTableFromHeaderAction;
     QAction *clearDataBaseAction;
-        // Separator
+    // Separator
     QAction *loadTableFromTextFileAction;
     QAction *loadTableFromDataFileAction;
     QAction *saveTableToTextFileAction;
     QAction *saveTableToDataFileAction;
     QAction *saveTableToHtmlFileAction;
-        // Separator
+    // Separator
     QAction *changeTableModelAction;
+    QAction *changeNumSensorsAction;
 
-        /* Toolbar #2 */
+    /* Toolbar #2 */
     QAction *showChartWindowAction;
     QAction *showLevelsWindowAction;
     QAction *showOpenGLContextWindowAction;
-        // Separator
+    // Separator
     QAction *showAboutDialogWindowAction;
     QAction *showAboutQtDialogWindowAction;
 
-        /* Other Actions */
+    /* Other Actions */
     QActionGroup *languageActionGroup;
 
     QAction *setEditTablePolicy;
@@ -70,6 +77,15 @@ class MainWindow : public QMainWindow
     QToolBar *fileToolBar;
     QToolBar *viewToolBar;
     /********** End ToolBars **********/
+
+    /********** Start Dialog **********/
+    QDialog *changeNumSensorsDialog;
+    QSpinBox *spinBoxForDialog;
+    QLabel *labelSensorTextForDialog;
+    QLabel *labelWarningTextForDialog;
+    QPushButton *btnOkDialog;
+    QPushButton *btnCancelDialog;
+    /********** End Dialog **********/
 
     /********** Start Widgets **********/
     QWidget *mainWidget;
@@ -111,6 +127,8 @@ class MainWindow : public QMainWindow
     void createSchemeGroupBox();
     void settingsWindow();
     void retranslateUi();
+
+    void createChangeNumSensorsDialog();
 private slots:
     void switchLanguage(QAction *action);
 
@@ -123,6 +141,10 @@ private slots:
     void showLevelsWindowSlot();
 
     void showAboutDialog();
+
+    void showChangeNumSensorsDialog();
+    void setColumn(int);
+    void setColumnInDataBase();
 protected:
     void closeEvent(QCloseEvent *event);
 public:

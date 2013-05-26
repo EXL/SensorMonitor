@@ -81,6 +81,7 @@ void LevelOneDec::createDoubleBoxes()
     spbDoubleBoxAlpha = new QDoubleSpinBox(this);
     spbDoubleBoxAlpha->setRange(0.1, 1.0);
     spbDoubleBoxAlpha->setSingleStep(0.1);
+    spbDoubleBoxAlpha->setDecimals(1);
     spbDoubleBoxAlpha->setWrapping(false);
     spbDoubleBoxAlpha->setToolTip(tr("Please change Coefficient \"A\""));
     connect(spbDoubleBoxAlpha, SIGNAL(valueChanged(double)), this, SLOT(changedAlpha(double)));

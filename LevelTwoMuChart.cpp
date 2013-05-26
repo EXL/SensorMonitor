@@ -330,11 +330,13 @@ void LevelTwoMuChart::showItem(QwtPlotItem *item, bool on)
 
     if(qScale)
     {
+        setAxisScale(yLeft, (-2e-05), 8e-05);
         setAxisScale(xBottom, 185.325, 185.355);
         item->setVisible(on);
         return;
     }
 
+    setAxisScale(yLeft, (-2e-05), 8e-05);
     setAxisScale(xBottom, 226.9345, 226.9775);
     item->setVisible(on);
 }

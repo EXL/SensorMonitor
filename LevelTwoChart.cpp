@@ -319,6 +319,7 @@ void LevelTwoChart::showItem(QwtPlotItem *item, bool on)
 {
     if(item->title().text() == strRA && on)
     {
+        setAxisScale(yLeft, (-1e-05), 7e-05);
         setAxisScale(xBottom, 226.945, 226.97);
     }
     else if (item->title().text() == strFA)
@@ -326,11 +327,13 @@ void LevelTwoChart::showItem(QwtPlotItem *item, bool on)
         forecastDotA->setVisible(on);
         if (on)
         {
+            setAxisScale(yLeft, (-1e-05), 7e-05);
             setAxisScale(xBottom, 226.945, 226.97);
         }
     }
     else if(item->title().text() == strRB && on)
     {
+        setAxisScale(yLeft, (-1e-05), 7e-05);
         setAxisScale(xBottom, 226.945, 226.97);
     }
     else if(item->title().text() == strFB)
@@ -338,11 +341,13 @@ void LevelTwoChart::showItem(QwtPlotItem *item, bool on)
         forecastDotB->setVisible(on);
         if (on)
         {
+            setAxisScale(yLeft, (-1e-05), 7e-05);
             setAxisScale(xBottom, 226.945, 226.97);
         }
     }
     else if (item->title().text() == strRC && on)
     {
+        setAxisScale(yLeft, (-1e-05), 7e-05);
         setAxisScale(xBottom, 185.325, 185.355);
     }
     else if (item->title().text() == strFC)
@@ -351,6 +356,7 @@ void LevelTwoChart::showItem(QwtPlotItem *item, bool on)
 
         if (on)
         {
+            setAxisScale(yLeft, (-1e-05), 7e-05);
             setAxisScale(xBottom, 185.325, 185.355);
         }
     }

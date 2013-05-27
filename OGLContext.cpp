@@ -1,4 +1,4 @@
-#include "oglcontext.h"
+#include "OGLContext.h"
 
 #include <QMouseEvent>
 #include <QTimer>

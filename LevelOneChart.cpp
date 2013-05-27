@@ -100,19 +100,19 @@ void LevelOneChart::plotAssay()
     symbolR = new QwtSymbol;
     symbolR->setStyle(QwtSymbol::Ellipse);
     symbolR->setBrush(QBrush(Qt::white));
-    symbolR->setPen(QPen(Qt::blue, 2));
-    symbolR->setSize(5, 5);
+    symbolR->setPen(QPen(Qt::blue, 1));
+    symbolR->setSize(3, 3);
 
     symbolF = new QwtSymbol;
     symbolF->setStyle(QwtSymbol::Ellipse);
     symbolF->setBrush(QBrush(Qt::white));
-    symbolF->setPen(QPen(Qt::red, 2));
-    symbolF->setSize(5, 5);
+    symbolF->setPen(QPen(Qt::red, 1));
+    symbolF->setSize(3, 3);
 
     forecastSymbol = new QwtSymbol;
     forecastSymbol->setStyle(QwtSymbol::Diamond);
     forecastSymbol->setBrush(QBrush(Qt::yellow));
-    forecastSymbol->setPen(QPen(Qt::red, 2));
+    forecastSymbol->setPen(QPen(Qt::red, 1));
     forecastSymbol->setSize(10, 10);
 
     /* Curves */
@@ -122,13 +122,13 @@ void LevelOneChart::plotAssay()
     /* Setting curves */
     curveR->setRenderHint(QwtPlotItem::RenderAntialiased, true);
     curveR->setLegendAttribute(QwtPlotCurve::LegendShowLine, true);
-    curveR->setPen(QPen(Qt::blue, 2));
+    curveR->setPen(QPen(Qt::blue, 1));
     curveR->setSymbol(symbolR);
     curveR->attach(this);
 
     curveF->setRenderHint(QwtPlotItem::RenderAntialiased, true);
     curveF->setLegendAttribute(QwtPlotCurve::LegendShowLine, true);
-    curveF->setPen(QPen(Qt::red, 2));
+    curveF->setPen(QPen(Qt::red, 1));
     curveF->setSymbol(symbolF);
     curveF->attach(this);
 

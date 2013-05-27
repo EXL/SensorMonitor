@@ -493,9 +493,9 @@ void LevelTwoDec::createToolBar()
     toolBar->addSeparator();
 
     blocksToolTips = new QLabel(toolBar);
-    blocksToolTips->setText(tr("<strong><font color='#FFCC99'>Block A</font></strong><br>"
-                               "<strong><font color='#CCFFCC'>Block B</strong></font><br>"
-                               "<strong><font color='#99CCFF'>Block C</strong></font><br>"));
+    blocksToolTips->setText(tr("<strong><font color='#FF7B5C'>Block A</font></strong><br>"
+                               "<strong><font color='#65D270'>Block B</strong></font><br>"
+                               "<strong><font color='#53ACD6'>Block C</strong></font><br>"));
     blocksToolTips->setContentsMargins(10, 10, 0, 0);
     blocksToolTips->setToolTip(tr("The color in the table corresponds to the tip"));
 
@@ -1001,9 +1001,9 @@ TableLevelTwoModel::TableLevelTwoModel(const QString &str_date,
     str_blockC = "|C";
 
     lightYellow.setRgb(255, 255, 153);
-    lightRed.setRgb(255, 204, 153);
-    lightGreen.setRgb(204, 255, 204);
-    lightBlue.setRgb(153, 204, 255);
+    lightRed.setRgb(255, 123, 92);
+    lightGreen.setRgb(101, 210, 112);
+    lightBlue.setRgb(83, 172, 214);
 }
 
 void TableLevelTwoModel::setCurrencyVectors(const QVector<QString> &tableVectorDate,
@@ -1188,9 +1188,9 @@ TableStabilityLevelTwoModel::TableStabilityLevelTwoModel(const QString &str_date
     str_blockC = "|C";
 
     lightYellow.setRgb(255, 255, 153);
-    lightRed.setRgb(255, 204, 153);
-    lightGreen.setRgb(204, 255, 204);
-    lightBlue.setRgb(153, 204, 255);
+    lightRed.setRgb(255, 123, 92);
+    lightGreen.setRgb(101, 210, 112);
+    lightBlue.setRgb(83, 172, 214);
 }
 
 void TableStabilityLevelTwoModel::setCurrencyVectors(const QVector<QString> &tableVectorDate,

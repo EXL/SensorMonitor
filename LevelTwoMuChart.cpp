@@ -111,56 +111,56 @@ void LevelTwoMuChart::plotAssay()
     symbolMuLowerBlockA = new QwtSymbol;
     symbolMuLowerBlockA->setStyle(QwtSymbol::Ellipse);
     symbolMuLowerBlockA->setBrush(QBrush(Qt::white));
-    symbolMuLowerBlockA->setPen(QPen(QColor(255, 102, 51), 2));
-    symbolMuLowerBlockA->setSize(5, 5);
+    symbolMuLowerBlockA->setPen(QPen(QColor(255, 0, 0), 1));
+    symbolMuLowerBlockA->setSize(3, 3);
 
     symbolMuBlockA = new QwtSymbol;
     symbolMuBlockA->setStyle(QwtSymbol::Ellipse);
     symbolMuBlockA->setBrush(QBrush(Qt::white));
-    symbolMuBlockA->setPen(QPen(QColor(255, 0, 0), 2));
-    symbolMuBlockA->setSize(5, 5);
+    symbolMuBlockA->setPen(QPen(QColor(180, 0, 0), 1));
+    symbolMuBlockA->setSize(3, 3);
 
     symbolMuUpperBlockA = new QwtSymbol;
     symbolMuUpperBlockA->setStyle(QwtSymbol::Ellipse);
     symbolMuUpperBlockA->setBrush(QBrush(Qt::white));
-    symbolMuUpperBlockA->setPen(QPen(QColor(153, 0, 0), 2));
-    symbolMuUpperBlockA->setSize(5, 5);
+    symbolMuUpperBlockA->setPen(QPen(QColor(102, 0, 0), 1));
+    symbolMuUpperBlockA->setSize(3, 3);
 
     symbolMuLowerBlockB = new QwtSymbol;
     symbolMuLowerBlockB->setStyle(QwtSymbol::Ellipse);
     symbolMuLowerBlockB->setBrush(QBrush(Qt::white));
-    symbolMuLowerBlockB->setPen(QPen(QColor(204, 255, 204), 2));
-    symbolMuLowerBlockB->setSize(5, 5);
+    symbolMuLowerBlockB->setPen(QPen(QColor(0, 255, 0), 1));
+    symbolMuLowerBlockB->setSize(3, 3);
 
     symbolMuBlockB = new QwtSymbol;
     symbolMuBlockB->setStyle(QwtSymbol::Ellipse);
     symbolMuBlockB->setBrush(QBrush(Qt::white));
-    symbolMuBlockB->setPen(QPen(QColor(0, 255, 0), 2));
-    symbolMuBlockB->setSize(5, 5);
+    symbolMuBlockB->setPen(QPen(QColor(0, 180, 0), 1));
+    symbolMuBlockB->setSize(3, 3);
 
     symbolMuUpperBlockB = new QwtSymbol;
     symbolMuUpperBlockB->setStyle(QwtSymbol::Ellipse);
     symbolMuUpperBlockB->setBrush(QBrush(Qt::white));
-    symbolMuUpperBlockB->setPen(QPen(QColor(0, 102, 0), 2));
-    symbolMuUpperBlockB->setSize(5, 5);
+    symbolMuUpperBlockB->setPen(QPen(QColor(0, 102, 0), 1));
+    symbolMuUpperBlockB->setSize(3, 3);
 
     symbolMuLowerBlockC = new QwtSymbol;
     symbolMuLowerBlockC->setStyle(QwtSymbol::Ellipse);
     symbolMuLowerBlockC->setBrush(QBrush(Qt::white));
-    symbolMuLowerBlockC->setPen(QPen(QColor(102, 204, 255), 2));
-    symbolMuLowerBlockC->setSize(5, 5);
+    symbolMuLowerBlockC->setPen(QPen(QColor(0, 0, 255), 1));
+    symbolMuLowerBlockC->setSize(3, 3);
 
     symbolMuBlockC = new QwtSymbol;
     symbolMuBlockC->setStyle(QwtSymbol::Ellipse);
     symbolMuBlockC->setBrush(QBrush(Qt::white));
-    symbolMuBlockC->setPen(QPen(QColor(0, 0, 255), 2));
-    symbolMuBlockC->setSize(5, 5);
+    symbolMuBlockC->setPen(QPen(QColor(0, 0, 180), 1));
+    symbolMuBlockC->setSize(3, 3);
 
     symbolMuUpperBlockC = new QwtSymbol;
     symbolMuUpperBlockC->setStyle(QwtSymbol::Ellipse);
     symbolMuUpperBlockC->setBrush(QBrush(Qt::white));
-    symbolMuUpperBlockC->setPen(QPen(QColor(0, 0, 102), 2));
-    symbolMuUpperBlockC->setSize(5, 5);
+    symbolMuUpperBlockC->setPen(QPen(QColor(0, 0, 102), 1));
+    symbolMuUpperBlockC->setSize(3, 3);
 
     /* Curves */
     curveMuLowerBlockA = new QwtPlotCurve(strMuLowerBlockA);
@@ -176,55 +176,55 @@ void LevelTwoMuChart::plotAssay()
     /* Setting curves */
     curveMuLowerBlockA->setRenderHint(QwtPlotItem::RenderAntialiased, true);
     curveMuLowerBlockA->setLegendAttribute(QwtPlotCurve::LegendShowLine, true);
-    curveMuLowerBlockA->setPen(QPen(QColor(255, 102, 51), 2));
+    curveMuLowerBlockA->setPen(QPen(QColor(255, 0, 0), 1));
     curveMuLowerBlockA->setSymbol(symbolMuLowerBlockA);
     curveMuLowerBlockA->attach(this);
 
     curveMuBlockA->setRenderHint(QwtPlotItem::RenderAntialiased, true);
     curveMuBlockA->setLegendAttribute(QwtPlotCurve::LegendShowLine, true);
-    curveMuBlockA->setPen(QPen(QColor(255, 0, 0), 2));
+    curveMuBlockA->setPen(QPen(QColor(180, 0, 0), 1));
     curveMuBlockA->setSymbol(symbolMuBlockA);
     curveMuBlockA->attach(this);
 
     curveMuUpperBlockA->setRenderHint(QwtPlotItem::RenderAntialiased, true);
     curveMuUpperBlockA->setLegendAttribute(QwtPlotCurve::LegendShowLine, true);
-    curveMuUpperBlockA->setPen(QPen(QColor(153, 0, 0), 2));
+    curveMuUpperBlockA->setPen(QPen(QColor(102, 0, 0), 1));
     curveMuUpperBlockA->setSymbol(symbolMuUpperBlockA);
     curveMuUpperBlockA->attach(this);
 
     curveMuLowerBlockB->setRenderHint(QwtPlotItem::RenderAntialiased, true);
     curveMuLowerBlockB->setLegendAttribute(QwtPlotCurve::LegendShowLine, true);
-    curveMuLowerBlockB->setPen(QPen(QColor(204, 255, 204), 2));
+    curveMuLowerBlockB->setPen(QPen(QColor(0, 255, 0), 1));
     curveMuLowerBlockB->setSymbol(symbolMuLowerBlockB);
     curveMuLowerBlockB->attach(this);
 
     curveMuBlockB->setRenderHint(QwtPlotItem::RenderAntialiased, true);
     curveMuBlockB->setLegendAttribute(QwtPlotCurve::LegendShowLine, true);
-    curveMuBlockB->setPen(QPen(QColor(0, 255, 0), 2));
+    curveMuBlockB->setPen(QPen(QColor(0, 180, 0), 1));
     curveMuBlockB->setSymbol(symbolMuBlockB);
     curveMuBlockB->attach(this);
 
     curveMuUpperBlockB->setRenderHint(QwtPlotItem::RenderAntialiased, true);
     curveMuUpperBlockB->setLegendAttribute(QwtPlotCurve::LegendShowLine, true);
-    curveMuUpperBlockB->setPen(QPen(QColor(0, 102, 0), 2));
+    curveMuUpperBlockB->setPen(QPen(QColor(0, 102, 0), 1));
     curveMuUpperBlockB->setSymbol(symbolMuUpperBlockB);
     curveMuUpperBlockB->attach(this);
 
     curveMuLowerBlockC->setRenderHint(QwtPlotItem::RenderAntialiased, true);
     curveMuLowerBlockC->setLegendAttribute(QwtPlotCurve::LegendShowLine, true);
-    curveMuLowerBlockC->setPen(QPen(QColor(102, 204, 255), 2));
+    curveMuLowerBlockC->setPen(QPen(QColor(0, 0, 255), 1));
     curveMuLowerBlockC->setSymbol(symbolMuLowerBlockC);
     curveMuLowerBlockC->attach(this);
 
     curveMuBlockC->setRenderHint(QwtPlotItem::RenderAntialiased, true);
     curveMuBlockC->setLegendAttribute(QwtPlotCurve::LegendShowLine, true);
-    curveMuBlockC->setPen(QPen(QColor(0, 0, 255), 2));
+    curveMuBlockC->setPen(QPen(QColor(0, 0, 180), 1));
     curveMuBlockC->setSymbol(symbolMuBlockC);
     curveMuBlockC->attach(this);
 
     curveMuUpperBlockC->setRenderHint(QwtPlotItem::RenderAntialiased, true);
     curveMuUpperBlockC->setLegendAttribute(QwtPlotCurve::LegendShowLine, true);
-    curveMuUpperBlockC->setPen(QPen(QColor(0, 0, 102), 2));
+    curveMuUpperBlockC->setPen(QPen(QColor(0, 0, 102), 1));
     curveMuUpperBlockC->setSymbol(symbolMuUpperBlockC);
     curveMuUpperBlockC->attach(this);
 

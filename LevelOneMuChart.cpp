@@ -96,20 +96,20 @@ void LevelOneMuChart::plotAssay()
     symbolMuLower = new QwtSymbol;
     symbolMuLower->setStyle(QwtSymbol::Ellipse);
     symbolMuLower->setBrush(QBrush(Qt::white));
-    symbolMuLower->setPen(QPen(Qt::red, 2));
-    symbolMuLower->setSize(5, 5);
+    symbolMuLower->setPen(QPen(Qt::red, 1));
+    symbolMuLower->setSize(3, 3);
 
     symbolMu = new QwtSymbol;
     symbolMu->setStyle(QwtSymbol::Ellipse);
     symbolMu->setBrush(QBrush(Qt::white));
-    symbolMu->setPen(QPen(Qt::green, 2));
-    symbolMu->setSize(5, 5);
+    symbolMu->setPen(QPen(Qt::green, 1));
+    symbolMu->setSize(3, 3);
 
     symbolMuUpper = new QwtSymbol;
     symbolMuUpper->setStyle(QwtSymbol::Ellipse);
     symbolMuUpper->setBrush(QBrush(Qt::white));
-    symbolMuUpper->setPen(QPen(Qt::blue, 2));
-    symbolMuUpper->setSize(5, 5);
+    symbolMuUpper->setPen(QPen(Qt::blue, 1));
+    symbolMuUpper->setSize(3, 3);
 
     /* Curves */
     curveMuLower = new QwtPlotCurve(tr("Mu[Low.Lim]"));
@@ -119,19 +119,19 @@ void LevelOneMuChart::plotAssay()
     /* Setting curves */
     curveMuLower->setRenderHint(QwtPlotItem::RenderAntialiased, true);
     curveMuLower->setLegendAttribute(QwtPlotCurve::LegendShowLine, true);
-    curveMuLower->setPen(QPen(Qt::red, 2));
+    curveMuLower->setPen(QPen(Qt::red, 1));
     curveMuLower->setSymbol(symbolMuLower);
     curveMuLower->attach(this);
 
     curveMu->setRenderHint(QwtPlotItem::RenderAntialiased, true);
     curveMu->setLegendAttribute(QwtPlotCurve::LegendShowLine, true);
-    curveMu->setPen(QPen(Qt::green, 2));
+    curveMu->setPen(QPen(Qt::green, 1));
     curveMu->setSymbol(symbolMu);
     curveMu->attach(this);
 
     curveMuUpper->setRenderHint(QwtPlotItem::RenderAntialiased, true);
     curveMuUpper->setLegendAttribute(QwtPlotCurve::LegendShowLine, true);
-    curveMuUpper->setPen(QPen(Qt::blue, 2));
+    curveMuUpper->setPen(QPen(Qt::blue, 1));
     curveMuUpper->setSymbol(symbolMuUpper);
     curveMuUpper->attach(this);
 

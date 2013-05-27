@@ -194,8 +194,8 @@ void LineChart::plotAssay()
         symbols[i] = new QwtSymbol;
         symbols[i]->setStyle(QwtSymbol::Ellipse);
         symbols[i]->setBrush(QBrush(Qt::white));
-        symbols[i]->setPen(QPen(colors[i], 2));
-        symbols[i]->setSize(5, 5);
+        symbols[i]->setPen(QPen(colors[i], 1));
+        symbols[i]->setSize(3, 3);
     }
 
     /* Curves */
@@ -207,7 +207,7 @@ void LineChart::plotAssay()
         sensors[i] = new QwtPlotCurve(tr("Sensor %1").arg(i+1));
         sensors[i]->setRenderHint(QwtPlotItem::RenderAntialiased, true);
         sensors[i]->setLegendAttribute(QwtPlotCurve::LegendShowLine, true);
-        sensors[i]->setPen(QPen(colors[i], 2));
+        sensors[i]->setPen(QPen(colors[i], 1));
         sensors[i]->setSymbol(symbols[i]);
         sensors[i]->setSamples(points[i]);
         sensors[i]->attach(this);

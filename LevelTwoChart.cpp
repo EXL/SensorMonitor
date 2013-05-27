@@ -106,55 +106,55 @@ void LevelTwoChart::plotAssay()
     symbolRA = new QwtSymbol;
     symbolRA->setStyle(QwtSymbol::Ellipse);
     symbolRA->setBrush(QBrush(Qt::white));
-    symbolRA->setPen(QPen(QColor(255, 0, 0), 2));
-    symbolRA->setSize(5, 5);
+    symbolRA->setPen(QPen(QColor(255, 0, 0), 1));
+    symbolRA->setSize(3, 3);
 
     symbolFA = new QwtSymbol;
     symbolFA->setStyle(QwtSymbol::Ellipse);
     symbolFA->setBrush(QBrush(Qt::white));
-    symbolFA->setPen(QPen(QColor(255, 204, 153), 2));
-    symbolFA->setSize(5, 5);
+    symbolFA->setPen(QPen(QColor(176, 0, 0), 1));
+    symbolFA->setSize(3, 3);
 
     symbolRB = new QwtSymbol;
     symbolRB->setStyle(QwtSymbol::Ellipse);
     symbolRB->setBrush(QBrush(Qt::white));
-    symbolRB->setPen(QPen(QColor(0, 255, 0), 2));
-    symbolRB->setSize(5, 5);
+    symbolRB->setPen(QPen(QColor(0, 255, 0), 1));
+    symbolRB->setSize(3, 3);
 
     symbolFB = new QwtSymbol;
     symbolFB->setStyle(QwtSymbol::Ellipse);
     symbolFB->setBrush(QBrush(Qt::white));
-    symbolFB->setPen(QPen(QColor(204, 255, 204), 2));
-    symbolFB->setSize(5, 5);
+    symbolFB->setPen(QPen(QColor(0, 109, 0), 1));
+    symbolFB->setSize(3, 3);
 
     symbolRC = new QwtSymbol;
     symbolRC->setStyle(QwtSymbol::Ellipse);
     symbolRC->setBrush(QBrush(Qt::white));
-    symbolRC->setPen(QPen(QColor(0, 0, 255), 2));
-    symbolRC->setSize(5, 5);
+    symbolRC->setPen(QPen(QColor(0, 0, 255), 1));
+    symbolRC->setSize(3, 3);
 
     symbolFC = new QwtSymbol;
     symbolFC->setStyle(QwtSymbol::Ellipse);
     symbolFC->setBrush(QBrush(Qt::white));
-    symbolFC->setPen(QPen(QColor(153, 204, 254), 2));
-    symbolFC->setSize(5, 5);
+    symbolFC->setPen(QPen(QColor(0, 0, 121), 1));
+    symbolFC->setSize(3, 3);
 
     forecastSymbolA = new QwtSymbol;
     forecastSymbolA->setStyle(QwtSymbol::Diamond);
     forecastSymbolA->setBrush(QBrush(Qt::yellow));
-    forecastSymbolA->setPen(QPen(QColor(255, 204, 153), 2));
+    forecastSymbolA->setPen(QPen(QColor(176, 0, 0), 1));
     forecastSymbolA->setSize(10, 10);
 
     forecastSymbolB = new QwtSymbol;
     forecastSymbolB->setStyle(QwtSymbol::Diamond);
     forecastSymbolB->setBrush(QBrush(Qt::yellow));
-    forecastSymbolB->setPen(QPen(QColor(204, 255, 204), 2));
+    forecastSymbolB->setPen(QPen(QColor(0, 109, 0), 1));
     forecastSymbolB->setSize(10, 10);
 
     forecastSymbolC = new QwtSymbol;
     forecastSymbolC->setStyle(QwtSymbol::Diamond);
     forecastSymbolC->setBrush(QBrush(Qt::yellow));
-    forecastSymbolC->setPen(QPen(QColor(153, 204, 254), 2));
+    forecastSymbolC->setPen(QPen(QColor(0, 0, 121), 1));
     forecastSymbolC->setSize(10, 10);
 
     /* Curves */
@@ -168,37 +168,37 @@ void LevelTwoChart::plotAssay()
     /* Setting curves */
     curveRA->setRenderHint(QwtPlotItem::RenderAntialiased, true);
     curveRA->setLegendAttribute(QwtPlotCurve::LegendShowLine, true);
-    curveRA->setPen(QPen(QColor(255, 0, 0), 2));
+    curveRA->setPen(QPen(QColor(255, 0, 0), 1));
     curveRA->setSymbol(symbolRA);
     curveRA->attach(this);
 
     curveFA->setRenderHint(QwtPlotItem::RenderAntialiased, true);
     curveFA->setLegendAttribute(QwtPlotCurve::LegendShowLine, true);
-    curveFA->setPen(QPen(QColor(255, 204, 153), 2));
+    curveFA->setPen(QPen(QColor(176, 0, 0), 1));
     curveFA->setSymbol(symbolFA);
     curveFA->attach(this);
 
     curveRB->setRenderHint(QwtPlotItem::RenderAntialiased, true);
     curveRB->setLegendAttribute(QwtPlotCurve::LegendShowLine, true);
-    curveRB->setPen(QPen(QColor(0, 255, 0), 2));
+    curveRB->setPen(QPen(QColor(0, 255, 0), 1));
     curveRB->setSymbol(symbolRB);
     curveRB->attach(this);
 
     curveFB->setRenderHint(QwtPlotItem::RenderAntialiased, true);
     curveFB->setLegendAttribute(QwtPlotCurve::LegendShowLine, true);
-    curveFB->setPen(QPen(QColor(204, 255, 204), 2));
+    curveFB->setPen(QPen(QColor(0, 109, 0), 1));
     curveFB->setSymbol(symbolFB);
     curveFB->attach(this);
 
     curveRC->setRenderHint(QwtPlotItem::RenderAntialiased, true);
     curveRC->setLegendAttribute(QwtPlotCurve::LegendShowLine, true);
-    curveRC->setPen(QPen(QColor(0, 0, 255), 2));
+    curveRC->setPen(QPen(QColor(0, 0, 255), 1));
     curveRC->setSymbol(symbolRC);
     curveRC->attach(this);
 
     curveFC->setRenderHint(QwtPlotItem::RenderAntialiased, true);
     curveFC->setLegendAttribute(QwtPlotCurve::LegendShowLine, true);
-    curveFC->setPen(QPen(QColor(153, 204, 255), 2));
+    curveFC->setPen(QPen(QColor(0, 0, 121), 1));
     curveFC->setSymbol(symbolFC);
     curveFC->attach(this);
 

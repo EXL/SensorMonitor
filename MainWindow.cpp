@@ -395,7 +395,7 @@ void MainWindow::retranslateUi()
 {
     /********** Start About Dialog **********/
     aboutTitle = tr("About SensorMonitor");
-    aboutBody = tr("<p><b>Version 0.56</b></p>"
+    aboutBody = tr("<p><b>Version 0.57</b></p>"
                    "<p>Application and source code available under license GPL v.3.0:</p>"
                    "<p><a href='http://www.gnu.org/licenses/gpl.html'>GNU GENERAL PUBLIC LICENSE</a></p>"
                    "<p><a href='https://github.com/EXLMOTODEV/SensorMonitor'>Source Code on GitHub</a></p>"

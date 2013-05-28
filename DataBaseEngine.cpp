@@ -37,6 +37,10 @@ void DataBaseEngine::connectToSQLiteDataBase()
         qDebug() << "[DataBaseEngine] Sensors.sqlite is empty, CountColumnOfDataBase will be 16!";
 #endif
     }
+    else
+    {
+        countColumnOfDataBase = 0;
+    }
 
     dbase.setDatabaseName("sensors.sqlite");
     if (!dbase.open())
@@ -112,16 +116,16 @@ void DataBaseEngine::formTableInSQLiteDataBase()
     //sqlTableModel->setEditStrategy(QSqlTableModel::OnFieldChange);
 
     sqlTableModel->select();
+
+    countRowsOfDataBase = sqlTableModel->rowCount();
+    countColumnOfDataBase = sqlTableModel->columnCount() - 1;
+
     sqlTableModel->setHeaderData(0, Qt::Horizontal, date);
 
     for (size_t i = 1; i <= countColumnOfDataBase; ++i)
     {
         sqlTableModel->setHeaderData(i, Qt::Horizontal, sensor + QString(" %1").arg(i));
     }
-
-    countRowsOfDataBase = sqlTableModel->rowCount();
-    countColumnOfDataBase = sqlTableModel->columnCount() - 1;
-    countColumnOfDataBase = sqlTableModel->columnCount() - 1;
 
 #ifdef _DEBUG
     qDebug() << "countRowsOfDataBase:" << countRowsOfDataBase;

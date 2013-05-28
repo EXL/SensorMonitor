@@ -409,7 +409,8 @@ void DataBaseEngine::clearDataBase()
 }
 
 void DataBaseEngine::loadTableFromHeader()
-{if (countRowsOfDataBase > 0)
+{
+    if (countRowsOfDataBase > 0)
     {
         QMessageBox *pmbx = new QMessageBox(QMessageBox::Question,
                                             clearDataBaseSlot[0],

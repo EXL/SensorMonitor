@@ -566,9 +566,9 @@ Show plot?</translation>
     <name>LevelOneChart</name>
     <message>
         <location filename="LevelOneChart.cpp" line="47"/>
-        <source>Chart of of phase coordinates</source>
-        <oldsource>Chart of &quot;Alpha&quot; and &quot;Mu&quot;</oldsource>
-        <translation>Chart of of phase coordinates</translation>
+        <source>Chart of phase coordinates</source>
+        <oldsource>Chart of of phase coordinates</oldsource>
+        <translation>Chart of phase coordinates</translation>
     </message>
     <message>
         <source>Curve 1</source>
@@ -908,8 +908,9 @@ Show HTML Page in your browser?</translation>
     <name>LevelTwoChart</name>
     <message>
         <location filename="LevelTwoChart.cpp" line="51"/>
-        <source>Chart of of phase coordinates</source>
-        <translation>Chart of of phase coordinates</translation>
+        <source>Chart of phase coordinates</source>
+        <oldsource>Chart of of phase coordinates</oldsource>
+        <translation>Chart of phase coordinates</translation>
     </message>
     <message>
         <location filename="LevelTwoChart.cpp" line="28"/>

@@ -44,7 +44,7 @@ LevelOneChart::LevelOneChart(QWidget *parent)
 
     updateWidgetGradient();
 
-    setTitle(tr("Chart of of phase coordinates"));
+    setTitle(tr("Chart of phase coordinates"));
 
     /* Legend */
     legend = new QwtLegend();

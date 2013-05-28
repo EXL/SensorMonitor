@@ -433,7 +433,6 @@ void LevelTwoMuChart::updateWidgetGradient()
     setPalette(pal);
 }
 
-
 LevelTwoMuChart::~LevelTwoMuChart()
 {
     /* Empty Destructor */

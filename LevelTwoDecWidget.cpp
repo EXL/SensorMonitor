@@ -227,7 +227,7 @@ QString LevelTwoDec::getAlphaString(unsigned int i,
             muMultiplic = getMu(0, vectorTarget2D) * getMu(i, vectorTarget2D);
         }
     }
-    return QString::number(qAcos(vecMultiplic/muMultiplic), 'f', 6);
+    return QString::number(ArcCos(vecMultiplic/muMultiplic), 'f', 6);
 }
 
 double LevelTwoDec::getAvrgAlpha(const QVector<QString> &vectorTarget)
@@ -304,6 +304,28 @@ void LevelTwoDec::getAlphaForecast(size_t i, double a, double avrg_alpha,
     }
 
     vectorOutput.push_back(QString::number(alpha_forecast, 'f', 6));
+}
+
+double LevelTwoDec::ArcCos(double x)
+{
+    double result;
+
+    if ((1 - x*x) < 0)
+    {
+        return 0;
+    }
+    else
+    {
+        if (qSqrt(1 - x*x) == 0)
+        {
+            return 0;
+        }
+        else
+        {
+            result = 2*qAtan(1) - atan(x / sqrt(1 - x*x));
+        }
+    }
+    return result;
 }
 
 void LevelTwoDec::createBlocksVectorsSensReadingsLandH(bool qLow,

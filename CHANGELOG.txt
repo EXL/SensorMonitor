@@ -1,3 +1,6 @@
+5/28/2013 (v. 0.58):
++: Fixed a bug with the steady growth
+
 5/27/2013 (v. 0.57):
 +: Fixed size line charts and colors (chars and table)
 

@@ -120,6 +120,8 @@ class LevelOneDec : public QWidget
 
     void getAlphaForecast(size_t i, double a);
     double getAvrgAlphaForecast();
+
+    double ArcCos(double x);
     /********** END FIRST TABLE **********/
 
     /********** SECOND TABLE **********/

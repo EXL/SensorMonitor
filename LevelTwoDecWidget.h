@@ -145,6 +145,7 @@ class LevelTwoDec : public QWidget
     void getAlphaForecast(size_t i, double a, double avrg_alpha,
                           const QVector<QString> &vectorTarget,
                           QVector<QString> &vectorOutput);
+    double ArcCos(double x);
     /********** END FIRST TABLE **********/
 
     /********** SECOND TABLE **********/

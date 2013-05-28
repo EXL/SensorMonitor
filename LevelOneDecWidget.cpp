@@ -313,7 +313,7 @@ QString LevelOneDec::getAlphaString(int i)
             muMultiplic = getMu(0) * getMu(i);
         }
     }
-    return QString::number(qAcos(vecMultiplic/muMultiplic), 'f', 6);
+    return QString::number(ArcCos(vecMultiplic/muMultiplic), 'f', 6);
 }
 
 double LevelOneDec::getAvrgAlpha()
@@ -402,6 +402,28 @@ double LevelOneDec::getAvrgAlphaForecast()
 #endif
 
     return alpha_avrg_forecast / row;
+}
+
+double LevelOneDec::ArcCos(double x)
+{
+    double result;
+
+    if ((1 - x*x) < 0)
+    {
+        return 0;
+    }
+    else
+    {
+        if (qSqrt(1 - x*x) == 0)
+        {
+            return 0;
+        }
+        else
+        {
+            result = 2*qAtan(1) - atan(x / sqrt(1 - x*x));
+        }
+    }
+    return result;
 }
 
 void LevelOneDec::createVector2DSensReadingsLow(double eps)

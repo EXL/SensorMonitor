@@ -395,7 +395,7 @@ void MainWindow::retranslateUi()
 {
     /********** Start About Dialog **********/
     aboutTitle = tr("About SensorMonitor");
-    aboutBody = tr("<p><b>Version 0.57</b></p>"
+    aboutBody = tr("<p><b>Version %1</b></p>"
                    "<p>Application and source code available under license GPL v.3.0:</p>"
                    "<p><a href='http://www.gnu.org/licenses/gpl.html'>GNU GENERAL PUBLIC LICENSE</a></p>"
                    "<p><a href='https://github.com/EXLMOTODEV/SensorMonitor'>Source Code on GitHub</a></p>"
@@ -409,7 +409,7 @@ void MainWindow::retranslateUi()
                    "<tr><td align='center'><a href='http://www.sqlite.org/'><img src='://gfx/sqlite.png'/></a></td><td align='center'><br>SQLite is an embedded SQL database engine.</td></tr>"
                    "<tr><td align='center'><a href='http://qwt.sourceforge.net/'><img src='://gfx/qwt.png'/></a></td><td align='center'><br>Qwt is Qt Widgets for Technical Applications.</td></tr>"
                    "<tr><td align='center'><a href='http://www.opengl.org/'><img src='://gfx/opengl.png'/></a></td><td align='center'><br>OpenGL is a library (API) for rendering 2D/3D graphics.</td></tr>"
-                   "</table></p>");
+                   "</table></p>").arg(0.58);
     /********** End About Dialog **********/
 
     /********** Start Actions **********/

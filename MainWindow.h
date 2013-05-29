@@ -16,6 +16,7 @@
 #include <QSettings>
 #include <QTableView>
 #include <QSplitter>
+#include <QDir>
 
 class MainWindow : public QMainWindow
 {
@@ -47,6 +48,7 @@ class MainWindow : public QMainWindow
     QAction *showLevelsWindowAction;
     QAction *showOpenGLContextWindowAction;
     // Separator
+    QAction *showHelpInBrowserAction;
     QAction *showAboutDialogWindowAction;
     QAction *showAboutQtDialogWindowAction;
 
@@ -115,6 +117,7 @@ class MainWindow : public QMainWindow
     void retranslateUi();
 
     void createChangeNumSensorsDialog();
+    QDir directoryOf(const QString &subdir);
 private slots:
     void switchLanguage(QAction *action);
 
@@ -126,6 +129,7 @@ private slots:
     void showOpenGLContextWindowSlot();
     void showLevelsWindowSlot();
 
+    void showHelpInBrowser();
     void showAboutDialog();
 
     void showChangeNumSensorsDialog();

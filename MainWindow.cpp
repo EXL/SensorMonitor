@@ -10,6 +10,8 @@
 #include <QStringList>
 #include <QMessageBox>
 #include <QCloseEvent>
+#include <QDesktopServices>
+#include <QUrl>
 
 #ifdef _DEBUG
 #include <QDebug>
@@ -151,6 +153,10 @@ void MainWindow::createActions()
     // showOpenGLContextWindowAction->setShortcut(QKeySequence::UnknownKey);
     showOpenGLContextWindowAction->setIcon(QIcon("://icons/others_icons/show_open_gl_context_32x32.png"));
     connect(showOpenGLContextWindowAction, SIGNAL(triggered()), this, SLOT(showOpenGLContextWindowSlot()));
+
+    showHelpInBrowserAction = new QAction(this);
+    showHelpInBrowserAction->setIcon(QIcon("://icons/others_icons/help_icon_32x32.png"));
+    connect(showHelpInBrowserAction, SIGNAL(triggered()), this, SLOT(showHelpInBrowser()));
 
     showAboutDialogWindowAction = new QAction(this);
     // showAboutDialogWindowAction->setShortcut(QKeySequence::UnknownKey);
@@ -318,10 +324,6 @@ void MainWindow::createToolBars()
 
     fileToolBar->addAction(changeTableModelAction);
 
-    //    fileToolBar->addSeparator();
-
-    //    fileToolBar->addWidget(spinBoxForDialog);
-
     fileToolBar->setStyleSheet("QToolBar {background-color: #D9F1FF}");
 
     viewToolBar = new QToolBar(this);
@@ -332,6 +334,7 @@ void MainWindow::createToolBars()
 
     viewToolBar->addSeparator();
 
+    viewToolBar->addAction(showHelpInBrowserAction);
     viewToolBar->addAction(showAboutDialogWindowAction);
     viewToolBar->addAction(showAboutQtDialogWindowAction);
 
@@ -589,6 +592,33 @@ void MainWindow::showLevelsWindowSlot()
     {
         dataBaseEngine->emptyDataBaseCriticalError();
     }
+}
+
+void MainWindow::showHelpInBrowser()
+{
+    QUrl url(directoryOf("doc").absoluteFilePath("index.htm"));
+    QDesktopServices::openUrl(url);
+}
+
+QDir MainWindow::directoryOf(const QString &subdir)
+{
+    QDir dir(QApplication::applicationDirPath());
+
+#if defined(Q_OS_WIN)
+    if (dir.dirName().toLower() == "debug" || dir.dirName().toLower() == "release")
+    {
+        dir.cdUp();
+    }
+#elif defined(Q_OS_MAC)
+    if (dir.dirName() == "MacOS")
+    {
+        dir.cdUp();
+        dir.cdUp();
+        dir.cdUp();
+    }
+#endif
+    dir.cd(subdir);
+    return dir;
 }
 
 void MainWindow::showAboutDialog()

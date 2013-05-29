@@ -44,5 +44,6 @@
         <file>gfx/Sensors/Sensor-16.png</file>
         <file>icons/others_icons/swap_levels_32x32.png</file>
         <file>icons/save_icons/export_html_icon_32x32.png</file>
+        <file>icons/others_icons/help_icon_32x32.png</file>
     </qresource>
 </RCC>

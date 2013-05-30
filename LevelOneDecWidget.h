@@ -95,6 +95,7 @@ class LevelOneDec : public QWidget
     QAction *printLevelOneChart;
     QAction *exportReportLevelOne;
     QAction *switchWidgetsLevelOne;
+    QAction *showHelpInBrowserAction;
 
     QToolBar *toolBar;
     QWidget *toolBarBox;
@@ -152,6 +153,7 @@ private slots:
     void hideLevelOneWidgets();
 
     void exportReportToHTML();
+    void showHelpInBrowser();
 public:
     LevelOneDec(const QVector<QString> &vectorDate,
                 const QVector<QVector<double> > &vectorSensorReadings2D,

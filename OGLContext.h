@@ -3,60 +3,32 @@
 
 #include <QGLWidget>
 
-#define N 48
-
-struct P
-{
-    P(): z(0), vz(0) {}
-    float x;
-    float y;
-    float z;
-    float vz;
-};
-
-class OGLContext: public QGLWidget
+class OGLContext : public QGLWidget
 {
     Q_OBJECT
+    GLfloat nScale;
+    GLfloat ratio;
 
-    GLint xRot;
-    GLint yRot;
-    GLint zRot;
+    GLfloat xRot1;
+    GLfloat yRot1;
+    GLfloat zRot1;
 
-    GLfloat K;
-    GLfloat DT;
-    GLfloat nSca;
-
-    QPoint lastPos;
-
-    P p[N][N];
-
-    void normalizeAngle(int *angle);
-
-    GLfloat sqrtx(float x);
-
-    void scale_plus();
-    void scale_minus();
-    void changeXRotPlus();
-    void changeXRotMinus();
-signals:
-    void xRotationChanged(int angle);
-    void yRotationChanged(int angle);
-    void zRotationChanged(int angle);
+    GLfloat xRot2;
+    GLfloat yRot2;
+    GLfloat zRot2;
+    QPoint mousePosition;
+    GLuint textureID[3];
+    void genTextures();
 protected:
     void initializeGL();
+    void resizeGL(int nWidth, int nHeight);
     void paintGL();
-    void resizeGL(int width, int height);
-    void mousePressEvent(QMouseEvent *event);
+    void mousePressEvent(QMouseEvent* event);
     void mouseMoveEvent(QMouseEvent *event);
-    void wheelEvent(QWheelEvent* event);
-    virtual void keyPressEvent(QKeyEvent *keyEvent);
-private slots:
-    void updateScene();
-    void setXRotation(int angle);
-    void setYRotation(int angle);
-    void setZRotation(int angle);
+    void wheelEvent(QWheelEvent *event);
+
 public:
-    OGLContext(QWidget *parent = 0);
+    OGLContext(QWidget* parent = 0);
     ~OGLContext();
 };
 

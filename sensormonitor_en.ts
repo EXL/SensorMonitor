@@ -209,92 +209,92 @@ Show HTML Page in your browser?</translation>
 <context>
     <name>DataBaseEngine</name>
     <message>
-        <location filename="DataBaseEngine.cpp" line="176"/>
+        <location filename="DataBaseEngine.cpp" line="180"/>
         <source>DATA</source>
         <translation>DATA</translation>
     </message>
     <message>
-        <location filename="DataBaseEngine.cpp" line="177"/>
+        <location filename="DataBaseEngine.cpp" line="181"/>
         <source>Sensor</source>
         <translation>Sensor</translation>
     </message>
     <message>
-        <location filename="DataBaseEngine.cpp" line="181"/>
+        <location filename="DataBaseEngine.cpp" line="185"/>
         <source>FATAL: Database Error!</source>
         <translation>FATAL: Database Error!</translation>
     </message>
     <message>
-        <location filename="DataBaseEngine.cpp" line="182"/>
+        <location filename="DataBaseEngine.cpp" line="186"/>
         <source>SQLite Driver not found!</source>
         <translation>SQLite Driver not found!</translation>
     </message>
     <message>
-        <location filename="DataBaseEngine.cpp" line="184"/>
+        <location filename="DataBaseEngine.cpp" line="188"/>
         <source>Warning!</source>
         <translation>Warning!</translation>
     </message>
     <message>
-        <location filename="DataBaseEngine.cpp" line="185"/>
+        <location filename="DataBaseEngine.cpp" line="189"/>
         <source>&lt;html&gt;The table was very large (256 rows overflow limit). &lt;br&gt;Adding items can slow down the program. &lt;br&gt;&lt;br&gt;You can:&lt;ul&gt;&lt;li&gt;Continue;&lt;/li&gt;&lt;li&gt;Clear the DataBase;&lt;/li&gt;&lt;li&gt;Generate the HTML Table.&lt;/li&gt;&lt;/ul&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;The table was very large (256 rows overflow limit). &lt;br&gt;Adding items can slow down the program. &lt;br&gt;&lt;br&gt;You can:&lt;ul&gt;&lt;li&gt;Continue;&lt;/li&gt;&lt;li&gt;Clear the DataBase;&lt;/li&gt;&lt;li&gt;Generate the HTML Table.&lt;/li&gt;&lt;/ul&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="DataBaseEngine.cpp" line="195"/>
+        <location filename="DataBaseEngine.cpp" line="199"/>
         <source>Continue</source>
         <translation>Continue</translation>
     </message>
     <message>
-        <location filename="DataBaseEngine.cpp" line="196"/>
+        <location filename="DataBaseEngine.cpp" line="200"/>
         <source>Clear DataBase</source>
         <translation>Clear DataBase</translation>
     </message>
     <message>
-        <location filename="DataBaseEngine.cpp" line="197"/>
+        <location filename="DataBaseEngine.cpp" line="201"/>
         <source>Generate HTML</source>
         <translation>Generate HTML</translation>
     </message>
     <message>
-        <location filename="DataBaseEngine.cpp" line="199"/>
+        <location filename="DataBaseEngine.cpp" line="203"/>
         <source>Error!</source>
         <translation>Error!</translation>
     </message>
     <message>
-        <location filename="DataBaseEngine.cpp" line="200"/>
+        <location filename="DataBaseEngine.cpp" line="204"/>
         <source>Success!</source>
         <translation>Success!</translation>
     </message>
     <message>
-        <location filename="DataBaseEngine.cpp" line="202"/>
+        <location filename="DataBaseEngine.cpp" line="206"/>
         <source>DataBase Question</source>
         <translation>DataBase Question</translation>
     </message>
     <message>
-        <location filename="DataBaseEngine.cpp" line="203"/>
+        <location filename="DataBaseEngine.cpp" line="207"/>
         <source>Delete SQLite DataBase?</source>
         <translation>Delete SQLite DataBase?</translation>
     </message>
     <message>
-        <location filename="DataBaseEngine.cpp" line="204"/>
+        <location filename="DataBaseEngine.cpp" line="208"/>
         <source>Load the table deletes the existing database.</source>
         <translation>Load the table deletes the existing database.</translation>
     </message>
     <message>
-        <location filename="DataBaseEngine.cpp" line="206"/>
+        <location filename="DataBaseEngine.cpp" line="210"/>
         <source>Empty SQLite DataBase table!</source>
         <translation>Empty SQLite DataBase table!</translation>
     </message>
     <message>
-        <location filename="DataBaseEngine.cpp" line="209"/>
+        <location filename="DataBaseEngine.cpp" line="213"/>
         <source>Save *.html file</source>
         <translation>Save *.html file</translation>
     </message>
     <message>
-        <location filename="DataBaseEngine.cpp" line="210"/>
+        <location filename="DataBaseEngine.cpp" line="214"/>
         <source>HTML page (*.html);;All Files (*)</source>
         <translation>HTML page (*.html);;All Files (*)</translation>
     </message>
     <message>
-        <location filename="DataBaseEngine.cpp" line="211"/>
+        <location filename="DataBaseEngine.cpp" line="215"/>
         <source>Can&apos;t write HTML file!
 Please check RW permission or correct select the file.
 And try again!</source>
@@ -303,7 +303,7 @@ Please check RW permission or correct select the file.
 And try again!</translation>
     </message>
     <message>
-        <location filename="DataBaseEngine.cpp" line="214"/>
+        <location filename="DataBaseEngine.cpp" line="218"/>
         <source>HTML page is created successfully.
 Written %1x%2 cells!
 
@@ -314,18 +314,18 @@ Written %1x%2 cells!
 Show HTML Page in your browser?</translation>
     </message>
     <message>
-        <location filename="DataBaseEngine.cpp" line="218"/>
+        <location filename="DataBaseEngine.cpp" line="222"/>
         <source>Save *.txt file</source>
         <translation>Save *.txt file</translation>
     </message>
     <message>
-        <location filename="DataBaseEngine.cpp" line="219"/>
-        <location filename="DataBaseEngine.cpp" line="235"/>
+        <location filename="DataBaseEngine.cpp" line="223"/>
+        <location filename="DataBaseEngine.cpp" line="239"/>
         <source>Text File (*.txt);;All Files (*)</source>
         <translation>Text File (*.txt);;All Files (*)</translation>
     </message>
     <message>
-        <location filename="DataBaseEngine.cpp" line="220"/>
+        <location filename="DataBaseEngine.cpp" line="224"/>
         <source>Can&apos;t write TXT file!
 Please check RW permission or correct select the file.
 And try again!</source>
@@ -334,25 +334,25 @@ Please check RW permission or correct select the file.
 And try again!</translation>
     </message>
     <message>
-        <location filename="DataBaseEngine.cpp" line="223"/>
+        <location filename="DataBaseEngine.cpp" line="227"/>
         <source>TXT file is created successfully.
 Written %1 lines!</source>
         <translation>TXT file is created successfully.
 Written %1 lines!</translation>
     </message>
     <message>
-        <location filename="DataBaseEngine.cpp" line="226"/>
+        <location filename="DataBaseEngine.cpp" line="230"/>
         <source>Save *.dat file</source>
         <translation>Save *.dat file</translation>
     </message>
     <message>
-        <location filename="DataBaseEngine.cpp" line="227"/>
-        <location filename="DataBaseEngine.cpp" line="251"/>
+        <location filename="DataBaseEngine.cpp" line="231"/>
+        <location filename="DataBaseEngine.cpp" line="255"/>
         <source>Data File (*.dat);;All Files (*)</source>
         <translation>Data File (*.dat);;All Files (*)</translation>
     </message>
     <message>
-        <location filename="DataBaseEngine.cpp" line="228"/>
+        <location filename="DataBaseEngine.cpp" line="232"/>
         <source>Can&apos;t write DATA file!
 Please check RW permission or correct select the file.
 And try again!</source>
@@ -361,19 +361,19 @@ Please check RW permission or correct select the file.
 And try again!</translation>
     </message>
     <message>
-        <location filename="DataBaseEngine.cpp" line="231"/>
+        <location filename="DataBaseEngine.cpp" line="235"/>
         <source>DATA file is created successfully.
 Added %1 lines!</source>
         <translation>DATA file is created successfully.
 Added %1 lines!</translation>
     </message>
     <message>
-        <location filename="DataBaseEngine.cpp" line="234"/>
+        <location filename="DataBaseEngine.cpp" line="238"/>
         <source>Open *.txt file</source>
         <translation>Open *.txt file</translation>
     </message>
     <message>
-        <location filename="DataBaseEngine.cpp" line="236"/>
+        <location filename="DataBaseEngine.cpp" line="240"/>
         <source>Can&apos;t read TXT file!
 Please check RW permission or correct select the file.
 And try again!</source>
@@ -382,7 +382,7 @@ Please check RW permission or correct select the file.
 And try again!</translation>
     </message>
     <message>
-        <location filename="DataBaseEngine.cpp" line="239"/>
+        <location filename="DataBaseEngine.cpp" line="243"/>
         <source>Attention!
 You try to read TXT file format, which unsuitable size of columns!
 The number of columns must be equal to %1!
@@ -397,14 +397,14 @@ The number of columns must be equal to %1!
 Information: Number of columns in the file - %2</translation>
     </message>
     <message>
-        <location filename="DataBaseEngine.cpp" line="244"/>
+        <location filename="DataBaseEngine.cpp" line="248"/>
         <source>The data in the TXT file is corrupted!
 The first mistake: %1</source>
         <translation>The data in the TXT file is corrupted!
 The first mistake: %1</translation>
     </message>
     <message>
-        <location filename="DataBaseEngine.cpp" line="246"/>
+        <location filename="DataBaseEngine.cpp" line="250"/>
         <source>TXT file is read successfully.
 Read %1 lines!
 
@@ -415,12 +415,12 @@ Read %1 lines!
 Show plot?</translation>
     </message>
     <message>
-        <location filename="DataBaseEngine.cpp" line="250"/>
+        <location filename="DataBaseEngine.cpp" line="254"/>
         <source>Open *.dat file</source>
         <translation>Open *.dat file</translation>
     </message>
     <message>
-        <location filename="DataBaseEngine.cpp" line="252"/>
+        <location filename="DataBaseEngine.cpp" line="256"/>
         <source>Can&apos;t read DATA file!
 Please check RW permission or correct select the file.
 And try again!</source>
@@ -429,14 +429,14 @@ Please check RW permission or correct select the file.
 And try again!</translation>
     </message>
     <message>
-        <location filename="DataBaseEngine.cpp" line="255"/>
+        <location filename="DataBaseEngine.cpp" line="259"/>
         <source>Invalid &quot;*.dat&quot; file!
 Please check data file and try again!</source>
         <translation>Invalid &quot;*.dat&quot; file!
 Please check data file and try again!</translation>
     </message>
     <message>
-        <location filename="DataBaseEngine.cpp" line="257"/>
+        <location filename="DataBaseEngine.cpp" line="261"/>
         <source>Data file is read successfully.
 Read %1 lines!
 
@@ -703,7 +703,7 @@ Show plot?</translation>
     </message>
     <message>
         <location filename="LevelOneDecWidget.cpp" line="118"/>
-        <location filename="LevelOneDecWidget.cpp" line="550"/>
+        <location filename="LevelOneDecWidget.cpp" line="558"/>
         <source>Export</source>
         <translation>Export</translation>
     </message>
@@ -714,7 +714,7 @@ Show plot?</translation>
     </message>
     <message>
         <location filename="LevelOneDecWidget.cpp" line="125"/>
-        <location filename="LevelOneDecWidget.cpp" line="579"/>
+        <location filename="LevelOneDecWidget.cpp" line="587"/>
         <source>Print</source>
         <translation>Print</translation>
     </message>
@@ -744,17 +744,27 @@ Show plot?</translation>
         <translation>Switch between charts and tables</translation>
     </message>
     <message>
-        <location filename="LevelOneDecWidget.cpp" line="163"/>
+        <location filename="LevelOneDecWidget.cpp" line="145"/>
+        <source>Help</source>
+        <translation>Help</translation>
+    </message>
+    <message>
+        <location filename="LevelOneDecWidget.cpp" line="146"/>
+        <source>Show help in your browser</source>
+        <translation>Show help in your browser</translation>
+    </message>
+    <message>
+        <location filename="LevelOneDecWidget.cpp" line="171"/>
         <source>&lt;h3&gt;Coefficient &quot;A&quot;: &lt;/h3&gt;</source>
         <translation>&lt;h3&gt;Coefficient &quot;A&quot;: &lt;/h3&gt;</translation>
     </message>
     <message>
-        <location filename="LevelOneDecWidget.cpp" line="166"/>
+        <location filename="LevelOneDecWidget.cpp" line="174"/>
         <source>&lt;h3&gt;Coefficient &quot;Eps&quot;: &lt;/h3&gt;</source>
         <translation>&lt;h3&gt;Coefficient &quot;Eps&quot;: &lt;/h3&gt;</translation>
     </message>
     <message>
-        <location filename="LevelOneDecWidget.cpp" line="169"/>
+        <location filename="LevelOneDecWidget.cpp" line="177"/>
         <source>&lt;h3&gt; = 3 mm&lt;/h3&gt;</source>
         <translation>&lt;h3&gt; = 3 mm&lt;/h3&gt;</translation>
     </message>
@@ -763,54 +773,54 @@ Show plot?</translation>
         <translation type="obsolete">&lt;h3&gt; = 1 mm&lt;/h3&gt;</translation>
     </message>
     <message>
-        <location filename="LevelOneDecWidget.cpp" line="190"/>
+        <location filename="LevelOneDecWidget.cpp" line="198"/>
         <source>Warning! System is not stable! You need to go to the second level of decomposition or increase the coefficient &quot;Eps&quot;</source>
         <translation>Warning! System is not stable! You need to go to the second level of decomposition or increase the coefficient &quot;Eps&quot;</translation>
     </message>
     <message>
-        <location filename="LevelOneDecWidget.cpp" line="544"/>
+        <location filename="LevelOneDecWidget.cpp" line="552"/>
         <source>&lt;h3&gt; = %1 mm&lt;/h3&gt;</source>
         <translation>&lt;h3&gt; = %1 mm&lt;/h3&gt;</translation>
     </message>
     <message>
-        <location filename="LevelOneDecWidget.cpp" line="551"/>
+        <location filename="LevelOneDecWidget.cpp" line="559"/>
         <source>What is the chart you want to export?</source>
         <translation>What is the chart you want to export?</translation>
     </message>
     <message>
-        <location filename="LevelOneDecWidget.cpp" line="554"/>
-        <location filename="LevelOneDecWidget.cpp" line="583"/>
+        <location filename="LevelOneDecWidget.cpp" line="562"/>
+        <location filename="LevelOneDecWidget.cpp" line="591"/>
         <source>Phase Coordinates</source>
         <translation>Phase Coordinates</translation>
     </message>
     <message>
-        <location filename="LevelOneDecWidget.cpp" line="555"/>
-        <location filename="LevelOneDecWidget.cpp" line="584"/>
+        <location filename="LevelOneDecWidget.cpp" line="563"/>
+        <location filename="LevelOneDecWidget.cpp" line="592"/>
         <source>Available Deviations</source>
         <translation>Available Deviations</translation>
     </message>
     <message>
-        <location filename="LevelOneDecWidget.cpp" line="580"/>
+        <location filename="LevelOneDecWidget.cpp" line="588"/>
         <source>What is the chart you want to print?</source>
         <translation>What is the chart you want to print?</translation>
     </message>
     <message>
-        <location filename="LevelOneDecWidget.cpp" line="644"/>
+        <location filename="LevelOneDecWidget.cpp" line="652"/>
         <source>Save *.html file</source>
         <translation>Save *.html file</translation>
     </message>
     <message>
-        <location filename="LevelOneDecWidget.cpp" line="646"/>
+        <location filename="LevelOneDecWidget.cpp" line="654"/>
         <source>HTML page (*.html);;All Files (*)</source>
         <translation>HTML page (*.html);;All Files (*)</translation>
     </message>
     <message>
-        <location filename="LevelOneDecWidget.cpp" line="651"/>
+        <location filename="LevelOneDecWidget.cpp" line="659"/>
         <source>Error!</source>
         <translation>Error!</translation>
     </message>
     <message>
-        <location filename="LevelOneDecWidget.cpp" line="651"/>
+        <location filename="LevelOneDecWidget.cpp" line="659"/>
         <source>Can&apos;t write HTML file!
 Please check RW permission or correct select the file.
 And try again!</source>
@@ -819,12 +829,12 @@ Please check RW permission or correct select the file.
 And try again!</translation>
     </message>
     <message>
-        <location filename="LevelOneDecWidget.cpp" line="776"/>
+        <location filename="LevelOneDecWidget.cpp" line="784"/>
         <source>Success!</source>
         <translation>Success!</translation>
     </message>
     <message>
-        <location filename="LevelOneDecWidget.cpp" line="777"/>
+        <location filename="LevelOneDecWidget.cpp" line="785"/>
         <source>Level One HTML-report is created successfully.
 Show HTML Page in your browser?</source>
         <translation>Level One HTML-report is created successfully.
@@ -1061,7 +1071,7 @@ Show HTML Page in your browser?</translation>
     </message>
     <message>
         <location filename="LevelTwoDecWidget.cpp" line="481"/>
-        <location filename="LevelTwoDecWidget.cpp" line="946"/>
+        <location filename="LevelTwoDecWidget.cpp" line="961"/>
         <source>Export</source>
         <translation>Export</translation>
     </message>
@@ -1091,7 +1101,7 @@ Show HTML Page in your browser?</translation>
     </message>
     <message>
         <location filename="LevelTwoDecWidget.cpp" line="488"/>
-        <location filename="LevelTwoDecWidget.cpp" line="975"/>
+        <location filename="LevelTwoDecWidget.cpp" line="990"/>
         <source>Print</source>
         <translation>Print</translation>
     </message>
@@ -1110,53 +1120,63 @@ Show HTML Page in your browser?</translation>
         <translation>Switch between charts and tables</translation>
     </message>
     <message>
-        <location filename="LevelTwoDecWidget.cpp" line="518"/>
+        <location filename="LevelTwoDecWidget.cpp" line="508"/>
+        <source>Help</source>
+        <translation>Help</translation>
+    </message>
+    <message>
+        <location filename="LevelTwoDecWidget.cpp" line="509"/>
+        <source>Show help in your browser</source>
+        <translation>Show help in your browser</translation>
+    </message>
+    <message>
+        <location filename="LevelTwoDecWidget.cpp" line="526"/>
         <source>&lt;strong&gt;&lt;font color=&apos;#FF7B5C&apos;&gt;Block A&lt;/font&gt;&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;&lt;font color=&apos;#65D270&apos;&gt;Block B&lt;/strong&gt;&lt;/font&gt;&lt;br&gt;&lt;strong&gt;&lt;font color=&apos;#53ACD6&apos;&gt;Block C&lt;/strong&gt;&lt;/font&gt;&lt;br&gt;</source>
         <oldsource>&lt;strong&gt;&lt;font color=&apos;#FFCC99&apos;&gt;Block A&lt;/font&gt;&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;&lt;font color=&apos;#CCFFCC&apos;&gt;Block B&lt;/strong&gt;&lt;/font&gt;&lt;br&gt;&lt;strong&gt;&lt;font color=&apos;#99CCFF&apos;&gt;Block C&lt;/strong&gt;&lt;/font&gt;&lt;br&gt;</oldsource>
         <translation>&lt;strong&gt;&lt;font color=&apos;#FF7B5C&apos;&gt;Block A&lt;/font&gt;&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;&lt;font color=&apos;#65D270&apos;&gt;Block B&lt;/strong&gt;&lt;/font&gt;&lt;br&gt;&lt;strong&gt;&lt;font color=&apos;#53ACD6&apos;&gt;Block C&lt;/strong&gt;&lt;/font&gt;&lt;br&gt;</translation>
     </message>
     <message>
-        <location filename="LevelTwoDecWidget.cpp" line="522"/>
+        <location filename="LevelTwoDecWidget.cpp" line="530"/>
         <source>The color in the table corresponds to the tip</source>
         <translation>The color in the table corresponds to the tip</translation>
     </message>
     <message>
-        <location filename="LevelTwoDecWidget.cpp" line="535"/>
+        <location filename="LevelTwoDecWidget.cpp" line="543"/>
         <source>&lt;h3&gt;Coefficient &quot;A&quot;: &lt;/h3&gt;</source>
         <translation>&lt;h3&gt;Coefficient &quot;A&quot;: &lt;/h3&gt;</translation>
     </message>
     <message>
-        <location filename="LevelTwoDecWidget.cpp" line="538"/>
+        <location filename="LevelTwoDecWidget.cpp" line="546"/>
         <source>&lt;h3&gt;Coefficient &quot;Eps&quot;: &lt;/h3&gt;</source>
         <translation>&lt;h3&gt;Coefficient &quot;Eps&quot;: &lt;/h3&gt;</translation>
     </message>
     <message>
-        <location filename="LevelTwoDecWidget.cpp" line="541"/>
+        <location filename="LevelTwoDecWidget.cpp" line="549"/>
         <source>&lt;h3&gt; = 3 mm&lt;/h3&gt;</source>
         <translation>&lt;h3&gt; = 3 mm&lt;/h3&gt;</translation>
     </message>
     <message>
-        <location filename="LevelTwoDecWidget.cpp" line="562"/>
+        <location filename="LevelTwoDecWidget.cpp" line="570"/>
         <source>Warning! System is not stable! You need refer to a specialist or increase the coefficient &quot;Eps&quot;</source>
         <translation>Warning! System is not stable! You need refer to a specialist or increase the coefficient &quot;Eps&quot;</translation>
     </message>
     <message>
-        <location filename="LevelTwoDecWidget.cpp" line="626"/>
+        <location filename="LevelTwoDecWidget.cpp" line="634"/>
         <source>Save *.html file</source>
         <translation>Save *.html file</translation>
     </message>
     <message>
-        <location filename="LevelTwoDecWidget.cpp" line="628"/>
+        <location filename="LevelTwoDecWidget.cpp" line="636"/>
         <source>HTML page (*.html);;All Files (*)</source>
         <translation>HTML page (*.html);;All Files (*)</translation>
     </message>
     <message>
-        <location filename="LevelTwoDecWidget.cpp" line="633"/>
+        <location filename="LevelTwoDecWidget.cpp" line="641"/>
         <source>Error!</source>
         <translation>Error!</translation>
     </message>
     <message>
-        <location filename="LevelTwoDecWidget.cpp" line="633"/>
+        <location filename="LevelTwoDecWidget.cpp" line="641"/>
         <source>Can&apos;t write HTML file!
 Please check RW permission or correct select the file.
 And try again!</source>
@@ -1165,41 +1185,41 @@ Please check RW permission or correct select the file.
 And try again!</translation>
     </message>
     <message>
-        <location filename="LevelTwoDecWidget.cpp" line="810"/>
+        <location filename="LevelTwoDecWidget.cpp" line="818"/>
         <source>Success!</source>
         <translation>Success!</translation>
     </message>
     <message>
-        <location filename="LevelTwoDecWidget.cpp" line="811"/>
+        <location filename="LevelTwoDecWidget.cpp" line="819"/>
         <source>Level Two HTML-report is created successfully.
 Show HTML Page in your browser?</source>
         <translation>Level Two HTML-report is created successfully.
 Show HTML Page in your browser?</translation>
     </message>
     <message>
-        <location filename="LevelTwoDecWidget.cpp" line="940"/>
+        <location filename="LevelTwoDecWidget.cpp" line="948"/>
         <source>&lt;h3&gt; = %1 mm&lt;/h3&gt;</source>
         <translation>&lt;h3&gt; = %1 mm&lt;/h3&gt;</translation>
     </message>
     <message>
-        <location filename="LevelTwoDecWidget.cpp" line="947"/>
+        <location filename="LevelTwoDecWidget.cpp" line="962"/>
         <source>What is the chart you want to export?</source>
         <translation>What is the chart you want to export?</translation>
     </message>
     <message>
-        <location filename="LevelTwoDecWidget.cpp" line="950"/>
-        <location filename="LevelTwoDecWidget.cpp" line="979"/>
+        <location filename="LevelTwoDecWidget.cpp" line="965"/>
+        <location filename="LevelTwoDecWidget.cpp" line="994"/>
         <source>Phase Coordinates</source>
         <translation>Phase Coordinates</translation>
     </message>
     <message>
-        <location filename="LevelTwoDecWidget.cpp" line="951"/>
-        <location filename="LevelTwoDecWidget.cpp" line="980"/>
+        <location filename="LevelTwoDecWidget.cpp" line="966"/>
+        <location filename="LevelTwoDecWidget.cpp" line="995"/>
         <source>Available Deviations</source>
         <translation>Available Deviations</translation>
     </message>
     <message>
-        <location filename="LevelTwoDecWidget.cpp" line="976"/>
+        <location filename="LevelTwoDecWidget.cpp" line="991"/>
         <source>What is the chart you want to print?</source>
         <translation>What is the chart you want to print?</translation>
     </message>
@@ -1498,12 +1518,12 @@ Show HTML Page in your browser?</translation>
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="MainWindow.cpp" line="267"/>
+        <location filename="MainWindow.cpp" line="277"/>
         <source>&amp;%1</source>
         <translation>&amp;%1</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="397"/>
+        <location filename="MainWindow.cpp" line="404"/>
         <source>About SensorMonitor</source>
         <oldsource>About Monitoring Sensor</oldsource>
         <translation>About SensorMonitor</translation>
@@ -1514,113 +1534,113 @@ Show HTML Page in your browser?</translation>
         <translation type="obsolete">&lt;p&gt;&lt;b&gt;Version 0.5&lt;/b&gt;&lt;/p&gt;&lt;p&gt;Application and source code available under license GPL v.3.0:&lt;/p&gt;&lt;p&gt;&lt;a href=&apos;http://www.gnu.org/licenses/gpl.html&apos;&gt;GNU GENERAL PUBLIC LICENSE&lt;/a&gt;&lt;/p&gt;&lt;p&gt;SensorMonitor is designed by Vitaly Shuvaev and Alexander Skorlupin, is students of group BI21-A.&lt;/p&gt;&lt;p&gt;Email: &lt;a href=&apos;mailto:exl@bk.ru&apos;&gt;exl@bk.ru&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;center&gt;&lt;a href=&apos;http://ssga.ru&apos;&gt;&lt;img src=&apos;://gfx/logo.png&apos;/&gt;&lt;/a&gt;&lt;/center&gt;&lt;/p&gt;&lt;p&gt;(c) SSGA, 2013&lt;/p&gt;&lt;p&gt;Application was developmented used the following technologies:&lt;/p&gt;&lt;p&gt;&lt;table&gt;&lt;tr&gt;&lt;td align=&apos;center&apos;&gt;&lt;a href=&apos;http://www.w3.org/TR/html-markup/&apos;&gt;&lt;img src=&apos;://gfx/html.png&apos;/&gt;&lt;/a&gt;&lt;/td&gt;&lt;td align=&apos;center&apos;&gt;&lt;br&gt;HTML and CSS is the main web markup language.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&apos;center&apos;&gt;&lt;a href=&apos;http://www.sqlite.org/&apos;&gt;&lt;img src=&apos;://gfx/sqlite.png&apos;/&gt;&lt;/a&gt;&lt;/td&gt;&lt;td align=&apos;center&apos;&gt;&lt;br&gt;SQLite is an embedded SQL database engine.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&apos;center&apos;&gt;&lt;a href=&apos;http://qwt.sourceforge.net/&apos;&gt;&lt;img src=&apos;://gfx/qwt.png&apos;/&gt;&lt;/a&gt;&lt;/td&gt;&lt;td align=&apos;center&apos;&gt;&lt;br&gt;Qwt is Qt Widgets for Technical Applications.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&apos;center&apos;&gt;&lt;a href=&apos;http://www.opengl.org/&apos;&gt;&lt;img src=&apos;://gfx/opengl.png&apos;/&gt;&lt;/a&gt;&lt;/td&gt;&lt;td align=&apos;center&apos;&gt;&lt;br&gt;OpenGL is a library (API) for rendering 2D/3D graphics.&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="398"/>
+        <location filename="MainWindow.cpp" line="405"/>
         <source>&lt;p&gt;&lt;b&gt;Version %1&lt;/b&gt;&lt;/p&gt;&lt;p&gt;Application and source code available under license GPL v.3.0:&lt;/p&gt;&lt;p&gt;&lt;a href=&apos;http://www.gnu.org/licenses/gpl.html&apos;&gt;GNU GENERAL PUBLIC LICENSE&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;a href=&apos;https://github.com/EXLMOTODEV/SensorMonitor&apos;&gt;Source Code on GitHub&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Sensor Monitor is designed by Vitaly Shuvaev and Alexander Skorlupin, is students of group BI21-A.&lt;/p&gt;&lt;p&gt;Email: &lt;a href=&apos;mailto:exl@bk.ru&apos;&gt;exl@bk.ru&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;center&gt;&lt;a href=&apos;http://ssga.ru&apos;&gt;&lt;img src=&apos;://gfx/logo.png&apos;/&gt;&lt;/a&gt;&lt;/center&gt;&lt;/p&gt;&lt;p&gt;(c) SSGA, 2013&lt;/p&gt;&lt;p&gt;Application was developmented used the following technologies:&lt;/p&gt;&lt;p&gt;&lt;table&gt;&lt;tr&gt;&lt;td align=&apos;center&apos;&gt;&lt;a href=&apos;http://www.w3.org/TR/html-markup/&apos;&gt;&lt;img src=&apos;://gfx/html.png&apos;/&gt;&lt;/a&gt;&lt;/td&gt;&lt;td align=&apos;center&apos;&gt;&lt;br&gt;HTML and CSS is the main web markup language.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&apos;center&apos;&gt;&lt;a href=&apos;http://www.sqlite.org/&apos;&gt;&lt;img src=&apos;://gfx/sqlite.png&apos;/&gt;&lt;/a&gt;&lt;/td&gt;&lt;td align=&apos;center&apos;&gt;&lt;br&gt;SQLite is an embedded SQL database engine.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&apos;center&apos;&gt;&lt;a href=&apos;http://qwt.sourceforge.net/&apos;&gt;&lt;img src=&apos;://gfx/qwt.png&apos;/&gt;&lt;/a&gt;&lt;/td&gt;&lt;td align=&apos;center&apos;&gt;&lt;br&gt;Qwt is Qt Widgets for Technical Applications.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&apos;center&apos;&gt;&lt;a href=&apos;http://www.opengl.org/&apos;&gt;&lt;img src=&apos;://gfx/opengl.png&apos;/&gt;&lt;/a&gt;&lt;/td&gt;&lt;td align=&apos;center&apos;&gt;&lt;br&gt;OpenGL is a library (API) for rendering 2D/3D graphics.&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/p&gt;</source>
         <oldsource>&lt;p&gt;&lt;b&gt;Version 0.57&lt;/b&gt;&lt;/p&gt;&lt;p&gt;Application and source code available under license GPL v.3.0:&lt;/p&gt;&lt;p&gt;&lt;a href=&apos;http://www.gnu.org/licenses/gpl.html&apos;&gt;GNU GENERAL PUBLIC LICENSE&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;a href=&apos;https://github.com/EXLMOTODEV/SensorMonitor&apos;&gt;Source Code on GitHub&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Sensor Monitor is designed by Vitaly Shuvaev and Alexander Skorlupin, is students of group BI21-A.&lt;/p&gt;&lt;p&gt;Email: &lt;a href=&apos;mailto:exl@bk.ru&apos;&gt;exl@bk.ru&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;center&gt;&lt;a href=&apos;http://ssga.ru&apos;&gt;&lt;img src=&apos;://gfx/logo.png&apos;/&gt;&lt;/a&gt;&lt;/center&gt;&lt;/p&gt;&lt;p&gt;(c) SSGA, 2013&lt;/p&gt;&lt;p&gt;Application was developmented used the following technologies:&lt;/p&gt;&lt;p&gt;&lt;table&gt;&lt;tr&gt;&lt;td align=&apos;center&apos;&gt;&lt;a href=&apos;http://www.w3.org/TR/html-markup/&apos;&gt;&lt;img src=&apos;://gfx/html.png&apos;/&gt;&lt;/a&gt;&lt;/td&gt;&lt;td align=&apos;center&apos;&gt;&lt;br&gt;HTML and CSS is the main web markup language.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&apos;center&apos;&gt;&lt;a href=&apos;http://www.sqlite.org/&apos;&gt;&lt;img src=&apos;://gfx/sqlite.png&apos;/&gt;&lt;/a&gt;&lt;/td&gt;&lt;td align=&apos;center&apos;&gt;&lt;br&gt;SQLite is an embedded SQL database engine.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&apos;center&apos;&gt;&lt;a href=&apos;http://qwt.sourceforge.net/&apos;&gt;&lt;img src=&apos;://gfx/qwt.png&apos;/&gt;&lt;/a&gt;&lt;/td&gt;&lt;td align=&apos;center&apos;&gt;&lt;br&gt;Qwt is Qt Widgets for Technical Applications.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&apos;center&apos;&gt;&lt;a href=&apos;http://www.opengl.org/&apos;&gt;&lt;img src=&apos;://gfx/opengl.png&apos;/&gt;&lt;/a&gt;&lt;/td&gt;&lt;td align=&apos;center&apos;&gt;&lt;br&gt;OpenGL is a library (API) for rendering 2D/3D graphics.&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/p&gt;</oldsource>
         <translation>&lt;p&gt;&lt;b&gt;Version %1&lt;/b&gt;&lt;/p&gt;&lt;p&gt;Application and source code available under license GPL v.3.0:&lt;/p&gt;&lt;p&gt;&lt;a href=&apos;http://www.gnu.org/licenses/gpl.html&apos;&gt;GNU GENERAL PUBLIC LICENSE&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;a href=&apos;https://github.com/EXLMOTODEV/SensorMonitor&apos;&gt;Source Code on GitHub&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Sensor Monitor is designed by Vitaly Shuvaev and Alexander Skorlupin, is students of group BI21-A.&lt;/p&gt;&lt;p&gt;Email: &lt;a href=&apos;mailto:exl@bk.ru&apos;&gt;exl@bk.ru&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;center&gt;&lt;a href=&apos;http://ssga.ru&apos;&gt;&lt;img src=&apos;://gfx/logo.png&apos;/&gt;&lt;/a&gt;&lt;/center&gt;&lt;/p&gt;&lt;p&gt;(c) SSGA, 2013&lt;/p&gt;&lt;p&gt;Application was developmented used the following technologies:&lt;/p&gt;&lt;p&gt;&lt;table&gt;&lt;tr&gt;&lt;td align=&apos;center&apos;&gt;&lt;a href=&apos;http://www.w3.org/TR/html-markup/&apos;&gt;&lt;img src=&apos;://gfx/html.png&apos;/&gt;&lt;/a&gt;&lt;/td&gt;&lt;td align=&apos;center&apos;&gt;&lt;br&gt;HTML and CSS is the main web markup language.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&apos;center&apos;&gt;&lt;a href=&apos;http://www.sqlite.org/&apos;&gt;&lt;img src=&apos;://gfx/sqlite.png&apos;/&gt;&lt;/a&gt;&lt;/td&gt;&lt;td align=&apos;center&apos;&gt;&lt;br&gt;SQLite is an embedded SQL database engine.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&apos;center&apos;&gt;&lt;a href=&apos;http://qwt.sourceforge.net/&apos;&gt;&lt;img src=&apos;://gfx/qwt.png&apos;/&gt;&lt;/a&gt;&lt;/td&gt;&lt;td align=&apos;center&apos;&gt;&lt;br&gt;Qwt is Qt Widgets for Technical Applications.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&apos;center&apos;&gt;&lt;a href=&apos;http://www.opengl.org/&apos;&gt;&lt;img src=&apos;://gfx/opengl.png&apos;/&gt;&lt;/a&gt;&lt;/td&gt;&lt;td align=&apos;center&apos;&gt;&lt;br&gt;OpenGL is a library (API) for rendering 2D/3D graphics.&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="416"/>
+        <location filename="MainWindow.cpp" line="423"/>
         <source>&amp;Add a random row</source>
         <translation>&amp;Add a random row</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="417"/>
+        <location filename="MainWindow.cpp" line="424"/>
         <source>Add a random row in the SQLite DataBase</source>
         <translation>Add a random row in the SQLite DataBase</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="419"/>
+        <location filename="MainWindow.cpp" line="426"/>
         <source>&amp;Load Table</source>
         <translation>&amp;Load Table</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="420"/>
+        <location filename="MainWindow.cpp" line="427"/>
         <source>Load table with the sensor readings</source>
         <translation>Load table with the sensor readings</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="422"/>
+        <location filename="MainWindow.cpp" line="429"/>
         <source>&amp;Clear DataBase</source>
         <translation>&amp;Clear DataBase</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="423"/>
+        <location filename="MainWindow.cpp" line="430"/>
         <source>Clear the SQLite DataBase</source>
         <translation>Clear the SQLite DataBase</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="425"/>
+        <location filename="MainWindow.cpp" line="432"/>
         <source>&amp;Load Table from &quot;*.txt&quot;</source>
         <translation>&amp;Load Table from &quot;*.txt&quot;</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="426"/>
+        <location filename="MainWindow.cpp" line="433"/>
         <source>Load Table from general TextFile</source>
         <translation>Load Table from general TextFile</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="428"/>
+        <location filename="MainWindow.cpp" line="435"/>
         <source>&amp;Load Table from &quot;*.dat&quot;</source>
         <translation>&amp;Load Table from &quot;*.dat&quot;</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="429"/>
+        <location filename="MainWindow.cpp" line="436"/>
         <source>Load Table from special DataFile</source>
         <translation>Load Table from special DataFile</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="431"/>
+        <location filename="MainWindow.cpp" line="438"/>
         <source>&amp;Save Table to &quot;*.txt&quot;</source>
         <translation>&amp;Save Table to &quot;*.txt&quot;</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="432"/>
+        <location filename="MainWindow.cpp" line="439"/>
         <source>Save Table to the general TextFile</source>
         <translation>Save Table to the general TextFile</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="434"/>
+        <location filename="MainWindow.cpp" line="441"/>
         <source>&amp;Save Table to &quot;*.dat&quot;</source>
         <translation>&amp;Save Table to &quot;*.dat&quot;</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="435"/>
+        <location filename="MainWindow.cpp" line="442"/>
         <source>Save Table to special DataFile</source>
         <translation>Save Table to special DataFile</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="437"/>
+        <location filename="MainWindow.cpp" line="444"/>
         <source>&amp;Export DataBase to HTLM page</source>
         <translation>&amp;Export DataBase to HTLM page</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="438"/>
+        <location filename="MainWindow.cpp" line="445"/>
         <source>Export DataBase table to general HTLM page with table</source>
         <translation>Export DataBase table to general HTLM page with table</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="440"/>
+        <location filename="MainWindow.cpp" line="447"/>
         <source>&amp;Change the number of sensors</source>
         <translation>&amp;Change the number of sensors</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="441"/>
+        <location filename="MainWindow.cpp" line="448"/>
         <source>Change the number of sensors in SQLite DataBase</source>
         <translation>Change the number of sensors in SQLite DataBase</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="443"/>
+        <location filename="MainWindow.cpp" line="450"/>
         <source>&amp;Swap tables SQLite &lt;-&gt; Memory</source>
         <translation>&amp;Swap tables SQLite &lt;-&gt; Memory</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="444"/>
+        <location filename="MainWindow.cpp" line="451"/>
         <source>Switch SQLite DataBase Table on a Table in Memory and back</source>
         <translation>Switch SQLite DataBase Table on a Table in Memory and back</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="446"/>
+        <location filename="MainWindow.cpp" line="453"/>
         <source>&amp;Disable editing table</source>
         <translation>&amp;Disable editing table</translation>
     </message>
@@ -1629,169 +1649,179 @@ Show HTML Page in your browser?</translation>
         <translation type="obsolete">&amp;Disable editing SQLite DataBase table</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="447"/>
+        <location filename="MainWindow.cpp" line="454"/>
         <source>Disable editing SQLite DataBase table</source>
         <translation>Disable editing SQLite DataBase table</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="449"/>
+        <location filename="MainWindow.cpp" line="456"/>
         <source>&amp;Enable editing table</source>
         <translation>&amp;Enable editing table</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="450"/>
+        <location filename="MainWindow.cpp" line="457"/>
         <source>Enable editing SQLite DataBase table</source>
         <translation>Enable editing SQLite DataBase table</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="452"/>
+        <location filename="MainWindow.cpp" line="459"/>
         <source>&amp;Show Chart window</source>
         <translation>&amp;Show Chart window</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="453"/>
+        <location filename="MainWindow.cpp" line="460"/>
         <source>Show linear schedule of Sensor Monitor Table</source>
         <translation>Show linear schedule of Sensor Monitor Table</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="455"/>
+        <location filename="MainWindow.cpp" line="462"/>
         <source>&amp;Show Levels of Decomposition</source>
         <translation>&amp;Show Levels of Decomposition</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="456"/>
+        <location filename="MainWindow.cpp" line="463"/>
         <source>Show levels of decomposition windows of current DataBase</source>
         <translation>Show levels of decomposition windows of current DataBase</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="458"/>
+        <location filename="MainWindow.cpp" line="465"/>
         <source>&amp;Show 3D OpenGL window</source>
         <translation>&amp;Show 3D OpenGL window</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="459"/>
+        <location filename="MainWindow.cpp" line="466"/>
         <source>Show OpenGL context window with 3D Plot</source>
         <translation>Show OpenGL context window with 3D Plot</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="461"/>
+        <location filename="MainWindow.cpp" line="468"/>
+        <source>&amp;Show Help</source>
+        <translation>&amp;Show Help</translation>
+    </message>
+    <message>
+        <location filename="MainWindow.cpp" line="469"/>
+        <source>Show Help system in your Internet Browser</source>
+        <translation>Show Help system in your Internet Browser</translation>
+    </message>
+    <message>
+        <location filename="MainWindow.cpp" line="471"/>
         <source>&amp;About SensorMonitor</source>
         <translation>&amp;About SensorMonitor</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="462"/>
+        <location filename="MainWindow.cpp" line="472"/>
         <source>Show About SensorMonitor dialog</source>
         <translation>Show About SensorMonitor dialog</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="464"/>
+        <location filename="MainWindow.cpp" line="474"/>
         <source>&amp;About Qt</source>
         <translation>&amp;About Qt</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="465"/>
+        <location filename="MainWindow.cpp" line="475"/>
         <source>Show About Qt Library dialog</source>
         <translation>Show About Qt Library dialog</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="467"/>
+        <location filename="MainWindow.cpp" line="477"/>
         <source>&amp;Quit</source>
         <translation>&amp;Quit</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="468"/>
+        <location filename="MainWindow.cpp" line="478"/>
         <source>Quit the program</source>
         <translation>Quit the program</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="472"/>
+        <location filename="MainWindow.cpp" line="482"/>
         <source>&amp;File</source>
         <translation>&amp;File</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="473"/>
+        <location filename="MainWindow.cpp" line="483"/>
         <source>File Menu</source>
         <translation>File Menu</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="475"/>
+        <location filename="MainWindow.cpp" line="485"/>
         <source>&amp;View</source>
         <translation>&amp;View</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="476"/>
+        <location filename="MainWindow.cpp" line="486"/>
         <source>View Menu</source>
         <translation>View Menu</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="478"/>
+        <location filename="MainWindow.cpp" line="488"/>
         <source>&amp;Table</source>
         <translation>&amp;Table</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="479"/>
+        <location filename="MainWindow.cpp" line="489"/>
         <source>Table menu</source>
         <translation>Table menu</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="481"/>
+        <location filename="MainWindow.cpp" line="491"/>
         <source>&amp;Language</source>
         <translation>&amp;Language</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="482"/>
+        <location filename="MainWindow.cpp" line="492"/>
         <source>Language Menu</source>
         <translation>Language Menu</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="484"/>
+        <location filename="MainWindow.cpp" line="494"/>
         <source>&amp;Help</source>
         <translation>&amp;Help</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="485"/>
+        <location filename="MainWindow.cpp" line="495"/>
         <source>Help Menu</source>
         <translation>Help Menu</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="489"/>
+        <location filename="MainWindow.cpp" line="499"/>
         <source>File ToolBar</source>
         <translation>File ToolBar</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="490"/>
+        <location filename="MainWindow.cpp" line="500"/>
         <source>View ToolBar</source>
         <translation>View ToolBar</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="494"/>
+        <location filename="MainWindow.cpp" line="504"/>
         <source>Ready</source>
         <translation>Ready</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="498"/>
-        <location filename="MainWindow.cpp" line="552"/>
+        <location filename="MainWindow.cpp" line="508"/>
+        <location filename="MainWindow.cpp" line="562"/>
         <source>SQLite DataBase</source>
         <translation>SQLite DataBase</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="499"/>
-        <location filename="MainWindow.cpp" line="553"/>
+        <location filename="MainWindow.cpp" line="509"/>
+        <location filename="MainWindow.cpp" line="563"/>
         <source>Table Monitoring Sensors of SQLite DataBase</source>
         <translation>Table Monitoring Sensors of SQLite DataBase</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="500"/>
+        <location filename="MainWindow.cpp" line="510"/>
         <source>Monitoring Table</source>
         <translation>Monitoring Table</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="504"/>
+        <location filename="MainWindow.cpp" line="514"/>
         <source>Sensors Scheme</source>
         <translation>Sensors Scheme</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="505"/>
+        <location filename="MainWindow.cpp" line="515"/>
         <source>Arrangement of sensors on the building. Click to display sensors</source>
         <translation>Arrangement of sensors on the building. Click to display sensors</translation>
     </message>
@@ -1820,17 +1850,17 @@ After changing the number of sensors, the DataBase clears.</translation>
         <translation type="obsolete">Arrangement of sensors on the building</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="514"/>
+        <location filename="MainWindow.cpp" line="524"/>
         <source>Sensor Monitor</source>
         <translation>Sensor Monitor</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="557"/>
+        <location filename="MainWindow.cpp" line="567"/>
         <source>Table in Memory</source>
         <translation>Table in Memory</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="558"/>
+        <location filename="MainWindow.cpp" line="568"/>
         <source>Table Monitoring Sensors of Memory RAM</source>
         <translation>Table Monitoring Sensors of Memory RAM</translation>
     </message>

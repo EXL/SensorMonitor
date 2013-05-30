@@ -220,6 +220,10 @@ void MainWindow::createMenus()
     createLanguageMenu();
 
     helpMenu = new QMenu(this);
+    helpMenu->addAction(showHelpInBrowserAction);
+
+    helpMenu->addSeparator();
+
     helpMenu->addAction(showAboutDialogWindowAction);
     helpMenu->addAction(showAboutQtDialogWindowAction);
 
@@ -461,6 +465,9 @@ void MainWindow::retranslateUi()
     showOpenGLContextWindowAction->setText(tr("&Show 3D OpenGL window"));
     showOpenGLContextWindowAction->setStatusTip(tr("Show OpenGL context window with 3D Plot"));
 
+    showHelpInBrowserAction->setText(tr("&Show Help"));
+    showHelpInBrowserAction->setStatusTip(tr("Show Help system in your Internet Browser"));
+
     showAboutDialogWindowAction->setText(tr("&About SensorMonitor"));
     showAboutDialogWindowAction->setStatusTip(tr("Show About SensorMonitor dialog"));
 
@@ -596,29 +603,8 @@ void MainWindow::showLevelsWindowSlot()
 
 void MainWindow::showHelpInBrowser()
 {
-    QUrl url(directoryOf("doc").absoluteFilePath("index.htm"));
+    QUrl url(QDir("doc").absoluteFilePath("index.htm"));
     QDesktopServices::openUrl(url);
-}
-
-QDir MainWindow::directoryOf(const QString &subdir)
-{
-    QDir dir(QApplication::applicationDirPath());
-
-#if defined(Q_OS_WIN)
-    if (dir.dirName().toLower() == "debug" || dir.dirName().toLower() == "release")
-    {
-        dir.cdUp();
-    }
-#elif defined(Q_OS_MAC)
-    if (dir.dirName() == "MacOS")
-    {
-        dir.cdUp();
-        dir.cdUp();
-        dir.cdUp();
-    }
-#endif
-    dir.cd(subdir);
-    return dir;
 }
 
 void MainWindow::showAboutDialog()

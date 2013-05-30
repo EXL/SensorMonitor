@@ -140,6 +140,12 @@ void LevelOneDec::createToolBar()
     switchWidgetsLevelOne->setToolTip(tr("Switch between charts and tables"));
     connect(switchWidgetsLevelOne, SIGNAL(triggered()), this, SLOT(hideLevelOneWidgets()));
 
+    showHelpInBrowserAction = new QAction(this);
+    showHelpInBrowserAction->setIcon(QIcon("://icons/others_icons/help_icon_32x32.png"));
+    showHelpInBrowserAction->setText(tr("Help"));
+    showHelpInBrowserAction->setToolTip(tr("Show help in your browser"));
+    connect(showHelpInBrowserAction, SIGNAL(triggered()), this, SLOT(showHelpInBrowser()));
+
     toolBar = new QToolBar(this);
     toolBar->addAction(exportLevelOneChart);
     toolBar->addAction(printLevelOneChart);
@@ -150,6 +156,8 @@ void LevelOneDec::createToolBar()
     toolBar->addAction(switchWidgetsLevelOne);
 
     toolBar->addSeparator();
+
+    toolBar->addAction(showHelpInBrowserAction);
 
     toolBarBox = new QWidget(toolBar);
 
@@ -789,6 +797,12 @@ void LevelOneDec::exportReportToHTML()
         /* Open HTML Table in your browser */
         QDesktopServices::openUrl(QUrl::fromLocalFile(fileName));
     }
+}
+
+void LevelOneDec::showHelpInBrowser()
+{
+    QUrl url(QDir("doc").absoluteFilePath("index.htm"));
+    QDesktopServices::openUrl(url);
 }
 
 LevelOneDec::~LevelOneDec()

@@ -503,6 +503,12 @@ void LevelTwoDec::createToolBar()
     switchWidgetsLevelTwo->setToolTip(tr("Switch between charts and tables"));
     connect(switchWidgetsLevelTwo, SIGNAL(triggered()), this, SLOT(hideLevelTwoWidgets()));
 
+    showHelpInBrowserAction = new QAction(this);
+    showHelpInBrowserAction->setIcon(QIcon("://icons/others_icons/help_icon_32x32.png"));
+    showHelpInBrowserAction->setText(tr("Help"));
+    showHelpInBrowserAction->setToolTip(tr("Show help in your browser"));
+    connect(showHelpInBrowserAction, SIGNAL(triggered()), this, SLOT(showHelpInBrowser()));
+
     toolBar = new QToolBar(this);
     toolBar->addAction(exportLevelTwoChart);
     toolBar->addAction(printLevelTwoChart);
@@ -513,6 +519,8 @@ void LevelTwoDec::createToolBar()
     toolBar->addAction(switchWidgetsLevelTwo);
 
     toolBar->addSeparator();
+
+    toolBar->addAction(showHelpInBrowserAction);
 
     blocksToolTips = new QLabel(toolBar);
     blocksToolTips->setText(tr("<strong><font color='#FF7B5C'>Block A</font></strong><br>"
@@ -938,6 +946,13 @@ void LevelTwoDec::changedEps(double eps)
 void LevelTwoDec::setDoubleCountToLabel(double eps)
 {
     labelMeterEps->setText(QString(tr("<h3> = %1 mm</h3>")).arg(eps * 1000));
+}
+
+
+void LevelTwoDec::showHelpInBrowser()
+{
+    QUrl url(QDir("doc").absoluteFilePath("index.htm"));
+    QDesktopServices::openUrl(url);
 }
 
 void LevelTwoDec::chooseExportCharts()

@@ -1,278 +1,261 @@
 #include "OGLContext.h"
 
 #include <QMouseEvent>
-#include <QTimer>
+#include <QWheelEvent>
 
-#ifdef _DEBUG
-#include <QDebug>
-#endif
-
-#include <cmath>
-
-OGLContext::OGLContext(QWidget *parent)
-    : QGLWidget(parent)
+OGLContext::OGLContext(QWidget* parent) : QGLWidget(QGLFormat(QGL::SampleBuffers), parent)
 {
-    /* For KeyEvent! */
-    setFocusPolicy(Qt::StrongFocus);
+    xRot1=-159.726f; yRot1=102.339f; zRot1=0.0f;
+    xRot2=-90.0f; yRot2=0.0f; zRot2=0.0f;
 
-    K = 40;
-    DT = 0.03;
-    nSca = 1;
-
-    /* Fix View */
-    xRot = 5000;
-
-    for (int x = 0; x < N; ++x)
-    {
-        for (int y = 0; y < N; ++y)
-        {
-            p[x][y].x = x * 480 / N;
-            p[x][y].y = y * 480 / N;
-        }
-    }
-    QTimer *timer = new QTimer(this);
-    connect(timer, SIGNAL(timeout()), this, SLOT(updateScene()));
-    timer->start();
-}
-
-void OGLContext::setXRotation(int angle)
-{
-    normalizeAngle(&angle);
-    if (angle != xRot)
-    {
-        /* Limiter */
-        if (angle > 3800)
-        {
-            xRot = angle;
-        }
-        emit xRotationChanged(angle);
-        updateGL();
-    }
-}
-
-void OGLContext::setYRotation(int angle)
-{
-    normalizeAngle(&angle);
-    if (angle != yRot)
-    {
-        yRot = angle;
-        emit yRotationChanged(angle);
-        updateGL();
-    }
-}
-
-void OGLContext::setZRotation(int angle)
-{
-    normalizeAngle(&angle);
-    if (angle != zRot)
-    {
-        zRot = angle;
-        emit zRotationChanged(angle);
-        updateGL();
-    }
-}
-
-void OGLContext::normalizeAngle(int *angle)
-{
-    while (*angle < 0)
-    {
-        *angle += 360 * 16;
-    }
-    while (*angle > 360 * 16)
-    {
-        *angle -= 360 * 16;
-    }
-}
-
-GLfloat OGLContext::sqrtx(float x)
-{
-    return x * x;
+    nScale = 1;
 }
 
 void OGLContext::initializeGL()
 {
-    glEnable(GL_NORMALIZE);
-    glClearColor(0, 0, 0, 1.0);
+    qglClearColor(Qt::white);
+    glEnable(GL_DEPTH_TEST);
+    glEnable(GL_TEXTURE_2D);
+
+    genTextures();
+
+    glEnableClientState(GL_VERTEX_ARRAY);
+    glEnableClientState(GL_TEXTURE_COORD_ARRAY);
+}
+
+void OGLContext::resizeGL(int nWidth, int nHeight)
+{
+    glMatrixMode(GL_PROJECTION);
+    glLoadIdentity();
+
+    ratio = (GLfloat)nHeight/(GLfloat)nWidth;
+
+    if (nWidth >= nHeight)
+    {
+        glOrtho(-10.0 / ratio, 10.0 / ratio, -10.0, 10.0, -10.0, 10.0);
+    }
+    else
+    {
+        glOrtho(-10.0, 10.0, -10.0 * ratio, 10.0 * ratio, -10.0, 10.0);
+    }
+
+    glViewport(0, 0, (GLint)nWidth, (GLint)nHeight);
 }
 
 void OGLContext::paintGL()
 {
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-    glPushMatrix();
 
-    /* Zooming */
-    glScalef(1, nSca, 1);
-
-    /* Rotating Up/Down */
-    glRotated(xRot / 16.0, 1.0, 0.0, 0.0);
-    //    glRotated(yRot / 16.0, 0.0, 1.0, 0.0);
-    //    glRotated(zRot / 16.0, 0.0, 0.0, 1.0);
-
-    //qDebug() << xRot / 16.0;
-
-    for (int x = 0; x < N; ++x)
-    {
-        glBegin(GL_LINE_STRIP);
-        for (int y = 0; y < N; ++y)
-        {
-            glVertex3f(p[x][y].x, p[x][y].y, p[x][y].z * 10);
-        }
-        glEnd();
-    }
-    for (int y = 0; y < N; ++y)
-    {
-        glBegin(GL_LINE_STRIP);
-        for (int x = 0; x < N; ++x)
-        {
-            glVertex3f(p[x][y].x, p[x][y].y, p[x][y].z * 10);
-        }
-        glEnd();
-    }
-    glPopMatrix();
-
-    /* Please use Pop/Push Matrix and not swapBuffers */
-    // swapBuffers();
-}
-
-void OGLContext::updateScene()
-{
-    const int dx[] = {-1, 0, 1, 0};
-    const int dy[] = {0, 1, 0, -1};
-    if (rand() % 500 == 0)
-        p[rand() % (N - 2) + 1][rand() % (N - 2) + 1].vz += 150;
-    for (int y = 1; y < N - 1; ++y)
-        for (int x = 1; x < N - 1; ++x)
-        {
-            P &p0 = p[x][y];
-            for (int i = 0; i < 4; ++i)
-            {
-                P &p1 = p[x + dx[i]][y + dy[i]];
-                const float d = sqrt(sqrtx(p0.x - p1.x) + sqrtx(p0.y - p1.y) + sqrtx(p0.z - p1.z));
-                p0.vz += K * (p1.z - p0.z) / d * DT;
-                p0.vz *= 0.999;
-            }
-
-        }
-    for (int y = 1; y < N - 1; ++y)
-        for (int x = 1; x < N - 1; ++x)
-        {
-            P &p0 = p[x][y];
-            p0.z += p0.vz * DT;
-        }
-    updateGL();
-}
-
-void OGLContext::resizeGL(int width, int height)
-{
-    int side = qMin(width, height);
-    glViewport((width - side) / 2, (height - side) / 2, side, side);
-
-    glMatrixMode(GL_PROJECTION);
-    glLoadIdentity();
-    glFrustum(-100, 100, -100, 100, 100, 2000);
     glMatrixMode(GL_MODELVIEW);
     glLoadIdentity();
-    glTranslatef(-240, -240, -200);
+    glScalef(nScale, nScale, nScale);
+    glTranslatef(-1.0f/ratio, 0.0f, 0.0f);
+    glRotatef(xRot1, 1.0f, 0.0f, 0.0f);
+    glRotatef(yRot1, 0.0f, 1.0f, 0.0f);
+    glRotatef(zRot1, 0.0f, 0.0f, 1.0f);
 
-    /* Moved to PaintGL */
-    // glRotatef(-30, 1, 0, 0);
+    glPushMatrix();
+    glBindTexture(GL_TEXTURE_2D, textureID[0]);
+
+    glBegin(GL_QUADS);
+
+    /********** Block A ***********/
+    glTexCoord2f(0.0f, 0.0f); glVertex3f(-2.7f, -3.0f, -4.0f);
+    glTexCoord2f(1.0f, 0.0f); glVertex3f(2.7f, -3.0f, -4.0f);
+    glTexCoord2f(1.0f, 1.0f); glVertex3f(2.7f, 3.0f, -4.0f);
+    glTexCoord2f(0.0f, 1.0f); glVertex3f(-2.7f, 3.0f, -4.0f);
+
+    glTexCoord2f(1.0f, 0.0f); glVertex3f(-2.7f, -3.0f, -6.0f);
+    glTexCoord2f(1.0f, 1.0f); glVertex3f(-2.7f, 3.0f, -6.0f);
+    glTexCoord2f(0.0f, 1.0f); glVertex3f(2.7f, 3.0f, -6.0f);
+    glTexCoord2f(0.0f, 0.0f); glVertex3f(2.7f, -3.0f, -6.0f);
+
+    glTexCoord2f(0.0f, 1.0f); glVertex3f(-2.7f, 3.0f, -6.0f);
+    glTexCoord2f(0.0f, 0.0f); glVertex3f(-2.7f, 3.0f, -4.0f);
+    glTexCoord2f(1.0f, 0.0f); glVertex3f(2.7f, 3.0f, -4.0f);
+    glTexCoord2f(1.0f, 1.0f); glVertex3f(2.7f, 3.0f, -6.0f);
+
+    glTexCoord2f(1.0f, 1.0f); glVertex3f(-2.7f, -3.0f, -6.0f);
+    glTexCoord2f(0.0f, 1.0f); glVertex3f(2.7f, -3.0f, -6.0f);
+    glTexCoord2f(0.0f, 0.0f); glVertex3f(2.7f, -3.0f, -4.0f);
+    glTexCoord2f(1.0f, 0.0f); glVertex3f(-2.7f, -3.0f, -4.0f);
+
+    glTexCoord2f(1.0f, 0.0f); glVertex3f(2.7f, -3.0f, -6.0f);
+    glTexCoord2f(1.0f, 1.0f); glVertex3f(2.7f, 3.0f, -6.0f);
+    glTexCoord2f(0.0f, 1.0f); glVertex3f(2.7f, 3.0f, -4.0f);
+    glTexCoord2f(0.0f, 0.0f); glVertex3f(2.7f, -3.0f, -4.0f);
+
+    glTexCoord2f(0.0f, 0.0f); glVertex3f(-2.7f, -3.0f, -6.0f);
+    glTexCoord2f(1.0f, 0.0f); glVertex3f(-2.7f, -3.0f, -4.0f);
+    glTexCoord2f(1.0f, 1.0f); glVertex3f(-2.7f, 3.0f, -4.0f);
+    glTexCoord2f(0.0f, 1.0f); glVertex3f(-2.7f, 3.0f, -6.0f);
+
+    /********** Block B ***********/
+    glTexCoord2f(0.0f, 0.0f); glVertex3f(-2.0f, -3.0f, 2.0f);
+    glTexCoord2f(1.0f, 0.0f); glVertex3f(2.0, -3.0f, 2.0f);
+    glTexCoord2f(1.0f, 1.0f); glVertex3f(2.0, 3.0f, 2.0f);
+    glTexCoord2f(0.0f, 1.0f); glVertex3f(-2.0, 3.0f, 2.0f);
+
+    glTexCoord2f(1.0f, 0.0f); glVertex3f(-2.0, -3.0f, -4.0f);
+    glTexCoord2f(1.0f, 1.0f); glVertex3f(-2.0, 3.0f, -4.0f);
+    glTexCoord2f(0.0f, 1.0f); glVertex3f(2.0, 3.0f, -4.0f);
+    glTexCoord2f(0.0f, 0.0f); glVertex3f(2.0, -3.0f, -4.0f);
+
+    glTexCoord2f(0.0f, 1.0f); glVertex3f(-2.0, 3.0f, -4.0f);
+    glTexCoord2f(0.0f, 0.0f); glVertex3f(-2.0, 3.0f, 2.0f);
+    glTexCoord2f(1.0f, 0.0f); glVertex3f(2.0, 3.0f, 2.0f);
+    glTexCoord2f(1.0f, 1.0f); glVertex3f(2.0, 3.0f, -4.0f);
+
+    glTexCoord2f(1.0f, 1.0f); glVertex3f(-2.0, -3.0f, -4.0f);
+    glTexCoord2f(0.0f, 1.0f); glVertex3f(2.0, -3.0f, -4.0f);
+    glTexCoord2f(0.0f, 0.0f); glVertex3f(2.0, -3.0f, 2.0f);
+    glTexCoord2f(1.0f, 0.0f); glVertex3f(-2.0, -3.0f, 2.0f);
+
+    /********** Block C1 ***********/
+    glTexCoord2f(0.0f, 0.0f); glVertex3f(-3.0f, -3.0f, 4.0f);
+    glTexCoord2f(1.0f, 0.0f); glVertex3f(3.0f, -3.0f, 4.0f);
+    glTexCoord2f(1.0f, 1.0f); glVertex3f(3.0f, 3.0f, 4.0f);
+    glTexCoord2f(0.0f, 1.0f); glVertex3f(-3.0f, 3.0f, 4.0f);
+
+    glTexCoord2f(1.0f, 0.0f); glVertex3f(-3.0f, -3.0f, 2.0f);
+    glTexCoord2f(1.0f, 1.0f); glVertex3f(-3.0f, 3.0f, 2.0f);
+    glTexCoord2f(0.0f, 1.0f); glVertex3f(3.0f, 3.0f, 2.0f);
+    glTexCoord2f(0.0f, 0.0f); glVertex3f(3.0f, -3.0f, 2.0f);
+
+    glTexCoord2f(0.0f, 1.0f); glVertex3f(-3.0f, 3.0f, 2.0f);
+    glTexCoord2f(0.0f, 0.0f); glVertex3f(-3.0f, 3.0f, 4.0f);
+    glTexCoord2f(1.0f, 0.0f); glVertex3f(3.0f, 3.0f, 4.0f);
+    glTexCoord2f(1.0f, 1.0f); glVertex3f(3.0f, 3.0f, 2.0f);
+
+    glTexCoord2f(1.0f, 1.0f); glVertex3f(-3.0f, -3.0f, 2.0f);
+    glTexCoord2f(0.0f, 1.0f); glVertex3f(3.0f, -3.0f, 2.0f);
+    glTexCoord2f(0.0f, 0.0f); glVertex3f(3.0f, -3.0f, 4.0f);
+    glTexCoord2f(1.0f, 0.0f); glVertex3f(-3.0f, -3.0f, 4.0f);
+
+    glTexCoord2f(1.0f, 0.0f); glVertex3f(3.0f, -3.0f, 2.0f);
+    glTexCoord2f(1.0f, 1.0f); glVertex3f(3.0f, 3.0f, 2.0f);
+    glTexCoord2f(0.0f, 1.0f); glVertex3f(3.0f, 3.0f, 4.0f);
+    glTexCoord2f(0.0f, 0.0f); glVertex3f(3.0f, -3.0f, 4.0f);
+
+    glTexCoord2f(0.0f, 0.0f); glVertex3f(-3.0f, -3.0f, 2.0f);
+    glTexCoord2f(1.0f, 0.0f); glVertex3f(-3.0f, -3.0f, 4.0f);
+    glTexCoord2f(1.0f, 1.0f); glVertex3f(-3.0f, 3.0f, 4.0f);
+    glTexCoord2f(0.0f, 1.0f); glVertex3f(-3.0f, 3.0f, 2.0f);
+
+    /********** Block C2 ***********/
+    glTexCoord2f(0.0f, 0.0f); glVertex3f(-3.0f, -3.0f, 4.0f);
+    glTexCoord2f(0.0f, 1.0f); glVertex3f(0.0f, -3.0f, 6.0f);
+    glTexCoord2f(1.0f, 1.0f); glVertex3f(0.0f, 3.0f, 6.0f);
+    glTexCoord2f(1.0f, 0.0f); glVertex3f(-3.0f, 3.0f, 4.0f);
+
+    glTexCoord2f(0.0f, 0.0f); glVertex3f(3.0f, -3.0f, 4.0f);
+    glTexCoord2f(0.0f, 1.0f); glVertex3f(0.0f, -3.0f, 6.0f);
+    glTexCoord2f(1.0f, 1.0f); glVertex3f(0.0f, 3.0f, 6.0f);
+    glTexCoord2f(1.0f, 0.0f); glVertex3f(3.0f, 3.0f, 4.0f);
+
+    glTexCoord2f(1.0f, 0.0f); glVertex3f(-3.0f, -3.0f, 4.0f);
+    glTexCoord2f(1.0f, 1.0f); glVertex3f(-3.0f, 3.0f, 4.0f);
+    glTexCoord2f(0.0f, 1.0f); glVertex3f(3.0f, 3.0f, 4.0f);
+    glTexCoord2f(0.0f, 0.0f); glVertex3f(3.0f, -3.0f, 4.0f);
+
+    glTexCoord2f(1.0f, 0.0f); glVertex3f(-3.0f, -3.0f, -6.2f);
+    glTexCoord2f(1.0f, 1.0f); glVertex3f(3.0f, -3.0f, -6.2f);
+    glTexCoord2f(0.0f, 1.0f); glVertex3f(3.0f, -3.0f, 6.2f);
+    glTexCoord2f(0.0f, 0.0f); glVertex3f(-3.0f, -3.0f, 6.2f);
+    glEnd();
+
+    glBegin(GL_TRIANGLES);
+    glTexCoord2f(0.0f, 0.0f); glVertex3f(-3.0f, -3.0f, 4.0f);
+    glTexCoord2f(1.0f, 0.0f); glVertex3f(3.0f, -3.0f, 4.0f);
+    glTexCoord2f(0.5f, 1.0f); glVertex3f(0.0f, -3.0f, 6.0f);
+
+    glTexCoord2f(0.0f, 0.0f); glVertex3f(-3.0f, 3.0f, 4.0f);
+    glTexCoord2f(1.0f, 0.0f); glVertex3f(3.0f, 3.0f, 4.0f);
+    glTexCoord2f(0.5f, 1.0f); glVertex3f(0.0f, 3.0f, 6.0f);
+
+    glTexCoord2f(0.0f, 0.0f); glVertex3f(-3.0f, -3.0f, -6.2f);
+    glTexCoord2f(1.0f, 1.0f); glVertex3f(3.0f, -3.0f, -6.2f);
+    glTexCoord2f(0.5f, 1.0f); glVertex3f(0.0f, -5.0f, -6.2f);
+
+    glTexCoord2f(0.0f, 0.0f); glVertex3f(-3.0f, -3.0f, 6.2f);
+    glTexCoord2f(1.0f, 1.0f); glVertex3f(3.0f, -3.0f, 6.2f);
+    glTexCoord2f(0.5f, 1.0f); glVertex3f(0.0f, -5.0f, 6.2f);
+    glEnd();
+
+    glPopMatrix();
+
+    glPushMatrix();
+    glBindTexture(GL_TEXTURE_2D, textureID[1]);
+
+    glBegin(GL_QUADS);
+    glTexCoord2f(1.0f, 0.0f); glVertex3f(2.0, -3.0f, -4.0f);
+    glTexCoord2f(1.0f, 1.0f); glVertex3f(2.0, 3.0f, -4.0f);
+    glTexCoord2f(0.0f, 1.0f); glVertex3f(2.0, 3.0f, 2.0f);
+    glTexCoord2f(0.0f, 0.0f); glVertex3f(2.0, -3.0f, 2.0f);
+
+    glTexCoord2f(0.0f, 0.0f); glVertex3f(-2.0, -3.0f, -4.0f);
+    glTexCoord2f(1.0f, 0.0f); glVertex3f(-2.0, -3.0f, 2.0f);
+    glTexCoord2f(1.0f, 1.0f); glVertex3f(-2.0, 3.0f, 2.0f);
+    glTexCoord2f(0.0f, 1.0f); glVertex3f(-2.0, 3.0f, -4.0f);
+    glEnd();
+
+    glPopMatrix();
+
+    glPushMatrix();
+    glBindTexture(GL_TEXTURE_2D, textureID[2]);
+
+    glBegin(GL_QUADS);
+    glTexCoord2f(1.0f, 0.0f); glVertex3f(-3.0f, -3.0f, -6.2f);
+    glTexCoord2f(1.0f, 1.0f); glVertex3f(0.0f, -5.0f, -6.2f);
+    glTexCoord2f(0.0f, 1.0f); glVertex3f(0.0f, -5.0f, 6.2f);
+    glTexCoord2f(0.0f, 0.0f); glVertex3f(-3.0f, -3.0f, 6.2f);
+
+    glTexCoord2f(1.0f, 0.0f); glVertex3f(3.0f, -3.0f, -6.2f);
+    glTexCoord2f(1.0f, 1.0f); glVertex3f(0.0f, -5.0f, -6.2f);
+    glTexCoord2f(0.0f, 1.0f); glVertex3f(0.0f, -5.0f, 6.2f);
+    glTexCoord2f(0.0f, 0.0f); glVertex3f(3.0f, -3.0f, 6.2f);
+    glEnd();
+
+    glPopMatrix();
 }
 
-void OGLContext::mousePressEvent(QMouseEvent *event)
+void OGLContext::mousePressEvent(QMouseEvent* event)
 {
-    lastPos = event->pos();
+    mousePosition = event->pos();
+}
+
+void OGLContext::genTextures()
+{
+    for (int i = 0; i < 3; ++i)
+    {
+        textureID[i]=bindTexture(QPixmap(QString("://gfx/Textures/texture1.jpg").arg(i + 1)), GL_TEXTURE_2D);
+    }
+}
+
+void OGLContext::mouseMoveEvent(QMouseEvent* event)
+{
+    xRot1 += 180 * (GLfloat) (event->y() - mousePosition.y()) / height();
+    yRot1 += 180 * (GLfloat) (event->x() -mousePosition.x()) / width();
+
+    updateGL();
+
+    mousePosition = event->pos();
 }
 
 void OGLContext::wheelEvent(QWheelEvent *event)
 {
-    if ((event->delta()) > 0)
+    if ((event->delta()) > 0 && nScale < 1.61051)
     {
-        scale_plus();
+        nScale = nScale * 1.1;
     }
-    else if ((event->delta()) < 0)
+    else if ((event->delta()) < 0 && nScale > 0.101526)
     {
-        scale_minus();
-    }
-    updateGL();
-}
-
-void OGLContext::scale_plus()
-{
-    nSca = nSca*1.1;
-#ifdef _DEBUG
-    qDebug() << "Pressed +";
-#endif
-}
-
-void OGLContext::scale_minus()
-{
-    nSca = nSca/1.1;
-#ifdef _DEBUG
-    qDebug() << "Pressed -";
-#endif
-}
-
-void OGLContext::changeXRotPlus()
-{
-    xRot += 20;
-    if (xRot > 5750)
-    {
-        xRot = 5750;
-    }
-}
-
-void OGLContext::changeXRotMinus()
-{
-    xRot -= 20;
-    if (xRot < 3800)
-    {
-        xRot = 3800;
-    }
-}
-
-void OGLContext::keyPressEvent(QKeyEvent * keyEvent)
-{
-    switch (keyEvent->key())
-    {
-    case Qt::Key_Plus:
-        scale_plus();
-        break;
-
-    case Qt::Key_Minus:
-        scale_minus();
-        break;
-
-    case Qt::Key_Up:
-        changeXRotPlus();
-        break;
-
-    case Qt::Key_Down:
-        changeXRotMinus();
-        break;
+        nScale = nScale / 1.1;
     }
     updateGL();
-}
-
-void OGLContext::mouseMoveEvent(QMouseEvent *event)
-{
-    int dx = event->x() - lastPos.x();
-    int dy = event->y() - lastPos.y();
-
-    if (event->buttons() & Qt::LeftButton)
-    {
-        setXRotation(xRot + 8 * dy);
-        setYRotation(yRot + 8 * dx);
-    }
-    else if (event->buttons() & Qt::RightButton)
-    {
-        setXRotation(xRot + 8 * dy);
-        setZRotation(zRot + 8 * dx);
-    }
-
-    lastPos = event->pos();
 }
 
 OGLContext::~OGLContext()
 {
-    /* Empty Destructor */
+    /* Empty destructor */
 }

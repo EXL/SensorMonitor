@@ -45,5 +45,8 @@
         <file>icons/others_icons/swap_levels_32x32.png</file>
         <file>icons/save_icons/export_html_icon_32x32.png</file>
         <file>icons/others_icons/help_icon_32x32.png</file>
+        <file>gfx/Textures/texture1.jpg</file>
+        <file>gfx/Textures/texture2.jpg</file>
+        <file>gfx/Textures/texture3.jpg</file>
     </qresource>
 </RCC>

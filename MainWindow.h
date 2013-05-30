@@ -16,7 +16,6 @@
 #include <QSettings>
 #include <QTableView>
 #include <QSplitter>
-#include <QDir>
 
 class MainWindow : public QMainWindow
 {
@@ -117,7 +116,6 @@ class MainWindow : public QMainWindow
     void retranslateUi();
 
     void createChangeNumSensorsDialog();
-    QDir directoryOf(const QString &subdir);
 private slots:
     void switchLanguage(QAction *action);
 

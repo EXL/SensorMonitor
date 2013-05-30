@@ -117,6 +117,7 @@ class LevelTwoDec : public QWidget
     QAction *printLevelTwoChart;
     QAction *exportReportLevelTwo;
     QAction *switchWidgetsLevelTwo;
+    QAction *showHelpInBrowserAction;
 
     QDoubleSpinBox *spbDoubleBoxAlpha;
     QwtCounter *spbDoubleBoxEps;
@@ -177,6 +178,7 @@ private slots:
     void hideLevelTwoWidgets();
 
     void exportReportToHTML();
+    void showHelpInBrowser();
 public:
     LevelTwoDec(const QVector<QString> &vectorDate,
                 const QVector<QVector<double> > &vectorSensorReadings2D,

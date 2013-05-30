@@ -228,7 +228,7 @@ void OGLContext::genTextures()
 {
     for (int i = 0; i < 3; ++i)
     {
-        textureID[i]=bindTexture(QPixmap(QString("://gfx/Textures/texture1.jpg").arg(i + 1)), GL_TEXTURE_2D);
+        textureID[i]=bindTexture(QPixmap(QString("://gfx/Textures/texture%1.jpg").arg(i + 1)), GL_TEXTURE_2D);
     }
 }
 

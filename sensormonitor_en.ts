@@ -1380,7 +1380,12 @@ Show HTML Page in your browser?</translation>
         <translation>First Level of Decomposition</translation>
     </message>
     <message>
-        <location filename="LevelsWidget.cpp" line="106"/>
+        <location filename="LevelsWidget.cpp" line="105"/>
+        <source>Second Level of Decomposition</source>
+        <translation>Second Level of Decomposition</translation>
+    </message>
+    <message>
+        <location filename="LevelsWidget.cpp" line="107"/>
         <source>Levels of decomposition</source>
         <translation>Levels of decomposition</translation>
     </message>
@@ -1685,13 +1690,15 @@ Show HTML Page in your browser?</translation>
     </message>
     <message>
         <location filename="MainWindow.cpp" line="465"/>
-        <source>&amp;Show 3D OpenGL window</source>
-        <translation>&amp;Show 3D OpenGL window</translation>
+        <source>&amp;Show 3D OpenGL model</source>
+        <oldsource>&amp;Show 3D OpenGL window</oldsource>
+        <translation>&amp;Show 3D OpenGL model</translation>
     </message>
     <message>
         <location filename="MainWindow.cpp" line="466"/>
-        <source>Show OpenGL context window with 3D Plot</source>
-        <translation>Show OpenGL context window with 3D Plot</translation>
+        <source>Show OpenGL model of buildings</source>
+        <oldsource>Show OpenGL context window with 3D Plot</oldsource>
+        <translation>Show OpenGL model of buildings</translation>
     </message>
     <message>
         <location filename="MainWindow.cpp" line="468"/>

@@ -462,8 +462,8 @@ void MainWindow::retranslateUi()
     showLevelsWindowAction->setText(tr("&Show Levels of Decomposition"));
     showLevelsWindowAction->setStatusTip(tr("Show levels of decomposition windows of current DataBase"));
 
-    showOpenGLContextWindowAction->setText(tr("&Show 3D OpenGL window"));
-    showOpenGLContextWindowAction->setStatusTip(tr("Show OpenGL context window with 3D Plot"));
+    showOpenGLContextWindowAction->setText(tr("&Show 3D OpenGL model"));
+    showOpenGLContextWindowAction->setStatusTip(tr("Show OpenGL model of buildings"));
 
     showHelpInBrowserAction->setText(tr("&Show Help"));
     showHelpInBrowserAction->setStatusTip(tr("Show Help system in your Internet Browser"));

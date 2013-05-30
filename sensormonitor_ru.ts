@@ -1421,7 +1421,12 @@ Show HTML Page in your browser?</source>
         <translation>Первый уровень декомпозиции</translation>
     </message>
     <message>
-        <location filename="LevelsWidget.cpp" line="106"/>
+        <location filename="LevelsWidget.cpp" line="105"/>
+        <source>Second Level of Decomposition</source>
+        <translation>Второй уровень декомпозиции</translation>
+    </message>
+    <message>
+        <location filename="LevelsWidget.cpp" line="107"/>
         <source>Levels of decomposition</source>
         <translation>Уровни декомпозиции</translation>
     </message>
@@ -1726,13 +1731,15 @@ Show HTML Page in your browser?</source>
     </message>
     <message>
         <location filename="MainWindow.cpp" line="465"/>
-        <source>&amp;Show 3D OpenGL window</source>
-        <translation>&amp;3D OpenGL График</translation>
+        <source>&amp;Show 3D OpenGL model</source>
+        <oldsource>&amp;Show 3D OpenGL window</oldsource>
+        <translation>&amp;3D OpenGL Модель</translation>
     </message>
     <message>
         <location filename="MainWindow.cpp" line="466"/>
-        <source>Show OpenGL context window with 3D Plot</source>
-        <translation>Показать OpenGL контекст, содержащий 3D график</translation>
+        <source>Show OpenGL model of buildings</source>
+        <oldsource>Show OpenGL context window with 3D Plot</oldsource>
+        <translation>Показать OpenGL контекст, содержащий 3D модель здания</translation>
     </message>
     <message>
         <location filename="MainWindow.cpp" line="468"/>

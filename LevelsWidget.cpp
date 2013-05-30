@@ -102,6 +102,7 @@ void LevelsWidget::retranslateUi()
     statusBar()->showMessage(tr("Ready"));
 
     levelOneDec->setStatusTip(tr("First Level of Decomposition"));
+    levelTwoDec->setStatusTip(tr("Second Level of Decomposition"));
 
     setWindowTitle(tr("Levels of decomposition"));
 }

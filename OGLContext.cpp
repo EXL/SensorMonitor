@@ -13,7 +13,7 @@ OGLContext::OGLContext(QWidget* parent) : QGLWidget(QGLFormat(QGL::SampleBuffers
 
 void OGLContext::initializeGL()
 {
-    qglClearColor(Qt::white);
+    qglClearColor(Qt::black);
     glEnable(GL_DEPTH_TEST);
     glEnable(GL_TEXTURE_2D);
 
@@ -235,7 +235,7 @@ void OGLContext::genTextures()
 void OGLContext::mouseMoveEvent(QMouseEvent* event)
 {
     xRot1 += 180 * (GLfloat) (event->y() - mousePosition.y()) / height();
-    yRot1 += 180 * (GLfloat) (event->x() -mousePosition.x()) / width();
+    yRot1 += 180 * (GLfloat) (event->x() - mousePosition.x()) / width();
 
     updateGL();
 

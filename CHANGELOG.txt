@@ -56,7 +56,7 @@
 +: Update tables on tabs
 +: Experiments with tabs
 +: Fixed const "col"
-+: Crosscompile for Linux x64_86 (Mint 14)
++: Crosscompiled for Linux x64_86 (Mint 14)
 +: Fixed variables for Linux
 +: Edit "*.pro" file for crosscompiling
 

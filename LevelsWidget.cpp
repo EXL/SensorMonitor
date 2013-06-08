@@ -69,7 +69,7 @@ void LevelsWidget::createCentralLevelsWidget()
 
     tabLevelsWidget->addTab(levelOneDec, tr("Level I"));
     tabLevelsWidget->addTab(levelTwoDec, tr("Level II"));
-    tabLevelsWidget->addTab(new QLabel(tr("There is a third level"), tabLevelsWidget), tr("Level III"));
+    // tabLevelsWidget->addTab(new QLabel(tr("There is a third level"), tabLevelsWidget), tr("Level III"));
 
     centralLayout->addWidget(tabLevelsWidget);
     centralLevelsWidget->setLayout(centralLayout);

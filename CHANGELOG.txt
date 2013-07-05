@@ -1,3 +1,6 @@
+7/5/2013 (v. 0.61):
++: Fixed zoom in OGLContext
+
 5/28/2013 (v. 0.58):
 +: Fixed a bug with the steady growth
 +: Fixed database creation serious bug

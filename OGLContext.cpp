@@ -3,6 +3,10 @@
 #include <QMouseEvent>
 #include <QWheelEvent>
 
+#ifdef _DEBUG
+#include <QDebug>
+#endif
+
 OGLContext::OGLContext(QWidget* parent) : QGLWidget(QGLFormat(QGL::SampleBuffers), parent)
 {
     xRot1=-159.726f; yRot1=102.339f; zRot1=0.0f;
@@ -13,7 +17,7 @@ OGLContext::OGLContext(QWidget* parent) : QGLWidget(QGLFormat(QGL::SampleBuffers
 
 void OGLContext::initializeGL()
 {
-    qglClearColor(Qt::black);
+    qglClearColor(Qt::white);
     glEnable(GL_DEPTH_TEST);
     glEnable(GL_TEXTURE_2D);
 
@@ -244,13 +248,15 @@ void OGLContext::mouseMoveEvent(QMouseEvent* event)
 
 void OGLContext::wheelEvent(QWheelEvent *event)
 {
-    if ((event->delta()) > 0 && nScale < 1.61051)
+    if ((event->delta()) > 0 && nScale < 1.25f)
     {
-        nScale = nScale * 1.1;
+        nScale = nScale * 1.05f;
+        qDebug() << nScale;
     }
-    else if ((event->delta()) < 0 && nScale > 0.101526)
+    else if ((event->delta()) < 0 && nScale > 0.40f)
     {
-        nScale = nScale / 1.1;
+        nScale = nScale / 1.05f;
+        qDebug() << nScale;
     }
     updateGL();
 }

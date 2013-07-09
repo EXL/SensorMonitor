@@ -1,4 +1,7 @@
-7/5/2013 (v. 0.61):
+7/9/2013 (v. 0.6):
++: Fixed Bug with connect to SQLite DataBase
+
+7/5/2013 (v. 0.59):
 +: Fixed zoom in OGLContext
 
 5/28/2013 (v. 0.58):

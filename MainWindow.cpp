@@ -17,6 +17,8 @@
 #include <QDebug>
 #endif
 
+#define VERSION_APP 0.6
+
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
 {
@@ -176,7 +178,13 @@ void MainWindow::createActions()
 void MainWindow::createAndReadDataBase()
 {
     dataBaseEngine = new DataBaseEngine(this);
-    dataBaseEngine->connectToSQLiteDataBase();
+    if(!dataBaseEngine->connectToSQLiteDataBase())
+    {
+#ifdef _DEBUG
+        qDebug() << "Critical Error! Cannot connect to DataBase!";
+#endif
+        exit(1);
+    }
     dataBaseEngine->createTableInSQLiteDataBase();
     dataBaseEngine->formTableInSQLiteDataBase();
 }
@@ -416,7 +424,7 @@ void MainWindow::retranslateUi()
                    "<tr><td align='center'><a href='http://www.sqlite.org/'><img src='://gfx/sqlite.png'/></a></td><td align='center'><br>SQLite is an embedded SQL database engine.</td></tr>"
                    "<tr><td align='center'><a href='http://qwt.sourceforge.net/'><img src='://gfx/qwt.png'/></a></td><td align='center'><br>Qwt is Qt Widgets for Technical Applications.</td></tr>"
                    "<tr><td align='center'><a href='http://www.opengl.org/'><img src='://gfx/opengl.png'/></a></td><td align='center'><br>OpenGL is a library (API) for rendering 2D/3D graphics.</td></tr>"
-                   "</table></p>").arg(0.58);
+                   "</table></p>").arg(VERSION_APP);
     /********** End About Dialog **********/
 
     /********** Start Actions **********/

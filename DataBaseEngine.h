@@ -47,9 +47,6 @@ class DataBaseEngine: public QWidget
     QString errorTitleGeneral;
     QString successTitleGeneral;
 
-    QString dataBaseErrorTitle;
-    QString dataBaseErrorBody;
-
     QString overflowWarningTitle;
     QString overflowWarningBody;
     QString overflowWarningButtons[3];
@@ -105,7 +102,7 @@ public slots:
 public:
     DataBaseEngine(QWidget *parent = 0);
 
-    void connectToSQLiteDataBase();
+    bool connectToSQLiteDataBase();
     void createTableInSQLiteDataBase();
     void formTableInSQLiteDataBase();
 

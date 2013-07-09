@@ -26,7 +26,7 @@ DataBaseEngine::DataBaseEngine(QWidget *parent)
     tableModelOfVectors = new TableModelOfVectors(this);
 }
 
-void DataBaseEngine::connectToSQLiteDataBase()
+bool DataBaseEngine::connectToSQLiteDataBase()
 {
     QSqlDatabase dbase = QSqlDatabase::addDatabase("QSQLITE");
 
@@ -49,8 +49,9 @@ void DataBaseEngine::connectToSQLiteDataBase()
         qDebug() << "Error: Cannot create or open \"sqlite\" file!"
                  << "Please Check SQLite Driver!";
 #endif
-        QMessageBox::warning(0, dataBaseErrorTitle, dataBaseErrorBody);
-
+        QMessageBox::warning(0, tr("Critical Error!"), tr("Cannot connect to SQLite DataBase!\n"
+                                                "Please Check SQLite Driver!"));
+        return false;
     }
     else
     {
@@ -66,6 +67,7 @@ void DataBaseEngine::connectToSQLiteDataBase()
 
     /* For not to edit table cells */
     tableViewWidget->setEditTriggers(QAbstractItemView::NoEditTriggers);
+    return true;
 }
 
 void DataBaseEngine::createTableInSQLiteDataBase()
@@ -181,9 +183,6 @@ void DataBaseEngine::retranslateUi()
     sensor = tr("Sensor");
     datePtr = &date;
     sensorPtr = &sensor;
-
-    dataBaseErrorTitle = tr("FATAL: Database Error!");
-    dataBaseErrorBody = tr("SQLite Driver not found!");
 
     overflowWarningTitle = tr("Warning!");
     overflowWarningBody = tr("<html>"

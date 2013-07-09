@@ -5,7 +5,9 @@
 #include <QMenu>
 #include <QMenuBar>
 
-LevelsWidget::LevelsWidget(const QVector<QString> &vectorDate, const QVector<QVector<double> > &vectorSensorReadings2D, QWidget *parent) :
+LevelsWidget::LevelsWidget(const QVector<QString> &vectorDate,
+                           const QVector<QVector<double> > &vectorSensorReadings2D,
+                           QWidget *parent) :
     QMainWindow(parent)
 {
     levelOneDec = new LevelOneDec(vectorDate, vectorSensorReadings2D);

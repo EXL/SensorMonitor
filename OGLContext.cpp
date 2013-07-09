@@ -251,12 +251,16 @@ void OGLContext::wheelEvent(QWheelEvent *event)
     if ((event->delta()) > 0 && nScale < 1.25f)
     {
         nScale = nScale * 1.05f;
+#ifdef _DEBUG
         qDebug() << nScale;
+#endif
     }
     else if ((event->delta()) < 0 && nScale > 0.40f)
     {
         nScale = nScale / 1.05f;
+#ifdef _DEBUG
         qDebug() << nScale;
+#endif
     }
     updateGL();
 }

@@ -49,5 +49,8 @@
         <file>gfx/Textures/texture2.png</file>
         <file>gfx/Textures/texture3.png</file>
         <file>gfx/Textures/texture4.png</file>
+        <file>icons/others_icons/help_back_32x32.png</file>
+        <file>icons/others_icons/help_close_32x32.png</file>
+        <file>icons/others_icons/help_home_32x32.png</file>
     </qresource>
 </RCC>

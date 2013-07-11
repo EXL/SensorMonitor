@@ -1,4 +1,5 @@
 #include "LevelTwoDecWidget.h"
+#include "HelpBrowser.h"
 
 #include <QAction>
 #include <QPushButton>
@@ -507,7 +508,7 @@ void LevelTwoDec::createToolBar()
     showHelpInBrowserAction->setIcon(QIcon("://icons/others_icons/help_icon_32x32.png"));
     showHelpInBrowserAction->setText(tr("Help"));
     showHelpInBrowserAction->setToolTip(tr("Show help in your browser"));
-    connect(showHelpInBrowserAction, SIGNAL(triggered()), this, SLOT(showHelpInBrowser()));
+    connect(showHelpInBrowserAction, SIGNAL(triggered()), this, SLOT(showHelp()));
 
     toolBar = new QToolBar(this);
     toolBar->addAction(exportLevelTwoChart);
@@ -949,10 +950,9 @@ void LevelTwoDec::setDoubleCountToLabel(double eps)
 }
 
 
-void LevelTwoDec::showHelpInBrowser()
+void LevelTwoDec::showHelp()
 {
-    QUrl url(QDir("doc").absoluteFilePath("index.htm"));
-    QDesktopServices::openUrl(url);
+    HelpBrowser::showPage("index.html");
 }
 
 void LevelTwoDec::chooseExportCharts()

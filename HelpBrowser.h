@@ -3,18 +3,22 @@
 
 #include <QWidget>
 #include <QTextBrowser>
-#include <QPushButton>
+#include <QToolBar>
+#include <QAction>
 #include <QHBoxLayout>
 #include <QVBoxLayout>
+
 
 class HelpBrowser : public QWidget
 {
     Q_OBJECT
 
     QTextBrowser *textBrowser;
-    QPushButton *homeButton;
-    QPushButton *backButton;
-    QPushButton *closeButton;
+    QAction *homeAction;
+    QAction *backAction;
+    QAction *closeAction;
+
+    QToolBar *toolBar;
 
     QHBoxLayout *buttonLayout;
     QVBoxLayout *mainLayout;

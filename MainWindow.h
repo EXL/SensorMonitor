@@ -127,7 +127,7 @@ private slots:
     void showOpenGLContextWindowSlot();
     void showLevelsWindowSlot();
 
-    void showHelpInBrowser();
+    void showHelp();
     void showAboutDialog();
 
     void showChangeNumSensorsDialog();

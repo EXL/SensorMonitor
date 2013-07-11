@@ -2,23 +2,35 @@
 #define OGLCONTEXT_H
 
 #include <QGLWidget>
+#include <QVector2D>
+#include <QVector3D>
+#include <QTimer>
 
 class OGLContext : public QGLWidget
 {
     Q_OBJECT
+
+    QVector<QVector3D> vertices;
+    QVector<QVector2D> texCoords;
+    GLuint textures[4];
+
     GLfloat nScale;
     GLfloat ratio;
 
-    GLfloat xRot1;
-    GLfloat yRot1;
-    GLfloat zRot1;
+    GLfloat xRot;
+    GLfloat yRot;
+    GLfloat zRot;
 
-    GLfloat xRot2;
-    GLfloat yRot2;
-    GLfloat zRot2;
     QPoint mousePosition;
-    GLuint textureID[3];
-    void genTextures();
+
+    bool qRotate;
+
+    QTimer *timer;
+
+    void rotateBy(int xAngle, int yAngle, int zAngle);
+    void makeObject();
+private slots:
+    void rotateOneStep();
 protected:
     void initializeGL();
     void resizeGL(int nWidth, int nHeight);
@@ -26,7 +38,7 @@ protected:
     void mousePressEvent(QMouseEvent* event);
     void mouseMoveEvent(QMouseEvent *event);
     void wheelEvent(QWheelEvent *event);
-
+    void keyPressEvent(QKeyEvent *event);
 public:
     OGLContext(QWidget* parent = 0);
     ~OGLContext();

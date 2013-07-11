@@ -1,4 +1,5 @@
 #include "MainWindow.h"
+#include "HelpBrowser.h"
 
 #include <QApplication>
 #include <QAction>
@@ -10,14 +11,12 @@
 #include <QStringList>
 #include <QMessageBox>
 #include <QCloseEvent>
-#include <QDesktopServices>
-#include <QUrl>
 
 #ifdef _DEBUG
 #include <QDebug>
 #endif
 
-#define VERSION_APP 0.6
+#define VERSION_APP 0.61
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -158,7 +157,7 @@ void MainWindow::createActions()
 
     showHelpInBrowserAction = new QAction(this);
     showHelpInBrowserAction->setIcon(QIcon("://icons/others_icons/help_icon_32x32.png"));
-    connect(showHelpInBrowserAction, SIGNAL(triggered()), this, SLOT(showHelpInBrowser()));
+    connect(showHelpInBrowserAction, SIGNAL(triggered()), this, SLOT(showHelp()));
 
     showAboutDialogWindowAction = new QAction(this);
     // showAboutDialogWindowAction->setShortcut(QKeySequence::UnknownKey);
@@ -609,10 +608,9 @@ void MainWindow::showLevelsWindowSlot()
     }
 }
 
-void MainWindow::showHelpInBrowser()
+void MainWindow::showHelp()
 {
-    QUrl url(QDir("doc").absoluteFilePath("index.htm"));
-    QDesktopServices::openUrl(url);
+    HelpBrowser::showPage("index.html");
 }
 
 void MainWindow::showAboutDialog()

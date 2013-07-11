@@ -28,6 +28,9 @@ void OGLContextWidget::createGLWidgets()
     glWidgetArea->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     glWidgetArea->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     glWidgetArea->setSizePolicy(QSizePolicy::Ignored, QSizePolicy::Ignored);
+
+    /* For KeyEvent! */
+    glWidget->setFocusPolicy(Qt::StrongFocus);
 }
 
 void OGLContextWidget::createMenuAndActions()

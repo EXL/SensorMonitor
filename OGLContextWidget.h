@@ -24,6 +24,7 @@ class OGLContextWidget : public QWidget
     void createMenuAndActions();
     void createLayout();
     void settingsWidget();
+
 private slots:
     void grabFrameBuffer();
 public:

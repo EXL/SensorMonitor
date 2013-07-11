@@ -58,7 +58,8 @@ SOURCES += main.cpp\
     LevelTwoDecWidget.cpp \
     LevelTwoChart.cpp \
     LevelTwoMuChart.cpp \
-    NumSensorsDialog.cpp
+    NumSensorsDialog.cpp \
+    HelpBrowser.cpp
 
 HEADERS  += \
     Generators.h \
@@ -77,7 +78,8 @@ HEADERS  += \
     LevelTwoDecWidget.h \
     LevelTwoChart.h \
     LevelTwoMuChart.h \
-    NumSensorsDialog.h
+    NumSensorsDialog.h \
+    HelpBrowser.h
 
 RESOURCES += \
     SensorMonitor.qrc

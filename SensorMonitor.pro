@@ -4,18 +4,35 @@
 #
 #-------------------------------------------------
 
-QT += core gui sql opengl
+QT += core gui sql opengl svg
 
 TARGET = SensorMonitor
 TEMPLATE = app
+
+#-------------------------------------------------
+# For static build (need static Qt librares)
+# Warning: please use qt_ru.qm coincident with the Qt version
+#-------------------------------------------------
+
+CONFIG += static
+static {
+    QMAKE_LFLAGS += -static -static-libgcc -static-libstdc++
+}
 
 # For Debug
 QMAKE_CXXFLAGS_DEBUG += -D_DEBUG
 
 # For using QWT
+!static {
+    QT_VER = $${QT_VERSION}
+} else {
+    QT_VER = $${QT_VERSION}-static
+}
+
 QWT_VER = 6.0.2
+
 win32-g++ {
-    QWT_PATH = C:/Qt/Qt4.8.4/qwt-$${QWT_VER}
+    QWT_PATH = C:/Qt/Qt$${QT_VER}/qwt-$${QWT_VER}
     QWT_INC_PATH = $${QWT_PATH}/include
     CONFIG(debug,debug|release) {
         DEBUG_SFX = d
@@ -42,6 +59,7 @@ LIBS += -L$${QWT_PATH}/lib -l$${QWT_LIB}
 # For icon
 win32-g++:RC_FILE = SensorMonitor.rc
 
+# Files
 SOURCES += main.cpp\
     Generators.cpp \
     LineChart.cpp \

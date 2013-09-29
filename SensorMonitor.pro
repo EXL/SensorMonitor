@@ -16,7 +16,7 @@ TEMPLATE = app
 
 CONFIG += static
 static {
-    QMAKE_LFLAGS += -static -static-libgcc -static-libstdc++
+    win32-g++: QMAKE_LFLAGS += -static -static-libgcc -static-libstdc++
 }
 
 # For Debug

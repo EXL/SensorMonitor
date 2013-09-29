@@ -23,6 +23,7 @@ MainWindow::MainWindow(QWidget *parent)
 {
     /* Set INI-file for settings */
     appSettings = new QSettings(QString("settings.ini"), QSettings::IniFormat);
+    readSettingsFromIniFile();
 
     /* Install translations for App and Qt lib */
     qApp->installTranslator(&appTranslator);
@@ -38,27 +39,21 @@ MainWindow::MainWindow(QWidget *parent)
     createMenus();
 
     /* 3 */
-    createChangeNumSensorsDialog();
-
-    /* 4 */
     createToolBars();
 
-    /* 5 */
+    /* 4 */
     createStatusBar();
 
-    /* 6 */
-    readSettingsFromIniFile();
-
-    /* 7 */
+    /* 5 */
     createCentralWidget();
 
-    /* 8 */
+    /* 6 */
     settingsWindow();
 
-    /* 9 */
+    /* 7 */
     readGlobalSettings();
 
-    /* 10 */
+    /* 8 */
     retranslateUi();
 }
 
@@ -288,28 +283,23 @@ void MainWindow::createLanguageMenu()
         languageMenu->addAction(languageAction);
         languageActionGroup->addAction(languageAction);
 
-        if (language == "English")
+        if (locale == globalLocale) {
             languageAction->setChecked(true);
+        } else if (globalLocale == "" && locale == "en") {
+            languageAction->setChecked(true);
+        }
     }
-}
-
-void MainWindow::createChangeNumSensorsDialog()
-{
-
 }
 
 void MainWindow::readSettingsFromIniFile()
 {
-    QString locale = appSettings->value("Language").toString();
+    globalLocale = appSettings->value("Language").toString();
 
     QDir qmDir("://translations");
     QString qmPath = qmDir.absolutePath();
 
-    appTranslator.load("sensormonitor_" + locale, qmPath);
-    qtTranslator.load("qt_" + locale, qmPath);
-
-    if (locale == "ru")
-        languageAction->setChecked(true);
+    appTranslator.load("sensormonitor_" + globalLocale, qmPath);
+    qtTranslator.load("qt_" + globalLocale, qmPath);
 }
 
 void MainWindow::createToolBars()

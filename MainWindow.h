@@ -92,6 +92,7 @@ class MainWindow : public QMainWindow
     QSettings *appSettings;
     QString aboutTitle;
     QString aboutBody;
+    QString globalLocale;
 
     DataBaseEngine *dataBaseEngine;
     LineChartWidget *lineChartWidget;
@@ -114,8 +115,6 @@ class MainWindow : public QMainWindow
     void createSchemeGroupBox();
     void settingsWindow();
     void retranslateUi();
-
-    void createChangeNumSensorsDialog();
 private slots:
     void switchLanguage(QAction *action);
 

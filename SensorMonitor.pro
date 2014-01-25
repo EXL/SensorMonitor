@@ -14,9 +14,9 @@ TEMPLATE = app
 # Warning: please use qt_ru.qm coincident with the Qt version
 #-------------------------------------------------
 
-CONFIG += static
+win32-g++:CONFIG += static
 static {
-    win32-g++: QMAKE_LFLAGS += -static -static-libgcc -static-libstdc++
+    QMAKE_LFLAGS += -static -static-libgcc -static-libstdc++
 }
 
 # For Debug
@@ -40,9 +40,7 @@ win32-g++ {
         DEBUG_SFX =
     }
     QWT_LIB = qwt$${DEBUG_SFX}$${VER_SFX}
-}
-
-linux-g++ {
+} else {
     QWT_PATH = /usr/local/qwt-$${QWT_VER}
     QWT_INC_PATH = $${QWT_PATH}/include
     CONFIG(debug,debug|release) {
